@@ -10,7 +10,7 @@
 
 # Learning Table
 --
-[1일차 바로가기](/juuminjun/IOS-develop5/study/1_17.9.4(1일차).md)
+[1일차 바로가기1](study/1_17.9.4(1일차).md)
 
 
 
