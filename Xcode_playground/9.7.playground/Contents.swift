@@ -41,297 +41,174 @@ var dic1 = oddDigits.sorted()
 print(dic1)
 ///////////////////////////////////////////////////////
 
+// 1. month 와 day를 받아서 요일 구하기
 
-
-
-
-
-// 1.  요일구하기 2017년도 1월1일은 일요일 입니다. 월과 데이를 받아서 그날의 요일을 구하는 함수 getWeekDay(달:Int, 날짜:Int)
-
- // - > 힌트는 30일, 31일 짜리인 달을 구함. 그 달을 먼저 찾게하고, 30일, 31에 따라서 요일을 구해줌. +1이 되면
- // - > 각각 달들이 28,30,31 인지 정의해놓고, 각각의 달들을 더해줌
-
-func getWeekDay(_ Month:Int,_ Day:Int) -> String
+func getWeek(_ month:Int,_ day:Int)
 {
-    var Month:Int = Month
-    var Day:Int = Day
+    
+    var value:Int = 0
+    var month:Int = 2
+    var day:Int = 2
     var MonthValue = 0
     var ofWeek:[String] = ["일", "월", "화", "수", "목", "금", "토"]
-    var whileValue = 0
+    var dic:[Int] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
-    // 달을 먼저 구해보자.
-    
-    //var day28:[Int] = [2]
-    //var day30:[Int] = [4, 6, 9, 11]
-    //var day31:[Int] = [1, 3, 5, 7, 8, 10 ,12]
-    var dic:[Int:Int] = [1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31] // 딕셔너리 벨류값 빼서 연산하는 방법알면 다시 만들자
-    
-    while Month != whileValue
+    if month == 1
     {
-        if Month == 1
-        {
-            MonthValue = Day
-            whileValue += 1
-        }
-        else if Month == 2
-        {
-            MonthValue = 31 + Day
-            whileValue += 1
-        }
-        else if Month == 3
-        {
-            MonthValue = 31 + 28 + Day
-            whileValue += 1
-        }
-        else if Month == 4
-        {
-            MonthValue = 31 + 28 + 31 + Day
-            whileValue += 1
-        }
-        else if Month == 5
-        {
-            MonthValue = 31 + 28 + 31 + 30 + Day
-            whileValue += 1
-        }
-        else if Month == 6
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + Day
-            whileValue += 1
-        }
-        else if Month == 7
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + 30 + Day
-            whileValue += 1
-        }
-        else if Month == 8
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + 30 + 31 + Day
-            whileValue += 1
-        }
-        else if Month == 9
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + Day
-            whileValue += 1
-        }
-        else if Month == 10
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + Day
-            whileValue += 1
-        }
-        else if Month == 11
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + Day
-            whileValue += 1
-        }
-        else if Month == 12
-        {
-            MonthValue = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30 + Day
-            whileValue += 1
-        }else {
-            print("요일을 알수 없음")
-            break
-        }
-        
+        value = day
+        value = value / 7
+        var value1:String = ofWeek[value]
+        print(value)
     }
-    // MonthValue = 총 날짜수가 들어가 있음
-    MonthValue = MonthValue % 7
-    var res:String = ofWeek[MonthValue-1]
+    else if month > 2
+    {
+        
+        
+        for i in 0...(month-2)
+        {
+            value += dic[i]
+        }
+    }
     
-    return res
+    value = value / 7
+    var value1:String = ofWeek[value]
+    print(value1)
 }
-print(getWeekDay(12, 31)) // 맨 마지막날 '일요일'
 
 
-// 2. 중복 숫자 줄이기 : 연속으로 중복된 숫자를 없애는 함수
+print(getWeek(2,1))
+    
+   // - > 총 day 를 7로 나누어서 요일 인덱스 값으로 받아서 처리함!
 
-func shoter(num:Int) -> [Int]
+
+// 2. 인풋값을 받아서 중복 숫자를 줄이기!
+
+
+func shoter(_ num:Int) -> [Int]
+    
 {
     var number = num
     var list:[Int] = []
     var list1:[Int] = []
+    var list2:[Int] = []
     
     while number >= 1 && number != 0
     {
         list.insert(number % 10, at: 0)
         number /= 10
     }
-    print(list)
-    // list = [순서대로 저장]
-    for i in 1...(list.count-1)
+    //list 에는 인풋값이 리스트로 만들어진상태
+    
+    for i in 0...(list.count-1)
     {
-        if list[i-1] == list[i] // 리스트 값이 같으면, 리스트를 리스트1에 올림.
+        if list1.contains(list[i]) == true
         {
-            list1.append(list[i-1])
+            list2.append(list[i])
+        }else {
+            list1.append(list[i])
         }
     }
     return list1
 }
 
+print(shoter(100121333))
+    
+//    -> input 값을 [input value] 로 만들고 -> [빈 list] 에 [input value] 안에 있는 값이 있는지 검사하고, 값이 있으면 넣지않고, 없으면 넣어서 중복 값을 찾아줌. 여기서 문제는 숫자 '0' 이 맨 앞으로 오면 0을 리스트에 넣어주지 못함.. 이거는 문자열을 나중에 슬라이싱 하는 방법을 배우면 다시 풀어보자.
 
-print(shoter(num:11223344))
-var dicc:[Int:Int] = [1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31]
+// 3. 소수를 찾는 함수 
 
-// 3. 소수찾기 : 2부터 입력된 숫자까지의 모든 소수를 찾아서 반환 
-
-//func allPrimNumber(_ num:Int)
-//{
-//    var number:Int = num
-//    var list:[Int] = []
-//    var list1:[Int] = []
-//    for i in 1...number
-//    {
-//        list.append(i)
-//    }
-//    // list 에는 1~num 까지 담겨 있음
-//    for i in 1...list.count
-//    {
-//        
-//        for j in 1...i
-//        {
-//            if i % j == 0
-//            {
-//                print("\(i) 는 소수가 아닙니다.")
-//            }
-//            else if i % j != 0
-//            {
-//                print("\(i) 는 소수입니다.")
-//            }else {
-//                print(i)
-//            }
-//        }
-//    }
-//    print(list1)
-//}
-//
-//print(allPrimNumber(10))
-
-// 소수 찾기 알고리즘 -> 내가 찾고자 하는 소수가 10 -> 1~10 까지 리스트 만들고, for을 사용해서 index 하는데, index 하는 값 보다 작은 값들을 나누어서, 나머지가 0 이 나오는 경우면 소수 아님, 나머지 0 이 안나오면 소수 맞음. 알고리즘 짜다가 실패..
-
-
-
-
-
-// 4. 시저암호 구현하기 ceasar(data:["a","B","C","d"], keyNum:4
-
-func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:Int = 4)
+func allPrimNumber(_ num:Int) -> [Int]
 {
-    var list:[String] = ["a","b","c","d","e","f","g","h"]
-    var list1:[String] = []
-    var data:String = data
     
+    var num:Int = num
+    var list:[Int] = []
+    var list1:[Int] = []
+    var list2:[Int] = []
     
-    for i in 1...list.count
+    while num >= 2
     {
-        if "\(data)" == list[i-1]
-        {
-            if "\(data)" == list[list.count-4] //list.count-1 은 index의 마지막 값 -> 인덱스 넘어가면 앞으로 돌려줌
-            {
-                list1.append(list[0])
-            }
-            else if "\(data)" == list[list.count-3]
-            {
-                list1.append(list[1])
-            }
-            else if "\(data)" == list[list.count-2]
-            {
-                list.append(list[2])
-            }
-            else if "\(data)" == list[list.count-1]
-            {
-                list1.append(list[3])
-            }else {
-                list1.append(list[i-1+keynum])
-            }
-            
-            
-        }
+        list.insert(num, at: 0)
+        num -= 1
+    }
+    print(list)
+    // list 에 거꾸로 값이 들어있음.
+    
+    for i in 0...list.count-1
+    {
+        var x:Int = 0
         
-    }
-    for i in 1...list.count
-    {
-        if "\(data1)" == list[i-1]
+        if list1.contains(list[i]) == true
         {
-            if "\(data1)" == list[list.count-4] //list.count-1 은 index의 마지막 값
-            {
-                list1.append(list[0])
-            }
-            else if "\(data1)" == list[list.count-3]
-            {
-                list1.append(list[1])
-            }
-            else if "\(data1)" == list[list.count-2]
-            {
-                list.append(list[2])
-            }
-            else if "\(data1)" == list[list.count-1]
-            {
-                list1.append(list[3])
-            }else {
-                list1.append(list[i-1+keynum])
-            }
-            
-            
+            print("\(i) 는 소수가 아닙니다.")
         }
-        
-    }
-    
-    for i in 1...list.count
-    {
-        if "\(data2)" == list[i-1]
+            
+        else if list1.contains(list[i]) == false //list1 안에 list값이 들어있지않으면 > 소수
         {
-            if "\(data2)" == list[list.count-4] //list.count-1 은 index의 마지막 값
-            {
-                list1.append(list[0])
-            }
-            else if "\(data2)" == list[list.count-3]
-            {
-                list1.append(list[1])
-            }
-            else if "\(data2)" == list[list.count-2]
-            {
-                list.append(list[2])
-            }
-            else if "\(data2)" == list[list.count-1]
-            {
-                list1.append(list[3])
-            }else {
-                list1.append(list[i-1+keynum])
-            }
+            list2.insert(list[i], at: 0)
             
-            
-        }
-        
-    }
-    for i in 1...list.count
-    {
-        if "\(data3)" == list[i-1]
-        {
-            if "\(data3)" == list[list.count-4] //list.count-1 은 index의 마지막 값
+            while x <= list[list.count-1] // 소수인지 판별하는 대상값을 list의 마지막 값까지 배수하는것!
             {
-                list1.append(list[0])
+                x += list[i]
+                list1.insert(x, at: 0)
+                
             }
-            else if "\(data3)" == list[list.count-3]
-            {
-                list1.append(list[1])
-            }
-            else if "\(data3)" == list[list.count-2]
-            {
-                list.append(list[2])
-            }
-            else if "\(data3)" == list[list.count-1]
-            {
-                list1.append(list[3])
-            }else {
-                list1.append(list[i-1+4])
-            }
-            
-            
         }
     }
-    print(list1)
-    
+    return list2
     
 }
 
-ceasar("a","b","c","d",2)
+
+print(allPrimNumber(13))
+
+
+
+// 4. 시저암호
+
+func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:Int = 4)
+{
+    var list:[String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","j","u","v","w","x","y","z"]
+    var list1:[String] = []
+    let data:String = data
+    let allData:[String] = [data, data1, data2, data3]
+    
+    for j in allData // for 을 data 값을 기준으로 돌려줍니다
+    {
+        
+        
+        for i in 1...list.count // 인풋값을 찾으면 list1에 +4 인덱스값을 해서 추가해주고, 맨뒤에 값들도 걸러내주게 변경해줍니다.
+        {
+            if "\(j)" == list[i-1]
+            {
+                if "\(j)" == list[list.count-4] //list.count-1 은 index의 마지막 값 -> 인덱스 넘어가면 앞으로 돌려줌
+                {
+                    list1.append(list[0])
+                }
+                else if "\(j)" == list[list.count-3]
+                {
+                    list1.append(list[1])
+                }
+                else if "\(j)" == list[list.count-2]
+                {
+                    list.append(list[2])
+                }
+                else if "\(j)" == list[list.count-1]
+                {
+                    list1.append(list[3])
+                }else {
+                    list1.append(list[i-1+keynum])
+                }
+                
+                
+            }
+        }
+        
+    }
+    print(list1)
+}
+
+print(ceasar("a","b","c","d"))
+
+
+
 
