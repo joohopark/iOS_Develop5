@@ -43,13 +43,11 @@ print(dic1)
 
 // 1. month 와 day를 받아서 요일 구하기
 
-func getWeek(_ month:Int,_ day:Int)
+func getWeek(_ month:Int,_ day:Int) -> String
 {
     
     var value:Int = 0
-    var month:Int = 2
-    var day:Int = 2
-    var MonthValue = 0
+    
     var ofWeek:[String] = ["일", "월", "화", "수", "목", "금", "토"]
     var dic:[Int] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
@@ -58,7 +56,8 @@ func getWeek(_ month:Int,_ day:Int)
         value = day
         value = value / 7
         var value1:String = ofWeek[value]
-        print(value)
+        return value1
+        
     }
     else if month > 2
     {
@@ -72,12 +71,12 @@ func getWeek(_ month:Int,_ day:Int)
     
     value = value / 7
     var value1:String = ofWeek[value]
-    print(value1)
+    
+    return value1
 }
 
 
-print(getWeek(2,1))
-    
+print(getWeek(1,2))
    // - > 총 day 를 7로 나누어서 요일 인덱스 값으로 받아서 처리함!
 
 
@@ -130,37 +129,37 @@ func allPrimNumber(_ num:Int) -> [Int]
         list.insert(num, at: 0)
         num -= 1
     }
-    print(list)
-    // list 에 거꾸로 값이 들어있음.
     
-    for i in 0...list.count-1
+    // list 에 2부터 num 까지의 값이 들어가 있음.
+    
+    
+    for i in 0...list.count-1 // list.count-1( list의 인덱스 숫자 만큼 for 이 돌음)
     {
         var x:Int = 0
         
-        if list1.contains(list[i]) == true
+        if list1.contains(list[i]) == true // list1에 list에 있는 값이 있으면 넣지 않음.
         {
-            print("\(i) 는 소수가 아닙니다.")
+            print("\(list[i]) 는 소수가 아닙니다.")
         }
             
         else if list1.contains(list[i]) == false //list1 안에 list값이 들어있지않으면 > 소수
         {
-            list2.insert(list[i], at: 0)
+            list2.append(list[i])
             
-            while x <= list[list.count-1] // 소수인지 판별하는 대상값을 list의 마지막 값까지 배수하는것!
+            while x < list[list.count-1] // 소수인지 판별하는 대상값을 list의 마지막 값까지 배수하는것!
             {
                 x += list[i]
-                list1.insert(x, at: 0)
+                list1.append(x)
                 
             }
         }
     }
-    return list2
+    return list1
     
 }
 
 
-print(allPrimNumber(13))
-
+print(allPrimNumber(11))
 
 
 // 4. 시저암호
