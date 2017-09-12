@@ -162,14 +162,20 @@ func allPrimNumber(_ num:Int) -> [Int]
 print(allPrimNumber(11))
 
 
-// 4. 시저암호
+// 4. 시저암호 -> 대, 소문자 구분 완려ㅛ
 
-func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:Int = 4)
+func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:Int = 4) -> [String]
 {
-    var list:[String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","j","u","v","w","x","y","z"]
+    var list:[String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","j","u","v","w","x","y","z",]
     var list1:[String] = []
+    
+    
+    var new_list:[String] = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","J","U","V","W","X","Y","Z"]
+    var new_list1:[String] = []
+    
     let data:String = data
     let allData:[String] = [data, data1, data2, data3]
+    print(list.count)
     
     for j in allData // for 을 data 값을 기준으로 돌려줍니다
     {
@@ -177,7 +183,30 @@ func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:
         
         for i in 1...list.count // 인풋값을 찾으면 list1에 +4 인덱스값을 해서 추가해주고, 맨뒤에 값들도 걸러내주게 변경해줍니다.
         {
-            if "\(j)" == list[i-1]
+            if "\(j)" == new_list[i-1]
+            {
+                if "\(j)" == new_list[list.count-4] //list.count-1 은 index의 마지막 값 -> 인덱스 넘어가면 앞으로 돌려줌
+                {
+                    list1.append(new_list[0])
+                }
+                else if "\(j)" == new_list[list.count-3]
+                {
+                    list1.append(new_list[1])
+                }
+                else if "\(j)" == new_list[list.count-2]
+                {
+                    list1.append(new_list[2])
+                }
+                else if "\(j)" == new_list[list.count-1]
+                {
+                    list1.append(list[3])
+                }else {
+                    list1.append(new_list[i-1+keynum])
+                }
+                
+                
+            }
+            else if "\(j)" == list[i-1]
             {
                 if "\(j)" == list[list.count-4] //list.count-1 은 index의 마지막 값 -> 인덱스 넘어가면 앞으로 돌려줌
                 {
@@ -189,7 +218,7 @@ func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:
                 }
                 else if "\(j)" == list[list.count-2]
                 {
-                    list.append(list[2])
+                    list1.append(list[2])
                 }
                 else if "\(j)" == list[list.count-1]
                 {
@@ -200,13 +229,18 @@ func ceasar(_ data:String,_ data1:String,_ data2:String,_ data3:String,_ keynum:
                 
                 
             }
+            
         }
         
     }
-    print(list1)
+    
+    return list1
+    
 }
 
-print(ceasar("a","b","c","d"))
+print(ceasar("W","X","y","z"))
+
+
 
 
 
