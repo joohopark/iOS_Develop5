@@ -18,6 +18,7 @@
 > 4. [collection Type, Array, Set, Dictionary, Quiz](/study/4_17.9.7.md)
 > 5. [Git 정의, 명령어](/study/5_17.9.8_git.md)
 > 6. [반복,조건문 Quiz, Class, OOP](/study/6_17.9.11.md)
+> 7. [class 구조, Inheritance, override](/study/7_17.9.13.md)
 
 
 # QnA
