@@ -21,6 +21,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnNumberClick(btn: UIButton) {
+        if btn.titleLabel?.text == "+" || btn.titleLabel?.text == "-" || btn.titleLabel?.text == "*" || btn.titleLabel?.text == "/" || btn.titleLabel?.text == "="  {
+            if disPlayText == "" {
+                 return disPlayLabel.text = "다른거 눌러라.."
+            }
+            
+        } // 맨처음, 연산기호 눌렀을때. 예외처리
         
         
         if disPlayLabel.text == "0" {// 계산기 처음에 0000누르는경우 예외처리.
@@ -44,7 +50,11 @@ class ViewController: UIViewController {
         
         
         
+        
+        
         if btn.titleLabel?.text == "+" || btn.titleLabel?.text == "-" || btn.titleLabel?.text == "*" || btn.titleLabel?.text == "/"  { // 연산자 눌렀을때 실행되는 함수.
+            
+            
             
             if operatorArea == "" {                      // 맨처음 연산자를 만났을때 처리.
                 operatorArea += (btn.titleLabel?.text)! // 연산자 구역에 연산자 추가
@@ -140,30 +150,8 @@ class ViewController: UIViewController {
 
             
         }
-                
-                
-                
-                
-        
-
-        
-    
-        
-        
-        
-        
-        print(operatorArea)
-
-        print(intIntputValue)
-        print(disPlayText)
-        
-        
-        
     }
-        
-        
-        
-        
+
     @IBAction func resetBtn(btn: UIButton) {
         
         disPlayText = ""
@@ -171,25 +159,8 @@ class ViewController: UIViewController {
         intIntputValueArea = 0
         operatorArea = ""
         disPlayLabel.text = disPlayText
-        
     }
-        
-        
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
