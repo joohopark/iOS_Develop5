@@ -51,5 +51,5 @@ Q1.
 
 
 
-![screen](/study/image/email.jpg) **:incoming_envelope:** **e-mail : <juuminjun@gmail.com>**
+#### **:envelope:** **e-mail : <juuminjun@gmail.com>**
 
