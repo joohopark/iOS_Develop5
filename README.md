@@ -48,6 +48,8 @@ Q1.
 
 #
 #
-#
-#### e-mail : <juuminjun@gmail.com>
+
+
+
+![screen](/study/image/email.png) **e-mail : <juuminjun@gmail.com>**
 
