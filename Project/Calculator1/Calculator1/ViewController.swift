@@ -1,23 +1,10 @@
-# 8.14(목) 수업
-
----
-
-## storyboard 활용한 계산기 만들기
-
----
-
- - UI 
-  
- <p align="center">
- 
- ![screen](/study/image/calculator.png)
- </p>
- 
- 버튼을 끌어와서 크기, 색상, 폰트, 폰트 크기 등을 수정해서 만들어 주었다. 직관적이고 쉽게 UI에 접근할수 있다. storyboard 사용시 조금 아쉬운점은, 각각 버튼에 code 를 연결 시켜주어야, 그 버튼을 눌렀을때, 실행이된다....
- 
- 
-```swift
-
+//
+//  ViewController.swift
+//  Calculator1
+//
+//  Created by MIN JUN JU on 2017. 9. 16..
+//  Copyright © 2017년 MIN JUN JU. All rights reserved.
+//
 
 import UIKit
 
@@ -174,6 +161,14 @@ class ViewController: UIViewController {
         disPlayLabel.text = disPlayText
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -187,8 +182,3 @@ class ViewController: UIViewController {
 
 }
 
-```
-
- > 2일 정도 고민해서 완성했다. 온전히 내 힘으로 완성하지는 못했다.. :sob: 맨 처음에는, list를 활용해서 만들려고 했었는데, 생각보다 list에 paking, unpaking 과정이 생각보다 까다롭고 복잡했다... 고민하다가, hint를 받고, 시도해서 성공했다.
- 
- > 초기화 버튼을 제외하고, 나머지 버튼은 같은 함수를 사용했다. 원리는, 버튼을 누를때마다 들어오는 버튼값들을 3가지 구역에 나누어서 그 구역에 들어있는값들을 이용해서 계산해주는 원리를 사용했다. 버튼을 누를때 버튼값이 들어가는 공간, 연산자 버튼을 누를때 연산자 버튼이 들어가는 공간, 두 공간이 차있을때, 새로운 연산을 하기위해서 버튼값과 새로 들어온 버튼값을 연산하는 공간 으로 나누어서 구현했다...!
