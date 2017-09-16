@@ -26,7 +26,7 @@
 > 1. [반복,조건문 Quiz, Class, OOP](/study/6_17.9.11.md)
 > 2. [class 구조, Inheritance, override](/study/7_17.9.13.md)
 > 3. [StoryBoard 활용해서 계산기 만들기](/study/8_17.9.14.md)
-> 4. [미완성, application life cycle...](/study/9_17.9.15.md)
+> 4. [IOS application life cycle, MVC(Model View Controller)](/study/9_17.9.15.md)
 
 
 # QnA
