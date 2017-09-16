@@ -30,6 +30,10 @@
 > 5. [Tuple, Any, AnyObject, nill, Type Casting, Access Control, Optionals, Modules and Sourece Files](/study/10_17.9.16.md)
 > 6. [Func, Inout, 논리연산자(===, !==), 삼항 연산자, switch](/study/11_17.9.16.md)
 
+3. **Part 3**
+
+> 1.[대기...](/study/12_17.9.18.md)
+
 
 # QnA
 
