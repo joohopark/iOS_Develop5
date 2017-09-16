@@ -51,5 +51,5 @@ Q1.
 
 
 
-![screen](/study/image/email.png) **e-mail : <juuminjun@gmail.com>**
+![screen](/study/image/email.jpg) **e-mail : <juuminjun@gmail.com>**
 
