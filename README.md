@@ -19,6 +19,7 @@
 > 5. [Git 정의, 명령어](/study/5_17.9.8_git.md)
 > 6. [반복,조건문 Quiz, Class, OOP](/study/6_17.9.11.md)
 > 7. [class 구조, Inheritance, override](/study/7_17.9.13.md)
+> 8. [StoryBoard 활용해서 계산기 만들기](/study/8_17.9.14.md)
 
 
 # QnA
