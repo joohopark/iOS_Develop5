@@ -16,6 +16,7 @@
 		042349E01F6EA6760092C5A8 /* google.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 042349DC1F6EA6760092C5A8 /* google.jpg */; };
 		042349E11F6EA6760092C5A8 /* instagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 042349DD1F6EA6760092C5A8 /* instagram.jpg */; };
 		042349E21F6EA6760092C5A8 /* intel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 042349DE1F6EA6760092C5A8 /* intel.jpg */; };
+		04AA87111F6F5F9C0046AE4F /* intel.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AA87101F6F5F9C0046AE4F /* intel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		042349DC1F6EA6760092C5A8 /* google.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = google.jpg; sourceTree = "<group>"; };
 		042349DD1F6EA6760092C5A8 /* instagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instagram.jpg; sourceTree = "<group>"; };
 		042349DE1F6EA6760092C5A8 /* intel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intel.jpg; sourceTree = "<group>"; };
+		04AA87101F6F5F9C0046AE4F /* intel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				042349DB1F6EA6760092C5A8 /* facebook.jpg */,
 				042349DC1F6EA6760092C5A8 /* google.jpg */,
 				042349DD1F6EA6760092C5A8 /* instagram.jpg */,
+				04AA87101F6F5F9C0046AE4F /* intel.png */,
 				042349DE1F6EA6760092C5A8 /* intel.jpg */,
 				042349D01F6EA6390092C5A8 /* Assets.xcassets */,
 				042349D21F6EA6390092C5A8 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AA87111F6F5F9C0046AE4F /* intel.png in Resources */,
 				042349E11F6EA6760092C5A8 /* instagram.jpg in Resources */,
 				042349D41F6EA6390092C5A8 /* LaunchScreen.storyboard in Resources */,
 				042349DF1F6EA6760092C5A8 /* facebook.jpg in Resources */,
@@ -315,6 +319,7 @@
 				042349DA1F6EA6390092C5A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
