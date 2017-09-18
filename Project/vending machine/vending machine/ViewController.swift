@@ -145,56 +145,10 @@ class ViewController: UIViewController {
                 
                 buyResultDisPlayLabel.text = "현재 자금이 부족합니다.."
             }
-            
-            
-
-            
-            
         }
-        
-        
-        
-        
-        print(chargeMoney)
-        print(chargeMoneyArea1)
-        print(btn.titleLabel?.text)
         moneyDisPlayLabel.text = "\(chargeMoney)"
-        
-        
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
