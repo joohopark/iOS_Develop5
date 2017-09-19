@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
     
     @IBOutlet var moneyDisPlayLabel: UILabel! // 충전 금액 표시 

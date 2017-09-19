@@ -184,38 +184,68 @@ func evaluate(_ expression: ArithmeticExpression) -> Int {
 
 
 
-enum Wearable {
-    enum Weight: Int {
-        case Light = 1
-        case Mid = 4
-        case Heavy = 10
+
+
+func testFuc(optionalStr:String?)
+{
+    if let unwrapStr = optionalStr {
+        print(unwrapStr)
     }
-    enum Armor: Int {
-        case Light = 2
-        case Strong = 8
-        case Heavy = 20
+}
+
+var testStr: String? = "efgh"
+var testStr1: String? = "abcd"
+
+
+
+
+if let ifLet = testStr,  let ifLet1 = testStr1  {
+    print(ifLet, ifLet1)
+}
+
+print(testStr)
+
+
+func greet(person: [String: String]){
+    guard let name = person["name"] else {
+        return print("else sys")
     }
-    case Helmet(weight: Weight, armor: Armor)
-    case Breastplate(weight: Weight, armor: Armor)
-    case Shield(weight: Weight, armor: Armor)
+    print("Hello \(name)!")
+    
+    guard let location = person["location"] else {
+        print("I hope the weather is nice near you.")
+        return
+    }
+
+    print("I hope the weather is nice in \(location).")
 }
 
 
-let num:Int = 10
-let num1:Int? = 10
-
-//print(num, num1)
+//greet(person: ["name": "John"])
+greet(person: ["name": "Jane", "location": "Cupertino"])
 
 
-let shortForm: Int? = Int("30")
-let longForm: Optional<Int> = Int("42")
+var li:[String] = ["name", "minjun"]
 
-// 옵셔널 값으로 저장하는 형식이구나..
 
-print(shortForm, longForm)
 
-let num3: Int? = Optional.none
-let num2: Int? = Optional.some(10)
 
-print(num3, num2)
+
+let defaultColorName = "red"
+var userDefinedColorName: String?
+var userDefinedColorName1: String?
+
+var colorNameToUse = userDefinedColorName ?? userDefinedColorName ?? defaultColorName
+
+print(defaultColorName, userDefinedColorName, colorNameToUse)
+
+
+
+
+
+// defaults to nil var colorNameToUse = userDefinedColorName ?? defaultColorName
+
+
+
+
 
