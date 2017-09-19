@@ -45,7 +45,7 @@
 >
 > 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17.9.18)
 >
-> 3. [미완성...](/study/14_17.9.19)
+> 3. [Enumeration(열거형), Optional(옵셔널), ](/study/14_17.9.19)
 
 
 
