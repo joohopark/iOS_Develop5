@@ -46,6 +46,8 @@
 > 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17.9.18.md)
 >
 > 3. [Enumeration(열거형), Optional(옵셔널), ](/study/14_17.9.19.md)
+> 
+> 4. [Closure, 계산기에 Closure, Enum 뜯어서 다시하기](/study/15_17.9.20.md)
 
 
 
