@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  newCal
+//  Calculator1
 //
-//  Created by MIN JUN JU on 2017. 9. 15..
+//  Created by MIN JUN JU on 2017. 9. 16..
 //  Copyright © 2017년 MIN JUN JU. All rights reserved.
 //
 
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBAction func btnNumberClick(btn: UIButton) {
         if btn.titleLabel?.text == "+" || btn.titleLabel?.text == "-" || btn.titleLabel?.text == "*" || btn.titleLabel?.text == "/" || btn.titleLabel?.text == "="  {
             if disPlayText == "" {
-                 return disPlayLabel.text = "다른거 눌러라.."
+                return disPlayLabel.text = "다른거 눌러라.."
             }
             
         } // 맨처음, 연산기호 눌렀을때. 예외처리
@@ -147,11 +147,11 @@ class ViewController: UIViewController {
                 intIntputValueArea = 0
                 //operatorArea = "/"
             }
-
+            
             
         }
     }
-
+    
     @IBAction func resetBtn(btn: UIButton) {
         
         disPlayText = ""
@@ -160,6 +160,14 @@ class ViewController: UIViewController {
         operatorArea = ""
         disPlayLabel.text = disPlayText
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

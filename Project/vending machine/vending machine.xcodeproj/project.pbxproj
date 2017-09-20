@@ -16,6 +16,7 @@
 		042349E01F6EA6760092C5A8 /* google.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 042349DC1F6EA6760092C5A8 /* google.jpg */; };
 		042349E11F6EA6760092C5A8 /* instagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 042349DD1F6EA6760092C5A8 /* instagram.jpg */; };
 		042349E21F6EA6760092C5A8 /* intel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 042349DE1F6EA6760092C5A8 /* intel.jpg */; };
+		048D0FE21F72386300176B3B /* UpgradeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0FE11F72386300176B3B /* UpgradeCalculatorViewController.swift */; };
 		04AA87111F6F5F9C0046AE4F /* intel.png in Resources */ = {isa = PBXBuildFile; fileRef = 04AA87101F6F5F9C0046AE4F /* intel.png */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		042349DC1F6EA6760092C5A8 /* google.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = google.jpg; sourceTree = "<group>"; };
 		042349DD1F6EA6760092C5A8 /* instagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instagram.jpg; sourceTree = "<group>"; };
 		042349DE1F6EA6760092C5A8 /* intel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intel.jpg; sourceTree = "<group>"; };
+		048D0FE11F72386300176B3B /* UpgradeCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeCalculatorViewController.swift; sourceTree = "<group>"; };
 		04AA87101F6F5F9C0046AE4F /* intel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 			children = (
 				042349C91F6EA6390092C5A8 /* AppDelegate.swift */,
 				042349CB1F6EA6390092C5A8 /* ViewController.swift */,
+				048D0FE11F72386300176B3B /* UpgradeCalculatorViewController.swift */,
 				042349CD1F6EA6390092C5A8 /* Main.storyboard */,
 				042349DB1F6EA6760092C5A8 /* facebook.jpg */,
 				042349DC1F6EA6760092C5A8 /* google.jpg */,
@@ -158,6 +161,7 @@
 			files = (
 				042349CC1F6EA6390092C5A8 /* ViewController.swift in Sources */,
 				042349CA1F6EA6390092C5A8 /* AppDelegate.swift in Sources */,
+				048D0FE21F72386300176B3B /* UpgradeCalculatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  MyCalculator
+//  Calculator1
 //
-//  Created by MIN JUN JU on 2017. 9. 12..
+//  Created by MIN JUN JU on 2017. 9. 16..
 //  Copyright © 2017년 MIN JUN JU. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
