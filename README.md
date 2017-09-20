@@ -43,9 +43,9 @@
 
 > 1. [StoryBoard 활용해서 대표이사 되기](/study/12_17.9.18.md)
 >
-> 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17.9.18)
+> 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17.9.18.md)
 >
-> 3. [Enumeration(열거형), Optional(옵셔널), ](/study/14_17.9.19)
+> 3. [Enumeration(열거형), Optional(옵셔널), ](/study/14_17.9.19.md)
 
 
 
