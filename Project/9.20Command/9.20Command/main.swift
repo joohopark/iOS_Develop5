@@ -1,23 +1,3 @@
-# 17.9.20(수)
-
----
-## closure 
-
-9.20 필기
-
-closure는 1 frist Function, mathod는 1급 함수가 아니다. 
-
-인트를 함수로
-
-
- - First Class function
-    1. 함수를 인자로 전달이 가능한가?
-    2. 함수를 변수에 저장이 가능 한가?
-    3. 함수가 함수를 반환 하는가?
-
-   
-```swift
-
 // 우리가 일반적으로 사용하고 있는 func은 사실은 closure의 일종이다. 근데 이름이 있는 closure이다...
 
 
@@ -50,7 +30,25 @@ print(g(funt: f, a: 10, b: 20))
 // 위의 3가지 조건이 충족되면 frist Class 충족해서 closure 를 사용할수 있다. 
 
 
+var m = 1000000
 
-```
+func testClosure(name:String, m:inout Int) -> String  {
+    
+    func add(money: Int) -> String {
+        m += money
+        
+        return name
+    }
+    return add(money: m)
+}
+
+
+var f1 = testClosure(name: "min", m: &1000)
+
+
+
+
+
+
 
 
