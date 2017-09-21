@@ -47,7 +47,7 @@
 >
 > 3. [Enumeration(열거형), Optional(옵셔널), ](/study/14_17.9.19.md)
 > 
-> 4. [Closure, 계산기에 Closure, Enum 뜯어서 다시하기](/study/15_17.9.20.md)
+> 4. [미완성..Closure, 계산기에 Closure, Enum 뜯어서 다시하기](/study/15_17.9.20.md)
 > 
 > 5. [baseballGame 만들기](/study/16_17.9.21.md)
 
