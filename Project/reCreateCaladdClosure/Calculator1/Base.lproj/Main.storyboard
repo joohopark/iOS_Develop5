@@ -38,7 +38,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="="/>
                                 <connections>
-                                    <action selector="equlAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m94-Qm-OQf"/>
+                                    <action selector="operateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ff-TA-cvT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTv-Oq-CN5">

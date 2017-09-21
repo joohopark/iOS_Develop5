@@ -68,7 +68,7 @@ class UpgradeViewController: UIViewController {
         }
         
 }
-    // == 함수
+    /*// == 함수
     @IBAction func equlAction(_ btn: UIButton) {
         
         if operatorArea == "+" {
@@ -83,7 +83,7 @@ class UpgradeViewController: UIViewController {
         
         
         
-    }
+    }*/
     
     
     // 오퍼레이션 함수
@@ -93,7 +93,7 @@ class UpgradeViewController: UIViewController {
             return disPlayLabel.text = "형 화낸다.."
         }
         // + 연산자 조건 부분.
-        if btn.titleLabel?.text == "+" {
+        if btn.titleLabel?.text == "+"  {
             
             if operatorArea == "" {
                 operatorArea = (btn.titleLabel?.text)! // 
@@ -129,7 +129,8 @@ class UpgradeViewController: UIViewController {
                 disPlayLabel.text = String(calculrationArea)
                 
             }
-            
+        
+    
             // 마이너스 연산자 부분
         }else if btn.titleLabel?.text == "-" {
             
@@ -167,8 +168,9 @@ class UpgradeViewController: UIViewController {
                 disPlayLabel.text = String(calculrationArea)
                 
             }
-            
-            //* 연산자 부분
+        
+
+            // 연산자 부분
         }else if btn.titleLabel?.text == "*" {
             
             if operatorArea == "" {
@@ -241,29 +243,63 @@ class UpgradeViewController: UIViewController {
                 observers = 0
                 operatorArea = (btn.titleLabel?.text)!
                 disPlayLabel.text = String(calculrationArea)
+            }
+            
+        }else if btn.titleLabel?.text == "=" {
+            
+            if operatorArea == "" {
+                operatorArea = (btn.titleLabel?.text)! //
+                calculrationArea = observers // input 값을 CalArea 에 넣음.
+                observers = 0
+                
+            }else if  operatorArea == "+" {
+                
+                calculrationArea = sum(calculrationArea, observers)
+                observers = 0
+                operatorArea = (btn.titleLabel?.text)!
+                disPlayLabel.text = String(calculrationArea)
+                
+            }else if  operatorArea == "-" {
+                
+                calculrationArea = minus(calculrationArea, observers)
+                observers = 0
+                operatorArea = (btn.titleLabel?.text)!
+                disPlayLabel.text = String(calculrationArea)
+                
+            }else if  operatorArea == "*" {
+                
+                calculrationArea = multi(calculrationArea, observers)
+                observers = 0
+                operatorArea = (btn.titleLabel?.text)!
+                disPlayLabel.text = String(calculrationArea)
+                
+            }else if  operatorArea == "/" {
+                
+                calculrationArea = divide(calculrationArea, observers)
+                observers = 0
+                operatorArea = (btn.titleLabel?.text)!
+                disPlayLabel.text = String(calculrationArea)
                 
             }
         }
-        
-        print(observers,calculrationArea,operatorArea)
-        
-        
-        
-            
-        
-        
     }
+
     
-    
-    
+
+        //print(observers,calculrationArea,operatorArea)
+        
+        
+        
+        
     // 초기화 함수 
     @IBAction func resetAction(_ btn: UIButton){
         observers = 0
         calculrationArea = 0
         operatorArea = ""
     }
-        
-        
+    
+    
+    
 }
 
 
@@ -279,10 +315,6 @@ class UpgradeViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
-
-
-
     
 
 
