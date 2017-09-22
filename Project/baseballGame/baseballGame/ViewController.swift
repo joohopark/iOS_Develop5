@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             
             if !randomValueArray.contains(randomValue) {
                 randomValueArray.append(randomValue)
-                print(randomValue, randomValueArray)
+                
                 
             }
         }
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
                 
             }else if clickBtnNumber > 3 {
                 resultDisPlayLabel.text = "이제 고만눌러.."
-                btnTagNumber = 4
+                clickBtnNumber = 4
                 
             }
         }
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
         
         
         // 게임이 실행중일때 작동함 
-        if isRunning {
+        if isRunning && clickBtnNumber >= 3 {
             
             // 스트라이크가 없을떄
             

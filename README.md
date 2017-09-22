@@ -64,7 +64,7 @@
 # QnA
 
 
-1. ARC(Auto Reference Count) 동작원리 무엇일까..?
+1. 
 
 2. 
  
