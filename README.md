@@ -76,8 +76,13 @@
 ---
 # Reference 
 
-[Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)
+**[Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)**
 
+**[전수열님 Swift 학습자료](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)**
+
+**[Swfit Interpreter](https://swift.sandbox.bluemix.net/#/repl)**
+
+**[Xcode Documents](http://help.apple.com/xcode/mac/9.0/#/)**
 
 ---
 
