@@ -50,6 +50,8 @@
 > 4. [미완성..Closure, 계산기에 Closure, Enum 뜯어서 다시하기](/study/15_17.9.20.md)
 > 
 > 5. [baseballGame 만들기](/study/16_17.9.21.md)
+> 
+> 6. [미완성...](/study/17_17.9.25.md)
 
 
 
@@ -71,12 +73,13 @@
 
 
 
+---
+# Reference 
+
+[Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)
 
 
-
-
-#
-#
+---
 
 
 
