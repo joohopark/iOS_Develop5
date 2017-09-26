@@ -9,9 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let lb:UILabel = UILabel(frame: CGRect(x: 50, y: 50, width: 300, height: 300))
     
-    var btnClickNumber = 0
+    let onBtn: UIButton = UIButton(frame: CGRect(x: 30, y: 30, width: 100, height: 100))
+    let offBtn: UIButton = UIButton(frame: CGRect(x: 140, y: 140, width: 100, height: 100))
+    
+    
     
     
     // viewDidLoad 역활
@@ -123,7 +125,7 @@ class ViewController: UIViewController {
         
         
         
-        
+       /* 버튼 기능과 함께 다시만들기
         // 다시만들어봄
                                       // 이렇게되면 생략인데, 사실 UIButtonType 가 생략됨.?
         let btn: UIButton = UIButton(type: .custom)
@@ -137,7 +139,7 @@ class ViewController: UIViewController {
         // 버튼을 누르고 손가락을 떼었을때 변하는값.
         btn.setTitle("selectred", for: .selected)
         
-        // 각 기능마다 색상을 변경 해줄수 있다. 
+        // 각 기능마다 색상을 변경 해줄수 있다.
         btn.setTitleColor(.white, for: .normal)
         btn.setTitleColor(.red, for: .highlighted)
         btn.setTitleColor(.blue , for: .selected)
@@ -163,7 +165,73 @@ class ViewController: UIViewController {
         
         
     }
+    */
+        
+
+        
+        
+        onBtn.setTitle("on", for: UIControlState.normal)
+        onBtn.setTitle("highlighted", for: UIControlState.highlighted)
+        onBtn.setTitle("selected", for: UIControlState.selected)
+        
+        onBtn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        onBtn.setTitleColor(.white, for: .normal)
+        onBtn.setTitleColor(.red, for: .highlighted)
+        onBtn.setTitleColor(.green, for: .selected)
+        
+        
+        onBtn.addTarget(self, action: #selector(self.onBtnAction(_:)), for: .touchUpInside)
+        
+        view.addSubview(onBtn)
+        
+        
+        
+        
+        
+        offBtn.setTitle("off", for: UIControlState.normal)
+        offBtn.setTitle("highlighted", for: UIControlState.highlighted)
+        offBtn.setTitle("selected", for: UIControlState.selected)
+        
+        offBtn.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        offBtn.setTitleColor(.white, for: .normal)
+        offBtn.setTitleColor(.red, for: .highlighted)
+        offBtn.setTitleColor(.green, for: .selected)
+        
+        
+        offBtn.addTarget(self, action: #selector(self.offBtnAction(_:)), for: .touchUpInside)
+        
+        view.addSubview(offBtn)
+
+        
+        
+        
+        
+    }
     
+    @objc func onBtnAction(_ sender:UIButton) {
+        
+        //내꺼가 눌리고 난 이후에, 상대꺼 안눌림
+        sender.isSelected = true
+        sender.isUserInteractionEnabled = false
+        
+        // 내꺼를 누를때 off 버튼의 isSelected 상태를 변화시켜주고, 상대방 버튼을 누를수 있게 만들어줌.
+        offBtn.isSelected = false
+        offBtn.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func offBtnAction(_ sender:UIButton) {
+        
+        // 내꺼 selected 가능 상태로,
+        sender.isSelected = true
+        sender.isUserInteractionEnabled = false
+        
+        // on 버튼 끄기
+        
+        onBtn.isSelected = false
+        onBtn.isUserInteractionEnabled = true
+    }
+        
     
     
     /*
