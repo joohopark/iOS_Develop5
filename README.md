@@ -58,7 +58,7 @@
 
 > 1. [UI 를 코드로 만들어보기!, UI Base, Resolutions, UIView, UILabel](/study/17_17.9.25.md)
 > 
-> 2. [미완성..](/study/18_17.9.26.md)
+> 2. [UIButton, UITextField, UITextFieldDelegate](/study/18_17.9.26.md)
 > 
 > 
 > 
