@@ -52,6 +52,8 @@
 > 5. [baseballGame 만들기](/study/16_17.9.21.md)
 > 
 > 6. [UI 를 코드로 만들어보기!, UI Base, Resolutions, UIView, UILabel](/study/17_17.9.25.md)
+> 
+> 7. [미완성..](/study/18_17.9.26.md)
 
 
 
