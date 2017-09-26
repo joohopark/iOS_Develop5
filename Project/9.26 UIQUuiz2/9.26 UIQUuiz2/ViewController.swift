@@ -50,6 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // 델리게이트 설정
         
+        // delegate 를 자기자신으로 인스턴스를 만들어서, 아래에있는 함수를 실행하게 했다고 지금은 이해하자..
         tf.delegate = self
         
     }

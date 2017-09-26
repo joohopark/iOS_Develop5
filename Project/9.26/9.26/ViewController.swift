@@ -20,42 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        //뷰 인스턴스를 만들어서 v1 인스턴스에 할당
-        let v1:UIView = UIView(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
         
-        view.addSubview(v1)
-        
-        v1.backgroundColor = UIColor.black
-        
-        
-        let v2:UIView = UIView(frame: CGRect(x: 120, y: 10, width: 100, height: 100))
-        
-        view.addSubview(v2)
-        
-        v2.backgroundColor = UIColor.blue
-        
-        
-        let v3:UIView = UIView(frame: CGRect(x: 230, y: 10, width: 100, height: 100))
-        
-        view.addSubview(v3)
-        
-        v3.backgroundColor = UIColor.brown
-        
-        
-        let v4:UIView = UIView(frame: CGRect(x: 10, y: 120, width: 100, height: 100))
-        
-        view.addSubview(v4)
-        
-        v4.backgroundColor = UIColor.cyan
-        
-        
-        
-        let v5:UIView = UIView(frame: CGRect(x: 120, y: 120, width: 100, height: 100))
-        
-        view.addSubview(v5)
-        
-        v5.backgroundColor = UIColor(displayP3Red: 12.0/255.0, green: 132.0/255.0, blue: 111.0/255.0, alpha: 0.8)
         
         // 새로운 뷰 올리기
         
