@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    // login 버튼을 누를때마다, 아래의 함수가 실행됨.
+    // login 버튼을
     @IBAction func loginButtonAction(_ sender: UIButton) {
         
         // userNAmeTextField 의 값이 nill이 아니면, username 에 바인딩하고, 아니면 else 구문이 실행됨
@@ -40,9 +40,8 @@ class LoginViewController: UIViewController {
         
         // 바인딩을 하고, 콤마 이후에 바로 실행을 처리할수 있다.
         guard let username = userNameTextField.text, !username.isEmpty else { return }
-        
-        
         guard let password = passwordTextField.text else { return }
+        
         
         // 구조체를 이용해서, 데이터 스트럭트를 만듬. 이것을 인스턴스의 함수로 실행함.. 오..
         //userModel.findUser(name: username, password: password)
