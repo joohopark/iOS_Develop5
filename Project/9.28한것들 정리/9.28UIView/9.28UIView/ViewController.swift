@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController,UIScrollViewDelegate {
     
     var scrollView: UIScrollView!
 
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-       //scrollView.setContentOffset(CGPoint(x: 400, y:0), animated: true)
+       scrollView.setContentOffset(CGPoint(x: 400, y:0), animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
