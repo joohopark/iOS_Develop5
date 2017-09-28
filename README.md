@@ -64,7 +64,7 @@
 > 
 > 4. [회원가입 페이지 만들기 ver.1](/study/19-1_17.9.27.md)
 > 
-> 5. [작성중.. UI Class Hierarchy, UIScrollView,](/study/20_17.9.28.md)
+> 5. [작성중.. UI Class Hierarchy, UIScrollView, UserDeFaults, Application Life Cycle](/study/20_17.9.28.md)
 > 
 
 
