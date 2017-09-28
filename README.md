@@ -60,7 +60,7 @@
 > 
 > 2. [UIButton, UITextField, UITextFieldDelegate](/study/18_17.9.26.md)
 > 
-> 3. [미완성..회원가입 페이지 만들기](/study/19_17.9.27.md)
+> 3. [회원가입 페이지 만들기](/study/19_17.9.27.md)
 > 
 > 
 > 
