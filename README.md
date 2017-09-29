@@ -66,9 +66,9 @@
 > 
 > 5. [UI Class Hierarchy, UIScrollView, UserDeFaults](/study/20_17.9.28.md)
 > 
-> 6. [작성중..Application Life Cycle, alert](/study/20-1_17.9.28.md)
+> 6. [Application Life Cycle, alert](/study/20-1_17.9.28.md)
 > 
-> 7. [미완성.......](/study/21_17.9.29.md)
+> 7. [작성중.. tabalView](/study/21_17.9.29.md)
 
 
 
