@@ -63,6 +63,35 @@ class ViewController: UIViewController {
             
             if i["ID"] == userName {
                 if i["PW"] == passWord {
+                    // 1. 알럿컨트롤러 설정
+                    let alertControllor: UIAlertController = UIAlertController(title: "알럿 타이틀 입니다.", message: "알럿 메세지 입니다", preferredStyle: .alert)
+                    
+                    // 2. 알럿 액션 버튼 설정
+                    
+                    let okActionAlert: UIAlertAction = UIAlertAction(title: "OK", style: .default) { (alert) in
+                        
+                        print("ok 버튼을 눌렀다.")
+                    }
+                    
+                    // 2-1. 알럿 액션 버튼 설정
+                    let cancelActionAlert: UIAlertAction = UIAlertAction(title: "cancel", style: .default) { (alert) in
+                        print("cancel 버튼을 눌렀다.")
+                    }
+                    
+                    
+                    // 3. 알럿 액션을 알럿 컨트롤러에 추가 해줘야함
+                    
+                    
+                    
+                    alertControllor.addAction(okActionAlert)
+                    
+                    alertControllor.addAction(cancelActionAlert)
+                    
+                    
+                    // 알럿을 뷰에 뿌려 줘야함.
+                    
+                    self.present(alertControllor, animated: true, completion: nil)
+                    
                     print("로그인 성공")
                     
                 }else {
