@@ -83,9 +83,9 @@
 # QnA
 
 
-1. 
+1. UI. 에서 frame 과, bounds의 차이 가 무엇일까?
 
-2. 
+2. datasource, delegate의 workFlow 는 어떻게 될까?
  
 
 
