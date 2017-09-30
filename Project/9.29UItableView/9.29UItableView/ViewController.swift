@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // cell을 등록하는 과정? -> UITableViewCell.self 는 클레스 자체를 가리킨다. -> 클레스 자체를 받아옴... Identifier 는 아래에 내가 만든 Cell의 이름이랑 같은 이름을 사용 해야한다. tv.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tv.register(MyCustomCell.self, forCellReuseIdentifier: "MyCustomCell")
         
-        tv.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        //tv.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         
         
         
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // 색션의 개수 생성
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     
@@ -52,14 +52,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // 타입 2가지 사용하는 방법 -> indexPath 의 section을 기준으로 바꾸어준다.. 
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-            
-            cell.textLabel?.text = poketmon[indexPath.row]
-            return cell
-            
-        }else {
+        // 타입 2가지 사용하는 방법 -> indexPath 의 section을 기준으로 바꾸어준다..
+        
+        
             
             // 이녀석은 재사용을함. 테이블 뷰 안에 존재하는녀석을 가져다가 사용을함.
             // 자료구조에서 데이터를 끄집어 낼때 dequeue 라고 하고, 데이터를 넣을때 enqueue
@@ -70,12 +65,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             
             // 다운캐스팅을 한 이유는, register 에서 row당 등록을 cell 이라는 변수를 사용해야하는데, 등록하는 변수의 타입과, 등록되어지는 cell의 타입을 같게 해주기 위해서이다.
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyCustomCell", for: indexPath) as! MyCustomCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCustomCell", for: indexPath) as! MyCustomCell
             // indexPath.row 는 현재 index 값같은 것이라고 생각해야 겠다.
-            cell.setImage(name: poketmon[indexPath.row])
+            // jpg 가 아닌경우에는 확장자를 제외하고 작성해주어도 괜찮음..
+        cell.setImage(name: poketmon[indexPath.row])
             
             //*******이거 잠깐 지워줌
-            //        cell.textLabel?.text = poketmon[indexPath.row]
+        
+        cell.textLabel?.text = poketmon[indexPath.row]
+ 
+ 
             return cell
             
         }
@@ -87,14 +87,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // 사실은 재사용해야되는데 ex) 타입이 2가지이면, 보여지느건 5개인데, 스크롤을 올리면, 이때 스크롤을 내리면, 녹색이 5개 쌓이고, 그 아래 파란색이 와야하는데, 사실은 파란색5개를 다시 만들어서 총 10개를 계속 가지고 있음.. 재사용이 아니라는 이야기임..!
         //return cell
-    }
+    
     
     // 테이블뷰의 low의 기본 높이를 지정해줌
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         
-        return 200
+        return 300
     }
     
     // 셀이 선택 되었을때 -> 이녀석을 delegate.self 를 선택 했을때 사용이 가능 하다.
