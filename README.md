@@ -68,7 +68,18 @@
 > 
 > 6. [Application Life Cycle, alert](/study/20-1_17.9.28.md)
 > 
-> 7. [작성중.. tabalView](/study/21_17.9.29.md)
+> 7. [UITableView, UITableView Customizing 하기, UIClassHierarchy 구조 뜯어보기](/study/21_17.9.29.md)
+ 
+### *  **Part 4** 
+
+> 8. [작성중..](/study/22_17.9.30.md)
+> 
+> 
+
+### *  **Braek week** 
+
+> 1. [작성중....](/breakweek/1_17.9.30.md)
+
 
 
 
