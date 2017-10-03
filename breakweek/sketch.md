@@ -114,7 +114,7 @@
 
 <p align="center">
 
-![screensh](/study/image/mokrup.jpg)
+![screensh](/study/image/morkup.jpg)
 
 </p>
 
