@@ -126,7 +126,7 @@
 
 ---
 
-## app Sifari 아이콘 만들어보기
+## app Safari 아이콘 만들어보기
 
 <p align="center">
 
