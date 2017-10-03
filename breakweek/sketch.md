@@ -228,11 +228,11 @@ Zeplin 은 협업하기 좋은 도구이다. 디자이너들의 github 같은 �
 사용방법은 내가 만든 이미지를 선택한후 `command + E` 를 누르면, 제플린으로 익스포트 할수 있다. 
 
 
-<p align="center">
 
-![screensh](/study/image/Zeplin1.jpg) ![screensh](/study/image/Zeplin2.jpg) ![screensh](/study/image/Zeplin3.jpg)
 
-</p>
+![screensh](https://user-images.githubusercontent.com/30401511/31121821-ab74ee86-a874-11e7-9864-3790fa80b7b7.jpg) ![screensh](https://user-images.githubusercontent.com/30401511/31121839-bb438002-a874-11e7-8990-39bb917a6d22.jpg) ![screensh](https://user-images.githubusercontent.com/30401511/31121859-c7fc9f9a-a874-11e7-9c6a-b8eb9346bd02.jpg)
+
+
 
 > export 하는 모습을 입니다.
 
