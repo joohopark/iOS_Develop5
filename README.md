@@ -78,7 +78,9 @@
 
 ### *  **Braek week** 
 
-> 1. [작성중..Sketch-Basic](/breakweek/sketch.md)
+> 1. [Sketch-Basic](/breakweek/sketch.md)
+> 
+> 2. [작성중...stanford](/breakweek/stanford.md)
 
 
 
