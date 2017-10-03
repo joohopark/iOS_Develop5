@@ -130,6 +130,156 @@
 
 </p>
 
+**사용한 아이콘들**
+
+ - Oval : 원
+ - Reactangle : 사격형
+ - Pencil : 연필(나침반의 침 부분을 선으로 그렸습니다.)
+ - Mask : object(?) 두개를 합쳐주는 기능(두 오브젝트중 상위 레이어에 있는녀석이 보여짐...?)
+ - Rotate : 회전 
+ - Union : 여러개의 객체를 한개로 묶는것
+ - Subtrack : 위의 예제에서 처럼 도형에서 도형을 뺴주는것
+ - Rotate Copies : 나침반의 초침 부분이 반복되는 부분을 초침을 한개 그리고 반복 해주는 기능 
+
+## 내가 필요한 기능 
+
+ - 스케치에서 작업한 이미지 뽑는(?) 방법 
+
+뽑으려고하는 이미지를 누르면 오른쪽 하단에 mkae exportable 버튼이 있음. 그 버튼을 누르고, export <이미지이름> 버튼을 누르게 되면, 저장하고 싶은 곳을 선택하고 ok를 누르면, 뽑힌 이미지를 확인할수 있습니다. `여기서 재미있는 부분은 아이폰의 이미지는 1x, 2x, 3x, 픽셀과 포인트가 다른 이미지가 필요할때가 있는데, sketch 에서는 그 이미지도 바로 뽑을수 있게 만들어 놓았다.`
+
+- 이미지 효율적으로 관리하기 
+
+sketch 에는 스타일, 심볼 이라는 기능이 있는데 스타일은, 어떤 객체에 적용되어있는 설정값(폰트, 폰트 사이즈, 색상 등등..) 들을 하나의 `스타일`로 묶어서, 비슷한 다른 객체에도 같은 스타일은 적용 할수 있는 기능이 있습니다. 이 기능을 `스타일` 이라고 합니다
+
+**스타일 설정 방법** : 객체를 누르고, 오른쪽 중단에 보면 `No Shared Style` 을 누르고 `Creat New Shared Style`을 지정 하고 `style 명`을 작성하면, style 등록 완료 
+
+**스타일 적용 방법** : 다른 객체를 누르고, `No Shared Style` -> `style 명` 을 누르게 되면, 등록한 style 을 적용 할수 있다.
+
+> 스타일에는 이미지도 등록해서, 자주 사용하는 이미지도 편리하게 꺼내서 사용할수 있다.
+
+
+ - 심볼 지정 및 관리방법(Sketch에서 가장 강력한 기능입니다.)
+
+포토샵에서 일일이 했던 작업을 심볼이라는 기능 덕분에 편리하게 관리할수 있게 해줍니다.
+예를 들어 아이콘을 만들면, 다른 여러화면에 사용되어져 있는데, 아이콘이 수정되면, 다른곳에 있던 아이콘을 수정 -> 복사 붙여넣기를 해야하는데, 심볼로 지정해놓으면, 반복적으로 사용되어있는 아이콘을 심볼로 등록하고, 심볼을 수정하면, 사용된 모든 심볼들이 수정되는것을 확인할수 있습니다. 
+
+
+
+<p align="center">
+
+![screensh](/study/image/iosUI.jpg)
+
+</p>
+
+
+> 왼쪽 화면을 보시면, 보라색 회전 모양으로 되어있는것이 심볼로 등록이 되어있는것 입니다. 심볼 등록은 객체를 선택하고 toolbar의 Creat Symbol을 눌러서 사용할수 있습니다. 심볼로 지정해주고, 내가 필요한것을 꺼내서 사용하고, 여러곳에 뿌려주었을때, 심볼 이미지를 수정하면, 뿌려주었던 모든 이미지들이 자동으로 수정이 됩니다...(디자인을 모르는 사람이 사용해도 강력한 기능이 맞는것 같습니다.)
+
+
+## Sketch Plugins
+
+> Plugins 사용방법: 메뉴 상단 -> Plugins -> Manage Plugins -> 원하는 Plugin 검색후 얻기
+> 
+> 오픈소스 라이브러리라고 생가하자.
+
+
+ - 스케치 플러그인 가이드
+
+ [다운로드 : https://github.com/luvmex/Sketch-Guides](https://github.com/luvmex/Sketch-Guides)
+ 
+<p align="center">
+
+![screensh](/study/image/pluginguide.jpg)
+
+</p>
+
+이미지 하단부의 툴바 같은 것이 스케치 플러그인 가이드 인데, 객체의 Ruler 가이드를 만들어놓은것임... 
+
+ 
+
+
+ - 스케치 미러앱 
+
+ 
+<p align="center">
+
+![screensh](/study/image/mirror.jpg)
+
+</p>
+
+[mirrir app 다운로드 https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8](https://itunes.apple.com/us/app/sketch-mirror/id677296955?mt=8) 
+
+스케치 상단의 mirror 라는 아이콘을 누르고, 사용하고 있는 디바이스에서, `Sketch mirror app`을 설치하면, 내가 sketch로 작업한것은 실시간으로 디바이스에서 확인할수 있다. 혹은 Web화면에서도 확인할수 있다.
+
+> mirror 옆에 cloud 를 클릭하게 되면 , URL이 따지는데, 이 URL을 협업하는 사람과 공유해서, 바로 볼수 있다.
+
+
+ - 스케치 플러그인 zeplin
+
+<p align="center">
+
+![screensh](/study/image/Zeplin.jpg)
+
+</p>
+
+[zeplin 다운로드: https://www.zeplin.io/](https://www.zeplin.io/)
+
+Zeplin 은 협업하기 좋은 도구이다. 디자이너들의 github 같은 느낌이다. 내가 sketch로 작업한것은, web 으로 import 해서 가져와서, 다른 사람을 초대해서, 그 web에서 comments 를 남기고 이야기 하면서 작업이 가능하다. 
+
+사용방법은 내가 만든 이미지를 선택한후 `command + E` 를 누르면, 제플린으로 익스포트 할수 있다. 
+
+
+<p align="center">
+
+![screensh](/study/image/Zeplin1.jpg) ![screensh](/study/image/Zeplin2.jpg) ![screensh](/study/image/Zeplin3.jpg)
+
+</p>
+
+> export 하는 모습을 입니다.
+
+
+- 스케치 플러그인 Invision craft
+
+<p align="center">
+
+![screensh](/study/image/Invision.jpg)
+
+</p> 
+
+[Craft 다운로드 https://www.invisionapp.com/craft](https://www.invisionapp.com/craft)
+
+Invision craft 는 반복적인 작업을 할때, 유용하게 사용할수 있다. 예를들어서, 
+
+네모칸이 20개인 이미지를 넣어야할때, 한번에 한개씩 선택해서 이미지를 넣는게 아니라, 어떤 file 안에 이미지를 넣어놓으면, 그 녀석들이 20개의 네모칸 안에 뿌려지게 됩니다.(프로토 타입을 빠르게 만들수 있게 도와주는 녀석인것 같다.)
+
+<p align="center">
+
+![screensh](/study/image/craft1.jpg)
+
+</p> 
+
+invision craft 를 설치하게 되면 , 이미지 처럼 오른쪽 툴바 부분에 어떤 아이콘들이 생기는데, 그녀석들이 craft의 기능들입니다. 이미지에서 사용한 기능은, web상에 있는 이미지를 네모 상자 안에 이미지를 뿌려 주는 기능을 시전 해봤습니다...
+
+
+## 여담
+
+[페이스북 UI 디자인을 스케치로 공개한곳](http://facebook.design/devices)
+
+**제플린은 사용하다 보면, 자연사를 자주 하기때문에 주기적으로 세이브 하는 습관을 가지고 시작하도록 하자...**
+
+- sketch는 기본적으로 벡터 이미지로 제작이되서, 이미지가 깨지지 않는다.
+- 객체 사이의 거리는 기본적으로 홀수값을 지양 합니다.(개발단에서 수정의 용의함을 위해서)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
