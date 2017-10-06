@@ -147,18 +147,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 ## 3. 각 역마다 버튼 넣고, 위치 지정 
 
-- 확대, 축소후 기능 버튼 위치 그대로(검정색 원이 사실은 버튼입니다)
+ 
 
-![screensh](/study/image/CreatSubway3.jpg)  ![screensh](/study/image/CreatSubway4.jpg)
+![screensh](/study/image/CreatSubway3.jpg)  
 
+![screensh](/study/image/CreatSubway4.jpg)
 
-- 버튼 숨기기
-
+> 확대, 축소후 기능 버튼 위치 그대로(검정색 원이 사실은 버튼입니다)
 
 
 ![screensh](/study/image/CreatSubway5.jpg) 
 
-
+> 버튼 숨기기
 
 
 
