@@ -18,6 +18,16 @@
 
 ## 1. 이미지와, 스크롤뷰 생성 
 
+
+<p align="center">
+
+![screensh](/study/image/CreatSubway.jpg) ![screensh](/study/image/CreatSubway1.jpg)
+
+</p>
+
+> 이미지, 스크롤뷰 
+
+
 ```swift
 
 import UIKit { 
@@ -58,6 +68,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 ---
 
 ## 2. Pinch, doubleTap Gesture(이미지 벡터로 변경)
+
+
+
+<p align="center">
+
+![screensh](/study/image/CreatSubway2.jpg) 
+
+</p>
+
+> 확대, 축소 기능 구현 
 
 
 ```swift
@@ -126,6 +146,23 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 ---
 
 ## 3. 각 역마다 버튼(현재 13개의 역에만 버튼넣음..방법을 몰라서 노가다로 넣음..) 넣고, 위치 지정.
+
+- 확대, 축소후 기능 버튼 위치 그대로(검정색 원이 사실은 버튼입니다)
+
+<p align="center">
+
+![screensh](/study/image/CreatSubway3.jpg) ![screensh](/study/image/CreatSubway4.jpg)
+
+</p>
+
+- 버튼 숨기기
+
+<p align="center">
+
+![screensh](/study/image/CreatSubway5.jpg) 
+
+</p>
+
 
 
 ```swift
@@ -373,6 +410,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 ---
 
 ## 버튼의 기능 구현(alert을 통해서, 출발역, 도착역 지정시 결과 반환)
+
+5. 출발역, 도착역, 결과 알럿 
+
+<p align="center">
+
+![screensh](/study/image/CreatSubway6.jpg) ![screensh](/study/image/CreatSubway7.jpg)  ![screensh](/study/image/CreatSubway8.jpg) 
+
+</p>
+
 
 ```swift
 
@@ -791,46 +837,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 ## 구현 이미지 확인 
 
-1. 스크롤뷰 
-
-<p align="center">
-
-![screensh](/study/image/CreatSubway.jpg) ![screensh](/study/image/CreatSubway1.jpg)
-
-</p>
-
-2. Zoom, Doubletap, Pinch Gesture
 
 
-<p align="center">
 
-![screensh](/study/image/CreatSubway2.jpg) 
 
-</p>
-
-3. 확대, 축소후 기능 버튼 위치 그대로(검정색 원이 사실은 버튼입니다)
-
-<p align="center">
-
-![screensh](/study/image/CreatSubway3.jpg) ![screensh](/study/image/CreatSubway4.jpg)
-
-</p>
-
-4. 버튼 숨기기
-
-<p align="center">
-
-![screensh](/study/image/CreatSubway5.jpg) 
-
-</p>
-
-5. 출발역, 도착역, 결과 알럿 
-
-<p align="center">
-
-![screensh](/study/image/CreatSubway6.jpg) ![screensh](/study/image/CreatSubway7.jpg)  ![screensh](/study/image/CreatSubway8.jpg) 
-
-</p>
 
 
 
