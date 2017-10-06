@@ -415,13 +415,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 <p align="center">
 
-![screensh](/study/image/CreatSubWay6.jpg) ![screensh](/study/image/CreatSubWay7.jpg)  
-![screensh](/study/image/CreatSubWay8.jpg) 
+![screensh](/study/image/CreatSubWay6.jpg) 
+
 
 
 
 </p>
 
+![screen](/study/image/CreatSubWay7.jpg)  
+
+![screen](/study/image/CreatSubWay8.jpg) 
 
 ```swift
 
