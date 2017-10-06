@@ -55,7 +55,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 ```
 
-2. Pinch, doubleTap Gesture 
+2. Pinch, doubleTap Gesture(이미지 벡터로 변경)
 
 
 ```swift
