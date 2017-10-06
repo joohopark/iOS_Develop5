@@ -80,7 +80,9 @@
 
 > 1. [Sketch-Basic](/breakweek/sketch.md)
 > 
-> 2. [작성중...stanford](/breakweek/stanford.md)
+> 2. [미완성... 지하철 노선도 만들기](/breakweek/CreatSubway.md)
+> 
+> 3. [작성중.. stanford](/breakweek/stanford.md)
 
 
 
