@@ -824,6 +824,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 </p>
 
+5. 출발역, 도착역, 결과 알럿 
+
+<p align="center">
+
+![screensh](/study/image/CreatSubway6.jpg) ![screensh](/study/image/CreatSubway7.jpg)  ![screensh](/study/image/CreatSubway8.jpg) 
+
+</p>
+
+
+
+
 
 
 
