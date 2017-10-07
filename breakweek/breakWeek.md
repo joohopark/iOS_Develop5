@@ -33,7 +33,7 @@
 
 ---
 
-## 지하철 노선도 만들기, 탐색기능 에서 막힘(링크드 리스트 사용해서 완수할까 고민중)
+## 지하철 노선도 만들기(링크드 리스트 미 적용)
 
 [https://devminjun.github.io/blog/CreatSubway](https://devminjun.github.io/blog/CreatSubway)
 
