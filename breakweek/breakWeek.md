@@ -4,7 +4,7 @@
 
 ## Github blog 생성
 
-![screen](/study/imagebreakWeek-1.jpg)
+![screen](/study/image/breakWeek-1.jpg)
 
 [https://devminjun.github.io](https://devminjun.github.io)
 
