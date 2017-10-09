@@ -82,7 +82,11 @@
 > 
 > 2. [지하철 노선도 만들기(Alert, ScrollView이용해서 구현)](/breakweek/CreatSubway.md)
 > 
-> 3. [작성중...Break Week 때 한것들](/breakweek/breakWeek.md)
+> 3. [문법 정리 1/2](/breakweek/2017-10-9-online.md)
+> 
+> 4. [작성중..문법 정리 2/2](/breakweek/2017-10-10-online.md)
+> 
+> 5. [작성중...Break Week 때 한것들](/breakweek/breakWeek.md)
 
 
 

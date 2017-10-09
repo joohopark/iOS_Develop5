@@ -118,6 +118,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         print(UserDefaults.standard.object(forKey: "userList"))
+        dump(UserDefaults.standard.object(forKey: "userList"))
     }
     
     
