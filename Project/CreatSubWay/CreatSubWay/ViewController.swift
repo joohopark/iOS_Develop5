@@ -6,6 +6,7 @@
 //  Copyright © 2017년 MIN JUN JU. All rights reserved.
 //
 
+
 import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
@@ -209,7 +210,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         
         /*=======================
-             버튼 기능 연결
+                버튼 기능 연결
          ========================*/
         
         yeungNamHosp.addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
