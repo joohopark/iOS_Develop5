@@ -16,6 +16,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 시작을 모두 끊음. 그리고 여기서 시작함.
+        // 원래는, self.view.fram... 했는데, 여기서는 application, delegate 만 실행이 되니까, view가 존재 하지 않음. 따라서 Screen 자체를 가지고 온다.
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // ViewController instance 를 만들기
+        // 1. ViewController Story를 통해서 가져와야해서, StroyBoard 를 먼저 만든다
+        // ->
+        
+        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let rootVC: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController*/
+        
+        
+            /*=================
+             이렇게도 사용이 가능한데 느리다..?
+             =================*/
+        
+        let rootVC = UIViewController()
+        rootVC.view.backgroundColor = .red
+        
+        let firstVC = UINavigationController(rootViewController: rootVC)
+        
+        // UIViewController 를 사용할떄와, ViewController 의 차이 
+        let secondVC = UIViewController()
+        secondVC.view.backgroundColor = .green
+        
+
+        
+        
+        let tabbar = UITabBarController()
+        
+        // tabbar의 아이템들만 들어가 있음..
+        tabbar.viewControllers = [firstVC, secondVC]
+        
+        
+        // window 에 뷰 컨트롤러와
+        window?.rootViewController = tabbar
+        
+        // window도 여러개가 있는데, 여러개가 잇는데, 그중에 main을 만들수 있음..
+        window?.makeKeyAndVisible()
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         return true
     }
 
