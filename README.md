@@ -72,7 +72,9 @@
  
 ### *  **Part 4** 
 
-> 8. [작성중..](/study/22_17.9.30.md)
+> 1. [UIVIewController, Segue(간단한 화면전환)](/study/22_17.10.10.md)
+> 
+> 2. [작성중..UINavigationController, Delegate](/study/23_17.10.11.md)
 > 
 > 
 
