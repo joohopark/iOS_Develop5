@@ -21,21 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 원래는, self.view.fram... 했는데, 여기서는 application, delegate 만 실행이 되니까, view가 존재 하지 않음. 따라서 Screen 자체를 가지고 온다.
         
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+//        window = UIWindow(frame: UIScreen.main.bounds)
         
         // ViewController instance 를 만들기
         // 1. ViewController Story를 통해서 가져와야해서, StroyBoard 를 먼저 만든다
         // ->
+       /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let rootVC: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController*/
-        
+        let rootVC: ViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        */
         
             /*=================
              이렇게도 사용이 가능한데 느리다..?
              =================*/
         
+        /*
         let rootVC = UIViewController()
         rootVC.view.backgroundColor = .red
         
@@ -61,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
     
-        
+        */ 
         
         
         
