@@ -74,7 +74,9 @@
 
 > 1. [UIVIewController, Segue(간단한 화면전환)](/study/22_17.10.10.md)
 > 
-> 2. [작성중..UINavigationController, Delegate](/study/23_17.10.11.md)
+> 2. [UINavigationController, UIViewController](/study/23_17.10.11.md)
+> 
+> 3. [작성중..Protocol, Delegate, AutoLayOut](/study/24_17.10.12.md)
 > 
 > 
 
