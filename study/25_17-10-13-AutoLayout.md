@@ -40,7 +40,10 @@
 	- 고정된 픽스값을 주어서 그 값으로 고정 시키느냐.. 둘중 하나로 정할수 있다. 
 - 컨텐츠 뷰의 제약을 주면, 그 제약은 내부 `셋`값이다..? 이게 무슨 이야기일까 한번 확인 해보자
 
-|![screen](/study/image/Autolayout-1.jpg)|![screen](/study/image/Autolayout-2.jpg)|
+| UIHierachy  | Hierachy | 
+| :------------ | -----------: | 
+| ![screensh](/study/image/Autolayout-1.jpg) | ![screensh](/study/image/Autolayout-2.jpg) |
+
 
 > Storyboard 로 SscrollView 를 만들때, 계층 구조를 보면, <br>
 > 
@@ -72,26 +75,5 @@
 > 
 > 5번은 3번의 스텍뷰로 만들기 전에, autuLayOut 를 사용해서 만들었다.
 > 
-> 
+ 
 ---
-
-
-## 표 테스트
-
-| UIHierachy  | Hierachy | 
-| :------------ | -----------: | 
-| ![screensh](/study/image/Autolayout-1.jpg) | ![screensh](/study/image/Autolayout-2.jpg) |
-
-
-<br>
-
-| First Header  | Second Header | Third Header         |
-| :------------ | :-----------: | -------------------: |
-| First row     | Data          | Very long data entry |
-| Second row    | **Cell**      | *Cell*               |
-| Third row     | Cell that spans across two columns  ||
-[Table caption, works as a reference][section-mmd-tables-table1] 
-
-
-
-
