@@ -40,8 +40,7 @@
 	- 고정된 픽스값을 주어서 그 값으로 고정 시키느냐.. 둘중 하나로 정할수 있다. 
 - 컨텐츠 뷰의 제약을 주면, 그 제약은 내부 `셋`값이다..? 이게 무슨 이야기일까 한번 확인 해보자
 
-
-| ![screen](/study/image/Autolayout-1.jpg) | ![screen](/study/image/Autolayout-2.jpg) |
+|![screen](/study/image/Autolayout-1.jpg)|![screen](/study/image/Autolayout-2.jpg)|
 
 > Storyboard 로 SscrollView 를 만들때, 계층 구조를 보면, <br>
 > 
