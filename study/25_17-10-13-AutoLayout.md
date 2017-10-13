@@ -31,6 +31,31 @@
 
 ---
 
+## ScrollView Storyboard 로 만들기
+
+컨텐츠 뷰는 autolayout 으로 잡아주는게 불가능 하기 때문에, rootView랑  높이를 같게 만든다. 
+
+- 내부의 컨텐츠뷰 사이즈를 결정하는 것은 
+	- 내부의 콘텐츠의 사이즈에 따라서 변하게 하던가
+	- 고정된 픽스값을 주어서 그 값으로 고정 시키느냐.. 둘중 하나로 정할수 있다. 
+- 컨텐츠 뷰의 제약을 주면, 그 제약은 내부 `셋`값이다..? 이게 무슨 이야기일까 한번 확인 해보자
+
+
+| ![screen](/study/image/AutoLayOut-1.jpg) | ![screen](/study/image/AutoLayOut-2.jpg) |
+
+> Storyboard 로 SscrollView 를 만들때, 계층 구조를 보면, 
+> 
+> |-- ScrollView  
+> |------View(이름을 컨텐츠 뷰로 바꿈..) 
+> |----------StackView
+> |--------------View
+> |--------------View
+> |--------------View
+> 
+> 사실상 ScrollView 바로 위에 있는 View가 ContentsView의 역활을 수행한다..! 
+
+---
+
 ## 정리
 
 
