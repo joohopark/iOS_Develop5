@@ -78,7 +78,7 @@
 > 
 > 3. [Protocol, Delegate](/study/24_17-10-12.md)
 > 
-> 4. [AutoLayOut, StackView](/study/24_17-10-13.md)
+> 4. [AutoLayOut, StackView](/study/25_17-10-13-AutoLayout.md)
 > 
 > 5. [작성중..](/study/25_.md)
 > 
