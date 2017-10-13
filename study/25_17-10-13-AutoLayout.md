@@ -78,10 +78,10 @@
 
 ## 표 테스트
 
-| ㅁ | ㅠ | ㅎ |
-| 1 | 2 | 3 |
+| ㅁ | ㅠ | ㅎ | <br>
+| 1 | 2 | 3 | <br>
 
-| ![screen](/study/image/Autolayout-1.jpg) | ![screen](/study/image/Autolayout-2.jpg) |
+| ![screensh](/study/image/Autolayout-1.jpg) | ![screensh](/study/image/Autolayout-2.jpg) |
 
 
 
