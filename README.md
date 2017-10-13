@@ -76,7 +76,11 @@
 > 
 > 2. [UINavigationController, UIViewController](/study/23_17-10-11.md)
 > 
-> 3. [작성중..Protocol, Delegate, AutoLayOut](/study/24_17-10-12.md)
+> 3. [Protocol, Delegate](/study/24_17-10-12.md)
+> 
+> 4. [AutoLayOut, StackView](/study/24_17-10-13.md)
+> 
+> 5. [작성중..](/study/25_.md)
 > 
 > 
 
