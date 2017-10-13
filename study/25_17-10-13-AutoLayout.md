@@ -72,6 +72,16 @@
 > 
 > 5번은 3번의 스텍뷰로 만들기 전에, autuLayOut 를 사용해서 만들었다.
 > 
+> 
+---
+
+
+## 표 테스트
+
+| ㅁ | ㅠ | ㅎ |
+| 1 | 2 | 3 |
+
+| ![screen](/study/image/Autolayout-1.jpg) | ![screen](/study/image/Autolayout-2.jpg) |
 
 
 
