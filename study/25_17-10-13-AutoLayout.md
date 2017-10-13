@@ -2,9 +2,7 @@
 
 ---
 
-## Refrence
-
-## [AutoLayOut PDF](/study/image/AutoLayOut.pdf)
+## Refrence : [AutoLayOut PDF](/study/image/AutoLayOut.pdf)
 
 ---
 
