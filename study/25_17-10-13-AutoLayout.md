@@ -41,7 +41,7 @@
 - 컨텐츠 뷰의 제약을 주면, 그 제약은 내부 `셋`값이다..? 이게 무슨 이야기일까 한번 확인 해보자
 
 
-| ![screen](/study/image/AutoLayOut-1.jpg) | ![screen](/study/image/AutoLayOut-2.jpg) |
+| ![screen](/study/image/Autolayout-1.jpg) | ![screen](/study/image/Autolayout-2.jpg) |
 
 > Storyboard 로 SscrollView 를 만들때, 계층 구조를 보면, 
 > 
