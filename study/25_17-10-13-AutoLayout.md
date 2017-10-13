@@ -78,17 +78,19 @@
 
 ## 표 테스트
 
-| ㅁ | ㅠ | ㅎ | <br>
-| 1 | 2 | 3 | <br>
-
+| First Header  | Second Header | 
+| :------------ | -----------: | 
 | ![screensh](/study/image/Autolayout-1.jpg) | ![screensh](/study/image/Autolayout-2.jpg) |
 
+
+<br>
 
 | First Header  | Second Header | Third Header         |
 | :------------ | :-----------: | -------------------: |
 | First row     | Data          | Very long data entry |
 | Second row    | **Cell**      | *Cell*               |
 | Third row     | Cell that spans across two columns  ||
+
 [Table caption, works as a reference][section-mmd-tables-table1] 
 
 
