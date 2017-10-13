@@ -43,14 +43,14 @@
 
 | ![screen](/study/image/Autolayout-1.jpg) | ![screen](/study/image/Autolayout-2.jpg) |
 
-> Storyboard 로 SscrollView 를 만들때, 계층 구조를 보면, 
+> Storyboard 로 SscrollView 를 만들때, 계층 구조를 보면, <br>
 > 
-> |-- ScrollView  
-> |------View(이름을 컨텐츠 뷰로 바꿈..) 
-> |----------StackView
-> |--------------View
-> |--------------View
-> |--------------View
+> |-- ScrollView  <br>
+> |------View(이름을 컨텐츠 뷰로 바꿈..) <br>
+> |----------StackView<br>
+> |--------------View<br>
+> |--------------View<br>
+> |--------------View<br>
 > 
 > 사실상 ScrollView 바로 위에 있는 View가 ContentsView의 역활을 수행한다..! 
 
