@@ -2,6 +2,12 @@
 
 ---
 
+## Refrence
+
+## [AutoLayOut PDF](/study/image/AutoLayOut.pdf)
+
+---
+
 ## autoLayOut 
 
 - apple에서 권고하는 autoLayOut은 6, 7, 사이즈 들을 고려하고, + 계열은  + 계열 끼리 고려해서 만들어 주는것을 권고한다.
@@ -45,7 +51,7 @@
 > 5번은 3번의 스텍뷰로 만들기 전에, autuLayOut 를 사용해서 만들었다.
 > 
 
-[AutoLayOut PDF](/study/image/)
+
 
 
 
