@@ -70,7 +70,7 @@
 > 
 > 7. [UITableView, UITableView Customizing 하기, UIClassHierarchy 구조 뜯어보기](/study/21_17-9-29.md)
  
-### *  **Part 4** 
+### *  **Part 5** 
 
 > 1. [UIVIewController, Segue(간단한 화면전환)](/study/22_17-10-10.md)
 > 
@@ -79,8 +79,10 @@
 > 3. [Protocol, Delegate](/study/24_17-10-12.md)
 > 
 > 4. [AutoLayOut, StackView](/study/25_17-10-13-AutoLayout.md)
-> 
-> 5. [작성중..](/study/25_.md)
+
+
+### *  **Part 6** 
+> 1. [작성중..다음주]()
 > 
 > 
 
@@ -90,9 +92,9 @@
 > 
 > 2. [지하철 노선도 만들기(Alert, ScrollView이용해서 구현)](/breakweek/CreatSubway.md)
 > 
-> 3. [문법 정리 1/2](/breakweek/2017-10-9-online.md)
+> 3. [Swift 기본 문법 정리 1/2](/breakweek/2017-10-9-online.md)
 > 
-> 4. [작성중..문법 정리 2/2](/breakweek/2017-10-10-online.md)
+> 4. [Swift 기본 문법 정리 2/2](/breakweek/2017-10-10-online.md)
 > 
 > 5. [작성중...Break Week 때 한것들](/breakweek/breakWeek.md)
 
@@ -126,7 +128,7 @@
 
 **[전수열님 Swift 학습자료](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)**
 
-**[Swfit Interpreter](https://swift.sandbox.bluemix.net/#/repl)**
+**[Swift Interpreter](https://swift.sandbox.bluemix.net/#/repl)**
 
 **[Xcode Documents](http://help.apple.com/xcode/mac/9.0/#/)**
 
@@ -136,5 +138,5 @@
 
 
 
-### **:envelope:**  : <juuminjun@gmail.com>
+### **:envelope:**  : <devminjunju@gmail.com>
 
