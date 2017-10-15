@@ -51,7 +51,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // zoomscale 설정
         scrollView.minimumZoomScale = 1
-        scrollView.maximumZoomScale = 3.0
+        scrollView.maximumZoomScale = 3
         
         
         
@@ -272,16 +272,35 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @objc func tapToZoom(_ gestureRecognizer: UIGestureRecognizer) {
         
         // 좌표추적
-        print(gestureRecognizer.location(in: scrollView))
+        //print(gestureRecognizer.location(in: scrollView))
+        
+        
         
         print("줌..")
+        
+        
         
         // 더블탭 간단 하게 구현
         if scrollView.zoomScale == CGFloat(1) {
             
+            
+            let locationX = gestureRecognizer.location(in: scrollView).x*2.95-90
+            let locationY = gestureRecognizer.location(in: scrollView).y*2.95-300
+            
+            
+            
+            
             scrollView.setZoomScale(3, animated: true)
+            
+            scrollView.setContentOffset(CGPoint(x: locationX, y: locationY), animated: true)
         }else {
+            
+            let locationX = gestureRecognizer.location(in: scrollView).x/2.95-200
+            let locationY = gestureRecognizer.location(in: scrollView).y/2.95-250
             scrollView.setZoomScale(1, animated: true)
+
+            
+            scrollView.setContentOffset(CGPoint(x: locationX, y: locationY), animated: true)
         }
         
     }

@@ -14,7 +14,6 @@
 		0463F4E21F822DA2008ED9B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0463F4E11F822DA2008ED9B1 /* Assets.xcassets */; };
 		0463F4E51F822DA2008ED9B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0463F4E31F822DA2008ED9B1 /* LaunchScreen.storyboard */; };
 		047F93A71F8F609E00DEB87B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F93A61F8F609E00DEB87B /* Data.swift */; };
-		047F93A91F8F60BC00DEB87B /* ViewControllerOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047F93A81F8F60BC00DEB87B /* ViewControllerOrigin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		0463F4E41F822DA2008ED9B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0463F4E61F822DA2008ED9B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		047F93A61F8F609E00DEB87B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		047F93A81F8F60BC00DEB87B /* ViewControllerOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOrigin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 				0463F4E11F822DA2008ED9B1 /* Assets.xcassets */,
 				0463F4E31F822DA2008ED9B1 /* LaunchScreen.storyboard */,
 				0463F4E61F822DA2008ED9B1 /* Info.plist */,
-				047F93A81F8F60BC00DEB87B /* ViewControllerOrigin.swift */,
 			);
 			path = CreatSubWay;
 			sourceTree = "<group>";
@@ -146,7 +143,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047F93A91F8F60BC00DEB87B /* ViewControllerOrigin.swift in Sources */,
 				0463F4DD1F822DA2008ED9B1 /* ViewController.swift in Sources */,
 				047F93A71F8F609E00DEB87B /* Data.swift in Sources */,
 				0463F4DB1F822DA2008ED9B1 /* AppDelegate.swift in Sources */,
