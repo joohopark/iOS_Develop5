@@ -96,7 +96,7 @@
 > 
 > 4. [Swift 기본 문법 정리 2/2](/breakweek/2017-10-10-online.md)
 > 
-> 5. [작성중...Break Week 때 한것들](/breakweek/breakWeek.md)
+> 5. [Break Week 때 한것들](/breakweek/breakWeek.md)
 
 
 

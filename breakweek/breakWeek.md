@@ -41,6 +41,8 @@
 
 ## 야곰님 기본 문법 강의 청강
 
+[기본 문법 개괄 Part 1](https://devminjun.github.io/blog/letcureSwift)<br>
 
+[기본 문법 개괄 Part 2](https://devminjun.github.io/blog/lectureSwift-1)
 
 
