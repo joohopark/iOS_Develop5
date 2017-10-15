@@ -86,6 +86,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             stationBtns[i].addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
             stationBtns[i].titleLabel?.text = Station.stations[i].name
             stationBtns[i].tag = i
+            
+            print(stationBtns[i].titleLabel?.text, stationBtns[i].tag)
         }
 
         // 이 두줄로 해결 -> 이미지뷰 인터렉션 허용
@@ -174,6 +176,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     calcTable.append((i,Int.max))
                 }
                 
+                
+                
                 //startStationTag
                 //arrivalStationTag
                 
@@ -204,12 +208,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     
                     var minTime = Int.max // 시작역과 가장 가까운 역의 걸리는 시간 저장
                     for calcTableItem in calcTable { //모든 역 비교
+                        print(dicAlreadyCheckStations)
+                        
                         if !dicAlreadyCheckStations.contains(calcTableItem.sIndex) && //방문한적이 없으면서
                             minTime > calcTableItem.timeSum { //시작역과 가장 가까우면(시간)
+                            
                             nextStationTag = calcTableItem.sIndex //다음 역으로 지정
+                            
                             minTime = calcTableItem.timeSum //시작역과 이 역과의 시간값 저장
                         }
                     }
+                  
+                 
                 }
                 
                 let popAlert: UIAlertController = UIAlertController(title: "총 \(calcTable[self.arrivalStationTag].timeSum) 분 소요 됩니다", message:"" , preferredStyle: .alert)
