@@ -83,7 +83,7 @@
 
 ### *  **Part 6** 
 
-> 1. [작성중..Class VS Struct](/study/26_17-10-16-Class-Struct.md)
+> 1. [Class, Struct, Setting a Default Property Value with a Closure or Function, Data Model on Struct](/study/26_17-10-16-Class-Struct.md)
 > 
 > 
 
