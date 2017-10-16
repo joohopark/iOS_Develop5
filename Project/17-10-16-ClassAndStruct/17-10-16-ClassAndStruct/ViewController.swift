@@ -10,9 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let CreatBtn: UIButton = {
+            let Btn: UIButton = UIButton()
+            Btn.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            Btn.backgroundColor = .red
+            
+            view.addSubview(Btn)
+            
+            
+            return Btn
+            
+        }()
+        print(view.subviews.count)
+        
             }
 
     
