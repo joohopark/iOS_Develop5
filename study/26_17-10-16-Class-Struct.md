@@ -2,10 +2,10 @@
 
 ---
 
-## Class <br>
-## Struct <br> 
-## Setting a Default Property Value with a Closure or Function <br>
-## Data Model on Struct 
+## 1. Class <br>
+## 2. Struct <br> 
+## 3. Setting a Default Property Value with a Closure or Function <br>
+## 4. Data Model on Struct 
 
 ---
 
