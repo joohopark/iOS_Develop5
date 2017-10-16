@@ -169,7 +169,7 @@ print(rootStructInstance.x) // 0
 
 2. <br>
 
-![screen](/study/image/ClassVSStruct-10.jpg)
+![screen](/study/image/ClassVSStruct-12.jpg)
 
 > 헥스 코드로 된 값을 볼수 있는데 화면 중앙에 잘 보시면 `Address` 값을 확인할수 있습니다. 
 
