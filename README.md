@@ -85,6 +85,8 @@
 
 > 1. [Class, Struct, Setting a Default Property Value with a Closure or Function, Data Model on Struct](/study/26_17-10-16-Class-Struct.md)
 > 
+> 2. [값 타입 VS 참조 타입 ](/study/27_17-10-16-Class-Struct.md)
+> 
 > 
 
 ### *  **Braek week** 
