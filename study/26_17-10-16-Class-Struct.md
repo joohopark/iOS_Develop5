@@ -36,11 +36,22 @@ struct Resolution {}var width = 0var height = 0
 
 - base Initializers : 일반적으로 사용하는 init
 
-![screen](/study/image/ClassVSStruct.jpg)
+```swift
+
+ struct Subject {       var name:String   }   class Student {       var subjects:[Subject] = []       func addSubject(name:String) {let subject = Subject(name: name)   <-- `Memberwise Initializers`           subjects.append(subject)       }}var wingMan:Person = Person()  <-- `Initializers`Memberwise Initializers
+
+
+```
 
 - Memberwise Initializers : 구조체의 init
 
-![screen](/study/image/ClassVSStruct-1.jpg)
+```swift
+
+// Struct의 경우 모든 프로퍼티가 초기화 할수 있게 모든 멤버에 대해 initializer가 생긴다. init(name:String)
+
+struct Subject {    var name:String} class Student {    var subjects:[Subject] = []    func addSubject(name:String) {let subject = Subject(name: name)        subjects.append(subject)    }}var wingMan:Person = Person()
+
+```
 
 - Custom Initializer : 임의의 값을 받아서 초기화 해주면, custom Initializer 한다고 한다..?
 
@@ -56,15 +67,21 @@ struct Resolution {}var width = 0var height = 0
 	- 모든 프로퍼티가 초기화 되어 있어야 한다
 	- 상속을 받았다면 부모 클래스의 `Designated initializer` 을 호출 해야한다
 	
-![screen](/study/image/ClassVSStruct-3.jpg) <br>
+```swift
+
+init(parameters) { statements }
+
+```
 
 
 
 - Convenience initializers : 편의 초기화, 이 기능이 필요없다면 구현해주지 않아도 된다. 말 그대로 class의 편의를 위해서 사용하는 초기화인데, 예를들어서 
 
-![screen](/study/image/ClassVSStruct-4.jpg) <br>
+
 
 ```swift
+
+convenience init(parameters) {	statements }
 
 class Food {
     var name: String
@@ -123,6 +140,28 @@ class SomeClass {
 - Memory 구조 
 
 ![screen](/study/image/ClassVSStruct-5.jpg) <br>
+
+
+- Memory 에 Class, Struct가 어떻게 들어가는지 확인해보자!
+
+**Struct 인스턴스**
+
+var num: Int = 4
+var num2: Int = 5
+
+**Class 인스턴스**
+
+let lb:UIView = UIVIew()
+
+> 각각 메모리에 어떻게 들어가는지 확인해보자
+
+
+| Struct Instance  | Class Instance | 
+| :------------ | -----------: | 
+| ![screen](/study/image/ClassVSStruct-6.jpg) | ![screen](/study/image/ClassVSStruct-7.jpg) | 
+
+
+
 
 
 

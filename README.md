@@ -82,6 +82,7 @@
 
 
 ### *  **Part 6** 
+
 > 1. [작성중..Class VS Struct](/study/26_17-10-16-Class-Struct.md)
 > 
 > 
