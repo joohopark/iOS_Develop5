@@ -171,9 +171,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 
                 //다익스트라
                 
-                var calcTable: [(sIndex: Int, timeSum: Int)] = []
+                var calcTable: [(sIndex: Int, timeSum: Int, isVisit:Bool)] = []
                 for i in 0..<Station.stations.count {
-                    calcTable.append((i,Int.max))
+                    calcTable.append((i, Int.max, false))
                 }
                 
                 
@@ -183,22 +183,26 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 
                 //var currentTag
                 var nextStationTag: Int? = self.startStationTag
-                var dicAlreadyCheckStations: [Int] = []
                 
-            
                 calcTable[nextStationTag!].timeSum = 0
                 
                 while nextStationTag != nil {
                     //다음역
+                    
                     let station = Station.stations[nextStationTag!]
                     let currentStationTime = calcTable[nextStationTag!].timeSum
                     //station을 방문했다고 체크
-                    dicAlreadyCheckStations.append(nextStationTag!)
+                    calcTable[nextStationTag!].isVisit = true
                     
                     //비용 작성
                     for stationTime in station.stationTimes {
                         let ssIndex = stationTime.sIndex
                         let calcTimeSum = (currentStationTime + stationTime.time)
+                        
+                        // **이전역 갈때는 항상 자기 비용에서 더하는거니까, 어차피 시간 변경이 안된다...**
+                        // calc 에서 연산하기전에 최단거리를 확인해서, 짧은 거리의 값을 calcTimeSum 에 저장함.
+                        // 이때는 다음역의 시간을 계산한다. 근데, 계산한 다음역을 방문 했다고는 체크하지 않음. 방문한 현재 역만을 체크함.
+                        // 방문 한곳은 계산값이 고정인데, 방문하지 않은곳은 계산
                         if( calcTable[ssIndex].timeSum > calcTimeSum ) {
                             calcTable[ssIndex].timeSum = calcTimeSum
                         }
@@ -208,9 +212,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     
                     var minTime = Int.max // 시작역과 가장 가까운 역의 걸리는 시간 저장
                     for calcTableItem in calcTable { //모든 역 비교
-                        print(dicAlreadyCheckStations)
                         
-                        if !dicAlreadyCheckStations.contains(calcTableItem.sIndex) && //방문한적이 없으면서
+                        // 비용이 한번 정해지면 여전히 변하지 않는게 아니라,
+                        // 어차피 for- 문을 다돌아서 calcTable 의 값을 다 뜯어서 가져오는데, 다음값을, 선택할때, 어차피 연산이 되지 않은 값을 찾아서 다음값으로 지정해주어서 연산함.
+                        if !calcTableItem.isVisit && //방문한적이 없으면서
+                            
+                            // if에 한번 걸리게 되면 minTime 값이 갱신되어 있기 때문에, 다음의 값의 연산에서 minTime 값이 갱신 되어서 이후 if 문에 걸리지 않는다.
                             minTime > calcTableItem.timeSum { //시작역과 가장 가까우면(시간)
                             
                             nextStationTag = calcTableItem.sIndex //다음 역으로 지정
@@ -218,6 +225,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                             minTime = calcTableItem.timeSum //시작역과 이 역과의 시간값 저장
                         }
                     }
+                    
+                    // 방문체크할때, 경로를 저장 하는게 아니라, 비용 값이 변경 될때(왜냐하면, 처음 정한 비용이 다른 값으로 변할수 있기 때문에) 현재 역에서 방문한 역에 현재 역의 방문한 값을 넣어준다. 그리고, 현재 역에서 넣어준값을 역추적 하면 내가 가려고하는 노선의 위치가 나옴.
                   
                  
                 }
