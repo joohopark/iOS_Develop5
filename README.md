@@ -87,7 +87,7 @@
 > 
 > 2. [값 타입 VS 참조 타입 ](/study/27_17-10-16-Class-Struct.md)
 > 
-> 3. [작성중 17-10-17]()
+> 3. [작성중..Data Model, Bundle, Plist, Singletone Pattern](/study/28_17-10-17-Data-Modeling.md)
 > 
 
 ### *  **Braek week** 

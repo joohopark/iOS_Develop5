@@ -1,19 +1,13 @@
-# 28_17-10-17
+//
+//  main.swift
+//  17-10-17-dataModel
+//
+//  Created by MIN JUN JU on 2017. 10. 17..
+//  Copyright © 2017년 MIN JUN JU. All rights reserved.
+//
 
----
+import Foundation
 
-## Data Model, Bundle, Plist, Singletone Pattern
-
-
----
-
-## Data Model 실습
-
-> 사실 서버쪽에서 데이터가 넘어올떄 '_' 가 포함되어 있다. 이것도 필터링 해주는 방법을 생각해주어야 할것 같다..!
-
-- 시나리오: 서버에서 소녀시대 앨범 데이터를 받아서 데이터 모델링 하기..
-
-```swift
 
 
 let album: [String:Any] = ["albumInfo":["albumTitle":"2집 Oh!",
@@ -42,7 +36,7 @@ let album: [String:Any] = ["albumInfo":["albumTitle":"2집 Oh!",
                                         "playURL":"http://music.naver.com/126"]]
 ]
 
--> 위의 코드도 사실, 조금은 보기 편하게 나눈 것 이지만, 사실은 서버에서 한줄로 넘어오면 해석하기가 조금 난해해진다..
+
 
 struct AlbumInfoData {
     var albumTitle: String
@@ -62,7 +56,6 @@ struct AlbumInfoData {
     }
 }
 
-> 두개의 key값을 기준으로 `albumInfo` 와, `songList` 리스트를 나누어서 모델링을 했습니다.
 
 struct songListData {
     var songTitle: [String] = []
@@ -84,7 +77,7 @@ struct songListData {
             // songTitle
             let typeCasting = i as? [String:Any]
             let x = typeCasting!["songTitle"] as? String
-    
+            
             self.songTitle.append(x!)
             
             //trackNum
@@ -118,23 +111,15 @@ struct songListData {
             self.playURL.append(x5!)
         }
     }
-        
-        
-        
+    
+    
+    
     
 }
 
--> songListData 부분의 가정은 옵셔널인 경우가 없을때 가능합니다. for-in 문을 사용해서, 모든 프로퍼트의 값을 인덱스 번호를 패키지로 하나의 데이터로 만들어서 사용할수 있는 장점이 있습니다. 하지만 단점으로는 옵셔널인 경우가 없을때 가능합니다. 옵셔널이 있게되면, 인덱스의 경계가 무의미해 지기때문에 사용효과가 없어집니다. 그래서 좋은 모델링은 아닌것 같습니다..!
 
-
-```
-
-- 실습 난이도를 올려봅시다 !
-
-
-```swift
-
-
+// DataModel
+// 애초에 딕셔너리 형태로 만들지 말고, 어차피 son, up,artist
 let playData: [String: Any] = ["playList": ["id": "3",
                                             "upid": "nil",
                                             "title": "나의노래",
@@ -196,111 +181,40 @@ struct PlayDataModel {
     
 }
 
-```
-
-> key 값으로 `playList , likeInfo` 를 기준으로, 각각의 키, 벨류 값을 타입 캐스팅 하면서 변환시켜줍니다. 
 
 
 
 
----
-
-
-## Data 저장
-
-- Property list(Plist) 사용하기! 
-
-![screen](/study/image/Plist.jpg)
 
 
 
 
----
 
 
 
----> 아직 정리가 완벽하게 되지 않음 정리 해야한다면 
-
-1. Plist 사용방법 정리 
-2. bundle, Documents 관계 이해 하고, 사용방법, 구조 나누어서 정리하기 
-3. Singletone Pattern 왜 사용하는지 정리하고, 실제로 만들어서 사용하는것 정리하기 
 
 
 
----
 
-## Data
-
-bundle : 리소스, 인포 plist 등등 app 이 설치가 될때 필요한 녀석이다.
-
-app 내부에 디폴트로 저장이 되어있는 곳은 app의 번들 이라는곳. 
-
-번들에 있는 녀석들은 설정을할때, app이 load 가 되면, 수정이 불가능 하다. 
-
-내가 직접 작성해서 저장한것들은 plist 에 저장이 된다.. 
-
-app 이 luanch 되고, 그 이후에 저장되는 데이터들은 plist에 저장이 된다. 
-
-plist 데이터가 존재할수 있는 곳은 bundle 과 documents 에 존재할수 있다.
-
-plist 를 불러와서 사용하고 싶으면, bundle에 있는 데이터를 통해서 데이터를 불러올수 있다.
-
-**Bundle 은 plist파일의 데이터만 불러오는 역활을 할수 있다**
-**Documents 폴터에 있는 plist는 파일에 데이터를 쓰고 불러오는 역할을 한다**
-
----
+// 나머지 부분 데이터 가공 해보자
 
 
-## Main Bundle
 
-`bundle.main` 을 통해서 인스턴스를 가져올수 있음.
-
-하나의 app은 각자 독립적인 구조를 가지고 있다. 데이터를 불러올때 `샌드박스` 범위 안에 있는 데이터들을 불러 올수 있다.
-
-NSDictionary 는 class 의 오브젝트만 들어갈수 있고, Dictionary 는 스트럭트를 사용함..
+//print(y?.monthlyYm)
 
 
-**아래 내용 중요함**
-- 실제 파일에 있는 데이터를 Swift에 있는 어떤 method 를 사용해서 Swift에서 사용할수 있는 데이터로 만들어 주어야 하는데, 아직 `Dictionary` 에는 그런 method가 없다. 그래서 `NSDictionary` 에 있는 method 를 사용해서 dictionary로 타입 케스팅해서 사용해야 한다. 
 
 
----
-
-## Plist File in Document 찾기 
-
-1. Document folder Path 
-
-PDF 에 있는 bundle에 있는 파일 Document에 복사 하는 이유는 Bundle 에 있는 값은 읽기만 가능하기 때문에, bundle에 있는 값을 복사하고 다시 수정한이후에, 다른 방식으로 핸들링 하는것 같다.
-
--> 이거 PDF 보고 한번 만들어서 작성 -> 수정 되는것 눈으로 확인해보자.
 
 
----
+/*for (k,v) in playData {
+ // key 값 저장
+ let keyValue = playData["\(k)"] as? [String:Any]
+ let x = keyValue!["id"]
+ 
+ print(x)
+ 
+ 
+ }*/
 
-## Singletone Pattern 
-
-singleton, delegate 도 디자인패턴의 방법론의 하나이다.
-
-**핵심**
-
-어플리케이션 전 영역에 걸쳐 하나의 클래스의 단하나의 인스턴스만(객체)을 생성하는 것을 싱글톤 패턴이라고 한다. -> 모든 인스턴스에서 쉽게 접근하고 불러올수 있는 녀석을 싱글톤 패턴이라고 한다.
-
-app의 구조와는 무관하게 어디서든 접근이 가능 하고 수정이 가능 해야한다(이때 하나만 존재해야될때가 존재한다. 그리고 하나의 값을 핸들링 해야하는 경우가 있을때 사용한다.)
-
-'Singletone 의 기술적인 특징으로 class의 `static` 의 프로퍼티를 사용하는 방식을 비슷하게 설명할수 있다`
-
-
-- Singletone 에 대해서 한번 찾아서 사용하는 방법들 정리해보자
-
-- 동적영역과 정적 영역에 대한 차이
-
-
-동적 영역은 heap,
-정적 영역은 data -> data 에 들어가는 녀석들은 정적 영역으로 한번 정의가되면 app이 죽을때까지 메모리에 살아 있는 상태이다. 그래서 한번 생성이 되면 해제가 불가능하다. 그래서 싱글턴영역을 많이 사용하게 되면 메모리적인 손실이 크다!.
-
-
----
-
-해봐야 하는것 `static`
-
-
+//print(pl)
