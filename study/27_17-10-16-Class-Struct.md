@@ -8,8 +8,7 @@
 
 ## Struct VS Class 
 
-> Struct 와 Class 를 설명할때 기계적으로 Struct는 값 타입이고, Class 는 참조 타입입니다. 라고 이야기 합니다. 저는 그 이야기를 들었을때 그렇다면 왜? 일까 라는 생각이 먼저 떠올랐고, 눈으로 보면 좀더 쉽게 이해할수 있지 않을까를 생각으로 출발 했습니다. 
-> 
+> Struct 와 Class 를 설명할때 기계적으로 Struct는 값 타입이고, Class 는 참조 타입입니다. 라고 이야기 합니다. 하지만 이 이야기만 들으면 잘 이해되지 않아서 눈으로 확인해보면 좋지 않을까? 하는 생각으로 출발 했습니다. 
 
 ---
 
@@ -20,7 +19,7 @@
 ```swift
 
 // class 정의
-class VideoMode {var resolution = Resolution()var interlaced = falsevar frameRate = 0.0var name: String?}
+class VideoMode {var resolution = Resolution()var interlaced = falsexvar frameRate = 0.0var name: String?}
 
 // Struct 정의 
 struct Resolution {}var width = 0var height = 0
@@ -55,7 +54,7 @@ var value = Resolution()
 
 ![screen](/study/image/ClassVSStruct-5.jpg) <br>
 
-> 메모리는 그냥 사용하면 비효율적이기때문에, 어느정도 논리적으로 구분을 시켜서 사용하는것이 효율적이기 떄문에 메모리의 구역을 나눈다(stack, heap, data, code)
+> 메모리는 그냥 사용하면 비효율적이기때문에, 어느정도 논리적으로 구분을 시켜서 사용하는것이 효율적이기 때문에 메모리의 구역을 논리적으로 나누어서 사용합니다.(stack, heap, data, code)
 
 
 
@@ -86,15 +85,15 @@ let lb:UIView = UIVIew()
 
 
 
-> Struct로 인스턴스로 만들어진 녀석들을 STACK, CODE 영역에 저장이 됬습니다.
+> Struct 인스턴스로 만들어진 녀석들을 STACK, CODE 영역에 저장이 됬습니다.
 > 
-> 이유는 Struct는 값 타입이라서, 기본적으로 Struct 인스턴스를 생성할때, 인스턴스의 값을 다른 공간에 새롭게 복사해서, 복사된 인자를 전달합니다. 그렇기 때문에 기본적으로 Stack에 쌓이게됩니다. 하지만 Struct의 값이 커지게 되면 Heap 영역에 저장 되기도 한다. 
+> 이유는 Struct는 값 타입이라서, 기본적으로 Struct 인스턴스를 생성할때, 인스턴스의 값을 다른 공간에 새롭게 복사해서, 복사된 인자를 전달합니다. 그렇기 때문에 기본적으로 Stack에 쌓이게됩니다. 하지만 Struct의 값이 커지게 되면 Heap 영역에 저장 되기도 합니다. 
 > 
-> Class Instance 는 HEAP 영역에, 그 인스턴스의 주소값(이 인스턴스가 가리키는 '값' 이라고 표현하는게 조금더 정확할 것 같다)은 Stack 영역에 쌓였다.
+> Class Instance 는 HEAP 영역에, 그 인스턴스의 주소값(이 인스턴스가 가리키는 '값' 이라고 표현하는게 조금더 정확할 것 같습니다.)은 Stack 영역에 쌓였습니다.
 > 
-> 하지만 엄밀하게 얘기하면 Swift의 모든 타입은 변수들은 heap 저장되어서 참조 타입이다. 사실 Struct도 인스턴스로 만들어져서 어떤 인스턴스를 '참조' 하고 있을 테니 말이다. 
+> 하지만 엄밀하게 얘기하면 Swift의 모든 타입은 변수들은 heap 저장되어서 참조 타입이다. 사실 내부적으로 Struct도 어딘가를 참조하고 있다고 합니다. 그래서 엄밀하게는 Swift의 모든 녀석들은 참조 한다고 할수 있습니다.(깊게 들어가지 맙시다...!)
 > 
-> 이렇게 생각하게 되면 엄밀하게 내부에서 어떻게 동작하는지 뜯어서 눈으로 확인해야 하지만 실질적으로 그렇게 확인하는게 시간적으로나, 능력(?) 적으로나 매우 까다롭다. 그래서 값, 타입과 참조 타입 두개로 나누어서 생각하기 보다는, 참조 할때는, Heap 영역에 있는 어떤 '값'을 바라보고 있고, 값으로서 사용될떄는 Stack Frema 안에서 사용 되어 진다고 생각하자.
+> 이렇게 생각하게 되면 엄밀하게 내부에서 어떻게 동작하는지 뜯어서 눈으로 확인해야 하지만 실질적으로 그렇게 확인하는게 시간적으로나, 능력(?) 적으로나 매우 까다롭다. 그래서 값, 타입과 참조 타입 두개로 나누어서 생각하기 보다는, 참조 할때는, Heap 영역에 있는 어떤 '값'을 바라보고 있고, 값으로서 사용될떄는 Stack Frema 안에서 사용 되어 진다고 생각하는게 마음이 편할 것 같습니다..
 
 ---
 
@@ -168,7 +167,7 @@ print(rootStructInstance.x) // 0
 
 > 1. 체크 포인트를 설정후 실행 합니다
 > 
-> 2. memory 주소를 확인할 변수를 오른쪽 마우스로 클릭한후 `View Memory Of '변수명'` 을 클릭 합니다.
+> 2. 디버깅창 왼쪽 부분에서 memory 주소를 확인할 변수를 오른쪽 마우스로 클릭한후 `View Memory Of '변수명'` 을 클릭 합니다.
 
 2. <br>
 
@@ -192,13 +191,13 @@ var structInstance = rootStructInstance
 
 
 withUnsafePointer(to: &rootStructInstance) { Pa in print(Pa) } // 0x0000000100442218
-                                                            // debug_window memory addres 0x100442218
+                                             // debug_window memory addres 0x100442218
                                                             
 withUnsafePointer(to: & structInstance) { Pa in print(Pa) } // 0x0000000100442220
-                                                            // debug_window memory addres 0x100442220
+                                            // debug_window memory addres 0x100442220
 
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
--> debug_window : 통해서 서로 다른 참조를 하고 있는것을 확인할수 있다.
+-> debug_window : 통해서 서로 다른 참조를 하고 있는것을 확인할수 있습니다..
 
 
 // class 정의 
@@ -217,18 +216,16 @@ var classInstance = rootInstance
 
 
 withUnsafePointer(to: & rootInstance) { Pa in print(Pa) } // 0x00000001004420e0
-                                                            // debug_window memory addres 0x102824af0
+                                       // debug_window memory addres 0x102824af0
                                                             
 withUnsafePointer(to: & classInstance) { Pa in print(Pa) }  // 0x00000001004420e8
-                                                            // debug_window memory addres 0x102824af0
+                                       // debug_window memory addres 0x102824af0
                                                             
 -> `withUnsafePointer` : 메모리 주소값을 출력, 둘은 서로 다른 메모리 주소값에 정의 되어 있고, 
--> debug_window : 서로 같은 heap 영역의 인스턴스를 참조하고 있는것을 확인할수 있다.                                                            
+-> debug_window : 서로 같은 heap 영역의 인스턴스를 참조하고 있는것을 확인할수 있습니다.                                                            
 
 
 ```
 
-
-
-
+---
 
