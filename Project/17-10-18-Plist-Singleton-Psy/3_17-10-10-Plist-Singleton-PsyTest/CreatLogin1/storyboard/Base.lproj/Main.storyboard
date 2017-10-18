@@ -9,15 +9,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CreatLogin1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewViewController" customModule="CreatLogin1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eV5-Ao-N7i">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eV5-Ao-N7i" customClass="CustomTextField" customModule="CreatLogin1" customModuleProvider="target">
                                 <rect key="frame" x="68" y="291" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.43666335940361023" green="0.68041414022445679" blue="0.97262012958526611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -32,7 +32,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHU-gk-e5u">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHU-gk-e5u" customClass="CustomTextField" customModule="CreatLogin1" customModuleProvider="target">
                                 <rect key="frame" x="68" y="321" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.43666335940361023" green="0.68041414022445679" blue="0.97262012958526611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -40,44 +40,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-Of-AKG">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jy0-Of-AKG" customClass="RoundButton" customModule="CreatLogin1" customModuleProvider="target">
                                 <rect key="frame" x="68" y="377" width="233" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5rc-n8-JhT"/>
+                                    <action selector="LoginActionBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q0u-mY-Xk9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQs-7b-8fh">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQs-7b-8fh" customClass="RoundButton" customModule="CreatLogin1" customModuleProvider="target">
                                 <rect key="frame" x="68" y="550" width="233" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Creat Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="CreatAccountActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRh-BY-Tes"/>
-                                    <segue destination="WAY-HS-KyD" kind="presentation" modalTransitionStyle="crossDissolve" id="7Uh-AA-fg8"/>
+                                    <action selector="CreatAccountActionBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fXN-d9-BsW"/>
+                                    <segue destination="WAY-HS-KyD" kind="presentation" id="xYL-Yb-Art"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.34976428747177124" green="0.63199484348297119" blue="0.97262716293334961" alpha="0.85999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.34976428749999999" green="0.63199484350000001" blue="0.97262716289999995" alpha="0.85999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="passWordTextField" destination="DHU-gk-e5u" id="rLn-gn-IaF"/>
-                        <outlet property="userNameTextField" destination="eV5-Ao-N7i" id="lCn-JK-E4i"/>
+                        <outlet property="passwordTextField" destination="DHU-gk-e5u" id="BgH-Xo-rMs"/>
+                        <outlet property="userNameTextField" destination="eV5-Ao-N7i" id="vte-MQ-GVL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-70" y="-36"/>
         </scene>
-        <!--Creat Account Page-->
+        <!--Creat Account-->
         <scene sceneID="55W-pB-Fv0">
             <objects>
-                <viewController id="WAY-HS-KyD" customClass="CreatAccountPage" customModule="CreatLogin1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WAY-HS-KyD" customClass="CreatAccount" customModule="CreatLogin1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oHu-Pg-YYe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,19 +90,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapExitActionButton:" destination="WAY-HS-KyD" eventType="touchUpInside" id="bjG-rJ-3SL"/>
-                                    <action selector="loginActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYt-yK-yT5"/>
+                                    <segue destination="ctn-fu-7aR" kind="unwind" unwindAction="unwindToFirstViewControllerWithSegue:" id="XaQ-A6-8SM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-WN-RIq">
-                                <rect key="frame" x="81" y="154" width="213" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Account  New
-Creat</string>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ez-LA-Kc9">
                                 <rect key="frame" x="68" y="292" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,25 +120,35 @@ Creat</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfi-8i-bst">
                                 <rect key="frame" x="68" y="399" width="239" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Creat New Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="CreatAccountActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="37N-kL-Cec"/>
-                                    <action selector="creatNewAccountActionButton:" destination="WAY-HS-KyD" eventType="touchUpInside" id="gcc-pD-wrp"/>
-                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="As8-Kf-YdQ" customClass="ShadowView" customModule="CreatLogin1" customModuleProvider="target">
+                                <rect key="frame" x="68" y="121" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecb-WN-RIq">
+                                        <rect key="frame" x="14" y="14" width="213" height="114"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.4978797734" green="0.72055196759999995" blue="0.97653555869999997" alpha="0.76000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <string key="text">Account  New
+Creat</string>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.56683272123336792" green="0.75668942928314209" blue="0.97652900218963623" alpha="0.87" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.43666335940361023" green="0.68041414022445679" blue="0.97262012958526611" alpha="0.87" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.34976428749999999" green="0.63199484350000001" blue="0.97262716289999995" alpha="0.85999999999999999" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="2rQ-eA-3kf"/>
                     </view>
-                    <connections>
-                        <outlet property="accountCheckPassWordTextField" destination="Lbg-8V-Uwo" id="QPZ-dh-vwD"/>
-                        <outlet property="accountPassWordTextField" destination="zwK-hK-zCu" id="ESy-lK-jRn"/>
-                        <outlet property="accountUserNameTextField" destination="0Ez-LA-Kc9" id="APa-0y-7tq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZM-A6-ETe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ctn-fu-7aR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="876" y="-35.532233883058474"/>
         </scene>

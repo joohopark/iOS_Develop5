@@ -87,8 +87,11 @@
 > 
 > 2. [값 타입 VS 참조 타입 ](/study/27_17-10-16-Class-Struct.md)
 > 
-> 3. [작성중..Data Model, Bundle, Plist, Singletone Pattern](/study/28_17-10-17-Data-Modeling.md)
+> 3. [Data Model](/study/28_17-10-17-Data-Modeling.md)
 > 
+> 4. [Bundle, Plist, Singleton Pattern](/study/29_17-10-18-29_17-10-18-Bundle-Plist-Singletone-Pattern.md)
+> 
+> 5. [작성중..PsyTest App 만들기 였는데, DataModle, Plist, Singleton 실습](/study/29_17-10-18-PsyTest.md)
 
 ### *  **Braek week** 
 
