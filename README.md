@@ -91,7 +91,9 @@
 > 
 > 4. [Bundle, Plist, Singleton Pattern](/study/29_17-10-18-Bundle-Plist-Singletone-Pattern.md)
 > 
-> 5. [작성중..PsyTest App 만들기 였는데, DataModle, Plist, Singleton 실습](/study/30_17-10-18-PsyTest.md)
+> 5. [PsyTest App 만들기 였는데, DataModle, Plist, Singleton 실습](/study/30_17-10-18-PsyTest.md)
+> 
+> 6. [작성중..](/study/)
 
 ### *  **Braek week** 
 
