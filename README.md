@@ -121,7 +121,7 @@
 
 # QnA
 
-> 1. [QnA 목록들]()
+> 1. [QnA 목록들](/study/QnA.md)
 
  
 
