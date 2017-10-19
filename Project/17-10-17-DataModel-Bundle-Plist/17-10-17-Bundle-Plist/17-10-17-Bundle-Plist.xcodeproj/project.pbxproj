@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043A7E481F983A360005CF51 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A7E471F983A360005CF51 /* DataCenter.swift */; };
+		043A7E4A1F98521B0005CF51 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A7E491F98521B0005CF51 /* OtherViewController.swift */; };
+		043A7E4C1F9852360005CF51 /* OtherDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A7E4B1F9852360005CF51 /* OtherDataCenter.swift */; };
 		046D2D7E1F95E80800C192BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D2D7D1F95E80800C192BF /* AppDelegate.swift */; };
 		046D2D801F95E80800C192BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046D2D7F1F95E80800C192BF /* ViewController.swift */; };
 		046D2D831F95E80800C192BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046D2D811F95E80800C192BF /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043A7E471F983A360005CF51 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		043A7E491F98521B0005CF51 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
+		043A7E4B1F9852360005CF51 /* OtherDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherDataCenter.swift; sourceTree = "<group>"; };
 		046D2D7A1F95E80800C192BF /* 17-10-17-Bundle-Plist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "17-10-17-Bundle-Plist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		046D2D7D1F95E80800C192BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		046D2D7F1F95E80800C192BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 			children = (
 				046D2D7D1F95E80800C192BF /* AppDelegate.swift */,
 				046D2D7F1F95E80800C192BF /* ViewController.swift */,
+				043A7E491F98521B0005CF51 /* OtherViewController.swift */,
+				043A7E4B1F9852360005CF51 /* OtherDataCenter.swift */,
+				043A7E471F983A360005CF51 /* DataCenter.swift */,
 				046D2D8F1F95EDFE00C192BF /* UserPlist.plist */,
 				046D2D911F95FB9F00C192BF /* File.swift */,
 				046D2D811F95E80800C192BF /* Main.storyboard */,
@@ -144,8 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				046D2D801F95E80800C192BF /* ViewController.swift in Sources */,
+				043A7E4C1F9852360005CF51 /* OtherDataCenter.swift in Sources */,
 				046D2D921F95FB9F00C192BF /* File.swift in Sources */,
+				043A7E481F983A360005CF51 /* DataCenter.swift in Sources */,
 				046D2D7E1F95E80800C192BF /* AppDelegate.swift in Sources */,
+				043A7E4A1F98521B0005CF51 /* OtherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

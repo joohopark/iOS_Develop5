@@ -5,7 +5,7 @@
 //  Created by MIN JUN JU on 2017. 10. 17..
 //  Copyright © 2017년 MIN JUN JU. All rights reserved.
 //
-
+/*
 import Foundation
 
 class SingletonClass {
@@ -17,3 +17,4 @@ class SingletonClass {
         }
     }
 
+*/
