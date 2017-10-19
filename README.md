@@ -93,7 +93,7 @@
 > 
 > 5. [PsyTest App 만들기 였는데, DataModle, Plist, Singleton 실습](/study/30_17-10-18-PsyTest.md)
 > 
-> 6. [작성중..](/study/)
+> 6. [작성중..](/study/31_17-10-19-tableView.md)
 
 ### *  **Braek week** 
 
@@ -109,7 +109,7 @@
 
 
 
-### * **개인적인 프로젝트** 
+### * **Projects** 
 
 > 1. [지하철 노선도 만들기(초보편) Part 1](https://devminjun.github.io/blog/CreatSubway-ver1)
 > 
