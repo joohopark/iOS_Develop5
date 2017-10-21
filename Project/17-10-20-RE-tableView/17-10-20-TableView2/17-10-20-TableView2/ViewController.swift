@@ -35,8 +35,8 @@ class ViewController: UIViewController, UITableViewDataSource, SwitchTableViewCe
         cell.textLabel?.text = "\(indexPath.row)"
         
         
-        //cell.switchData = onOffList[indexPath.row]
-        print(cell.switchData.hashValue)
+        cell.switchData = onOffList[indexPath.row]
+        
         cell.indexPath = indexPath
         
         
@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, SwitchTableViewCe
         
         // 이녀석을 통해서 어디에 스위치가 바뀌는지 알수 있음.
         //print("\(cell.indexPath.row)", value)
-        print(value)
+        
         onOffList[cell.indexPath.row] = value
     }
     
