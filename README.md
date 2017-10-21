@@ -93,7 +93,9 @@
 > 
 > 5. [PsyTest App 만들기 였는데, DataModle, Plist, Singleton 실습](/study/30_17-10-18-PsyTest.md)
 > 
-> 6. [작성중..](/study/31_17-10-19-tableView.md)
+> 6. [Bundle, Plist, Singleton 연습하기!](/study/31_17-10-19-tableView.md)
+> 
+> 7. [작성중..tableView]()
 
 ### *  **Braek week** 
 
