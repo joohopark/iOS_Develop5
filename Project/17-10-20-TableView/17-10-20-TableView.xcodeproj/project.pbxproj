@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		040DDDE31F9984040075F96A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DDDE21F9984040075F96A /* AppDelegate.swift */; };
-		040DDDE51F9984040075F96A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DDDE41F9984040075F96A /* ViewController.swift */; };
 		040DDDE81F9984040075F96A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040DDDE61F9984040075F96A /* Main.storyboard */; };
 		040DDDEA1F9984040075F96A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040DDDE91F9984040075F96A /* Assets.xcassets */; };
 		040DDDED1F9984040075F96A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040DDDEB1F9984040075F96A /* LaunchScreen.storyboard */; };
+		040DDDF51F9986BD0075F96A /* FreindInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 040DDDF41F9986B50075F96A /* FreindInfo.plist */; };
+		040DDDF71F9986DA0075F96A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DDDF61F9986DA0075F96A /* MainViewController.swift */; };
+		040DDDF91F9986E70075F96A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DDDF81F9986E70075F96A /* DetailViewController.swift */; };
+		040DDDFB1F9993280075F96A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DDDFA1F9993280075F96A /* DataModel.swift */; };
+		04A6871B1F999A26008ED964 /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6871A1F999A26008ED964 /* ProfileDataManager.swift */; };
+		04A6871D1F999A30008ED964 /* ProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6871C1F999A30008ED964 /* ProfileDataModel.swift */; };
+		04A6871F1F99A832008ED964 /* profileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6871E1F99A832008ED964 /* profileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		040DDDDF1F9984040075F96A /* 17-10-20-TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "17-10-20-TableView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		040DDDE21F9984040075F96A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		040DDDE41F9984040075F96A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		040DDDE71F9984040075F96A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		040DDDE91F9984040075F96A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040DDDEC1F9984040075F96A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040DDDEE1F9984040075F96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040DDDF41F9986B50075F96A /* FreindInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FreindInfo.plist; sourceTree = "<group>"; };
+		040DDDF61F9986DA0075F96A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		040DDDF81F9986E70075F96A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		040DDDFA1F9993280075F96A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		04A6871A1F999A26008ED964 /* ProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataManager.swift; sourceTree = "<group>"; };
+		04A6871C1F999A30008ED964 /* ProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataModel.swift; sourceTree = "<group>"; };
+		04A6871E1F99A832008ED964 /* profileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +67,16 @@
 			isa = PBXGroup;
 			children = (
 				040DDDE21F9984040075F96A /* AppDelegate.swift */,
-				040DDDE41F9984040075F96A /* ViewController.swift */,
+				040DDDF61F9986DA0075F96A /* MainViewController.swift */,
+				040DDDF81F9986E70075F96A /* DetailViewController.swift */,
+				04A6871E1F99A832008ED964 /* profileTableViewCell.swift */,
+				040DDDFA1F9993280075F96A /* DataModel.swift */,
+				04A6871A1F999A26008ED964 /* ProfileDataManager.swift */,
+				04A6871C1F999A30008ED964 /* ProfileDataModel.swift */,
 				040DDDE61F9984040075F96A /* Main.storyboard */,
 				040DDDE91F9984040075F96A /* Assets.xcassets */,
 				040DDDEB1F9984040075F96A /* LaunchScreen.storyboard */,
+				040DDDF41F9986B50075F96A /* FreindInfo.plist */,
 				040DDDEE1F9984040075F96A /* Info.plist */,
 			);
 			path = "17-10-20-TableView";
@@ -125,6 +143,7 @@
 			files = (
 				040DDDED1F9984040075F96A /* LaunchScreen.storyboard in Resources */,
 				040DDDEA1F9984040075F96A /* Assets.xcassets in Resources */,
+				040DDDF51F9986BD0075F96A /* FreindInfo.plist in Resources */,
 				040DDDE81F9984040075F96A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +155,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040DDDE51F9984040075F96A /* ViewController.swift in Sources */,
+				040DDDF71F9986DA0075F96A /* MainViewController.swift in Sources */,
+				040DDDFB1F9993280075F96A /* DataModel.swift in Sources */,
+				04A6871B1F999A26008ED964 /* ProfileDataManager.swift in Sources */,
+				04A6871D1F999A30008ED964 /* ProfileDataModel.swift in Sources */,
 				040DDDE31F9984040075F96A /* AppDelegate.swift in Sources */,
+				04A6871F1F99A832008ED964 /* profileTableViewCell.swift in Sources */,
+				040DDDF91F9986E70075F96A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8CS7J8RX4;
 				INFOPLIST_FILE = "17-10-20-TableView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-10-20-TableView";
@@ -289,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8CS7J8RX4;
 				INFOPLIST_FILE = "17-10-20-TableView/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-10-20-TableView";
