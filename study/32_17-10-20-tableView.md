@@ -187,6 +187,10 @@ protocol SwitchTableViewCellDelegate {
 ![screen](/study/image/PlistData.jpg) <br>
 
 > Plist 구조 
+> |--Array
+> |----String:String
+> 
+> Plist = [[String:String], [String:String]....]
 
 
 2. 뷰 컨트롤러 전환할때, 이전 뷰컨트롤러의 데이터 사용 <br>
