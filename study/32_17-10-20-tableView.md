@@ -176,7 +176,7 @@ protocol SwitchTableViewCellDelegate {
 
 | * | * | 
 | :------------ | -----------: | 
-| ![screen](/study/image/ReTableViewController.jpg) | ![screen](/study/image/ReTableViewController.jpg-1.jpg) | 
+| ![screen](/study/image/ReTableViewController.jpg) | ![screen](/study/image/ReTableViewController-1.jpg) | 
 
 
 
@@ -188,8 +188,10 @@ protocol SwitchTableViewCellDelegate {
 
 > Plist 구조 
 
-	2. 뷰 컨트롤러 전환할때, 이전 뷰컨트롤러의 데이터 사용 <br>
-	3. AutoLayout
+
+2. 뷰 컨트롤러 전환할때, 이전 뷰컨트롤러의 데이터 사용 <br>
+
+3. AutoLayout<br>
 
 
 
