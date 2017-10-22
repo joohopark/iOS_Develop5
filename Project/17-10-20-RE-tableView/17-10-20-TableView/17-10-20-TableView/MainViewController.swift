@@ -49,6 +49,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
 //        cell.imageView?.image = UIImage(named: profileModel.bgImageName)
 //        
         cell.profileImageView.image = UIImage(named: profileModel.bgImageName)
+        
         cell.nameTextLabel.text = profileModel.nickname
         return cell
     }

@@ -168,69 +168,280 @@ protocol SwitchTableViewCellDelegate {
 ---
 
 
--------------------------------___!@#!@#!@#
-
-1. 테이블뷰의 데이터를 주기위해서 프로필 이미지 부분이랑, 레이블 부분을 cell class 에서 관리함.
-
-2. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 
-## 해야 하는것
+## TableView 응용 하기 
 
 
 
-1. singlerton 사용해서, 인풋텍스트값을 Plist에 저장해서, 다시 load할때 Plist를 생성하고 불러온다. 
-
-2. 테이블뷰 여러가지 형식으로 만들어서 오자(숙제!)
-
-- Delegate 다시 한번 만들어보기
-- tableView 모두 뜯어보기, Singleton 사용해서 만들기 
-
-
-**Delegate를 사용했을때 값이 넘어가는 이유 다시 정리, Delegate를 사용하지 않고 옵져빙만 사용했을때 값이 넘어가지 않았던 이유 고민하고 정리하기**
-
----
-
-## 10-20 필기
-
-- 테이블뷰의 각셀의 정보를 sender 로 받았을때 다음 뷰컨트롤러로 넘어갈때, sender의 정보를 다음 viewContoller로 넘기는 방법 다시한번 정리하자..!
+| * | * | 
+| :------------ | -----------: | 
+| ![screen](/study/image/ReTableViewController.jpg) | ![screen](/study/image/ReTableViewController.jpg-1.jpg) | 
 
 
 
+- 사용 한것
+	1. 데이터 모델링 <br>
 
 
----
+![screen](/study/image/PlistData.jpg) <br>
 
-UI 를 돌려서 cell 이 재사용된다고 생각하지 말고, data 자체를 던져주면서, 총 16개의 버튼이 있을때, 1번 버튼의 값이 false가 될때, 그 다음 재사용 될 cell의 값을 변경 해주게 되면, 지속적으로 사용할수 있다.
+> Plist 구조 
 
----
+	2. 뷰 컨트롤러 전환할때, 이전 뷰컨트롤러의 데이터 사용 <br>
+	3. AutoLayout
 
-## 테이블뷰 해더뷰 만들기.
 
+
+
+```swift
+
+- 데이터 모델링
+
+import Foundation
+
+// 데이터 모델
+
+struct ProfileModel {
+    
+    var nickname: String
+    var statusDesc: String
+    var profileImageName: String
+    
+    
+    var email: String
+    var phoneNumber: String
+    var myprofileDesc: String
+    var bgImageName: String
+    
+    
+    init?(data: [String:String]) {
+        
+        // 데이터 모델링 합시다.
+        
+        guard let nickname = data["Nickname"] else { return nil}
+        self.nickname = nickname
+        
+        guard let statusDesc = data["StatusDescription"] else { return nil}
+        self.statusDesc = statusDesc
+        
+        guard let profileImageName = data["ProfileImage"] else { return nil}
+        self.profileImageName = profileImageName
+        
+        guard let email = data["Email"] else { return nil}
+        self.email = email
+        
+        guard let phoneNumber = data["PhoneNumber"] else { return nil}
+        self.phoneNumber = phoneNumber
+        
+        guard let myprofileDesc = data["MyProfileDescription"] else { return nil}
+        self.myprofileDesc = myprofileDesc
+        
+        guard let bgImageName = data["BackgroundImage"] else { return nil}
+        self.bgImageName = bgImageName
+        
+        
+    }
+    
+    
+}
+
+
+- 데이터 모델링후 -> 사용할 데이터를 Array에 담아둔다.
+
+
+import Foundation
+
+class ProFileDataManager {
+    
+    var documentsPath: String?
+    
+    
+    //실제 데이터를 가지고 있는 녀석, 사용도중 초기화 되면 망하기 떄문에..
+    private var profiles: [ProfileModel] = []
+    
+    // 연산 프로퍼티를 사용해서, 값이 초기화되는것을 허용하지 않으려고 읽어 오는것만을 허용해주었다..
+    var profilesData: [ProfileModel] {
+        return profiles
+    }
+    
+    // 데이터를 load 하는 녀석
+    
+    init() {
+        loadData()
+    }
+    
+    func loadData() {
+        
+        
+        // 번들의 주소 가져오기
+        if let filePath = Bundle.main.path(forResource: "FreindInfo", ofType: "plist"), let dataList = NSArray(contentsOfFile: filePath) as? [Any]{
+            
+            
+            for data in dataList {
+                
+                if let realData = data as? [String: String],
+                    
+                    
+                    let dataModel = ProfileModel(data: realData) {
+                    profiles.append(dataModel)
+                    print(profiles)
+                    
+                    
+                    
+                }
+            }
+        }
+        
+    }
+
+    
+}
+
+
+- MainViewcontroller, NextViewcontroller 나누기.
+
+
+
+
+import UIKit
+
+class MainViewController: UIViewController, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var tv: UITableView!
+    
+    
+    // 데이터 로드
+    var dataManager: ProFileDataManager?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tv.dataSource = self
+        dataManager = ProFileDataManager()
+        
+        print(dataManager?.profilesData)
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataManager?.profilesData.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell: CustomCell = (tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomCell)!
+        
+        cell.textLabel?.text = dataManager?.profilesData[indexPath.row].nickname
+        
+        cell.imageView?.image = UIImage(named: (dataManager?.profilesData[indexPath.row].bgImageName)!)
+        
+        
+        cell.imageView?.clipsToBounds = true
+        
+        // 디테일 값을 detaileData 에 저장을 한다..!
+        let detaileData: ProfileModel = (dataManager?.profilesData[indexPath.row])!
+        
+        
+        cell.data = detaileData
+
+        
+        
+        
+        return cell
+    }
+    
+    
+    // prepare 는 뷰컨트롤러간 전환할때 호출되는데, 
+    // Push 하는 방식으로 사용되는것 같다. 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // sender 는 클릭된 녀석
+        //'segue.destination' 는 segue 로 넘어간 뷰컨트롤러를 가리킴
+        guard let cell = sender as? CustomCell else { return }
+        
+        
+        // Viewcontroller 가 전환될때, cell의 디테일 정보를 다음 뷰컨트롤러로 넘겨려고 할때, 
+        // nextVC 가 다음 뷰 컨트롤러를 가르키면서, 그 뷰컨트롤러가 가지고 있는 프로퍼티를 뷰컨트롤러가 전환하기 전에, 값을 넘겨 주어서
+        // 화면이 전환된 이후에도 사용을 하는 방식으로 사용한다.
+        guard let nextVC = segue.destination as? NextViewController else { return }
+        
+        print(nextVC)
+        nextVC.data = cell.data
+        
+    }
+
+   
+
+
+}
+
+- NextVC
+
+import UIKit
+
+class NextViewController: UIViewController {
+
+    
+    @IBOutlet weak var titleImageView: UIImageView!
+    @IBOutlet weak var detailProfileImageView: UIImageView!
+    @IBOutlet weak var detaliName: UILabel!
+    @IBOutlet weak var detaileTextView: UITextView!
+    @IBOutlet weak var phoneNumber: UILabel!
+    @IBOutlet weak var email: UILabel!
+    
+    // 디테이블 뷰에서는 cell에서 누른 값만 필요하기 때문에 ProfileModel 을 사용함..
+    var data: ProfileModel?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        detailProfileImageView.clipsToBounds = true
+        detailProfileImageView.layer.cornerRadius = 50
+        
+        
+        // data를 안전하게 바인딩해서 사용한다. 사실 바인딩 하지 않아도된다... 그 앞에서 값이 잘 넘어오면, 넘어온 데이터가 화면에 뿌려질것이고, 데이터가 잘 넘어오지 않았다면 어차피 화면에 보이지 않기 때문이다. 하지만 혹시 모를 오류에 대비하기 위해서 if-let 바인딩을 사용한다.
+        if let real = data {
+            //data에 값이 넘어온다는것.
+            titleImageView.image = UIImage(named: (data?.bgImageName)!)
+            detaliName.text = data?.nickname
+            detaileTextView.text = data?.myprofileDesc
+            phoneNumber.text = data?.phoneNumber
+            email.text = data?.email
+            
+            detailProfileImageView.image = UIImage(named: (data?.profileImageName)!)
+        }
+            
+            
+            
+
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+
+
+}
+
+
+
+``` 
 
 ---
 
 ## Reference 
 
+[scale guide](https://developer.apple.com/library/content/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/WindowsandViews/WindowsandViews.html)
