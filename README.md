@@ -95,7 +95,18 @@
 > 
 > 6. [Bundle, Plist, Singleton 연습하기!](/study/31_17-10-19-prectice-Bundle-Plist-Singleton.md)
 > 
-> 7. [작성중..tableView](/study/32_17-10-20-tableView.md)
+> 7. [tableView, prepare, ViewController](/study/32_17-10-20-tableView.md)
+
+
+
+### *  **Part 6** 
+
+> 1. [작성중..다음주]()
+> 
+> 
+
+
+
 
 ### *  **Braek week** 
 
