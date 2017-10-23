@@ -31,7 +31,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             return RawData.singletonRawData.rawData![2].serviceData.count
         }
         
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

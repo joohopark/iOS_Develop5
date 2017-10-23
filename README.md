@@ -101,7 +101,7 @@
 
 ### *  **Part 6** 
 
-> 1. [작성중..다음주]()
+> 1. [작성중..Optional, AppLifeCycle, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review)
 > 
 > 
 

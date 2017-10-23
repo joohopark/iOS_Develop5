@@ -2,10 +2,12 @@
 
 ---
 
+# Optional, AppLifeCycle, Do-Try-catch 문, NavigationViewController
 
-## 10.23 필기 
 
-스위프트에만 있는 것 중 특징 적인것은
+---
+
+## 지금까지 한것들 중에서, 조금 어려웠던 것들을 조금 되짚어 보고 시작 합니다.
 
 - 옵셔널
 	- if let
@@ -17,57 +19,9 @@
 	- 프로퍼티
 	
 	
-	
-app이 런치 되면 
-->  Life Cycle
--> application UI 
--> appDelegate
-
-view의 입장에서는 awikefromXIB 
-viewController의 최종은 viewdidload?
-
-  -> 무슨말이지
-  
- 
-UIKit 은 항상 하나의 5가지중 한가지의 상태가 됨 
-
-[reference: app life cycle ](https://developer.apple.com/documentation/uikit/core_app/managing_your_app_s_life_cycle#2934064)
-
-view -> VIewcontoller 에게 어떤 행동을 주는? Tagetting
-viewController 가 할일은 view가 대신하게 해주는 Delegate
-
-
-
-그러면 notification은?
-
-VC -> notification Center 을 보내면 -> 모든 VC, VC 들에게 보냄. 
-notification 은 VC 와 VC 간의 데이터를 전달하면서 사용할수 있음.
-
-serect, closure 를 사용해서 파라미터로 던져준다....?
-셀렉터라는 방식을 -> 클로져 방식으로 변환하고 있음.. 셀렉터는 objective-C의 유산같은 녀석이다...?
-
-
-
-*애자일, 스크럼, 스프린트 -> 이거 한번 다시찾아서 정리한번 해보자*
-
-
-- 옵셔널
-
-옵셔널 체이닝 
-
-var a: Int?
-
-var b: Int = a ?? 0
-
-init 하는 시점에서는 프로퍼티 옵져빙이 실행이 되지 않음..
-	-> 이유는, 옵져빙이 초기화 시점에서 등록이 아직 되지 않아서 실행이 되지 않는다..라고 생각해볼수 있다.
-	
-	command + option -> 화면 접힘
-	
-	
 ---
 
-스토리 보드를 통해서 인스턴스를 만들때와, 그냥 UI를 통해서 만드는것과, 
+## 아래의 init 각각 어떤경우에 사용하는지 찾아서 정리하자.
 
 
 ```swift
@@ -98,6 +52,7 @@ override func awakeFromNib() {
 
 
 ---
+
 
 
 ## 예외처리
@@ -178,5 +133,90 @@ do-try-catch 문이 동작되는 것을 생각 해보면
 ---
 
 
-## 
+## notification 
 
+네비게이션 컨트롤러 위에 -> 네비게이션 컨트롤러를 띄워 놓고, dismiss 를 사용해서 왔다 갔다 하면서 구현 한다...?
+
+1. storyboard reference 를 사용해서 segea로 이동하는것 해보기
+
+2. appDelegate에서 navi 화면을 각각 나누어서 적용 해보기
+
+3. MainNavi 에서 작성해서 해보기
+
+---
+
+## navigationViewController 연습하기
+
+#### 1. storyboard 에서 instance 생성 + navigationController 사용해서 화면간 전환 하기
+
+![screen](/study/image/Navi.jpg)
+
+> NavigationController 를 두개를 놓고, 엔트리 포인트를, 새로운 `Navi` 라는 클레스를 만들어서, 상속시킨 NavagiationController 에 상속 시켜놓고, `StoryBoard Idintifier` 를 통해서, NavigationController 위에 또다른 NavigationController 를 쌓은 구조를 만들었다. 그 이유는, 로그인을 완성하면 pop을 시켜서, 엔트리포인트로 지정해놓은 Navigation을 사용하기 위해서이다..!
+> 
+
+
+```swift
+
+**MainNavi Class**
+
+override func viewDidAppear(_ animated: Bool) {
+        
+        if !UserDefaults.standard.bool(forKey: "isLogined") {
+            if let presentVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginNavi") {
+                
+                self.present(presentVC, animated: true, completion: nil)
+                
+            }
+
+
+```
+
+> UserDefaults 는, 로그인 했을때, 자동로그인 처리를 하기 위해서만들어 놓은것입니다. 중요한건, 스토리보드를 통해서 인스턴스 생성 -> present 사용하는것 입니다. 
+> 
+> `LoginNavi` 라는 storyboard identifier 를 지정한 인스턴스를 띄워주게 처리했습니다.
+> 
+> 하지만 이 코드를 ViewdidAppear에서 사용하는것은 사실 좋지 않습니다. 이유는 navigation을 사용할때마다 저 코드가 불리기 떄문입니다. 조금더 말끔하게 처리하려면, appDelegate에서 windows 에서 처리하는 방법도 고민해보면 좋을것 같습니다. 
+> 
+
+#### 2. segue 의 idenfier 이용해서, NavigationViewContorller 위에 NavigationViewContorller
+
+
+![screen](/study/image/Navi-1.jpg)
+
+```swift
+
+**MainNavi Class**
+
+if !UserDefaults.standard.bool(forKey: "isLogined") {
+            performSegue(withIdentifier: "toLoginSegue", sender: nil)
+            
+        }
+
+
+```
+> `segue` 의 identifier 로 이동하는 방식으로 실행했습니다.
+
+#### 3. StoryBoard Reference 이용하기
+
+| *  | * | 
+| :------------ | :-----------: | 
+| ![screen](/study/image/Navi-2.jpg) | ![screen](/study/image/Navi-3.jpg) | 
+
+![screen](/study/image/Navi-4.jpg)
+
+> 원리는 segue 를 통해서, storyboard reference 를 가리키면, segue를 통해서 다른 storyboard에 연결되어있는 view를 띄워주는 형식이다. 이때 주의 해주어야 할 사항들이있다.
+> 
+> Storyboard Reference 이용시 설정해주어야 하는것들로는, 
+> 
+> 1. Storyboard Referece 가 어떤 `StoryBoard` 인지 `StoryBoard Referece`에서 설정 해주어야 한다.
+> 
+> 2. 해당 StoryBoard의 NavigationViewController의 Class 를, `StoryBoard`의 이름으로 바꾸어 주어야한다. 
+> 
+> 3. 스토리보드의 시작점(엔트리포인트)을 지정 해주어야 한다.
+> 
+
+---
+
+## Reference
+
+[reference: app life cycle ](https://developer.apple.com/documentation/uikit/core_app/managing_your_app_s_life_cycle#2934064)
