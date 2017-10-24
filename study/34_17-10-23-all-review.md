@@ -21,40 +21,6 @@
 	
 ---
 
-## 아래의 init 각각 어떤경우에 사용하는지 찾아서 정리하자.
-
-
-```swift
-
-override func awakeFromNib() {
-        <#code#>
-    }
-    
- 이 호출되고 난 이후에, ViewDidLoad가 호출된다. 코드로 만드는것과, 스토리보드로 만드는것의 시점 차이가 명확하다.
- 
- 
- 
- required init?(coder aDecoder: NSCoder) {
-        <#code#>
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        <#code#>
-    }
-    
-    override func awakeFromNib() {
-        <#code#>
-    }
-
-```
-
-각각의 init 시점, 사용 해야하는고 명확하게 찾아서 정리 해놓자.
-
-
----
-
-
-
 ## 예외처리
 
 1. 에러 타입 만들기
@@ -132,6 +98,35 @@ do-try-catch 문이 동작되는 것을 생각 해보면
 
 ---
 
+## init 의 사용, 시점 
+
+
+```swift
+
+
+    
+ 이 호출되고 난 이후에, ViewDidLoad가 호출된다. 코드로 만드는것과, 스토리보드로 만드는것의 시점 차이가 명확하다.
+ 
+ 
+ 
+ required init?(coder aDecoder: NSCoder) {
+        <#code#>
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        <#code#>
+    }
+    
+    override func awakeFromNib() {
+        <#code#>
+    }
+
+```
+
+각각의 init 시점, 사용 해야하는고 명확하게 찾아서 정리 해놓자.
+
+---
+
 
 ## notification 
 
@@ -151,10 +146,6 @@ do-try-catch 문이 동작되는 것을 생각 해보면
 
 ![screen](/study/image/Navi.jpg)
 
-> NavigationController 를 두개를 놓고, 엔트리 포인트를, 새로운 `Navi` 라는 클레스를 만들어서, 상속시킨 NavagiationController 에 상속 시켜놓고, `StoryBoard Idintifier` 를 통해서, NavigationController 위에 또다른 NavigationController 를 쌓은 구조를 만들었다. 그 이유는, 로그인을 완성하면 pop을 시켜서, 엔트리포인트로 지정해놓은 Navigation을 사용하기 위해서이다..!
-> 
-
-
 ```swift
 
 **MainNavi Class**
@@ -171,6 +162,8 @@ override func viewDidAppear(_ animated: Bool) {
 
 ```
 
+> NavigationController 를 두개를 놓고, 엔트리 포인트를, 새로운 `Navi` 라는 클레스를 만들어서, 상속시킨 NavagiationController 에 상속 시켜놓고, `StoryBoard Idintifier` 를 통해서, NavigationController 위에 또다른 NavigationController 를 쌓은 구조를 만들었다. 그 이유는, 로그인을 완성하면 pop을 시켜서, 엔트리포인트로 지정해놓은 Navigation을 사용하기 위해서이다..!
+> 
 > UserDefaults 는, 로그인 했을때, 자동로그인 처리를 하기 위해서만들어 놓은것입니다. 중요한건, 스토리보드를 통해서 인스턴스 생성 -> present 사용하는것 입니다. 
 > 
 > `LoginNavi` 라는 storyboard identifier 를 지정한 인스턴스를 띄워주게 처리했습니다.
@@ -203,6 +196,14 @@ if !UserDefaults.standard.bool(forKey: "isLogined") {
 | ![screen](/study/image/Navi-2.jpg) | ![screen](/study/image/Navi-3.jpg) | 
 
 ![screen](/study/image/Navi-4.jpg)
+
+```swift
+
+override func viewDidAppear(_ animated: Bool) {
+        
+        performSegue(withIdentifier: "otherStoryboard", sender: nil)
+
+```
 
 > 원리는 segue 를 통해서, storyboard reference 를 가리키면, segue를 통해서 다른 storyboard에 연결되어있는 view를 띄워주는 형식이다. 이때 주의 해주어야 할 사항들이있다.
 > 
