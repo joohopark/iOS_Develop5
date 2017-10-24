@@ -2,6 +2,16 @@
 
 ---
 
+## MiniProject-Creat-LoginPage
+
+- LogOut 기능 구현 
+
+| 1  | 2 | 3         |
+| :------------ | :-----------: | -------------------: |
+| ![screen](/study/image/mini-project.jpg) | ![screen](/study/image/mini-project-1.jpg) | ![screen](/study/image/mini-project-2.jpg) |
+
+
+
 ## 셋팅
 
 선생님은, 각각의 cell에 type를 부여해서, customCell 에서 설정해줌.. 
@@ -108,3 +118,126 @@ notificationCenter에 등록 하는 시점이랑, 등록이 되어지는 곳의 
 	- selecetor 는 mothod로 사용이 되어지고, 사용되는 방식이 mothod로, 사용하려고하는 함수의 idenetifier를 찾아가서 실행이 된다.
 
 	- closure 는 closure 그 자체로, 실행되는 조건(first class) 으로 closure 자체로서 실행이 되는 방식이다..!
+
+---
+
+## notification
+
+
+- 예제 
+
+ViewContorller 가 3개 -> ViewController 2개는 observing 등록을 해놓고, 마지막 ViewController 에서, post를 하면 -> 옵져빙 등록이 되어져 있는 ViewController에 object를 보낸다. 
+
+```swift
+
+**MainViewController**
+
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var mainLB: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 옵져빙 등록 
+        NotificationCenter.default.addObserver(forName: Notification.Name.init("TestNoti"), object: nil, queue: nil) { (noti) in
+            
+            // noti.object가 날라왔을때, 그 조건에 따라서 실행이됨.
+            if let text = noti.object as? String {
+                self.mainLB.text = text
+            }
+            // notification에 대한 실행
+            
+            print(noti.object)
+            print(noti.userInfo)
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+
+**SecondViewController**
+
+
+import UIKit
+
+class SecondViewController: UIViewController {
+
+    @IBOutlet weak var secondLB: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+
+        NotificationCenter.default.addObserver(forName: Notification.Name.init("TestNoti"), object: nil, queue: nil) { (noti) in
+            
+            if let text = noti.object as? String {
+                self.secondLB.text = text
+            }
+            // notification에 대한 실행
+            
+            print(noti.object)
+            print(noti.userInfo)
+        }
+    }
+        
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
+        // 노티피케이션에 옵져빙 등록
+        
+        
+        
+    }
+   
+
+}
+
+
+**ThirdViewController**
+
+
+
+import UIKit
+
+class ThirdViewController: UIViewController {
+
+    @IBOutlet weak var thirdTF: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // 여기서 noti 를 post
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+// 버튼을 눌렀을때, 아래의 코드가 실행되게함..(viewdidLoad 에서 하려고했는데, 행동이 되는 시점들 명확하게 생각하고 코드를 작성하자
+    @IBAction func thirdBtnAction(_ sender: UIButton) {
+        NotificationCenter.default.post(name: Notification.Name.init("TestNoti"), object: thirdTF.text, userInfo: ["noti":"info"])
+    }
+    
+
+}
+
+
+```
+
+noti 랑, delegate랑 같이 호출 되어서 사용되어 진다고 생각하면 좋을것 같다..!
+
+--- 
+
+## 코드 확장 
