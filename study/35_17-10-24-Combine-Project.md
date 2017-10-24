@@ -4,32 +4,11 @@
 
 ## MiniProject-Creat-LoginPage
 
-- LogOut 기능 구현 
+#### - LogOut 기능 구현 
 
-| 1  | 2 | 3         |
-| :------------ | :-----------: | -------------------: |
+| 1.  | 2. | 3. |
+| :------------: | :-----------: | :-------------------: |
 | ![screen](/study/image/mini-project.jpg) | ![screen](/study/image/mini-project-1.jpg) | ![screen](/study/image/mini-project-2.jpg) |
-
-
-
-## 셋팅
-
-선생님은, 각각의 cell에 type를 부여해서, customCell 에서 설정해줌.. 
-
-나는 section 별로 cell에 조건을 주어서 설정했지만, 이렇게 하는것보다 customCell에서 각각 타입에 대해서, 각 row별로 값이 던져 주어도 나쁘지 않을거 같다는 생각이 든다.
-
-
-- 각각 색션과 로우에 대한 타입값을 함수로 던져 주고, 
-
-그 던져지는 type에 따라서 어떤 행동을 하겠다고 정의해주고 사용해주는게 조금더 정리하기 편하다고 얘기함..
-
-**로그아웃 실행시**
-
-알럿띄우고, ok, 
-			cancle 유무에 따라서 dismiss, 로그아웃 변수 false 설정 해주어야함
-			
-			
-			
 
 ```swift
 
@@ -56,6 +35,31 @@ var window: UIWindow?
 
 
 ```
+
+> 여러가지 방법이 있지만, 위에서는 AppDelegate에서 
+
+
+
+
+## 셋팅
+
+선생님은, 각각의 cell에 type를 부여해서, customCell 에서 설정해줌.. 
+
+나는 section 별로 cell에 조건을 주어서 설정했지만, 이렇게 하는것보다 customCell에서 각각 타입에 대해서, 각 row별로 값이 던져 주어도 나쁘지 않을거 같다는 생각이 든다.
+
+
+- 각각 색션과 로우에 대한 타입값을 함수로 던져 주고, 
+
+그 던져지는 type에 따라서 어떤 행동을 하겠다고 정의해주고 사용해주는게 조금더 정리하기 편하다고 얘기함..
+
+**로그아웃 실행시**
+
+알럿띄우고, ok, 
+			cancle 유무에 따라서 dismiss, 로그아웃 변수 false 설정 해주어야함
+			
+			
+			
+
 
 ---
 
