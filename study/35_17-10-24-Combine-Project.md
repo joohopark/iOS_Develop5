@@ -76,12 +76,35 @@ notification 은 2가지가 중요하다, noti가 오는지 관찰하는 자, no
 	푸쉬, 로컬, : 외부(실제 메세지등..)
 	그냥 노티 : 로컬
 	
+	로컬, 푸쉬의 노티피케이션은 사실 현상은 똑같은데, app 내부에서냐, app 외부에서냐의 따라서 달라짐 
+	로컬 노티의 역활: 알람 설정시, 알람시간이 지났을때, 화면이 켜지게 하는것은 로컬 노티의 역활
+	
+	OS 의 역활은 app을 키는것 까지만함. 그 이후에 app이 켜지면서 app 내부의 설계된 
+	
 	계층 구조 
 	|--cocoa touch 프레임 워크
 	|----CF : core foundation
 	
 	프레임워크의 계층 구조 
 	|--notificationCenter
-	|----
+	|----CFnotificationCenter
+	
+	단으로 계층 구조가 나뉘어져 있다.
 	
 	
+	서버가 -> 에플 서버 요청 -> 각 app에게 푸쉬 노틸 -> os가 그 텍스만큼 받음 -> app 런치 -> 그 옵션안에 app 텍스트가 들어가 잇으면 -> app 내부에서 처리할수 있음.
+	
+	
+---
+
+notificationCenter에 등록 하는 시점이랑, 등록이 되어지는 곳의 인스턴스가 생성되고 재사용될때, 의도와 다르게 notificationCenter에 옵져빙하는 갯수가 여러개가 될수 있다.
+
+반드시 옵져빙을 add 했을때, 인스턴스가 사라질때 remove 해주어야 한다.
+
+가장 적절하게 해주는 방법은 인스턴스가 죽는 deinit 되는 부분에 옵져빙 remove 해주는게 좋음..
+
+- selecetor는 mothod 이고, closure 는 일급 객체로 사용되는 방식이 다름. 결국에는 둘다 함수로서 사용하는데, 사용이 되어지는 방식이 다르다.
+
+	- selecetor 는 mothod로 사용이 되어지고, 사용되는 방식이 mothod로, 사용하려고하는 함수의 idenetifier를 찾아가서 실행이 된다.
+
+	- closure 는 closure 그 자체로, 실행되는 조건(first class) 으로 closure 자체로서 실행이 되는 방식이다..!
