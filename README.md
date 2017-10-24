@@ -103,7 +103,7 @@
 
 > 1. [작성중..Optional, AppLifeCycle, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review.md)
 > 
-> 
+> 2. [MiniProject-Creat-LoginPage](/study/35_17-10-24-Combine-Project.md)
 
 
 
