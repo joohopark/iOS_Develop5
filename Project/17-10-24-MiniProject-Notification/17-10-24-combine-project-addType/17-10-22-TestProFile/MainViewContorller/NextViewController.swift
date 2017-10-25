@@ -30,12 +30,7 @@ class NextViewController: UIViewController {
             email.text = data?.email
             
             detailProfileImageView.image = UIImage(named: (data?.profileImageName)!)
-        }
-            
-            
-            
-
-        
+        }      
     }
 
     override func didReceiveMemoryWarning() {

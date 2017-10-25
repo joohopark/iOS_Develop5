@@ -11,16 +11,6 @@ class MainViewController: UIViewController, UITableViewDataSource {
     // 데이터 로드
     var dataManager: ProFileDataManager?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tv.dataSource = self
-        dataManager = ProFileDataManager()
-        
-        
-        
-        
-    }
     
     
     
@@ -74,3 +64,15 @@ class MainViewController: UIViewController, UITableViewDataSource {
 
 }
 
+extension MainViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tv.dataSource = self
+        dataManager = ProFileDataManager()
+        
+    }
+
+    
+}

@@ -9,6 +9,27 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
     var switcher: UISwitch!
     var versionLB: UILabel!
     
+    /*==========
+     Subscript 연습
+     ==========*/
+    class test {
+        subscript(section: Int, row: Int) -> Int {
+            if section == 0 {
+                if row == 0 {
+                    return 0
+                }else if row == 1 {
+                    return 1
+                }else if row == 2 {
+                    return 2
+                }
+                
+            }
+            return 0
+        }
+        
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +75,12 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         
         let cell: CustomCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         
+        
+        var x = test()
         /*===============
              0번 색션
          ================*/
-        if indexPath[0] == 0 {
+        if indexPath[0] == x[0,0] {
             cell.textLabel?.text = RawData.singletonRawData.rawData![0].accountData[indexPath.row]["Content"]!
             
             
@@ -121,8 +144,17 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         if indexPath[0] == 0 {
+            if indexPath.row == 0 {
+                
+                if let presentVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailSetting") {
+                    
+                    self.present(presentVC, animated: true, completion: nil)
+                    
+                }
+            }
             
-            if indexPath.row == 2 {
+            
+            else if indexPath.row == 2 {
                 let alertVC = UIAlertController(title: "Logout", message: "로그아웃 하시겠습니다?", preferredStyle: .alert)
                 
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: { (X) in

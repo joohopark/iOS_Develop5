@@ -24,6 +24,7 @@
 		04C3AF861F9E4333003A1E1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3AF841F9E4332003A1E1E /* LoginViewController.swift */; };
 		04C3AF881F9E49D2003A1E1E /* SettingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3AF871F9E49D1003A1E1E /* SettingDataModel.swift */; };
 		04C3AF8A1F9E4A16003A1E1E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3AF891F9E4A16003A1E1E /* SettingViewController.swift */; };
+		04FFD0E91FA027C400E41830 /* DetailSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FFD0E81FA027C400E41830 /* DetailSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		04C3AF841F9E4332003A1E1E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04C3AF871F9E49D1003A1E1E /* SettingDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDataModel.swift; sourceTree = "<group>"; };
 		04C3AF891F9E4A16003A1E1E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		04FFD0E81FA027C400E41830 /* DetailSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				04C3AF891F9E4A16003A1E1E /* SettingViewController.swift */,
+				04FFD0E81FA027C400E41830 /* DetailSetting.swift */,
 				0447B06E1F9C664C007F328B /* CustomCell.swift */,
 				04C3AF871F9E49D1003A1E1E /* SettingDataModel.swift */,
 			);
@@ -214,6 +217,7 @@
 				04C3AF8A1F9E4A16003A1E1E /* SettingViewController.swift in Sources */,
 				04C3AF851F9E4333003A1E1E /* CreatAccountPage.swift in Sources */,
 				0447B05B1F9C6052007F328B /* MainViewController.swift in Sources */,
+				04FFD0E91FA027C400E41830 /* DetailSetting.swift in Sources */,
 				0447B06D1F9C6559007F328B /* NextViewController.swift in Sources */,
 				0447B06F1F9C664C007F328B /* CustomCell.swift in Sources */,
 				0447B0591F9C6052007F328B /* AppDelegate.swift in Sources */,
