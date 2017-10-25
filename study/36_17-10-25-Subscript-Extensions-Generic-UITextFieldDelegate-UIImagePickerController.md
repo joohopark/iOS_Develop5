@@ -332,9 +332,9 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 2. Delegate 설정 (UIImagePickerControllerDelegate,UINavigationControllerD elegate 두개의!! 프로토콜 채택) <br>
 3. UIImagePicker의 sourceType 설정 Present! <br>
 
-| *  | * | 
+| *  | * | * |
 | :------------: | :-----------: | :-----------: | 
-| ![screen](/study/image/imagePicker-3.jpg) | ![screen](/study/image/imagePicker-4.jpg) |  ![scrren](/study/image/imagePicker.jpg)| 
+| ![screen](/study/image/imagePicker-3.jpg) | ![screen](/study/image/imagePicker-4.jpg) |  ![scrren](/study/image/imagePicker.jpg) | 
 
 ```swift
 
