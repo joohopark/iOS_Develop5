@@ -105,7 +105,9 @@
 > 
 > 2. [MiniProject-Creat-LoginPage, Notification](/study/35_17-10-24-Combine-Project.md)
 > 
-> 3. [작성중..10-24]()
+> 3. [Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController](/study/36_17-10-25-Subscript-Extensions-Generic-UITextFieldDelegate-UIImagePickerController.md)
+> 
+> 4. [작성중..10.26. ]()
 
 
 

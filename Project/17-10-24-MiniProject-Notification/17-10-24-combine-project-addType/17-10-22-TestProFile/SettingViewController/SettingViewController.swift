@@ -6,6 +6,8 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tv: UITableView!
     
+    
+    
     var switcher: UISwitch!
     var versionLB: UILabel!
     
