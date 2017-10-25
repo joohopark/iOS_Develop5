@@ -333,8 +333,8 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 3. UIImagePicker의 sourceType 설정 Present! <br>
 
 | *  | * | 
-| :------------: | :-----------: | 
-| ![screen](/study/image/imagePicker-3.jpg) | ![screen](/study/image/imagePicker-4.jpg) |   
+| :------------: | :-----------: | :-----------: | 
+| ![screen](/study/image/imagePicker-3.jpg) | ![screen](/study/image/imagePicker-4.jpg) |  ![scrren](/study/image/imagePicker.jpg)| 
 
 ```swift
 
