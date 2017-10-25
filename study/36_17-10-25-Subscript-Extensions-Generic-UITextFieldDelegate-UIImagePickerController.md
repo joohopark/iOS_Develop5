@@ -240,7 +240,7 @@ class ViewController: UIViewController {
 
 | *  | * | 
 | :------------: | :-----------: | 
-| ![screen](/study/imagePicker-1.jpg) | ![screen](/study/imagePicker-2.jpg) |   
+| ![screen](/study/image/imagePicker-1.jpg) | ![screen](/study/image/imagePicker-2.jpg) |   
 
 
 #### - Notification 을 사용해서 텍스트 필드에서 사용되는 키보드 이벤트 처리 하기 
@@ -334,7 +334,7 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
 | *  | * | 
 | :------------: | :-----------: | 
-| ![screen](/study/imagePicker-3.jpg) | ![screen](/study/imagePicker-4.jpg) |   
+| ![screen](/study/image/imagePicker-3.jpg) | ![screen](/study/image/imagePicker-4.jpg) |   
 
 ```swift
 
