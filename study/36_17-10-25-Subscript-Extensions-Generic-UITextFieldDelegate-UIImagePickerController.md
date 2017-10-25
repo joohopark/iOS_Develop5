@@ -6,6 +6,8 @@
 
 ---
 
+## subscript
+
 subscript를 통해서 연산 프로퍼티를 실행하는 용도로 사용할수 있다. subscript 문법 자체가 class, struct에서 정의 되어 사용되어 질때 인덱스의 `형태`로 사용되어 질수 있고, 조금더 사람이 생각하는 의미를 전달할수 있게 되어진다.
 
 ```swift
@@ -78,9 +80,9 @@ class SettingViewController: UIViewController, UITableViewDataSource, UITableVie
 
 }
 
-Extension SettingViewController {
+extension SettingViewController {
 
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return RawData.singletonRawData.rawData![0].accountData.count
@@ -93,7 +95,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
         return 0
     }
     
-func numberOfSections(in tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
         return (RawData.singletonRawData.rawData?.count)!
     }
 
@@ -235,6 +237,12 @@ class ViewController: UIViewController {
 
 텍스트 필드를 사용할때, Keyboard 에 대한 이벤트 처리를 해줄수 있다. 이때 Notification 을 사용하기도 하고, Delegate를 사용하기도 한다.!
 
+
+| *  | * | 
+| :------------: | :-----------: | 
+| ![screen](/study/imagePicker-1.jpg) | ![screen](/study/imagePicker-2.jpg) |   
+
+
 #### - Notification 을 사용해서 텍스트 필드에서 사용되는 키보드 이벤트 처리 하기 
 
 ```swift
@@ -323,6 +331,10 @@ func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 1. UIImagePickerController 인스턴스 생성 <br>
 2. Delegate 설정 (UIImagePickerControllerDelegate,UINavigationControllerD elegate 두개의!! 프로토콜 채택) <br>
 3. UIImagePicker의 sourceType 설정 Present! <br>
+
+| *  | * | 
+| :------------: | :-----------: | 
+| ![screen](/study/imagePicker-3.jpg) | ![screen](/study/imagePicker-4.jpg) |   
 
 ```swift
 
