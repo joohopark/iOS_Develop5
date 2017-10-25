@@ -269,36 +269,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5U-2c-cDZ">
-                                <rect key="frame" x="0.0" y="20" width="374" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CW3-HJ-AF5" userLabel="Contents View">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="647"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-NK-O2C">
-                                                <rect key="frame" x="37" y="549.5" width="299" height="30"/>
+                                                <rect key="frame" x="37" y="549.5" width="300" height="30"/>
                                                 <color key="backgroundColor" red="0.83287280797958374" green="0.24160259962081909" blue="0.32543331384658813" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="변경하기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeBtnAction:" destination="aat-8j-Nww" eventType="touchUpInside" id="ekq-N9-1fu"/>
+                                                    <action selector="changeBtnAction:" destination="aat-8j-Nww" eventType="touchUpInside" id="tw6-m4-xH5"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="seT-ek-FEo">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="194"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
                                             </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-VB-f3d">
+                                                <rect key="frame" x="159" y="154" width="56" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="E38-De-UhL"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-Bx-uuU">
+                                                <rect key="frame" x="174.5" y="192" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="SEO-PC-EVc"/>
+                                                    <constraint firstAttribute="height" constant="25" id="xXg-QU-EFZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="plus_icon_black"/>
+                                                <connections>
+                                                    <action selector="imagepickerAction:" destination="aat-8j-Nww" eventType="touchUpInside" id="vBu-V6-XUL"/>
+                                                </connections>
+                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BI1-Ug-6uI" userLabel="Acount Stack View">
-                                                <rect key="frame" x="35.5" y="234.5" width="302" height="30"/>
+                                                <rect key="frame" x="35.5" y="234.5" width="303" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NCC-N1-HRk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="6sQ-Si-dZI"/>
                                                             <constraint firstAttribute="height" constant="30" id="djF-MB-2Sk"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력 해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k0G-VD-B9P">
-                                                        <rect key="frame" x="40.5" y="0.0" width="261.5" height="30"/>
+                                                        <rect key="frame" x="41" y="0.0" width="262" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -318,17 +335,17 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfN-a4-sA7" userLabel="State Stack View">
-                                                <rect key="frame" x="35.5" y="334.5" width="302" height="30"/>
+                                                <rect key="frame" x="35.5" y="334.5" width="303" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="status" translatesAutoresizingMaskIntoConstraints="NO" id="dT3-qv-ovq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="QMK-v3-LVG"/>
                                                             <constraint firstAttribute="width" constant="40" id="xh2-ge-m9X"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상태 메세지를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Ho-s4h">
-                                                        <rect key="frame" x="40" y="0.0" width="262" height="30"/>
+                                                        <rect key="frame" x="40.5" y="0.0" width="262.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -344,17 +361,17 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKw-vV-VNJ">
-                                                <rect key="frame" x="36" y="386.5" width="302" height="30"/>
+                                                <rect key="frame" x="36" y="386.5" width="303" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="birthDay" translatesAutoresizingMaskIntoConstraints="NO" id="3PI-Cf-rfR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="1gY-ol-Fnf"/>
                                                             <constraint firstAttribute="width" constant="40" id="6Nw-TV-pto"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="생년월일을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7V2-WC-0oJ">
-                                                        <rect key="frame" x="40" y="0.0" width="262" height="30"/>
+                                                        <rect key="frame" x="40.5" y="0.0" width="262.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -370,17 +387,17 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8wJ-xs-Vwl" userLabel="NickName Stack View">
-                                                <rect key="frame" x="36" y="284.5" width="302" height="30"/>
+                                                <rect key="frame" x="36" y="284.5" width="303" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nickName" translatesAutoresizingMaskIntoConstraints="NO" id="aWA-ak-yp5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="HIi-C6-2NG"/>
                                                             <constraint firstAttribute="width" constant="40" id="K4t-ji-iJm"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wLj-3n-Oax">
-                                                        <rect key="frame" x="40" y="0.0" width="262" height="30"/>
+                                                        <rect key="frame" x="40.5" y="0.0" width="262.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -397,17 +414,17 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M04-Fw-hbS">
-                                                <rect key="frame" x="35.5" y="487.5" width="302" height="30"/>
+                                                <rect key="frame" x="35.5" y="487.5" width="303" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pPM-Ai-I4I">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="AGZ-9P-ytD"/>
                                                             <constraint firstAttribute="width" constant="40" id="XX3-qK-7Ab"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력 해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="feb-MI-rBD">
-                                                        <rect key="frame" x="40" y="0.0" width="262" height="30"/>
+                                                        <rect key="frame" x="40.5" y="0.0" width="262.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -423,17 +440,17 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5g-vY-wnk">
-                                                <rect key="frame" x="35.5" y="436.5" width="302" height="30"/>
+                                                <rect key="frame" x="35.5" y="436.5" width="303" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DDJ-2H-4zd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="K3P-en-4bD"/>
                                                             <constraint firstAttribute="height" constant="30" id="dUH-is-WCD"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="핸드폰 번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEL-Jv-gpM">
-                                                        <rect key="frame" x="40" y="0.0" width="262" height="30"/>
+                                                        <rect key="frame" x="40.5" y="0.0" width="262.5" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -448,24 +465,12 @@
                                                     <constraint firstAttribute="trailing" secondItem="YEL-Jv-gpM" secondAttribute="trailing" id="hda-hi-SfY"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-VB-f3d">
-                                                <rect key="frame" x="159" y="154" width="56" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="E38-De-UhL"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus_icon_black" translatesAutoresizingMaskIntoConstraints="NO" id="ijV-5T-uDR">
-                                                <rect key="frame" x="174.5" y="179" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="4fq-1s-cEE"/>
-                                                    <constraint firstAttribute="height" constant="25" id="Gsa-Ca-jVq"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="seT-ek-FEo" secondAttribute="trailing" id="1B9-d1-6jv"/>
                                             <constraint firstAttribute="trailing" secondItem="r5g-vY-wnk" secondAttribute="trailing" constant="36.5" id="1xY-jb-Rns"/>
+                                            <constraint firstItem="Pmw-Bx-uuU" firstAttribute="centerX" secondItem="CW3-HJ-AF5" secondAttribute="centerX" id="5JV-PU-JRz"/>
                                             <constraint firstAttribute="trailing" secondItem="BI1-Ug-6uI" secondAttribute="trailing" constant="36.333333333333314" id="7s6-aa-srI"/>
                                             <constraint firstItem="7ui-NK-O2C" firstAttribute="top" secondItem="M04-Fw-hbS" secondAttribute="bottom" constant="32" id="BQ2-hn-sYo"/>
                                             <constraint firstItem="Yye-Ho-s4h" firstAttribute="width" secondItem="CW3-HJ-AF5" secondAttribute="width" multiplier="0.7" id="FeW-OP-tnL"/>
@@ -490,7 +495,6 @@
                                             <constraint firstItem="CfN-a4-sA7" firstAttribute="top" secondItem="8wJ-xs-Vwl" secondAttribute="bottom" constant="20" id="l16-jn-O3b"/>
                                             <constraint firstItem="8wJ-xs-Vwl" firstAttribute="top" secondItem="BI1-Ug-6uI" secondAttribute="bottom" constant="20" id="m1t-U3-6S7"/>
                                             <constraint firstAttribute="trailing" secondItem="M04-Fw-hbS" secondAttribute="trailing" constant="36.5" id="mTj-pi-eQg"/>
-                                            <constraint firstItem="ijV-5T-uDR" firstAttribute="centerX" secondItem="seT-ek-FEo" secondAttribute="centerX" id="nWy-Lt-cXo"/>
                                             <constraint firstItem="8wJ-xs-Vwl" firstAttribute="leading" secondItem="CW3-HJ-AF5" secondAttribute="leading" constant="36" id="ne3-xA-J29"/>
                                             <constraint firstAttribute="trailing" secondItem="CfN-a4-sA7" secondAttribute="trailing" constant="36.5" id="nhe-Xw-IGa"/>
                                             <constraint firstItem="YEL-Jv-gpM" firstAttribute="width" secondItem="CW3-HJ-AF5" secondAttribute="width" multiplier="0.7" id="ntJ-0F-353"/>
@@ -500,8 +504,8 @@
                                             <constraint firstItem="7V2-WC-0oJ" firstAttribute="width" secondItem="CW3-HJ-AF5" secondAttribute="width" multiplier="0.7" id="wyn-XR-HhH"/>
                                             <constraint firstItem="7ui-NK-O2C" firstAttribute="height" secondItem="feb-MI-rBD" secondAttribute="height" id="xRR-ih-guV"/>
                                             <constraint firstItem="seT-ek-FEo" firstAttribute="leading" secondItem="CW3-HJ-AF5" secondAttribute="leading" id="xTG-oO-9zM"/>
+                                            <constraint firstItem="Pmw-Bx-uuU" firstAttribute="bottom" secondItem="seT-ek-FEo" secondAttribute="bottom" constant="23" id="xfC-wu-UEy"/>
                                             <constraint firstItem="wLj-3n-Oax" firstAttribute="width" secondItem="CW3-HJ-AF5" secondAttribute="width" multiplier="0.7" id="zDO-dd-Vmo"/>
-                                            <constraint firstItem="ijV-5T-uDR" firstAttribute="bottom" secondItem="seT-ek-FEo" secondAttribute="bottom" constant="10" id="zza-G1-I5I"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -533,7 +537,7 @@
                         <outlet property="nickNameTextField" destination="wLj-3n-Oax" id="Dqb-Dc-gHN"/>
                         <outlet property="phoneTextField" destination="YEL-Jv-gpM" id="9By-Aa-neE"/>
                         <outlet property="statusTextField" destination="Yye-Ho-s4h" id="S1b-cv-J7a"/>
-                        <outlet property="titleImageView" destination="nvw-VB-f3d" id="hYz-9X-c87"/>
+                        <outlet property="titleImageView" destination="seT-ek-FEo" id="rmO-kF-dO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MfT-Ry-i6B" userLabel="First Responder" sceneMemberID="firstResponder"/>

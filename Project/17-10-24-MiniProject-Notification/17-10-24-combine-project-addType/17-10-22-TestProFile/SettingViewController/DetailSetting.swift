@@ -2,9 +2,11 @@
 
 import UIKit
 
-class DetailSetting: UIViewController, UITextFieldDelegate {
+class DetailSetting: UIViewController, UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var mainSc: UIScrollView!
+    
+    
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var detailImageView: UIImageView!
     
@@ -17,6 +19,12 @@ class DetailSetting: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // UserDefaults에 있는 값을 forKey를 가지고 빼와서 사용한다.
+        if let imgData = UserDefaults.standard.value(forKey: "profileImgData") as? Data {
+            detailImageView.image = UIImage(data: imgData)
+        }
         
         // 키보드가 올라오기 직전에 노티피케이션을 사용해서 컨트롤하려고 함.
         NotificationCenter.default.addObserver(forName: Notification.Name.UIKeyboardWillShow, object: nil, queue: nil) { (noti) in
@@ -64,9 +72,67 @@ class DetailSetting: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func changeBtnAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 
    
-
+    // imagepicker
+    @IBAction func imagepickerAction(_ sender: UIButton) {
+        
+        let actionSheet = UIAlertController(title: "골라", message: "초이스", preferredStyle: .actionSheet)
+        
+        // 카메라가 달려있는지 없는지에 대해서 검사하고,
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction: UIAlertAction = UIAlertAction(title: "카메라", style: .default, handler: { (action) in
+                let cameraController = UIImagePickerController()
+                cameraController.delegate = self
+                cameraController.sourceType = .camera
+                self.present(cameraController, animated: true, completion: nil)
+            })
+            // 알럿에 액션 추가
+            actionSheet.addAction(cameraAction)
+        }
+        
+        let photoAction: UIAlertAction = UIAlertAction(title: "사진", style: .default, handler: { (action) in
+            let cameraController = UIImagePickerController()
+            cameraController.delegate = self
+            cameraController.sourceType = .photoLibrary
+            self.present(cameraController, animated: true, completion: nil)
+        })
+        actionSheet.addAction(photoAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    // imagePicker 를 사용하기 전에,
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print(info)
+        
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //detailImageView.image = img
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+        
+        // 현재 설정한 이미지를 저장하고 싶으면,
+        if let url = info[UIImagePickerControllerImageURL] as? URL {
+            
+            if let data = try? Data(contentsOf: url) {
+                
+                print(data)
+                detailImageView.image = UIImage(data: data)
+                
+                //유저 디폴트에 저장하고
+                UserDefaults.standard.set(data, forKey: "profileImgData")
+                // image 를 userDefault로 저장해서 사용하는 방식을 채택함.. 오..
+                
+            }
+            
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
