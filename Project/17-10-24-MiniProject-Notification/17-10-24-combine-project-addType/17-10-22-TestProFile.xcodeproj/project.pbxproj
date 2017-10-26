@@ -18,6 +18,7 @@
 		0447B0711F9C67BC007F328B /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447B0701F9C67BC007F328B /* DataModel.swift */; };
 		0447B0731F9C67D2007F328B /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447B0721F9C67D2007F328B /* DataCenter.swift */; };
 		0447B0751F9C6B24007F328B /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0447B0741F9C6B24007F328B /* Settings.plist */; };
+		0462A7491FA194FF0039BCC8 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462A7481FA194FF0039BCC8 /* PlayerViewController.swift */; };
 		04C3AF7C1F9E3FB7003A1E1E /* Otherstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C3AF7B1F9E3FB7003A1E1E /* Otherstoryboard.storyboard */; };
 		04C3AF821F9E404E003A1E1E /* MainNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3AF811F9E404E003A1E1E /* MainNavi.swift */; };
 		04C3AF851F9E4333003A1E1E /* CreatAccountPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3AF831F9E4332003A1E1E /* CreatAccountPage.swift */; };
@@ -41,6 +42,7 @@
 		0447B0701F9C67BC007F328B /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		0447B0721F9C67D2007F328B /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		0447B0741F9C6B24007F328B /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		0462A7481FA194FF0039BCC8 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		04C3AF7B1F9E3FB7003A1E1E /* Otherstoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Otherstoryboard.storyboard; sourceTree = "<group>"; };
 		04C3AF811F9E404E003A1E1E /* MainNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavi.swift; sourceTree = "<group>"; };
 		04C3AF831F9E4332003A1E1E /* CreatAccountPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAccountPage.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				0447B05F1F9C6052007F328B /* Assets.xcassets */,
 				047E553F1F9ECB030043A59B /* Loginsection */,
 				04C3AF811F9E404E003A1E1E /* MainNavi.swift */,
+				0462A7481FA194FF0039BCC8 /* PlayerViewController.swift */,
 				0447B06A1F9C6069007F328B /* FreindInfo.plist */,
 				0447B0741F9C6B24007F328B /* Settings.plist */,
 				0447B0611F9C6052007F328B /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 				04C3AF8A1F9E4A16003A1E1E /* SettingViewController.swift in Sources */,
 				04C3AF851F9E4333003A1E1E /* CreatAccountPage.swift in Sources */,
 				0447B05B1F9C6052007F328B /* MainViewController.swift in Sources */,
+				0462A7491FA194FF0039BCC8 /* PlayerViewController.swift in Sources */,
 				04FFD0E91FA027C400E41830 /* DetailSetting.swift in Sources */,
 				0447B06D1F9C6559007F328B /* NextViewController.swift in Sources */,
 				0447B06F1F9C664C007F328B /* CustomCell.swift in Sources */,
