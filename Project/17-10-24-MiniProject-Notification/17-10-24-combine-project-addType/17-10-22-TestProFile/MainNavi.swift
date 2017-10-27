@@ -1,10 +1,4 @@
-//
-//  MainNavi.swift
-//  17-10-22-TestProFile
-//
-//  Created by MIN JUN JU on 2017. 10. 24..
-//  Copyright © 2017년 MIN JUN JU. All rights reserved.
-//
+
 
 import UIKit
 

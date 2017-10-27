@@ -1,6 +1,38 @@
-# 37_17-10-27
+# 37_17-10-26
 
 ---
+
+## CollectionView
+
+- The classes and protocols for implementing collection views <br>
+
+	
+
+| Manager |Protocol |Presentation | 
+| :-----: | :-----: | :-----:|
+| UICollectionView |UICollectionViewDataSource |  UICollectionReusableView|
+| UICollectionViewController |  UICollectionViewDelegate | UICollectionViewCell|
+
+| Layout | flow Layouy |
+| :-----: | :-----: | 
+| UICollectionViewLayout| UICollectionViewFlowLayout| 
+|UICollectionViewLayoutAttributes | UICollectionViewDelegateFlowLayout|
+| UICollectionViewUpdateItem | * |
+
+> 채용해야 하는 프로토콜들이 있다.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 
 ## collectionView
 
@@ -39,3 +71,19 @@ View를 재사용하는 아이들의 모음 -> CollectionView 라고 생각해�
 
 
 private 을 class 
+
+하나의 노래의 metadata를 가져오면, 그 안에 있는 여러가지 아이템들을 가져올수 있음. 그 데이터들의 타입은 metadataItem 이다.
+
+
+lyric => 가사를 가져올수 있음.
+
+
+---
+
+UItabBarController 
+
+ViewController 들이 Array안에 들어가져 있다.
+
+tintiColor 는 png 에만 적용 됨, jpg 에는 적용 안됨.
+
+시스템 색상 이다...?
