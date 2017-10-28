@@ -105,6 +105,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         
     }
     
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.bounds.size.width/4

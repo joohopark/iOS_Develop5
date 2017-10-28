@@ -2,7 +2,7 @@
 
 ---
 
-## CollectionView
+## UICollectionView
 
 - The classes and protocols for implementing collection views <br>
 
@@ -19,9 +19,64 @@
 |UICollectionViewLayoutAttributes | UICollectionViewDelegateFlowLayout|
 | UICollectionViewUpdateItem | * |
 
+---
+
+## UICollectionView
+
+<p align="center">
+
+![screen](/study/imageUICollectionView.jpg)
+
+</p>
+
+
+---
+
 > 채용해야 하는 프로토콜들이 있다.
 
 
+- UICollectionViewDataSource
+ 	-> DataSource 를 사용하는것..!
+ 	
+// collectionView의 section의 개수를 정해주는 methoe
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    
+// 각 cell을 재사용하기 위해서 사용하는 method     
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+
+
+- UICollectionViewDelegateFlowLayout 
+	-> Layout을 결정하기 위해서 사용하는 Delegate 
+
+// 각 셀의 사이즈를 결정해준다.
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+
+        let width = collectionView.bounds.size.width/8
+        let height = collectionView.bounds.size.width/8
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    
+// item Spacing 
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 30
+    }
+// line Spacing    
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 100
+    }
+
+ -> 조금 햇갈릴수 있는 두 개념인데, 기준을 collectionView의 `scroll direction` 방향에 따라서 생각하면 조금 편해진다..! 
+ 
+ 
 
  
 
@@ -29,7 +84,8 @@
 
 
 
-
+// CustomCell 사용시 현재 Cell을 각 indexPath에 따라서 인스턴스로 만들어서 사용할수 있는 프로퍼티
+let cell = collectionView.cellForItem(at: indexPath) as? CustomCell
 
 
 
