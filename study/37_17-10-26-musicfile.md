@@ -2,7 +2,34 @@
 
 ---
 
-## UICollectionView
+## TabbarController, UICollectionView
+
+---
+
+## TabbarController
+
+#### [TabbarController tutorial](https://www.youtube.com/watch?v=nFw1yVhG4r8)
+
+---
+
+## tabBarController 구조
+
+![scrren](/study/image/TabbarController.jpg)
+
+
+---
+
+## Tab Bar Item
+
+![scrren](/study/image/TabbarController-1.jpg)
+
+> 각각의 ViewController를 각 TabBar Item에 매칭 되어 있다.
+>
+> TabBarItem은 이미지와 텍스트를 넣을수 있다. 
+> 
+> 각 TabBar Item은 해당 ViewController의 tabBarItem 프로퍼티로 접근 가능하  
+
+---
 
 - The classes and protocols for implementing collection views <br>
 
@@ -63,33 +90,19 @@
 
 ---
 
-## Item Size, Item Spacing, Line Spacing 
+## Item Size, Item Spacing, Line Spacing, Section Inset 
+
+#### - Item Size, Item Spacing, Line Spacing
 
 | Item Size | Item Spacing | Line Spacing |
 | :-------: | :-------: | :-------: |
 |![screen](/study/image/UICollectionView-3.jpg) |![screen](/study/image/UICollectionView-4.jpg) | ![screen](/study/image/UICollectionView-5.jpg) |
 
 
+> `UICollectionViewDataSource ` 채용해서 사용해야 한다. 
 
+```swift
 
-
-
-
-
-
-
-
-
-
-
-
-
-> 채용해야 하는 프로토콜들이 있다.
-
-
-- UICollectionViewDataSource
- 	-> DataSource 를 사용하는것..!
- 	
 // collectionView의 section의 개수를 정해주는 methoe
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         <#code#>
@@ -127,71 +140,61 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
     }
 
  -> 조금 햇갈릴수 있는 두 개념인데, 기준을 collectionView의 `scroll direction` 방향에 따라서 생각하면 조금 편해진다..! 
- 
- 
+``` 	
 
- 
+#### - Section Inset 
 
+<p align="center">
 
+![screen](/study/image/UICollectionView-7.jpg)
 
-
-
-// CustomCell 사용시 현재 Cell을 각 indexPath에 따라서 인스턴스로 만들어서 사용할수 있는 프로퍼티
-let cell = collectionView.cellForItem(at: indexPath) as? CustomCell
+</p>
 
 
-
-
-## collectionView
-
-z 축을 통해서 lay의 앞뒤를 구분할수 있게 됨..
-
-델리게이트 프로토콜은 3개 
-
-Presentation 
-	- UICollectionResuableView
-	- UICollectionViewCell
-
-	두개를 사용해야함..
-	
-**테이블뷰에서는 현재 색션은 reuseable하지 않았는데 사실은 가능하다는 이야기..? 이거 한번 찾아봐야 겠당**
-
-View를 재사용하는 아이들의 모음 -> CollectionView 라고 생각해보자.
-
-`cell` 과 `layOut` 을 통해서, View의 모습을 뿌려주는 순서와, View가 뿌려질때 `LayOut` 을 통해서 그 모습을 정의 할수 있다. 
-
- -> 자유도가 엄청 높은 녀석이다.
- 
- 
- #### - Section Layout 
- 
- **Layout**에 따라서 한 화면에 보이는 것임. section의 크기는 ViewController 의 총 길이가 아니라. Cell과, cell 사이의 스페이싱에 따라서 ViewController 의 화면 전환 간의 간격이 정해지게된다. 
- 
- 해더와, 풋터를 `reuseable` 하기때문에 `reuseable` 이라고 부른다..? 
- 
- 해더와 풋터가 decorationView, supplementary View 역활을 함..?
-
+> Edge inset values are applied to a rectangle to shrink or expand the area represented by that rectangle. Typically, edge insets are used during view layout to modify the view’s frame. Positive values cause the frame to be inset (or shrunk) by the specified amount. Negative values cause the frame to be outset (or expanded) by the specified amount.
+>
+> Edge inset methow 에 대한 설명인데, 가장 자리에 값을 삽입하여, 프레임 값을 변경한다고 작성되어있다.
+> 
+> 
 
 
 #### prefetching : 데이터를 미리 로드할수 있게 만들어 놓은공간, 테이블뷰에서 다음 cell을 로드할때, 네트워크를 갔다와서 데이터를 받아와야하는데, 그 과정 이전에 데이터를 prefetching 해서 사용할수 있다. 
 
-우리가 만들려고하는 quora 에서 적용해봐도 재미있을것 같다..
+---
 
+## UICollectionViewDelegate 
 
-private 을 class 
+```swift
 
-하나의 노래의 metadata를 가져오면, 그 안에 있는 여러가지 아이템들을 가져올수 있음. 그 데이터들의 타입은 metadataItem 이다.
+optional public func collectionView(_ collectionView: UICollectionView,
+shouldHighlightItemAt indexPath: IndexPath) -> Bool
 
+optional public func collectionView(_ collectionView: UICollectionView,
+didHighlightItemAt indexPath: IndexPath)
 
-lyric => 가사를 가져올수 있음.
+optional public func collectionView(_ collectionView: UICollectionView,
+didUnhighlightItemAt indexPath: IndexPath)
 
+optional public func collectionView(_ collectionView: UICollectionView,
+shouldSelectItemAt indexPath: IndexPath) -> Bool
+
+optional public func collectionView(_ collectionView: UICollectionView,
+shouldDeselectItemAt indexPath: IndexPath) -> Bool // called when the user
+taps on an already-selected item in multi-select mode
+
+optional public func collectionView(_ collectionView: UICollectionView,
+didSelectItemAt indexPath: IndexPath)
+
+optional public func collectionView(_ collectionView: UICollectionView,
+didDeselectItemAt indexPath: IndexPath)
+
+```
+
+> method 가 불리는 순서는
+> 
+> high -> didHiht -> didUnHigh -> shouldSelect -> didSelect 순서로 불렸습니다..
+> 
+> high, should, did 의 시점 차이를 정확하게 이해하고 있어야 합니다.
 
 ---
 
-UItabBarController 
-
-ViewController 들이 Array안에 들어가져 있다.
-
-tintiColor 는 png 에만 적용 됨, jpg 에는 적용 안됨.
-
-시스템 색상 이다...?
