@@ -25,7 +25,7 @@
 
 <p align="center">
 
-![screen](/study/imageUICollectionView.jpg)
+![screen](/study/image/UICollectionView.jpg)
 
 </p>
 
