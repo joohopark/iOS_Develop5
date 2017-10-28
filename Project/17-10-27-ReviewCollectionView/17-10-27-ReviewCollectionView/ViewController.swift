@@ -15,7 +15,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(sectionCount)
+        print(sectionCount.count)
+        
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,51 +36,55 @@ class ViewController: UIViewController {
 //        CV.reloadData()
         
         CV.performBatchUpdates({
-            
             let indexPath = IndexPath(item: sectionCount.count, section: 0)
-            
             sectionCount.append("h")
+            
+            // 어느위치에 넣고 업로드 할지 결정할수 있습니다.
             //sectionCount.insert("h", at: 3)
+            
+            // performBatchUpdates method 블럭안에서 collectionView안에 새로운 값을 넣어주는 작업을 하는것임..
             CV.insertItems(at: [indexPath])
-            
             CV.reloadData()
-            print(indexPath,sectionCount)
-            
+
         }, completion: nil)
-        
+
         // 프린트 찍어서 어떻게 작동하는 지 확인해보면 알수 있을것 같다.
         print(sectionCount)
         
         
     }
+    
+    
     @IBAction func deleteBtnAction(_ sender: UIButton) {
+
+        tempDelete.sort { (x, y) -> Bool in
+            
+            return x.item > y.item
+        }
+        
+        print(tempDelete)
+        
         
         // 지우는 방법
-        CV.performBatchUpdates({
-//            let indexPath = IndexPath(item: 0, section:0)
-//
-//            sectionCount.removeFirst()
-            var removeIDX = tempDelete[0].item
-            
-            for i in tempDelete {
-                let removedata = i.item
-                sectionCount.remove(at: removedata)
-                
-                //print(i, removeIDX)
-                CV.deleteItems(at: [i])
-            }
-            
-            
-            
-            
-            tempDelete = []
-            //CV.reloadData()
-            
-            
-            
-            
-        }, completion: nil)
         
+        
+        for i in tempDelete {
+
+            print(i.item)
+
+            
+            let cell = CV.cellForItem(at: i) as? CustomCell
+            let removedata = i.item
+            
+            sectionCount.remove(at: removedata)
+            cell?.layer.borderColor = UIColor.clear.cgColor
+            CV.deleteItems(at: [i])
+        }
+        
+        CV.reloadData()
+        tempDelete = []
+
+       
     }
     
     
@@ -106,8 +116,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = view.bounds.size.width/4
@@ -127,35 +135,38 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         return 2
     }
     
+    
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         collectionView.allowsMultipleSelection = true
-        // 선택되었다는 UI
-
-        // 현재 클릭된 cell의 인스턴스를 가져오는
         let cell = collectionView.cellForItem(at: indexPath) as? CustomCell
-
-//        cell?.layer.borderColor = UIColor.blue.cgColor
-//        cell?.layer.borderWidth = 3
-        
-        cell?.LB.textColor = .red
-        print(indexPath)
         
         
-        // reloadData 를 하면 랜덤하게 위의값들이 적용되는데 왜그런지 한번 확인해봐야할것 ㄱ타다.
-        //collectionView.reloadData()
+        //cell?.LB.textColor = .red
         
-        /// 선택 -> 삭제 버튼 누르면 삭제가 가능하게됨.
+        cell?.layer.borderColor = UIColor.purple.cgColor
+        cell?.layer.borderWidth = 5
         tempDelete.append(indexPath)
+        
+        print(tempDelete, tempDelete.count)
         
     }
     
+
     // 재선택 될때 불리는 매소드?
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.allowsMultipleSelection = true
         
         let cell = collectionView.cellForItem(at: indexPath) as? CustomCell
+        //cell?.LB.textColor = .black
+        cell?.layer.borderColor = UIColor.clear.cgColor
         
-        cell?.LB.textColor = .black
+        
+        
         
     }
 

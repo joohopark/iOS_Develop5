@@ -166,6 +166,7 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
 
 ```swift
 
+
 optional public func collectionView(_ collectionView: UICollectionView,
 shouldHighlightItemAt indexPath: IndexPath) -> Bool
 
@@ -190,8 +191,8 @@ didDeselectItemAt indexPath: IndexPath)
 
 ```
 
-> method 가 불리는 순서는
-> 
+> cell의 item을 터치 하면, 위의 Delegate가 불리게 되는데, 그 순서가 단어때문 모호하다. 그래서 명확하게 언제 불리는지 알아야 해서 print를 찍어 보았더니, 아래의 결과를 확인할수 있습니다.
+>  
 > high -> didHiht -> didUnHigh -> shouldSelect -> didSelect 순서로 불렸습니다..
 > 
 > high, should, did 의 시점 차이를 정확하게 이해하고 있어야 합니다.
