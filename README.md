@@ -107,9 +107,9 @@
 > 
 > 3. [Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController](/study/36_17-10-25-Subscript-Extensions-Generic-UITextFieldDelegate-UIImagePickerController.md)
 > 
-> 4. [UICollectionView, tapBar](/study/37_17-10-26-musicfile.md)
+> 4. [UICollectionView, TapBarController](/study/37_17-10-26-musicfile.md)
 > 
-> 5. [작성중..UICollectionView 응용, ](/study/38_17-10-27-CollectionView-gesture.md)
+> 5. [작성중..UICollectionView 응용하기, CoverFlow ](/study/38_17-10-27-CollectionView-gesture.md)
 
 
 
