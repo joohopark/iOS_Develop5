@@ -39,11 +39,11 @@
 
 ## Layout 
 
-
+<p align="center">
 
 ![screen](/study/image/UICollectionView-1.jpg)
 
-
+</p>
 
 > flow Layout , Custom Layout 의 계층이 다르게 되어 있습니다... Flow Layout 은 템플릿 처럼 사용하기 편하게 만들어 놓은것 같고, Flow Layout 에 만족하지 못한다면 무조건 Custom 으로 만들어야 할것 같습니다.
 
@@ -52,11 +52,11 @@
 
 ## Section Layout 
 
-
+<p align="center">
 
 ![screen](/study/image/UICollectionView-2.jpg)
 
-
+</p>
 
 > 하나의 Cell에 대한 Layout 입니다.
 
@@ -67,7 +67,7 @@
 
 | Item Size | Item Spacing | Line Spacing |
 | :-------: | :-------: | :-------: |
-| ![screen](/study/image/UICollectionView-3.jpg) | ![screen](/study/image/UICollectionView-4.jpg) | ![screen](/study/image/UICollectionView.jpg-5) |
+|![screen](/study/image/UICollectionView-3.jpg) |![screen](/study/image/UICollectionView-4.jpg) | ![screen](/study/image/UICollectionView.jpg-5) |
 
 
 
