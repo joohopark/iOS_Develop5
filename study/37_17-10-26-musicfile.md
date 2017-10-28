@@ -67,7 +67,7 @@
 
 | Item Size | Item Spacing | Line Spacing |
 | :-------: | :-------: | :-------: |
-|![screen](/study/image/UICollectionView-3.jpg) |![screen](/study/image/UICollectionView-4.jpg) | ![screen](/study/image/UICollectionView.jpg-5) |
+|![screen](/study/image/UICollectionView-3.jpg) |![screen](/study/image/UICollectionView-4.jpg) | ![screen](/study/image/UICollectionView-5.jpg) |
 
 
 
