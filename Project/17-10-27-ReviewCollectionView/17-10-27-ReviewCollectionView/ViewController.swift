@@ -60,7 +60,7 @@ class ViewController: UIViewController {
                 let removedata = i.item
                 sectionCount.remove(at: removedata)
                 
-                print(i, removeIDX)
+                //print(i, removeIDX)
                 CV.deleteItems(at: [i])
             }
             
