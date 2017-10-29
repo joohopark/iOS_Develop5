@@ -2,7 +2,7 @@
 
 ---
 
-## CollectionView 가지고 놀기
+## CollectionView 가지고 놀기, UICollectionViewFlowLayout 사용하기
 
 - 셀을 추가 & 삭제(다중선택 삭제) 가능하게 만들어보자.
 
@@ -186,5 +186,10 @@ func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexP
 ---
 
 
-## CoverFlow 동작 방식
+## UICollectionViewFlowLayout
+
+UICollectionViewFlowLayout
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/K64mb5KUhhs" frameborder="0" allowfullscreen></iframe>
+
 

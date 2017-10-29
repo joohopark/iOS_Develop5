@@ -102,6 +102,8 @@ class CoverFlowLayout : UICollectionViewFlowLayout {
     }
 
     
+    
+    
     func distance(ofCenter centerx:CGFloat) -> CGFloat
     {
         guard let collectionView = self.collectionView else {
