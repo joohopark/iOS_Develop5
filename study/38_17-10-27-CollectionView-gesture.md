@@ -333,6 +333,20 @@ class CoverFlowLayout : UICollectionViewFlowLayout {
 
 ``` 
 
+> 수학적인 요소가 많이 들어간것 같습니다.. 내가 원하는 모양으로 CoverFlow 를 다시 만들려고 한다면, cell의 위치에따라서 x,y,z 값, 조금더 나아가면 rotate 값도 변경하면서 2D -> 3D 처럼 보이게 만들수도 있을것 같습니다.
+> 
+> 자유도가 높은 만큼 처리해주어야 하는 부분들이 생각보다 까다롭습니다..ㅠ_ㅠ
+> 
+> 
+
+---
+
+## Layouy Process 
+
+![screen](/study/image/LayouyProcess-1.png)
+
+> Layout Process가 CollectionViewContentSize -> 변경 각 layoutAttributes 별로 변경이 하나씩 됩니다..
+
 
 
 
