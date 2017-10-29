@@ -190,6 +190,6 @@ func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexP
 
 UICollectionViewFlowLayout
 
-![screen](/study/video-gif/UICollectionViewFlowLayout.gif)
+![screen](/study/video-gif/UICollectionViewFlowLayout-1.gif)
 
 
