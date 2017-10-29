@@ -188,12 +188,9 @@ func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexP
 
 ## UICollectionViewFlowLayout
 
-<p align="center">
 
-| * |
-| :----: |
-| ![screen](/study/video-gif/UICollectionViewFlowLayout-1.gif) |
+![screen](/study/video-gif/UICollectionViewFlowLayout-1.gif){.aligncenter}
 
-</p>
+
 
 
