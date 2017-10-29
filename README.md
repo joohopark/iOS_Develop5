@@ -119,7 +119,7 @@
 > 
 
 ### *  **Github 으로 협업하기** 
-> 1. [작성중..](/study/0_17-10-28-github-recture.md)
+> 1. [Git 을 이용한 협업 WorkFlow](/study/0_17-10-28-github-recture.md)
 > 
 
 

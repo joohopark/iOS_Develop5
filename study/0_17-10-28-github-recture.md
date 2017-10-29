@@ -53,7 +53,7 @@ IT 회사에서 일해보지 않은 사람이 `github 으로 협업하기` 라�
 
 ---
 
-## Centralized Workflow
+## 1. Centralized Workflow
 
 
 ![screen](/study/image/gitworkflow.jpg)
@@ -70,7 +70,7 @@ SVN에 비하면 Git은 다음 장점이 있다. 첫째, 모든 팀 구성원이
 
 ---
 
-## Feature Branch Workflow
+## 2. Feature Branch Workflow
 
 ![screen](/study/image/gitworkflow-1.jpg)
 
@@ -85,7 +85,7 @@ Feature Branch Workflow의 핵심 컨셉은 기능별 브랜치를 만들어서 
 
 ---
 
-## Gitflow Workflow
+## 3. Gitflow Workflow
 
 ![screen](/study/image/gitworkflow-2.jpg)
 
@@ -99,14 +99,14 @@ Feature Branch Workflow의 핵심 컨셉은 기능별 브랜치를 만들어서 
 ---
 
 
-## Forking Workflow
+## 4. Forking Workflow
 
  OpenSource 에서 가장 많이 사용하는 방식 입니다. 누군가 만들어 놓은 repo를 fork 떠가고 난후, 수정, 보완 사항을 pull requests 해서 반영할수 있는 방식입니다. 
  
  
 ---
 
-## Github 명령어.
+## Github 명령어.ㅎ
 
 1. <br>
 
