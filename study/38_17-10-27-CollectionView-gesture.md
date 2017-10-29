@@ -186,13 +186,152 @@ func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexP
 ---
 
 
-## UICollectionViewFlowLayout
+## UICollectionViewFlowLayout <br>
+
 
 <center>
 
 ![screen](/study/video-gif/UICollectionViewFlowLayout-1.gif)
 
 </center>
+
+> 각 cell의 Layout 위치에 따라서 비율로 Scale 을 변화 시켜 주었습니다.
+
+
+#### - 만들어지는 과정
+
+
+```swift
+
+
+** UICollectionViewFlowLayout 을 상속받은 class 생성 
+
+class CoverFlowLayout : UICollectionViewFlowLayout {
+
+	// 아이템의 scale 값을 1~1.5 배 만큼 주기위해서 고정값 설정
+	// 아이템의 Alpha 값을 0~0.9999... 값의 범위까지 주기위해서, 고정값을 주었습니다.
+	let itemScale:CGFloat = 0.5
+	let itemAlpha:CGFloat = 0.5
+    
+    override func awakeFromNib() {
+    		
+    		//변화되는 값을, CollectionView의 Contents의 Witdh 값 + LineSpacing 값을 주고, 값 범위 안에 들어오면, CollectionView의 Contens의 Witdh, height 값을, Center 기준으로 Scale 을 서서히 1.5배율로 늘려줍니다.
+        self.minimumLineSpacing = 25.0
+        
+    }
+    
+    
+    
+    // layoutAtrributesforelements각각 들을 가져온다
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        
+        guard  let attributes = super.layoutAttributesForElements(in: rect) else {return nil}
+        
+        // 변경할 내용을 담아놓을 temp 같은 저장소?
+        var layoutAttribute:[UICollectionViewLayoutAttributes] = []
+        
+        // 현재 layout의Attributes 값을 가져오고 -> 그 값을 변경 시킨후, 새롭게 [UICollectionViewLayoutAttributes] 를 만들어서 반환 시켜 줍니다. 
+        
+        for item in attributes {
+            
+            changeLayoutAttribute(attribute: item)
+            layoutAttribute.append(item)
+        }
+        
+        return layoutAttribute
+    }
+    
+    func changeLayoutAttribute(attribute:UICollectionViewLayoutAttributes)
+    {
+        
+        // FlowLayout의 width 사이즈,
+        // 변경 가능한 최대거리
+        // ContentsView의 witdh 값, + 고정 Spacing 값 -> 아이템간의 거리를 정의 해놓은것 같음.
+        
+        //변경가능한 최대 거리(조정가능)
+        let maxDistance = self.itemSize.width + self.minimumLineSpacing
+        
+        //실제 거리과 최대거리중 작은거리를 선택!
+        let choiceDistance = min(distance(ofCenter: attribute.center.x), maxDistance)
+        
+        // 비율 계산
+        // maxDistance 와, choiceDistance의 값이 같아지면 0 반환
+        // 1을 반환하지는 않지만, 1의 근사치의 값으로 올라간다
+        // choiceDistance가 maxDistance의 근사치에 다가가기는 하지만, maxDistance보다 커지지는 않는다.
+        
+        let ratio = (maxDistance - choiceDistance) / maxDistance
+        
+        
+        
+        let scale = ratio * (1 - self.itemScale) + 1.0
+        let alpha = ratio * (1 - self.itemAlpha) + self.itemAlpha;
+        
+        
+        //attribute의 모습을 바꾸는 함수
+        
+        attribute.alpha = alpha;
+        attribute.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1);
+        
+        // z값의 범위는 0~9.999 까지 입니다. 
+        attribute.zIndex = NSInteger(alpha * 10.0)
+  
+    }
+    
+    
+    // offSet 값을 구합니다.
+    func distance(ofCenter centerx:CGFloat) -> CGFloat {
+        
+        guard let collectionView = self.collectionView else {
+            return 0
+        }
+        
+        // 현재 아이템의 offsetX + 센터
+        // 두값의 차의 최소값은 0이구나..
+        let offSet = collectionView.contentOffset.x + (collectionView.bounds.size.width/2)
+        return  fabs(offSet - centerx)
+    }
+    
+    
+    // layout의 값이 변할때 새롭게 변한 값을 사용하겠다는 method 입니다.
+    // 아래의 method를 사용하지 않으면, 변하는 값이 실시간으로 적용되지 않습니다. 
+    // Layout을 커스텀하게 만들때, 아래의 method를 모르면 로직을 올바르게 짜도 적용이 안되서 엄청난 삽질을 할수 있게 만드는.... 
+    
+    // cell 을 재사용해서 사용한다는게, cell이 재사용되고, 현재 View에 뿌려지는 데이터들도 변경된 값을 사용해야 하는데, 그 시점차이를 명확하게 인지 하고 있어야 할것 같습니다.
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
+    
+    
+    
+    // cell 의 값이 이동시마다 변하기 떄문에 paging을 사용할수 없게되었습니다. 그래서 paging 역활을 하는 method를 사용합니다. 스크롤 될때 마다 불리는데, cell의 center.x의 값에 가까워지게되면, offSet을 중앙으로 옮겨지게 만들어줍니다.
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        
+        guard let collectionView = self.collectionView  else { return proposedContentOffset }
+        
+        //현재 컬렉션 뷰의 [UICollectionViewLayoutAttributes] 가져오기
+        guard let attributeList =  self.layoutAttributesForElements(in: collectionView.bounds) else {return proposedContentOffset}
+        
+        
+        
+        //거리가 가장 가까운 순으로 정렬
+        let sortedAttributeList = attributeList.sorted {
+            (attribute1, attribute2) -> Bool in
+            distance(ofCenter: attribute1.center.x) < distance(ofCenter: attribute2.center.x)
+            
+        }
+        
+        //가장 가까은 아이템의 센터 위치
+        let xCenterOfMinimumAttributes = sortedAttributeList.first?.center.x
+    
+        let screenXCenter = collectionView.frame.size.width / 2
+        let targetContentOffset = CGPoint(x:xCenterOfMinimumAttributes! - screenXCenter,y: proposedContentOffset.y)
+        
+        return targetContentOffset
+    }
+
+}
+
+``` 
 
 
 
