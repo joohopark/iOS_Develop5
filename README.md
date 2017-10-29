@@ -99,7 +99,7 @@
 
 
 
-### *  **Part 6** 
+### *  **Part 7** 
 
 > 1. [작성중..Optional, AppLifeCycle, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review.md)
 > 
@@ -109,7 +109,18 @@
 > 
 > 4. [UICollectionView, TapBarController](/study/37_17-10-26-musicfile.md)
 > 
-> 5. [작성중..UICollectionView 응용하기, CoverFlow ](/study/38_17-10-27-CollectionView-gesture.md)
+> 5. [UICollectionView, UICollectionViewFlowLayout](/study/38_17-10-27-CollectionView-gesture.md)
+> 
+
+### *  **Part 8** 
+
+> 1. [작성중 10.30..]()
+> 
+> 
+
+### *  **Github 으로 협업하기** 
+> 1. [작성중..](/study/0_17-10-28-github-recture.md)
+> 
 
 
 

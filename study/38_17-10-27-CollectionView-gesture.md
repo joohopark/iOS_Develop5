@@ -2,7 +2,7 @@
 
 ---
 
-## CollectionView 가지고 놀기, UICollectionViewFlowLayout 사용하기
+## UICollectionView, UICollectionViewFlowLayout, Layouy Process 
 
 - 셀을 추가 & 삭제(다중선택 삭제) 가능하게 만들어보자.
 
@@ -347,6 +347,6 @@ class CoverFlowLayout : UICollectionViewFlowLayout {
 
 > Layout Process가 CollectionViewContentSize -> 변경 각 layoutAttributes 별로 변경이 하나씩 됩니다..
 
-
+---
 
 
