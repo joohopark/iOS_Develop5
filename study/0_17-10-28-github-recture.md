@@ -151,4 +151,4 @@ merge PR(pull requests)
 
 ## Refrence 
 
-#### [appkr.memo 님 blog](http://blog.appkr.kr/learn-n-think/comparing-workflows/)
+[appkr.memo 님 blog](http://blog.appkr.kr/learn-n-think/comparing-workflows/)
