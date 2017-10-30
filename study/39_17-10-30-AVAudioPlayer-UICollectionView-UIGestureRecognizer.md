@@ -375,9 +375,8 @@ class PlayerViewController: UIViewController , UIGestureRecognizerDelegate {
         textView?.addGestureRecognizer(textViewGesture)
         textViewGesture.numberOfTapsRequired = 2
         
-//        lyricsView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
         
-        // 애니메이션 사용 하는 방법은 이렇게 하는거구나... 오...!
+        에니메이션 적용 방법 
         UIView.animate(withDuration: 1) {
             
             self.textView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
