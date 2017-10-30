@@ -9,6 +9,7 @@ struct PlayListDataModel {
 
     var musicTitleArray: [String] = []
     var singerTitleArray: [String] = []
+    var lyricsArray: [String] = []
     
     var urlArray: [URL] = []
     
@@ -39,10 +40,14 @@ struct PlayListDataModel {
                 let asset = AVURLAsset(url: url)
                 // 이런 asset에 있는 녀석의 데이터가 메타 데이터임
                 
+                lyricsArray.append(asset.lyrics!)
+                
+                
                 let metaData:[AVMetadataItem] = asset.metadata
                 
                 
                 for item in metaData {
+                    
                     
                     
                     
@@ -63,6 +68,7 @@ struct PlayListDataModel {
                             let image = UIImage(data: data!)
                             
                             self.imgeArray.append(image!)
+                            
                             
                         default:
                             print("default")
