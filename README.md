@@ -114,11 +114,15 @@
 
 ### *  **Part 8** 
 
-> 1. [작성중 10.30..]()
+> 1. [AVAudioPlayer, UICollectionView, UIGestureRecognizer](/study/39_17-10-30-AVAudioPlayer-UICollectionView-UIGestureRecognizer.md)
 > 
-> 
+> 2. [작성중 17-10-31...]()
+
+
+
 
 ### *  **Github 으로 협업하기** 
+
 > 1. [Git 을 이용한 협업 WorkFlow](/study/0_17-10-28-github-recture.md)
 > 
 
