@@ -116,7 +116,7 @@
 
 > 1. [AVAudioPlayer, UICollectionView, UIGestureRecognizer](/study/39_17-10-30-AVAudioPlayer-UICollectionView-UIGestureRecognizer.md)
 > 
-> 2. [작성중 17-10-31...]()
+> 2. [ARC](/study/40_17-10-31-ARC.md)
 
 
 

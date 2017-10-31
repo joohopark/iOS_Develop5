@@ -22,11 +22,7 @@ class PlayerViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MusicCell
-        //cell.imageView.image = imgeArray[indexPath]
-       
-        //cell.imageView.image = imgeArray[indexPath]
-        
-        
+
         cell.imageView.image = imgeArray[indexPath.row]
         
         musicTitle.text = musicTitleArray[indexPath.row]
@@ -42,6 +38,7 @@ class PlayerViewController: UIViewController, UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.bounds.size.width*0.6)
         
+        
         return CGSize(width: width, height: collectionView.bounds.size.width)
     }
     
@@ -54,13 +51,7 @@ class PlayerViewController: UIViewController, UICollectionViewDelegateFlowLayout
         return UIEdgeInsets(top: collectionView.frame.size.height*0.5, left: sideInset, bottom: 0, right: sideInset)
     }
     
-    // 라인 스페이싱,
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//
-//        return collectionView.frame.size.width * 0.5
-//
-//    }
-
+    
     
     
     override func viewDidLoad() {
