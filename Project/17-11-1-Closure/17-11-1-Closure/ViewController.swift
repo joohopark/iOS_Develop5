@@ -1,5 +1,3 @@
-
-
 import UIKit
 
 class ViewController: UIViewController, CustomViewDelegate {
@@ -13,7 +11,7 @@ class ViewController: UIViewController, CustomViewDelegate {
     }
     
     
-
+    
     @IBOutlet weak var otherView: CustomView!
     
     
@@ -32,10 +30,7 @@ class ViewController: UIViewController, CustomViewDelegate {
             self?.otherView.customViewLB?.text = string
         }
     }
-
-
-
+    
+    
+    
 }
-
-
-
