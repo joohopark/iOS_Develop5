@@ -2,7 +2,7 @@
 
 ---
 
-## Delegate, Closure, Map, Filter, Reduce...
+## Delegate, Closure, Map, Filter, Reduce
 
 ---
 

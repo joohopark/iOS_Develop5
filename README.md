@@ -117,7 +117,7 @@
 > 
 > 2. [ARC](/study/40_17-10-31-ARC.md)
 > 
-> 3. [작성중..](/study/41) 
+> 3. [Delegate, Closure, Map, Filter, Reduce](/study/41_17-11-1-Closure-Delegate.md) 
 
 
 
