@@ -20,15 +20,19 @@ class ViewController: UIViewController, CustomViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         otherView.delegate = self
         
         
+        // weak 는 무조건 옵셔널 변수 밖에 안됨...
+        //
+        otherView.closure = {[weak self] (string) -> Void in
+            
+            
+            self?.otherView.customViewLB?.text = string
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
