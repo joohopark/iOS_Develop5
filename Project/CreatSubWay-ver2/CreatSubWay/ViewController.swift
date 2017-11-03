@@ -213,6 +213,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     var minTime = Int.max // 시작역과 가장 가까운 역의 걸리는 시간 저장
                     for calcTableItem in calcTable { //모든 역 비교
                         
+                        print(calcTableItem, calcTable)
+                        
+                        
+                        
                         // 비용이 한번 정해지면 여전히 변하지 않는게 아니라,
                         // 어차피 for- 문을 다돌아서 calcTable 의 값을 다 뜯어서 가져오는데, 다음값을, 선택할때, 어차피 연산이 되지 않은 값을 찾아서 다음값으로 지정해주어서 연산함.
                         if !calcTableItem.isVisit && //방문한적이 없으면서
@@ -289,7 +293,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         
         
-        // 더블탭 간단 하게 구현
+        // 더블탭 간단 하게 구현 b
         if scrollView.zoomScale == CGFloat(1) {
             
             
