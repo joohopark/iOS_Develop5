@@ -128,7 +128,7 @@
 
 ### *  **AutolayOut** 
 
-> 1. [작성중..AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution,](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
+> 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
 
 ### *  **Github 으로 협업하기** 
 
