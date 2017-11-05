@@ -1,87 +1,94 @@
 # 17-11-5
 ---
 
-## AutoLay Out 강의 정리 내용 - ## basic1_Start
-
-View의 특성 
- - View와 ViewController 가 스토리보드에는 같이 잡혀 있음.
-
-AutoLayOut 
-
-왼,오른,위,아래 간의 간격의 위치를 따라서 간격을 잡음 
-Constraints
-align(정렬) : 정렬은 하나만으로는 정렬이 안됨(그래서 회색으로 선택할수 없음) 
-
-Reset to Suggested Constraints -> Xcode 자체에서 제안하는 AutoLayout 값을 설정하는데, 거의 사용하지 않는다고 생각하면됨.
-
-autoLayOut 기본적으로 마진 값을 주지 않고 시작?
-
----
-
-## basic2_Constraints
-
-기본적으로 autoLayOut 을 적용 시키는 방법 
-
-Leading(왼쪽), trailing(오른쪽)
-
-마우스로 움직여도 변경이 되는데, 문제점이 생김 -> 이럴떄는 워닝(에러임)-> 지금 보이는 View랑은 다르게 나온다는 의미임.
-
-`editer` -> `update Frames`: 내가 변경한값의 이전으로 지정하고 싶을때 `option +Command + =`
-`update constraints` : 내가 변경한 Constraints의 값을 변경 시킨다는의미 
-
----
-
-## basic3_Constraints
-
-View가 여러개일때, 여러개의 뷰를 동시에 작업할때, 하나만 표시됨. 
-
-레이블은, 기본 크기가 잡혀있음(텍스트에 따라서) 
-일반 View는 기본적은 크기가 잡혀 있지 않기 때문에, 크기를 지정해주라고 에러가 생김
-
-- 아이폰 사이즈에 따라서, 고정 사이즈에 따라서, 상대적으로 변함..
-
-빨간뷰와, 녹색뷰가 같은 크기 여야 할경우.
-
----
-
-## basic4 _Constraints
-- 오른쪽 마우스를 누르면, 타겟팅을 지정 해줄수 있음.
-
-- View에 대한 값들을 같이 움직이게 하고싶으면, 하나의 기준뷰를 기준으로, 각각에 대한 제약들을 수정해가면서, 원하는 autoLayOut 을 적용시켜 줄수 있다.
+## AutolayOut, Constraints, Constraints Multiplier
 
 
 ---
 
-## basic5_Constraints_Multiplier
+## Constraints
 
-- 비율의 변화
+#### - Constraints <br>
 
-first Item 은 적용될 대상 View, SecondView는 현재 자신의 View
+객체에 제약조건을 주어서, `device` 의 크기가 변화해도, 정해놓은 제약조건을 값, 비율에 따라서 layout이 유동적으로 변하게 만들어 줄수 있다.
 
-multiplier 를 적용 시킬때 1:2, 1:3... 등등 정수가 아닌 값으로 조건을 줄수 있음.
+#### - align(정렬) <br> 
 
-오토레이아웃을 줄때, 적용될 대상과, 현재의 대상에 차이에 따라서 비율을 다시 주어야함..
+정렬은 단일 객체가 선택 되면, X,Y 의 Center 값만 설정 할수 있고, 여러개의 객체를 선택 하면 둘간의 관계에 따라서 정렬을 선택 해줄수 있다.
+기본적으로 아이폰의 device 에서 왼쪽에서 오른쪽으로 갈수록 x의 값이 커지게 되고, y값은 위에서 아래로 갈수록 값이 커지게 됩니다.
+
+```swift
+item1.atrribute = 비율 * item2.atrribute + 간격 
+```
+
+위의 공식을 통해서, 오토레이웃은 감으로 하는게 아니라, 공식으로 할수 있다는것을 생각하면 설계하도록 하자.
 
 ---
 
-## basic6_Constraints_Multiplier
+## Constraints 
 
-- 정렬 Align
-	- 하나만 선택했을때는 ,가로 정렬, 새로정렬을 할수 있음.	- 비율 정렬시, `0`은 작성할수 없음. -> 0과 비슷한 값 0.001.. 값을 입력해주면, piexle 의 오차가 조금 있을수 있지만, 거의 사용하지 않음. 
+| update Frame | Reset to Seggest Constraints & Update Constraints Constants |
+| :---: | :---: |
+| ![screen](/study/image/constraints.jpg) | ![screen](/study/image/constraints-1.jpg) |
+
+#### - update Frame  <br>
+
+오토 레이아웃을 설정하고, 내가 마우스로 크기나 위치를 변경하거나, 어떤 값을 주었을때 변경된 값으로 에러 메세지가 나오는데, 그 상태에서 `update Frame` 을 하게 되면, 변하기 이전의 frame 상태로 돌아간다. 단축키는 `option + command + =`
+
+#### -Reset to Seggest Constraints <br>
+
+system 적으로 AutoLayOut을 제안해준다.
+
+#### - update constraints <br>
+
+AutolayOut 을 적용 시키고, 마우스로 크기나 위치를 변경하고, 어떤 값을 주고난 이후, update Constraints 를 하게되면, 변해있는 상태의값을 Constraints 값으로 변경 한다는 의미이다.
+
+--- 
+
+## Constraints
+
+#### - Label <br>
+
+레이블은 기본크기가 텍스트에 따라서 잡혀 있다. 텍스트 사이즈에 따라서 Label 의 오토레이아웃을 지정할수 있다. <br>
+
+*tip > 오른쪽 마우스를 누르고 객체를 선택하면 controll 누르고 선택하는것과 같은 효과를 볼수 있습니다.*
+
 
 ---
 
-## basic7_Constraints_Multiplier
+## Constraints Multiplier
 
-- View의 반쯤 걸쳐져 있는
-	- autoLayout 을 하나만 적용되면, 오류가 나옴.
+| * | Red to grayView | Red to blue |
+| :---: | :---: | :---: |
+| ![screen](/study/image/constraints-2.jpg) | ![screen](/study/image/constraints-3.jpg) | ![screen](/study/image/constraints-4.jpg) |
 
-- 정렬을 하기 전에, 크기를 지정해주고함. 이유는 원래의 이미지가 엄청 큰 것 이기때문에, 크기를 지정하고 -> 정렬을 하면, 지정한 크기에 정렬이됨.
+RedView를 기준으로, grayView애 1:2 비율이 적용되고, BlueView에 1:3 비율이 적용되었습니다. 따라서 RedView는 상대적으로 grayView는 redView의 2배 width를 가지게 되고, BlueView는 redView의 3배의 width를 가지게 됩니다.
 
-- 이미지를 부모뷰의 끝에 걸쳐지게 하고싶은데, 정렬의 
-- 부모뷰를 넘어가는 부분은 옵션에 따라서 짤리게됨.(clip to bounds)
-- 문제가 생기는 이유는, View에 라운딩 처리를 하기 위해서는 clip to bounds 를 사용해야함. -> 라운딩을 포기하면, View를 넘어가게 하는 정렬은 소용없는 요소가됨.
-- `부모View를 넘어가는 정렬은 일반적으로 사용하지 않음.`
+```swift
+item1.atrribute = 비율 * item2.atrribute + 간격 
+```
+
+> 위의 공식을 생각하면서 적용 해봅니다. 
+
+#### - Align(정렬)
+
+![screen](/study/image/constraints-5.jpg) <br>
+
+- 하나만 선택했을때는 ,가로 정렬, 새로정렬을 할수 있음. <br>
+
+- 비율 정렬시, `0`은 작성할수 없음. -> 0과 비슷한 값 0.001.. 값을 입력해주면, piexle 의 오차가 조금 있을수 있지만, 거의 사용하지 않음. 
+
+---
+
+## Constraints Multiplier
+| * | 구름 View의 Constraints |
+| :--: | :---: |
+| ![screen](/study/image/constraints-6.jpg) | ![screen](/study/image/constraints-7.jpg) |
+
+위같이, View에 상단에 반쯤 걸쳐 있는 View를 만들수 있는 상황이 있는데, 저렇게 표현하기 위한 방법은 여러가지가 있다. 구름 이미지가 GrayView의 자식 View로 들어가서 `AutolayOut` 을 적용해주어서 표현해줄수 있지만, 이런 경우는 좋은 경우가 아니다. 
+
+이유는, 부모뷰의 범위를 넘어가게 되면, 일단 버튼은 눌리지도 않고, `Clip to bounds`를 부모뷰에서 선택하게 되면, 부모뷰를 넘어간 영역이 잘리게 된다. 그래서 좋은 autoLayOut이 아니다. 동등한 계층 구조에서, align 을 사용해서 정렬을 해주면 올바르게 적용 할수 있다.
+
 
 - 동등한 레벨로 정렬
 -  Edges 정렬 
@@ -240,5 +247,9 @@ margin 이라고 하는것은, 최상단뷰를 기준으로, 맨 왼쪽 오른�
 magin이 애매한 이유는, 아이폰 크기에 따라서, 회전되어있는 상황에 따라서 값이 다르다.. 사용하기 조금 애매함...
 
 `아이템` 끼리는 마진이 지정이 되지 않음(레이블 9개 넣고 마진 확인하는것) 레이블의 가운데 부분들은 마진이 지정이 안됨..
+
+---
+
+
 
 
