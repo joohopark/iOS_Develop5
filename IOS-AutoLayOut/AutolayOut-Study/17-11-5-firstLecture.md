@@ -1,7 +1,20 @@
 # 17-11-5
 ---
 
-## AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution,
+## AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution, align, Rotate, ScrollView AutoLayOut, margin
+
+---
+
+## 목차
+
+1. **Constraints** <br>
+2. **Constraints Multiplier** <br>
+3. **Hugging-Priority & Content Compression resistance Priority** <br>
+4. **Image resolution** <br>
+5. **align** <br>
+6. **Rotate** <br>
+7. **ScrollView AutoLayOut** <br>
+8. **margin** <br>
 
 ---
 
@@ -51,6 +64,7 @@ AutolayOut 을 적용 시키고, 마우스로 크기나 위치를 변경하고, 
 레이블은 기본크기가 텍스트에 따라서 잡혀 있다. 텍스트 사이즈에 따라서 Label 의 오토레이아웃을 지정할수 있다. <br>
 
 *tip > 오른쪽 마우스를 누르고 객체를 선택하면 controll 누르고 선택하는것과 같은 효과를 볼수 있습니다.*
+*tip > 옵션키를 누르고, 오브젝트를 누르게되면 오브젝트에 적용 되어 있는 Constraints 값을 볼수 있습니다.*
 
 
 ---
@@ -127,100 +141,84 @@ item1.atrribute = 비율 * item2.atrribute + 간격
 
 ## Image resolution
 
-- button에 이미지가 추가 됬을경우, 오른쪽이나, 왼쪽에 추가 되었을 경우.. 버튼 타이틀은 오른쪽으로 밀려서 정렬이됨...?
+Image 는 기본적인 사이즈를 가지고 있습니다. ImageView에 imageView를 추가하고, 본래 이미지의 raw Size 로 돌려리면 `Command + =` 키룰 눌러주면 됩니다. 
+이미지의 @2x, @3x 가 없으면, 이미지의 원래 픽셀 사이즈로 보여지게 됩니다, @2x 는 기본 아이폰 시리즈에서 사용이되는 사이즈이고, @3x는 아이폰 + 사이즈에서 사용이 되는 이미지입니다. 시스템적으로 자동으로 +버전, 기본 아이폰 버전 사용시 설정할수 있습니다. 
 
-- imageView 의 특성에 대해서 설명하기 위해서, 이미지별로 다른 해상도..
-300 짜리 픽셀.. 
-- 디바이스에 이미지, 픽셀에 대해서 확실하게 알고 있어야한다...?
-
-`이미지뷰에 command + =`하게되면, 이미지의 원래 사이즈로 변환시켜주게됨..!
-
-@2x, @3x 가 없으면, 이미지의 원래 픽셀 사이즈로 나오게함.
-@2x 들은 아이폰 시리즈에서 사용이됨. 
-@3x 는 아이폰 플러스 같은 디바이스에서 사용되고 
 
 ---
 
-## basic11_align 
+## align 
 
-버튼의 타이틀 정렬을 주어야함.
+| * | Size inspector | atrribute inspector |
+| :--: | :---: | :--: |
+| ![screen](/study/image/constraints-11.jpg) | ![screen](/study/image/constraints-12.jpg) | ![screen](/study/image/constraints-13.jpg) |
 
-inset 이라는 간격을 줄수 있는 
-기본적으로 버튼은 타이틀과, 이미지로 구성을 할수 있음. 
+버튼 타이틀의 정렬을 주어야 하는경우, image를 버튼왼쪽, 오른쪽에 놓고, title의 인셋을 조정할수 있습니다. `Size inspector` 부분에서, button의 `inset` 설정할수 있는데, `atrribute inspector`에 정렬과 논리적으로 맞아야 적용이 됩니다. 예를 들어서, `atrribute inspector`에서는, 왼쪽 정렬을 해놓고, `inset` 은 오른쪽 값을 주게 되면, 인셋값을 주나 마나인 경우가 됩니다..!
 
-`Content Insets` 은 타이틀과 이미지 인셋을 같이 주겠다는 이야기.
-
-준 값 만큼, 가운데 정렬..?
-
----
-
-## basic12_align 
-
-정렬 부분에서 x,y 의 값에 따라서 정수값, 음수값을 지정해줄수 있는데, 이것은 autolayOut 의 공식에 따라서 atrribute를 주는 것을 생각하자.
-
-- 이미지를 줄여서 살아서 사용하라고 하는 경우가 많이 있음.
-- 이미지를 내가 알아서 줄여서 사용해야함..
-
-여러가지 이미지를 내가 원하는 이미지의 autuLayout 으로 사용하려면, 내가 사이즈를 애초에 지정해놓고 사용하면 됨..! 아항..?
+`Content Insets`은 `title insets` 와 `image insets` 둘다 적용 시킬수 있습니다. 기본적으로 둘다 적용 시키는 `Content Insets`를 많이 사용합니다.
 
 ---
 
-## basic13_Rotate
+## Rotate
 
-- 화면의 회전에 따라 변화율 
+| Portrait | LandScape |
+| :--: | :---: |
+| ![screen](/study/image/constraints-14.jpg) | ![screen](/study/image/constraints-15.jpg) |
 
-기본 postirate
+| Portrait | 
+| :--: | 
+| ![screen](/study/image/constraints-16.jpg) | 
+| ![screen](/study/image/constraints-17.jpg) |
 
-`Vary For traits` -> 상황에 따라서 달라진다라는 버튼..?
+화면의 상태 Portrait(기본), LandScape(가로모드) 에 따라서 적용되는 AutoLayOut을 설정할수 있습니다.
 
-어떤 상황이냐에 따라서 설정을 해주어야 함
-Width -> 디바이스 제일큰 `Landscape`만 빠진상태로 적용된 상태임. 
-Height : -> 모든 landscape 믄 적용되지않고, fortratite만적용됨..?
+1. `Vary for Traits` 을 누릅니다. `height`, `Witdh` 에 따라서 적용되는 모드를 찾아볼수 있습니다.
 
-파란 상태일때, 적용을 하면, 해당 디바이스에 적용이된다고 생각하면됨.
+2. `height` 를 선택하면, LandScape 에 적용되는 모델들을 확인할수 있습니다.
 
-각각 회전 되었을때, 어떻게 적용할지에 대해서 적용 놓는 방법을 작성해서 정리 해놓자..! 
+3. 변경될 AutoLayOut 을 지정합니다. Constratins 값들을 변경한 후 `Done Varying` 을 누르면, 해당 모델에 LandScape 모드, 혹은 Portrait 모드에서 AutoLayout이 적용 되는것을 확인할수 있습니다. 
 
-회전 되었을때마다 각각의 view들의 autoLayOut을 모두 다시 잡아줘야하는구나..하핳..
 
----
-
-## basic14_ScrollView
-
-contents가 많을 경우 autoLayout 이 적용되는 경우를 보는것..
-
-ScrollView 안에 View는 사이즈를 지정해주어야함, 그래야지 에러가 나지않음.
-
-ScrollView의 조정하려고 하는 ContentsView의 간격을 늘어나거나 줄어들게 하기 위해서 priotiry 값을 낮춰준다.
-
-핵심은 ContentsView의 bottom 값의 priority 를 낮추어 주어서 ContentsView의 값을 늘어나고, 줄어나고 변화는것을 유동적으로 확인할수 있음.
 
 ---
 
-## basic15_margin
+## ScrollView AutoLayOut 적용 
 
-autoLayout 에서 margin 은 조금 애매한 기능인데..
+ScrollView의 AutoLayOut을 적용하는 경우는, ContentsView의 크기를 내부의 Contents의 개수, 혹은 크기에 따라서 유동적으로 적용하고 싶을때 사용할수 있습니다.
 
-위의 system 적인 값으로 statusBar 
+*Storyboard 로 ScrollView를 정의하는 경우에 ScrollView -> View를 올리게 되면, ContentsView로 인식을 하게됩니다. 그래서 크기값을 지정해주지 않으면, LayOut 오류라는 메세지를 출력합니다. *
 
-margin 을 
+| ScrollView | Constraints | bottom Constraints |
+| :--: | :---: | :--: |
+| ![screen](/study/image/constraints-18.jpg) | ![screen](/study/image/constraints-19.jpg) | ![screen](/study/image/constraints-20.jpg) |
 
-`option 누르고 객체 누르면 autoLayOut 값을 볼수 있음.`
-
-가장 상위뷰를 기준으로 margin이 왼쪽, 오른쪽만 잡힘.
-
-margin 이라고 하는것은, 최상단뷰를 기준으로, 맨 왼쪽 오른쪽만 간격이 잡히고, 그 아래쪽에 있는 object(왼쪽, 오른쪽, 위, 아래) 들은 8이라고 하는 숫자들만 간격이 잡힘
-
-작은 아이폰의 margin 은 최상단 뷰를 기준으로 제일큰 아이폰은 margin이 20 잡히고, 작은 아이폰들은 margin이 16이 잡힘. 
-
-`landscape` 되었을때, 작은 아이폰일때 margin이 20이되고, 
-큰 아이폰 일때 `landscape` 가 16이됨..?
-
-magin이 애매한 이유는, 아이폰 크기에 따라서, 회전되어있는 상황에 따라서 값이 다르다.. 사용하기 조금 애매함...
-
-`아이템` 끼리는 마진이 지정이 되지 않음(레이블 9개 넣고 마진 확인하는것) 레이블의 가운데 부분들은 마진이 지정이 안됨..
+스크롤뷰를 정의하고 내부에 TextFiled 를 올려주었습니다. 이때 ContentsView의 bottom 부분의 Priority 값을 700 정도로 낮추어 줍니다. 그렇게 되면, ContentsView의 bottom 부분이 내부의 Contents 의 사이즈에 따라서 유동적으로 변하게 됩니다. 이런식으로 ContentsView의 Scroll을 유동적으로 정의해줄수 있게 됩니다.
 
 ---
+
+## margin
+
+AutoLayOut 에서 `margin` 은 조금 애매한 기능입니다. <br>
+
+1. 가장 상위뷰를 기준으로 `margin` 을 셋팅하면 왼쪽과, 오른쪽에만 margin 이 셋팅이 됩니다.
+2. 그 아래의 계층에 있는 View는 왼쪽, 오른쪽, 위, 아래 모두 8 -> 그 다음계층에서 margin 을 적용하게 되면 16.. 씩 적용이 됩니다(+ 모델의 경우도 동일하게 적용이 됩니다.)
+3. `landscape` 일때도, 8, 16... 씩 margin 이 적용 됩니다. 
+4. 아이템과 아이템 사이는 마진이 적용이 되지 않습니다.(모든 아이템에 마진을 적용해도, 시스템상에서 마진 적용을 무시합니다)
+
+![screen](/study/image/constraints-21.jpg)
+
+---
+
+## 여담 
+
+AutoLayout을 다시 공부하니까, storyboard 가 생각보다 강력하다는것을 알게 되었습니다. code로만 작업할때는 추상적으로 생각했던 내용들을 Storyboard로 명확하게 작업하게 되니까, 시간도 절약되게 되고, 눈으로 보니까 조금더 명확하게 작업할수 있는것 같습니다.
+
+---
+
+## Reference 
+
+[Autolayout guide](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/)<br>
+[IOS Autolayout 강의](https://www.inflearn.com/course/autolayout-ui_ios/)
 
 
 
