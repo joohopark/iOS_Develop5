@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nI6-P7-xvP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SDSwagger.otf">
+            <string>Swagger</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="9gd-9e-6kI">
+            <objects>
+                <viewController storyboardIdentifier="selection" id="nI6-P7-xvP" customClass="ViewController" customModule="Hackaton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hE5-Y6-81K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCp-9b-KQi" customClass="CustomButton" customModule="Hackaton" customModuleProvider="target">
+                                <rect key="frame" x="31" y="203" width="150" height="133"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.5490196078431373" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="button1:" destination="HSe-oR-jGz" eventType="touchUpInside" id="5hT-p8-PXo"/>
+                                    <action selector="button1Action:" destination="nI6-P7-xvP" eventType="touchUpInside" id="Ww1-df-Yeb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co0-bq-dLU">
+                                <rect key="frame" x="31" y="203" width="150" height="133"/>
+                                <fontDescription key="fontDescription" name="Swagger" family="Swagger" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5l-QV-twe" customClass="CustomButton" customModule="Hackaton" customModuleProvider="target">
+                                <rect key="frame" x="194" y="203" width="150" height="133"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.5490196078431373" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="button2Action:" destination="nI6-P7-xvP" eventType="touchUpInside" id="FhI-en-9u7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-5M-jAd">
+                                <rect key="frame" x="194" y="203" width="150" height="133"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Swagger" family="Swagger" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voq-iJ-nW3" customClass="CustomButton" customModule="Hackaton" customModuleProvider="target">
+                                <rect key="frame" x="31" y="350.5" width="150" height="133.5"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.5490196078431373" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="button3Action:" destination="nI6-P7-xvP" eventType="touchUpInside" id="A9i-cc-1iJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdK-qM-Zy9">
+                                <rect key="frame" x="31" y="351.5" width="150" height="133"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Swagger" family="Swagger" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5w-xi-uBS" customClass="CustomButton" customModule="Hackaton" customModuleProvider="target">
+                                <rect key="frame" x="194" y="351" width="150" height="133"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.5490196078431373" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="button4Action:" destination="nI6-P7-xvP" eventType="touchUpInside" id="WOf-tf-AX9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNG-23-XXg">
+                                <rect key="frame" x="194" y="351" width="150" height="133"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Swagger" family="Swagger" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tce-ez-wPo" customClass="CustomButton" customModule="Hackaton" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="537" width="100" height="80"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.44705882352941173" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="f57-FX-Gl9"/>
+                                    <constraint firstAttribute="width" secondItem="Tce-ez-wPo" secondAttribute="height" multiplier="5:4" id="gCv-zG-pRS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Swagger" family="Swagger" pointSize="25"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextAction:" destination="nI6-P7-xvP" eventType="touchUpInside" id="eph-Xu-sHp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80R-Ga-dx8">
+                                <rect key="frame" x="112.5" y="120" width="150" height="45"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.89411764705882346" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="80R-Ga-dx8" secondAttribute="height" multiplier="5:1.5" id="AGG-f7-5h4"/>
+                                    <constraint firstAttribute="width" constant="150" id="ttc-SI-6mf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Swagger" family="Swagger" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.65490196078431373" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="co0-bq-dLU" firstAttribute="width" secondItem="ZCp-9b-KQi" secondAttribute="width" id="0Lr-yu-gz9"/>
+                            <constraint firstItem="Kdh-5M-jAd" firstAttribute="height" secondItem="P5l-QV-twe" secondAttribute="height" id="2aP-uy-kfx"/>
+                            <constraint firstItem="Kdh-5M-jAd" firstAttribute="centerX" secondItem="P5l-QV-twe" secondAttribute="centerX" id="2vt-pF-Qhe"/>
+                            <constraint firstItem="P5l-QV-twe" firstAttribute="width" secondItem="hE5-Y6-81K" secondAttribute="width" multiplier="0.4" id="3S9-dP-QzU"/>
+                            <constraint firstItem="L5w-xi-uBS" firstAttribute="centerY" secondItem="IE5-at-CRC" secondAttribute="centerY" multiplier="1.215" id="3av-pT-5U8"/>
+                            <constraint firstItem="80R-Ga-dx8" firstAttribute="centerX" secondItem="IE5-at-CRC" secondAttribute="centerX" id="5nN-fj-t5t"/>
+                            <constraint firstItem="gNG-23-XXg" firstAttribute="width" secondItem="L5w-xi-uBS" secondAttribute="width" id="8Yo-mu-rG5"/>
+                            <constraint firstItem="ZCp-9b-KQi" firstAttribute="centerX" secondItem="IE5-at-CRC" secondAttribute="centerX" multiplier="0.565" id="98a-7c-VpO"/>
+                            <constraint firstItem="GdK-qM-Zy9" firstAttribute="height" secondItem="voq-iJ-nW3" secondAttribute="height" id="Cd8-CT-ydf"/>
+                            <constraint firstItem="IE5-at-CRC" firstAttribute="bottom" secondItem="Tce-ez-wPo" secondAttribute="bottom" constant="50" id="Duv-Rg-LGW"/>
+                            <constraint firstItem="80R-Ga-dx8" firstAttribute="top" secondItem="IE5-at-CRC" secondAttribute="top" constant="100" id="ECA-wz-eG5"/>
+                            <constraint firstItem="ZCp-9b-KQi" firstAttribute="height" secondItem="hE5-Y6-81K" secondAttribute="height" multiplier="0.2" id="GXG-xG-qTe"/>
+                            <constraint firstItem="co0-bq-dLU" firstAttribute="height" secondItem="ZCp-9b-KQi" secondAttribute="height" id="Ipc-Jy-VtF"/>
+                            <constraint firstItem="Kdh-5M-jAd" firstAttribute="width" secondItem="P5l-QV-twe" secondAttribute="width" id="JRu-w6-cHb"/>
+                            <constraint firstItem="co0-bq-dLU" firstAttribute="centerX" secondItem="ZCp-9b-KQi" secondAttribute="centerX" id="LPO-iT-nkf"/>
+                            <constraint firstItem="L5w-xi-uBS" firstAttribute="height" secondItem="hE5-Y6-81K" secondAttribute="height" multiplier="0.2" id="Mgs-d8-UuO"/>
+                            <constraint firstItem="gNG-23-XXg" firstAttribute="height" secondItem="L5w-xi-uBS" secondAttribute="height" id="Psc-aL-7YZ"/>
+                            <constraint firstItem="voq-iJ-nW3" firstAttribute="height" secondItem="hE5-Y6-81K" secondAttribute="height" multiplier="0.2" id="Qox-nc-jiK"/>
+                            <constraint firstItem="P5l-QV-twe" firstAttribute="centerX" secondItem="IE5-at-CRC" secondAttribute="centerX" multiplier="1.435" id="TID-TE-cbz"/>
+                            <constraint firstItem="GdK-qM-Zy9" firstAttribute="width" secondItem="voq-iJ-nW3" secondAttribute="width" id="TXz-5L-NQO"/>
+                            <constraint firstItem="voq-iJ-nW3" firstAttribute="width" secondItem="hE5-Y6-81K" secondAttribute="width" multiplier="0.4" id="TtE-Gd-dF0"/>
+                            <constraint firstItem="voq-iJ-nW3" firstAttribute="centerX" secondItem="IE5-at-CRC" secondAttribute="centerX" multiplier="0.565" id="aKN-Ru-w33"/>
+                            <constraint firstItem="L5w-xi-uBS" firstAttribute="centerX" secondItem="IE5-at-CRC" secondAttribute="centerX" multiplier="1.435" id="bk6-dt-Y3i"/>
+                            <constraint firstItem="co0-bq-dLU" firstAttribute="centerY" secondItem="ZCp-9b-KQi" secondAttribute="centerY" id="cLe-gk-4un"/>
+                            <constraint firstItem="gNG-23-XXg" firstAttribute="centerX" secondItem="L5w-xi-uBS" secondAttribute="centerX" id="da1-cQ-Cb0"/>
+                            <constraint firstItem="gNG-23-XXg" firstAttribute="centerY" secondItem="L5w-xi-uBS" secondAttribute="centerY" id="dnD-Rm-cBh"/>
+                            <constraint firstItem="GdK-qM-Zy9" firstAttribute="centerY" secondItem="voq-iJ-nW3" secondAttribute="centerY" id="eNJ-pk-ng8"/>
+                            <constraint firstItem="L5w-xi-uBS" firstAttribute="width" secondItem="hE5-Y6-81K" secondAttribute="width" multiplier="0.4" id="hQa-nZ-X5V"/>
+                            <constraint firstItem="GdK-qM-Zy9" firstAttribute="centerX" secondItem="voq-iJ-nW3" secondAttribute="centerX" id="jzC-dU-Cp8"/>
+                            <constraint firstItem="voq-iJ-nW3" firstAttribute="centerY" secondItem="IE5-at-CRC" secondAttribute="centerY" multiplier="1.215" id="mxI-e8-d4U"/>
+                            <constraint firstItem="ZCp-9b-KQi" firstAttribute="centerY" secondItem="IE5-at-CRC" secondAttribute="centerY" multiplier="0.785" id="n9J-vo-9Ki"/>
+                            <constraint firstItem="Tce-ez-wPo" firstAttribute="centerX" secondItem="IE5-at-CRC" secondAttribute="centerX" id="ooJ-Gv-KoD"/>
+                            <constraint firstItem="Kdh-5M-jAd" firstAttribute="centerY" secondItem="P5l-QV-twe" secondAttribute="centerY" id="tQM-MC-wa2"/>
+                            <constraint firstItem="P5l-QV-twe" firstAttribute="centerY" secondItem="IE5-at-CRC" secondAttribute="centerY" multiplier="0.785" id="tot-ZX-Qab"/>
+                            <constraint firstItem="ZCp-9b-KQi" firstAttribute="width" secondItem="hE5-Y6-81K" secondAttribute="width" multiplier="0.4" id="uJx-cA-aR6"/>
+                            <constraint firstItem="P5l-QV-twe" firstAttribute="height" secondItem="hE5-Y6-81K" secondAttribute="height" multiplier="0.2" id="um2-4H-LXQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IE5-at-CRC"/>
+                    </view>
+                    <connections>
+                        <outlet property="button1" destination="ZCp-9b-KQi" id="coB-n9-UVs"/>
+                        <outlet property="button2" destination="P5l-QV-twe" id="x5E-WR-13w"/>
+                        <outlet property="button3" destination="voq-iJ-nW3" id="ljd-rl-b6r"/>
+                        <outlet property="button4" destination="L5w-xi-uBS" id="duJ-ln-1gg"/>
+                        <outlet property="buttonNext" destination="Tce-ez-wPo" id="Cx1-E9-O6j"/>
+                        <outlet property="label1" destination="co0-bq-dLU" id="XJy-bm-bYu"/>
+                        <outlet property="label2" destination="Kdh-5M-jAd" id="lN6-89-24S"/>
+                        <outlet property="label3" destination="GdK-qM-Zy9" id="H6a-E8-DAj"/>
+                        <outlet property="label4" destination="gNG-23-XXg" id="380-4b-czS"/>
+                        <outlet property="labelCurrent" destination="80R-Ga-dx8" id="mL2-cq-hH8"/>
+                        <segue destination="BZO-bo-1Qi" kind="show" identifier="result" id="Fnf-93-yJb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVa-go-ym8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="HSe-oR-jGz" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1173.5999999999999" y="575.26236881559225"/>
+        </scene>
+        <!--Result-->
+        <scene sceneID="xoe-Dk-cQ8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Result" id="BZO-bo-1Qi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Esy-yq-f6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921" y="575"/>
+        </scene>
+    </scenes>
+</document>

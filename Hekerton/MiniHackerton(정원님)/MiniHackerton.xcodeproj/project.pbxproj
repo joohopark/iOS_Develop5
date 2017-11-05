@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72CE25589AA1D0462F346163 /* Pods_MiniHackerton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9167B6F4B119845F92D14F /* Pods_MiniHackerton.framework */; };
+		E328BECB1FAAED96004E0E07 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E328BECD1FAAED96004E0E07 /* Realm.framework */; };
+		E328BECC1FAAED96004E0E07 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E328BECE1FAAED96004E0E07 /* RealmSwift.framework */; };
+		E328BED01FAAF125004E0E07 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E328BECF1FAAF125004E0E07 /* History.storyboard */; };
+		E328BED21FAAF1CE004E0E07 /* SegueAnimateFade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328BED11FAAF1CE004E0E07 /* SegueAnimateFade.swift */; };
+		E328BED41FAAF78A004E0E07 /* HistoryTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328BED31FAAF78A004E0E07 /* HistoryTabViewController.swift */; };
+		E33170071FAAB173005F7F25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33170061FAAB173005F7F25 /* AppDelegate.swift */; };
+		E33170091FAAB173005F7F25 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33170081FAAB173005F7F25 /* MainViewController.swift */; };
+		E331700C1FAAB173005F7F25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E331700A1FAAB173005F7F25 /* Main.storyboard */; };
+		E331700E1FAAB173005F7F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E331700D1FAAB173005F7F25 /* Assets.xcassets */; };
+		E33170111FAAB173005F7F25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E331700F1FAAB173005F7F25 /* LaunchScreen.storyboard */; };
+		E3A760101FAAB3D40083AE23 /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7600F1FAAB3D40083AE23 /* DataRepository.swift */; };
+		E3A760121FAAB5410083AE23 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A760111FAAB5410083AE23 /* SplashViewController.swift */; };
+		E3A760141FAAB76A0083AE23 /* MindTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A760131FAAB76A0083AE23 /* MindTestModel.swift */; };
+		E3A760171FAABEFF0083AE23 /* exampleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A760151FAABEFF0083AE23 /* exampleList.plist */; };
+		E3A760181FAABEFF0083AE23 /* resultList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3A760161FAABEFF0083AE23 /* resultList.plist */; };
+		E3A7601B1FAAC83D0083AE23 /* CustomImageTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7601A1FAAC83D0083AE23 /* CustomImageTextButton.swift */; };
+		E3A7601D1FAAD36F0083AE23 /* MindTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A7601C1FAAD36F0083AE23 /* MindTestViewController.swift */; };
+		E3EC37881FAAE6F400B7F56F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC37871FAAE6F400B7F56F /* ResultViewController.swift */; };
+		E3EC37901FAAE74C00B7F56F /* FirstUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC378F1FAAE74C00B7F56F /* FirstUseViewController.swift */; };
+		E3EC37921FAAE97C00B7F56F /* FirstUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3EC37911FAAE97C00B7F56F /* FirstUse.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		24D7838231A7C8FBF47431BC /* Pods-MiniHackerton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniHackerton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MiniHackerton/Pods-MiniHackerton.debug.xcconfig"; sourceTree = "<group>"; };
+		5B88CBFDFC8F3ADFE4F76923 /* Pods-MiniHackerton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiniHackerton.release.xcconfig"; path = "Pods/Target Support Files/Pods-MiniHackerton/Pods-MiniHackerton.release.xcconfig"; sourceTree = "<group>"; };
+		BE9167B6F4B119845F92D14F /* Pods_MiniHackerton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiniHackerton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E328BECD1FAAED96004E0E07 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E328BECE1FAAED96004E0E07 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E328BECF1FAAF125004E0E07 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		E328BED11FAAF1CE004E0E07 /* SegueAnimateFade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueAnimateFade.swift; sourceTree = "<group>"; };
+		E328BED31FAAF78A004E0E07 /* HistoryTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabViewController.swift; sourceTree = "<group>"; };
+		E33170031FAAB173005F7F25 /* MiniHackerton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniHackerton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E33170061FAAB173005F7F25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E33170081FAAB173005F7F25 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E331700B1FAAB173005F7F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E331700D1FAAB173005F7F25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E33170101FAAB173005F7F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E33170121FAAB173005F7F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3A7600F1FAAB3D40083AE23 /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		E3A760111FAAB5410083AE23 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = MiniHackerton/SplashViewController.swift; sourceTree = SOURCE_ROOT; };
+		E3A760131FAAB76A0083AE23 /* MindTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTestModel.swift; sourceTree = "<group>"; };
+		E3A760151FAABEFF0083AE23 /* exampleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = exampleList.plist; sourceTree = "<group>"; };
+		E3A760161FAABEFF0083AE23 /* resultList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = resultList.plist; sourceTree = "<group>"; };
+		E3A7601A1FAAC83D0083AE23 /* CustomImageTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageTextButton.swift; sourceTree = "<group>"; };
+		E3A7601C1FAAD36F0083AE23 /* MindTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindTestViewController.swift; sourceTree = "<group>"; };
+		E3EC37871FAAE6F400B7F56F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		E3EC378F1FAAE74C00B7F56F /* FirstUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUseViewController.swift; sourceTree = "<group>"; };
+		E3EC37911FAAE97C00B7F56F /* FirstUse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstUse.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E33170001FAAB173005F7F25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E328BECB1FAAED96004E0E07 /* Realm.framework in Frameworks */,
+				E328BECC1FAAED96004E0E07 /* RealmSwift.framework in Frameworks */,
+				72CE25589AA1D0462F346163 /* Pods_MiniHackerton.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		179F2FF11126804805CDEBF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E328BECD1FAAED96004E0E07 /* Realm.framework */,
+				E328BECE1FAAED96004E0E07 /* RealmSwift.framework */,
+				BE9167B6F4B119845F92D14F /* Pods_MiniHackerton.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5FFE358123C43F9E8BD0DA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24D7838231A7C8FBF47431BC /* Pods-MiniHackerton.debug.xcconfig */,
+				5B88CBFDFC8F3ADFE4F76923 /* Pods-MiniHackerton.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E3316FFA1FAAB173005F7F25 = {
+			isa = PBXGroup;
+			children = (
+				E33170051FAAB173005F7F25 /* MiniHackerton */,
+				E33170041FAAB173005F7F25 /* Products */,
+				D5FFE358123C43F9E8BD0DA3 /* Pods */,
+				179F2FF11126804805CDEBF3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E33170041FAAB173005F7F25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E33170031FAAB173005F7F25 /* MiniHackerton.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E33170051FAAB173005F7F25 /* MiniHackerton */ = {
+			isa = PBXGroup;
+			children = (
+				E33170061FAAB173005F7F25 /* AppDelegate.swift */,
+				E3A760191FAAC8130083AE23 /* view */,
+				E3A7600E1FAAB3A70083AE23 /* repo */,
+				E3A7600D1FAAB3890083AE23 /* model */,
+				E3A7600C1FAAB36C0083AE23 /* viewContoller */,
+				E331700A1FAAB173005F7F25 /* Main.storyboard */,
+				E3EC37911FAAE97C00B7F56F /* FirstUse.storyboard */,
+				E328BECF1FAAF125004E0E07 /* History.storyboard */,
+				E331700D1FAAB173005F7F25 /* Assets.xcassets */,
+				E331700F1FAAB173005F7F25 /* LaunchScreen.storyboard */,
+				E33170121FAAB173005F7F25 /* Info.plist */,
+				E3A760151FAABEFF0083AE23 /* exampleList.plist */,
+				E3A760161FAABEFF0083AE23 /* resultList.plist */,
+			);
+			path = MiniHackerton;
+			sourceTree = "<group>";
+		};
+		E3A7600C1FAAB36C0083AE23 /* viewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				E3A760111FAAB5410083AE23 /* SplashViewController.swift */,
+				E3EC378F1FAAE74C00B7F56F /* FirstUseViewController.swift */,
+				E33170081FAAB173005F7F25 /* MainViewController.swift */,
+				E3A7601C1FAAD36F0083AE23 /* MindTestViewController.swift */,
+				E3EC37871FAAE6F400B7F56F /* ResultViewController.swift */,
+				E328BED31FAAF78A004E0E07 /* HistoryTabViewController.swift */,
+			);
+			path = viewContoller;
+			sourceTree = "<group>";
+		};
+		E3A7600D1FAAB3890083AE23 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E3A760131FAAB76A0083AE23 /* MindTestModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E3A7600E1FAAB3A70083AE23 /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				E3A7600F1FAAB3D40083AE23 /* DataRepository.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		E3A760191FAAC8130083AE23 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E3A7601A1FAAC83D0083AE23 /* CustomImageTextButton.swift */,
+				E328BED11FAAF1CE004E0E07 /* SegueAnimateFade.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E33170021FAAB173005F7F25 /* MiniHackerton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E33170151FAAB173005F7F25 /* Build configuration list for PBXNativeTarget "MiniHackerton" */;
+			buildPhases = (
+				4E846865755760C27A38F20F /* [CP] Check Pods Manifest.lock */,
+				E3316FFF1FAAB173005F7F25 /* Sources */,
+				E33170001FAAB173005F7F25 /* Frameworks */,
+				E33170011FAAB173005F7F25 /* Resources */,
+				642CF2A91CBA0117472D45DB /* [CP] Embed Pods Frameworks */,
+				D51DECDD554A8C49AB8C3755 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MiniHackerton;
+			productName = MiniHackerton;
+			productReference = E33170031FAAB173005F7F25 /* MiniHackerton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3316FFB1FAAB173005F7F25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "김정원";
+				TargetAttributes = {
+					E33170021FAAB173005F7F25 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E3316FFE1FAAB173005F7F25 /* Build configuration list for PBXProject "MiniHackerton" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3316FFA1FAAB173005F7F25;
+			productRefGroup = E33170041FAAB173005F7F25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E33170021FAAB173005F7F25 /* MiniHackerton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E33170011FAAB173005F7F25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E33170111FAAB173005F7F25 /* LaunchScreen.storyboard in Resources */,
+				E3A760181FAABEFF0083AE23 /* resultList.plist in Resources */,
+				E328BED01FAAF125004E0E07 /* History.storyboard in Resources */,
+				E331700E1FAAB173005F7F25 /* Assets.xcassets in Resources */,
+				E331700C1FAAB173005F7F25 /* Main.storyboard in Resources */,
+				E3A760171FAABEFF0083AE23 /* exampleList.plist in Resources */,
+				E3EC37921FAAE97C00B7F56F /* FirstUse.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E846865755760C27A38F20F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MiniHackerton-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		642CF2A91CBA0117472D45DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MiniHackerton/Pods-MiniHackerton-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniHackerton/Pods-MiniHackerton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D51DECDD554A8C49AB8C3755 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MiniHackerton/Pods-MiniHackerton-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3316FFF1FAAB173005F7F25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3A760141FAAB76A0083AE23 /* MindTestModel.swift in Sources */,
+				E328BED21FAAF1CE004E0E07 /* SegueAnimateFade.swift in Sources */,
+				E3A760101FAAB3D40083AE23 /* DataRepository.swift in Sources */,
+				E328BED41FAAF78A004E0E07 /* HistoryTabViewController.swift in Sources */,
+				E3A7601B1FAAC83D0083AE23 /* CustomImageTextButton.swift in Sources */,
+				E3EC37881FAAE6F400B7F56F /* ResultViewController.swift in Sources */,
+				E33170091FAAB173005F7F25 /* MainViewController.swift in Sources */,
+				E33170071FAAB173005F7F25 /* AppDelegate.swift in Sources */,
+				E3A760121FAAB5410083AE23 /* SplashViewController.swift in Sources */,
+				E3A7601D1FAAD36F0083AE23 /* MindTestViewController.swift in Sources */,
+				E3EC37901FAAE74C00B7F56F /* FirstUseViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E331700A1FAAB173005F7F25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E331700B1FAAB173005F7F25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E331700F1FAAB173005F7F25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E33170101FAAB173005F7F25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E33170131FAAB173005F7F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E33170141FAAB173005F7F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E33170161FAAB173005F7F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24D7838231A7C8FBF47431BC /* Pods-MiniHackerton.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MiniHackerton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.jwk.MiniHackerton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E33170171FAAB173005F7F25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B88CBFDFC8F3ADFE4F76923 /* Pods-MiniHackerton.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MiniHackerton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.jwk.MiniHackerton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3316FFE1FAAB173005F7F25 /* Build configuration list for PBXProject "MiniHackerton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E33170131FAAB173005F7F25 /* Debug */,
+				E33170141FAAB173005F7F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E33170151FAAB173005F7F25 /* Build configuration list for PBXNativeTarget "MiniHackerton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E33170161FAAB173005F7F25 /* Debug */,
+				E33170171FAAB173005F7F25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3316FFB1FAAB173005F7F25 /* Project object */;
+}

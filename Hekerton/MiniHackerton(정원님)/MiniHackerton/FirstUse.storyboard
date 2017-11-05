@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C9u-9A-Vgj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Use View Controller-->
+        <scene sceneID="QP5-34-gbi">
+            <objects>
+                <viewController id="C9u-9A-Vgj" customClass="FirstUseViewController" customModule="MiniHackerton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SgS-RF-VlT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB0-4a-TvO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="C9u-9A-Vgj" id="Tst-An-dEb"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kyA-dC-ywo">
+                                <rect key="frame" x="168" y="614" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.10196078431372549" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1kX-gT-mWP" firstAttribute="bottom" secondItem="XB0-4a-TvO" secondAttribute="bottom" id="2GQ-K1-gYq"/>
+                            <constraint firstItem="XB0-4a-TvO" firstAttribute="top" secondItem="1kX-gT-mWP" secondAttribute="top" id="Bic-Oe-pc0"/>
+                            <constraint firstItem="XB0-4a-TvO" firstAttribute="leading" secondItem="1kX-gT-mWP" secondAttribute="leading" id="FZR-BG-rwC"/>
+                            <constraint firstItem="1kX-gT-mWP" firstAttribute="trailing" secondItem="XB0-4a-TvO" secondAttribute="trailing" id="O89-CU-NAJ"/>
+                            <constraint firstItem="kyA-dC-ywo" firstAttribute="centerX" secondItem="1kX-gT-mWP" secondAttribute="centerX" id="OGa-UW-Kuf"/>
+                            <constraint firstItem="1kX-gT-mWP" firstAttribute="bottom" secondItem="kyA-dC-ywo" secondAttribute="bottom" constant="16" id="qNk-Pc-Ajd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1kX-gT-mWP"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="kyA-dC-ywo" id="7AR-G7-yjJ"/>
+                        <outlet property="scrollView" destination="XB0-4a-TvO" id="J6b-dI-79d"/>
+                        <segue destination="skP-fp-3Ml" kind="show" identifier="segueFirstUseToMain" customClass="SegueAnimateFadeIn" customModule="MiniHackerton" customModuleProvider="target" id="oiZ-da-pkm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fss-zn-aKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="-130.88455772113943"/>
+        </scene>
+        <!--main-->
+        <scene sceneID="2a6-hV-RgH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="main" id="skP-fp-3Ml" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXL-Lw-Sad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466" y="-131"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hz4-dr-ein">
+            <objects>
+                <viewController storyboardIdentifier="vc1" id="QSN-qc-K1q" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j8O-Gy-D4o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심리테스트앱에 오신 것을 환영합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tay-R6-VXO">
+                                <rect key="frame" x="62.5" y="333" width="249" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.10196078431372549" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Tay-R6-VXO" firstAttribute="centerY" secondItem="XpE-aY-j4X" secondAttribute="centerY" id="NoZ-jN-Yk8"/>
+                            <constraint firstItem="Tay-R6-VXO" firstAttribute="centerX" secondItem="XpE-aY-j4X" secondAttribute="centerX" id="eQF-T4-4Cb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XpE-aY-j4X"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5E-6M-Lx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="600"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="44G-3j-vsY">
+            <objects>
+                <viewController storyboardIdentifier="vc2" id="nHs-Qr-RJ1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w4n-If-OGG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심리테스트를 통해 당신이 어떤 타입인지 알려줍니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9D-nL-1eO">
+                                <rect key="frame" x="14.5" y="333" width="346" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.10196078431372549" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S9D-nL-1eO" firstAttribute="centerY" secondItem="Sv2-bq-krD" secondAttribute="centerY" id="Bhy-6i-R2d"/>
+                            <constraint firstItem="S9D-nL-1eO" firstAttribute="centerX" secondItem="Sv2-bq-krD" secondAttribute="centerX" id="ari-11-lYo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sv2-bq-krD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAe-ZS-CPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="598"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MTI-1e-hGk">
+            <objects>
+                <viewController storyboardIdentifier="vc3" id="8cz-VI-tK0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ua-Y7-y2v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아래 시작하기를 눌러주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAr-ew-C4N">
+                                <rect key="frame" x="94.5" y="333" width="185.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64Y-k8-kXb">
+                                <rect key="frame" x="152" y="519" width="70" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.082352941176470587" green="0.10196078431372549" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="64Y-k8-kXb" firstAttribute="centerX" secondItem="Lja-id-BAC" secondAttribute="centerX" id="9WU-aE-68g"/>
+                            <constraint firstItem="ZAr-ew-C4N" firstAttribute="centerY" secondItem="Lja-id-BAC" secondAttribute="centerY" id="c6v-Dr-RX2"/>
+                            <constraint firstItem="ZAr-ew-C4N" firstAttribute="centerX" secondItem="Lja-id-BAC" secondAttribute="centerX" id="cr9-28-nhR"/>
+                            <constraint firstItem="Lja-id-BAC" firstAttribute="bottom" secondItem="64Y-k8-kXb" secondAttribute="bottom" constant="112" id="uRN-db-Kay"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lja-id-BAC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gui-NC-pEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344.8" y="599.55022488755628"/>
+        </scene>
+    </scenes>
+</document>

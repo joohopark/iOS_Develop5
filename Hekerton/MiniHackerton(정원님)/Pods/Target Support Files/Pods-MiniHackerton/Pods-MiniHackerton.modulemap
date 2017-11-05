@@ -1,0 +1,6 @@
+framework module Pods_MiniHackerton {
+  umbrella header "Pods-MiniHackerton-umbrella.h"
+
+  export *
+  module * { export * }
+}
