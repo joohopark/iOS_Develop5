@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04183A041FAEFFB400483E9B /* home300.png in Resources */ = {isa = PBXBuildFile; fileRef = 04183A011FAEFFB400483E9B /* home300.png */; };
+		04183A051FAEFFB400483E9B /* home50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04183A021FAEFFB400483E9B /* home50x50@2x.png */; };
+		04183A061FAEFFB400483E9B /* home50x50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04183A031FAEFFB400483E9B /* home50x50@3x.png */; };
 		04C9EEFE1FAEE224007D012B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9EEFD1FAEE224007D012B /* AppDelegate.swift */; };
 		04C9EF001FAEE224007D012B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9EEFF1FAEE224007D012B /* ViewController.swift */; };
 		04C9EF031FAEE224007D012B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C9EF011FAEE224007D012B /* Main.storyboard */; };
 		04C9EF051FAEE224007D012B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C9EF041FAEE224007D012B /* Assets.xcassets */; };
 		04C9EF081FAEE224007D012B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C9EF061FAEE224007D012B /* LaunchScreen.storyboard */; };
+		04C9EF101FAEF0CF007D012B /* weatherMark1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C9EF0F1FAEF0CF007D012B /* weatherMark1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04183A011FAEFFB400483E9B /* home300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home300.png; sourceTree = "<group>"; };
+		04183A021FAEFFB400483E9B /* home50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home50x50@2x.png"; sourceTree = "<group>"; };
+		04183A031FAEFFB400483E9B /* home50x50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home50x50@3x.png"; sourceTree = "<group>"; };
 		04C9EEFA1FAEE224007D012B /* first-AutoLayOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "first-AutoLayOut.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C9EEFD1FAEE224007D012B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C9EEFF1FAEE224007D012B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,7 @@
 		04C9EF041FAEE224007D012B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C9EF071FAEE224007D012B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04C9EF091FAEE224007D012B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C9EF0F1FAEF0CF007D012B /* weatherMark1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weatherMark1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				04C9EEFD1FAEE224007D012B /* AppDelegate.swift */,
 				04C9EEFF1FAEE224007D012B /* ViewController.swift */,
 				04C9EF011FAEE224007D012B /* Main.storyboard */,
+				04C9EF0F1FAEF0CF007D012B /* weatherMark1.png */,
+				04183A021FAEFFB400483E9B /* home50x50@2x.png */,
+				04183A031FAEFFB400483E9B /* home50x50@3x.png */,
+				04183A011FAEFFB400483E9B /* home300.png */,
 				04C9EF041FAEE224007D012B /* Assets.xcassets */,
 				04C9EF061FAEE224007D012B /* LaunchScreen.storyboard */,
 				04C9EF091FAEE224007D012B /* Info.plist */,
@@ -125,7 +137,11 @@
 			files = (
 				04C9EF081FAEE224007D012B /* LaunchScreen.storyboard in Resources */,
 				04C9EF051FAEE224007D012B /* Assets.xcassets in Resources */,
+				04183A051FAEFFB400483E9B /* home50x50@2x.png in Resources */,
 				04C9EF031FAEE224007D012B /* Main.storyboard in Resources */,
+				04183A061FAEFFB400483E9B /* home50x50@3x.png in Resources */,
+				04C9EF101FAEF0CF007D012B /* weatherMark1.png in Resources */,
+				04183A041FAEFFB400483E9B /* home300.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
