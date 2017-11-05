@@ -1,8 +1,7 @@
 # 17-11-5
 ---
 
-## AutolayOut, Constraints, Constraints Multiplier
-
+## AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution,
 
 ---
 
@@ -74,9 +73,9 @@ item1.atrribute = 비율 * item2.atrribute + 간격
 
 ![screen](/study/image/constraints-5.jpg) <br>
 
-- 하나만 선택했을때는 ,가로 정렬, 새로정렬을 할수 있음. <br>
+- 하나만 선택했을때는 ,가로 정렬, 새로정렬을 할수 있습니다. <br>
 
-- 비율 정렬시, `0`은 작성할수 없음. -> 0과 비슷한 값 0.001.. 값을 입력해주면, piexle 의 오차가 조금 있을수 있지만, 거의 사용하지 않음. 
+- 비율 정렬시, `0`은 작성할수 없음. -> 0과 비슷한 값 0.001.. 값을 입력해주면, piexle 의 오차가 조금 있을수 있지만, 거의 사용하지 않습니다.. 
 
 ---
 
@@ -85,75 +84,48 @@ item1.atrribute = 비율 * item2.atrribute + 간격
 | :--: | :---: |
 | ![screen](/study/image/constraints-6.jpg) | ![screen](/study/image/constraints-7.jpg) |
 
-위같이, View에 상단에 반쯤 걸쳐 있는 View를 만들수 있는 상황이 있는데, 저렇게 표현하기 위한 방법은 여러가지가 있다. 구름 이미지가 GrayView의 자식 View로 들어가서 `AutolayOut` 을 적용해주어서 표현해줄수 있지만, 이런 경우는 좋은 경우가 아니다. 
+위같이, View에 상단에 반쯤 걸쳐 있는 View를 만들수 있는 상황이 있는데, 저렇게 표현하기 위한 방법은 여러가지가 있습니다. 구름 이미지가 GrayView의 자식 View로 들어가서 `AutolayOut` 을 적용해주어서 표현해줄수 있지만, 이런 경우는 좋은 경우가 아닙니다. 
 
-이유는, 부모뷰의 범위를 넘어가게 되면, 일단 버튼은 눌리지도 않고, `Clip to bounds`를 부모뷰에서 선택하게 되면, 부모뷰를 넘어간 영역이 잘리게 된다. 그래서 좋은 autoLayOut이 아니다. 동등한 계층 구조에서, align 을 사용해서 정렬을 해주면 올바르게 적용 할수 있다.
+이유는, 부모뷰의 범위를 넘어가게 되면, 일단 버튼은 눌리지도 않고, `Clip to bounds`를 부모뷰에서 선택하게 되면, 부모뷰를 넘어간 영역이 잘리게 됩니다.. 그래서 좋은 autoLayOut이 아닌 케이스가 됩니다. 동등한 계층 구조에서, align 을 사용해서 정렬을 해주면 올바르게 적용 할수 있습니다..
 
-
-- 동등한 레벨로 정렬
--  Edges 정렬 
-
-```
-item1.atrribute = 비율 * item2.atrribute + 간격 
-```
-
-**- 동등한 위치에서 정렬을 하는게, button 을 클릭하는것도 가능함. **
-**- 부모뷰의 범위를 넘어가면 click 도 먹지 않음..**
+> 동등한 계층 구조에서 정렬을 하는게 좋다. 부모뷰의 범위를 넘어가면 click 도 되지 않는다..! 고로 AutolayOut을 설계할때, 기능적인 부분도 고려 해주어야 합니다.!
 
 ---
 
-## basic8_Hugging_Priority
+## Hugging-Priority
 
-- Lable
-	- 레이블 사이즈를 키워즈는 명령어 `edit->size to fit`, `command + =`, 텍스트의 크기 만큼 사이즈가 지정이됨.
-**- 레이블에 위치지정을 하면, 텍스트의 길이가 늘어남에 따라서, 자동으로 레이블의 크기가 증가함**
+#### - Label <br>
+	- 레이블 사이즈를 키워즈는 명령어 `edit->size to fit`, `command + =`, 텍스트의 크기 만큼 사이즈가 지정됩니다.
+	- 레이블에 위치지정을 하게되면, 텍스트의 길이가 늘어남에 다라서 자동으로 레이블의 크기가 증가하게 됩니다.
+	- 레이블의 Constraints 를 한쪽을 열어놓지 않고, 모두 적용하게 되면, Label의 사이즈는 고정되어 있게됩니다.
+	- 기본적으로 텍스트의 크기에 따라서 Label의 사이즈를 유동적으로 만드려고 한다면, 셋팅을 해주어야 합니다.
 
-- 한쪽이 열려 있어야(Constraints) label의 사이즈가 변경됨.
-- 레이블은 AutoLayout을 적용해주면, 현재 디바이스에서는 괜찮은데, 다른 디바이스가 되면 오류가남..? 
-- 우선순위를 잡아놓지 않으면, 변하지 않는게 기본 셋팅이다...?
-- 텍스트 크기에 따라서 레이블이 줄어들고, 늘어나고 해야하는데, 레이블은 이부분이 자동으로 되지 않음. 내가 셋팅을 해주어야함.
+#### - Content Hugging Priority
 
-huggin, compression resistance 오류에 대한 설정을 해주어야함(우선순위)
--> 늘어날수도 있고, 줄어들수도 있는개념..
+**Priority**는 우선순위 값 입니다. Label의 경우에 2개의 Label을 정의 해놓습니다.
 
-사이즈 인스펙터에 가면, Content Hugging Priority, Content Compression resistance Priority
+| * | * | * |
+| :---: | :---: | :---: |
+| ![screen](/study/image/constraints-8.jpg) | ![screen](/study/image/constraints-9.jpg) | ![screen](/study/image/constraints-10.jpg) |
 
+왼쪽의 Label이 `Content Hugging Priority` 값의 `Horizontal` 부분이 더 큰값입니다. 우선순위 값이 높으면, 기본적인 Label의 사이즈가 변할때, 왼쪽에 있는 Label의 자신의 사이즈를 먼저 마추고, 그다음에 오른쪽에 있는 Label의 사이즈를 고려하게 됩니다. 그래서 왼쪽의 값이 1이 일때, 1234 일때 변하는 크기에 따라서 오른쪽 Label 위치가 변하게 됩니다. 
 
-Content Hugging Priority : 기본적인 자신의 사이즈를 유지 하겠느냐 안하겠느냐..?
-Content Compression resistance Priority :
+반대로 오른쪽의 레이블의 크기를 늘리게 되면, 이때 왼쪽 레이블의 크기는 고정이 되어서 변화되지 않고, 왼쪽 레이블의 크기만 변하게 되는데, 일정 범위를 넘어가게 되면 device 의 범위를 벗어나서 오류가 발생하게 됩니다. 
 
-상대적으로 Hugging 이 높은 숫자가 우선권을 가지고 -> 우선적으로 그 View가 셋팅이됨. 그래서 의존적인 부분이 어느 부분인지가 결정이됨.
+> 자신의 사이즈를 유지 하느냐 안하겠느냐에 대한 우선 순위를 설정한다고 생각하면 조금 편합니다..
 
-낮은 숫자의  Hugging Priority 는 의존적으로 늘어난다..?
+#### - Content Compression resistance Priority
 
-Priority(우선순위) -> 우선순위를 낮추게 되면, 제일 높은 숫자가 먼저 사이즈대로 fit을 하고, 252가 내 사이즈대로 fit을 하고, 그 다음에 낮은 우선 순위의 priority의 
+`Content Hugging Priority` 의 반대되는 개념입니다.<br>
+위의 `Content Hugging Priority` 값이 높은 쪽은 자신의 초기 크기를 유지하게됩니다. 그러다가 두개의 Label의 크기가 device의 범위를 넘어가게될때 두개의 label 오류인상태로 늘어나지도, 줄어들지도 않게 되는데  `Content Compression resistance Priority` 값을 적용하게 되면, `Content Compression resistance Priority` 값이 높은 쪽의 Label이 `Content Compression resistance Priority` 값이 낮은쪽의 Label의 크기가 변화하게 되면, 높은 값을 가지고 있는 쪽은 찌그러지지(?) 않게 됩니다. 찌그러지는 값에 대한 정항 정도라고 생각할수 있습니다. 
 
-낮은 우선 순위는 늘어나거나, 줄어들수 있음..
-
-레이 아웃을 잡을때 모든 View, 각 Constraints 들은 Priority 를 가지고 있는데, Priority 값이 높은 순서대로, 자신의 본연의 사이즈를 fit 하고, 그 다음 순위 별로 Priority의 Rect 값을 셋을 하고, 가장 낮은 priority 는 의존적으로 자신의 Rect가 늘어나고, 줄어들고 할수 있음.
-
----
-
-## basic9_Compression_resistance_priority
-
-우선 순위가 높으면, 정확하게 내 자신의 크기대로 유지를 하고, 우선순위가 낮으면, 내 크기보다 커지거나, 작아질수 있다. 
-
-내 크기를 높이는데, 반대되는 경우가 `Compression_resistance_priority`
-
-내 크기보다 작아지는 형태를 -> 반발하겠음 -> prioty 가 높으면 내 크기를 유지하는것이고, 작아지면 내 크기가 작아진다..?
-
-서로가 딱 맞아 떨어지지 않는다면, 우선순위를 유지 해야함. 내 크기를 유지하지 못할때, 
-
-같거나 커질때는 : hugging prioty
-같거나 작아질때 : compression Resitance
-
-레이블 속의 텍스트 크기를 늘렸을때, 나와 상대되는 레이블이 있을때, Compression의 값이 작은 쪽이 찌그러지게되고, 값이 큰쪽의 사이즈를 유지한다..?
-
-위의 두개의 값이 어떤 차이가 있는지... 확실하게 이해하고 정리하자.
+> 모든 객체들의 Constraints 에는 Priority 의 값이 있습니다. 이 값을 잘 이용한다면, 조금 더 원하는 형태의 AutolayOut을 설계 할수 있습니다.
+>
+> 조금 햇갈린다면, Rect가 같거나 커질때는 `Hugging Priority`, Rect가 같거나 작아질때는 `Compression resitance`
 
 ---
 
-## basic10_image_resolution
+## Image resolution
 
 - button에 이미지가 추가 됬을경우, 오른쪽이나, 왼쪽에 추가 되었을 경우.. 버튼 타이틀은 오른쪽으로 밀려서 정렬이됨...?
 
