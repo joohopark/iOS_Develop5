@@ -12,49 +12,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageView4: UIImageView!
     
+    var countNumber: Int = 0
+    
     override func viewDidLoad() {
-        processTime {
-            
-            let q1 = DispatchQueue.main.async {
-                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                    DispatchQueue.main.async {
-                        self.imageView.image = UIImage(data: data)
-                    }
-                }
-            }
-            
-            let q2 = DispatchQueue.main.async {
-                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                    DispatchQueue.main.async {
-                        self.imageView1.image = UIImage(data: data)
-                    }
-                }
-                
-            }
-            let q3 = DispatchQueue.main.async {
-                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                    DispatchQueue.main.async {
-                        self.imageView2.image = UIImage(data: data)
-                    }
-                }
-                
-            }
-            let q4 = DispatchQueue.main.async {
-                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                    DispatchQueue.main.async {
-                        self.imageView3.image = UIImage(data: data)
-                    }
-                }
-            }
-            let q5 = DispatchQueue.main.async {
-                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                    DispatchQueue.main.async {
-                        self.imageView4.image = UIImage(data: data)
-                    }
-                }
-            }
-        }
         
+        
+        
+        
+//          if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
+//            print(data)
+//            print(URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!)
+//
+//            let imageList: [UIImageView] = [imageView, imageView1, imageView2, imageView3, imageView4]
+//            for item in imageList {
+//                item.image = UIImage(data: data)
+//
+//            }
+//        }
+        
+        
+        
+        
+        let t = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (t) in
+            self.countNumber += 1
+            print(self.countNumber)
+        }
         
         
         
@@ -65,7 +47,7 @@ class ViewController: UIViewController {
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
                 DispatchQueue.main.async {
-                    self.imageView.image = UIImage(data: data)
+                    
                 }
             }
         }
@@ -97,79 +79,51 @@ class ViewController: UIViewController {
                 }
             }
         }
-   
     }
 
 
     // Thred의 예시
     @IBAction func btnAction(_ sender: UIButton) {
-
-        
-//        let q = DispatchQueue(label: "com.minjun", qos: .userInteractive, attributes: .concurrent)
-//        let q1 = DispatchQueue(label: "com.minjun", qos: .userInitiated, attributes: .concurrent)
-//        let q2 = DispatchQueue(label: "com.minjun", qos: .default, attributes: .concurrent)
-//        let q3 = DispatchQueue(label: "com.minjun", qos: .utility, attributes: .concurrent)
-//        let q4 = DispatchQueue(label: "com.minjun", qos: .background, attributes: .concurrent)
-//
-//        q.async {
-//
-//            if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-//                self.imageView.image = UIImage(data: data)
-//            }
-//        }
-//        q1.async {
-//
-//            if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-//                self.imageView1.image = UIImage(data: data)
-//            }
-//        }
-//        q2.async {
-//
-//            if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-//                self.imageView2.image = UIImage(data: data)
-//            }
-//        }
-//        q3.async {
-//
-//            if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-//                self.imageView3.image = UIImage(data: data)
-//            }
-//        }
-//        q4.async {
-//
-//            if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-//                self.imageView4.image = UIImage(data: data)
-//            }
-//        }
-//
-//
-    
-        
         let q = DispatchQueue.global().async {
             if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                self.imageView.image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data)
+                }
+                
             }
         }
         let q1 = DispatchQueue.global().async {
             if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                self.imageView1.image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.imageView1.image = UIImage(data: data)
+                }
             }
         }
         let q2 = DispatchQueue.global().async {
             if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                self.imageView2.image = UIImage(data: data)
+                DispatchQueue.main.sync {
+                    self.imageView2.image = UIImage(data: data)
+                }
             }
         }
         let q3 = DispatchQueue.global().async {
             if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                self.imageView3.image = UIImage(data: data)
+                DispatchQueue.main.sync {
+                    self.imageView3.image = UIImage(data: data)
+                }
             }
         }
         let q4 = DispatchQueue.global().async {
             if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
-                self.imageView4.image = UIImage(data: data)
+                DispatchQueue.main.sync {
+                    self.imageView4.image = UIImage(data: data)
+                }
             }
         }
+    }
+}
+        
+    
 
         
         
@@ -231,7 +185,7 @@ class ViewController: UIViewController {
 //                }
 //            }
 //        }
-    }
+    
     
     func processTime(blockFunction: () -> ()){
         let startTime = CFAbsoluteTimeGetCurrent()
@@ -277,5 +231,5 @@ class ViewController: UIViewController {
         
     }
 
-}
+
 
