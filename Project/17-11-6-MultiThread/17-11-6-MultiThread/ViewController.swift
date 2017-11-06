@@ -13,6 +13,48 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView4: UIImageView!
     
     override func viewDidLoad() {
+        processTime {
+            
+            let q1 = DispatchQueue.main.async {
+                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
+                    DispatchQueue.main.async {
+                        self.imageView.image = UIImage(data: data)
+                    }
+                }
+            }
+            
+            let q2 = DispatchQueue.main.async {
+                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
+                    DispatchQueue.main.async {
+                        self.imageView1.image = UIImage(data: data)
+                    }
+                }
+                
+            }
+            let q3 = DispatchQueue.main.async {
+                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
+                    DispatchQueue.main.async {
+                        self.imageView2.image = UIImage(data: data)
+                    }
+                }
+                
+            }
+            let q4 = DispatchQueue.main.async {
+                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
+                    DispatchQueue.main.async {
+                        self.imageView3.image = UIImage(data: data)
+                    }
+                }
+            }
+            let q5 = DispatchQueue.main.async {
+                if let data = try? Data(contentsOf: URL(string: "http://4k.com/wp-content/uploads/2014/06/4k-image-santiago.jpg")!) {
+                    DispatchQueue.main.async {
+                        self.imageView4.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
+        
         
         
         
