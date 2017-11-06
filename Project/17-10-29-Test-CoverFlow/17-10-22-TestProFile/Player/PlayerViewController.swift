@@ -260,7 +260,7 @@ extension PlayerViewController: UICollectionViewDataSource {
      cell 정의
      ==========*/
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        print(Thread.current)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MusicCell
         
         
