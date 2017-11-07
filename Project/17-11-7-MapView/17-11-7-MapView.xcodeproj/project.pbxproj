@@ -56,12 +56,28 @@
 			children = (
 				047A1C721FB178D800461F05 /* AppDelegate.swift */,
 				047A1C741FB178D800461F05 /* ViewController.swift */,
+				04A50AE41FB1D3360054668C /* New Group */,
 				047A1C761FB178D800461F05 /* Main.storyboard */,
 				047A1C791FB178D800461F05 /* Assets.xcassets */,
 				047A1C7B1FB178D800461F05 /* LaunchScreen.storyboard */,
 				047A1C7E1FB178D800461F05 /* Info.plist */,
 			);
 			path = "17-11-7-MapView";
+			sourceTree = "<group>";
+		};
+		04A50AE41FB1D3360054668C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				04A50AE51FB1D3380054668C /* New Group */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		04A50AE51FB1D3380054668C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

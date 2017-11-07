@@ -111,8 +111,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let nowLocation = locations.last {
-            
-            
             var currentCoordinate = "latitude: \(nowLocation.coordinate.latitude) \n longitude: \(nowLocation.coordinate.longitude)"
             stringList.append(currentCoordinate)
             for i in stringList {
@@ -120,9 +118,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 print(i)
             }
             textView.text = textViewOnText
-            
             print(textList, textViewOnText)
-            
+            if stringList.count == 10 {
+                manager.stopUpdatingLocation()
+        
+            }
         }
     }
 }
