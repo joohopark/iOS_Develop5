@@ -8,10 +8,11 @@
 
 ## 기기 테스트
 
-[app 개발자 등록하는방법](http://tech.whatap.io/2016/04/27/apple-개발자-계정-등록하기/)<br>
-[App Distribution Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)<br>
-[IOS 인증서 만들기](http://comxp.tistory.com/298)
-
+| Reference |
+| :-----:|
+|[app 개발자 등록하는방법](http://tech.whatap.io/2016/04/27/apple-개발자-계정-등록하기/)<br> |
+|[App Distribution Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)<br> |
+|[IOS 인증서 만들기](http://comxp.tistory.com/298) | <br>
 
 Developer Center 
 
@@ -292,9 +293,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
 ```
 
+---
 
+## Reference 
 
-
+[app 개발자 등록하는방법](http://tech.whatap.io/2016/04/27/apple-개발자-계정-등록하기/)<br> 
+[App Distribution Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)<br> 
+[IOS 인증서 만들기](http://comxp.tistory.com/298) 
 
 
 
