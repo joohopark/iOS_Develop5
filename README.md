@@ -182,15 +182,11 @@
 
 # Reference 
 
-**[Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)**
-
-**[전수열님 Swift 학습자료](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)**
-
-**[Swift Interpreter](https://swift.sandbox.bluemix.net/#/repl)**
-
-**[Xcode Documents](http://help.apple.com/xcode/mac/9.0/#/)**
-
-**[MarkDown 기본 문법](/study/2017-10-13-markdown.md)**
+**[Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)**<br>
+**[전수열님 Swift 학습자료](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)**<br>
+**[Swift Interpreter](https://swift.sandbox.bluemix.net/#/repl)**<br>
+**[Xcode Documents](http://help.apple.com/xcode/mac/9.0/#/)**<br>
+**[MarkDown 기본 문법](/study/2017-10-13-markdown.md)**<br>
 
 ---
 
