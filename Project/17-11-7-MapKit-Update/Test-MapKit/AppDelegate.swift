@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  17-11-7-MapView
+//  Test-MapKit
 //
 //  Created by MIN JUN JU on 2017. 11. 7..
 //  Copyright © 2017년 MIN JUN JU. All rights reserved.
