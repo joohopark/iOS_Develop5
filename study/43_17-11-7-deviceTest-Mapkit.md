@@ -228,7 +228,7 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
 2. 버튼을 누르면, 실시간으로 위치정보를 받아서, 지도 프레임 업데이트<br>
 
 
-![](/study/)
+![screen](/study/video-gif/mapKit.gif)
 
 
 ```swift
