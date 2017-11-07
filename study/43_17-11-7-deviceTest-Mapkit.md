@@ -8,20 +8,16 @@
 
 ## 기기 테스트
 
-| Reference |
-| :-----:|
-|[app 개발자 등록하는방법](http://tech.whatap.io/2016/04/27/apple-개발자-계정-등록하기/)<br> |
-|[App Distribution Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)<br> |
-|[IOS 인증서 만들기](http://comxp.tistory.com/298) | <br>
+- #### Reference 
 
-Developer Center 
+[app 개발자 등록하는방법](http://tech.whatap.io/2016/04/27/apple-개발자-계정-등록하기/)<br> 
+[App Distribution Guide](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)<br> 
+[IOS 인증서 만들기](http://comxp.tistory.com/298) 
 
-- cetification
-- AppID-bundleID
-- Device ID - UUID(uniqueq ID)
-
-위의 3개를 합쳐서 Provisioning 을 만듬 
-uuid 는 하나가 아니라 uuids임.
+- #### Developer Center <br>
+	- cetification <br>
+	- AppID-bundleID <br>
+	- Device ID - UUID <br>
 
 - app store 에 올리는 방법은 2가지 <br>
 	- 하나는 xCode를 통해서 <br>
