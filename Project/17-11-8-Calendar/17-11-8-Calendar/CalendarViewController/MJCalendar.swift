@@ -7,9 +7,17 @@ class MJCalendar: UIView{
     private let cellIdentifie = "Cell"
     //외부에서 받을 데이터
     
+    var year: Int?
+    var month: Int?
+    
+    
+    
     var date: Date? {
         willSet{
-            calendarData = MJcalendarDataModel(data: newValue!)
+            calendarData = MJcalendarDataModel(date: newValue!)
+            year = calendarData?.year
+            month = calendarData?.month
+            contentsView.reloadData()
         }
     }
     
@@ -45,13 +53,19 @@ class MJCalendar: UIView{
         super.init(frame: frame)
         setUpUI()
         updateLayout()
- 
-        
-        
-}
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+    }
+    
+    func updateNextMonth() {
+        date = MJcalendarMager.nextMonth(with: calendarData!)
+    }
+    
+    func updatePrevious() {
+        date = MJcalendarMager.previousMonth(with: calendarData!) 
         
     }
     
@@ -110,18 +124,23 @@ extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifie, for: indexPath) as! CustomCell
 
         
+        cell.titleLB.text = ""
+        cell.backgroundColor = .clear
         if indexPath.section == 0 {
             cell.titleLB.text = WeekDay(rawValue: indexPath.row)?.name
+            
         }else {
             // 시작 cell의 위치를 잡기위해서 계산해주는식.
             let changedIndex = indexPath.item - calendarData!.startWeekOfMonth.rawValue
             if changedIndex >= 0 {
                 let day = changedIndex + 1
-                print(day)
-                if indexPath.item == 3 {
-
-                }
+                
                 cell.titleLB.text = "\(day)"
+                cell.titleLB.textColor = .black
+                
+                /* 선생님 코드 cell.date = calendarDate?newDate(of date) 형식으로 한번 바꾸어보자
+ 
+                    */
             }
         }
         
@@ -133,15 +152,29 @@ extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if indexPath.section == 0 {
-            return CGSize(width: collectionView.bounds.size.width/9, height: collectionView.bounds.size.height/6)
+            return CGSize(width: collectionView.bounds.size.width/7, height: collectionView.bounds.size.height/6)
         }else {
-            return CGSize(width: collectionView.bounds.size.width/9, height: collectionView.bounds.size.height/5)
+            return CGSize(width: collectionView.bounds.size.width/7, height: collectionView.frame.size.height/6)
         }
-        
-            
-        
-        }
+    }
     
+    // lineSpaceing 을 0으로
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print("내가선택한 collectionView의 indexPath는 \(indexPath), \(self.date)")
+        let cell = collectionView.cellForItem(at: indexPath) as? CustomCell
+        
+        cell?.backgroundColor = .red
+        
+    }
     
 
     
@@ -181,6 +214,7 @@ class CustomCell: UICollectionViewCell {
         let lb = UILabel()
         lb.textAlignment = .center
         lb.textColor = UIColor.black
+        lb.font = UIFont.boldSystemFont(ofSize: 13)
         return lb
     }()
     
@@ -207,11 +241,15 @@ class CustomCell: UICollectionViewCell {
 //        titleLB.topAnchor.constraint(equalTo: topAnchor).isActive = true
 //        titleLB.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 //        titleLB.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-//        titleLB.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//        titleLB.bottofmAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
     }
 }
 
+
+//protocol MJCalendarDelegate {
+//    func
+//}
 
 
 
