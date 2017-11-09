@@ -34,7 +34,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell?.titleLB.text = "\(indexPath)"
         cell?.backGroundImage.image = UIImage(named: "test.jpg")
-        cell?.tailImageView.image = #imageLiteral(resourceName: "StarIcon_Off")
+//        cell?.tailImageView.image = #imageLiteral(resourceName: "StarIcon_Off")
         
         
         return cell!
