@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0482B63E1FB3FBBD009CE6CD /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0482B63D1FB3FBBD009CE6CD /* test.jpg */; };
+		0482B6661FB4293F009CE6CD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0482B6651FB4293F009CE6CD /* NotificationCenter.framework */; };
+		0482B6691FB4293F009CE6CD /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482B6681FB4293F009CE6CD /* TodayViewController.swift */; };
+		0482B66C1FB4293F009CE6CD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0482B66A1FB4293F009CE6CD /* MainInterface.storyboard */; };
+		0482B6701FB4293F009CE6CD /* WPhotoExtention.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0482B6631FB4293F009CE6CD /* WPhotoExtention.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		04BF4C351FB3EC2B00177DB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF4C341FB3EC2B00177DB9 /* AppDelegate.swift */; };
 		04BF4C371FB3EC2B00177DB9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF4C361FB3EC2B00177DB9 /* MainViewController.swift */; };
 		04BF4C3A1FB3EC2B00177DB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BF4C381FB3EC2B00177DB9 /* Main.storyboard */; };
@@ -18,8 +22,39 @@
 		04BF4C4E1FB3F19200177DB9 /* DetailViewciontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF4C4D1FB3F19200177DB9 /* DetailViewciontroller.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0482B66E1FB4293F009CE6CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BF4C291FB3EC2B00177DB9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0482B6621FB4293F009CE6CD;
+			remoteInfo = WPhotoExtention;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0482B6741FB4293F009CE6CD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0482B6701FB4293F009CE6CD /* WPhotoExtention.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0482B63D1FB3FBBD009CE6CD /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		0482B6631FB4293F009CE6CD /* WPhotoExtention.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WPhotoExtention.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0482B6651FB4293F009CE6CD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0482B6681FB4293F009CE6CD /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0482B66B1FB4293F009CE6CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0482B66D1FB4293F009CE6CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0482B6751FB429AF009CE6CD /* WPhotoExtention.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WPhotoExtention.entitlements; sourceTree = "<group>"; };
+		0482B6761FB429E8009CE6CD /* 17-11-9-SearchBarController-.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "17-11-9-SearchBarController-.entitlements"; sourceTree = "<group>"; };
 		04BF4C311FB3EC2B00177DB9 /* 17-11-9-SearchBarController-.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "17-11-9-SearchBarController-.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BF4C341FB3EC2B00177DB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BF4C361FB3EC2B00177DB9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +68,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0482B6601FB4293F009CE6CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0482B6661FB4293F009CE6CD /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04BF4C2E1FB3EC2B00177DB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,10 +86,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0482B6641FB4293F009CE6CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0482B6651FB4293F009CE6CD /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0482B6671FB4293F009CE6CD /* WPhotoExtention */ = {
+			isa = PBXGroup;
+			children = (
+				0482B6751FB429AF009CE6CD /* WPhotoExtention.entitlements */,
+				0482B6681FB4293F009CE6CD /* TodayViewController.swift */,
+				0482B66A1FB4293F009CE6CD /* MainInterface.storyboard */,
+				0482B66D1FB4293F009CE6CD /* Info.plist */,
+			);
+			path = WPhotoExtention;
+			sourceTree = "<group>";
+		};
 		04BF4C281FB3EC2B00177DB9 = {
 			isa = PBXGroup;
 			children = (
 				04BF4C331FB3EC2B00177DB9 /* 17-11-9-SearchBarController- */,
+				0482B6671FB4293F009CE6CD /* WPhotoExtention */,
+				0482B6641FB4293F009CE6CD /* Frameworks */,
 				04BF4C321FB3EC2B00177DB9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				04BF4C311FB3EC2B00177DB9 /* 17-11-9-SearchBarController-.app */,
+				0482B6631FB4293F009CE6CD /* WPhotoExtention.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +127,7 @@
 		04BF4C331FB3EC2B00177DB9 /* 17-11-9-SearchBarController- */ = {
 			isa = PBXGroup;
 			children = (
+				0482B6761FB429E8009CE6CD /* 17-11-9-SearchBarController-.entitlements */,
 				04BF4C4C1FB3EE0900177DB9 /* AppDeleagate */,
 				04BF4C4A1FB3EDF800177DB9 /* ViewController */,
 				04BF4C4B1FB3EE0000177DB9 /* Cell */,
@@ -103,6 +169,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0482B6621FB4293F009CE6CD /* WPhotoExtention */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0482B6711FB4293F009CE6CD /* Build configuration list for PBXNativeTarget "WPhotoExtention" */;
+			buildPhases = (
+				0482B65F1FB4293F009CE6CD /* Sources */,
+				0482B6601FB4293F009CE6CD /* Frameworks */,
+				0482B6611FB4293F009CE6CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WPhotoExtention;
+			productName = WPhotoExtention;
+			productReference = 0482B6631FB4293F009CE6CD /* WPhotoExtention.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		04BF4C301FB3EC2B00177DB9 /* 17-11-9-SearchBarController- */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BF4C431FB3EC2B00177DB9 /* Build configuration list for PBXNativeTarget "17-11-9-SearchBarController-" */;
@@ -110,10 +193,12 @@
 				04BF4C2D1FB3EC2B00177DB9 /* Sources */,
 				04BF4C2E1FB3EC2B00177DB9 /* Frameworks */,
 				04BF4C2F1FB3EC2B00177DB9 /* Resources */,
+				0482B6741FB4293F009CE6CD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0482B66F1FB4293F009CE6CD /* PBXTargetDependency */,
 			);
 			name = "17-11-9-SearchBarController-";
 			productName = "17-11-9-SearchBarController-";
@@ -130,9 +215,23 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "MIN JUN JU";
 				TargetAttributes = {
+					0482B6621FB4293F009CE6CD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					04BF4C301FB3EC2B00177DB9 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -150,11 +249,20 @@
 			projectRoot = "";
 			targets = (
 				04BF4C301FB3EC2B00177DB9 /* 17-11-9-SearchBarController- */,
+				0482B6621FB4293F009CE6CD /* WPhotoExtention */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0482B6611FB4293F009CE6CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0482B66C1FB4293F009CE6CD /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04BF4C2F1FB3EC2B00177DB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +277,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0482B65F1FB4293F009CE6CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0482B6691FB4293F009CE6CD /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04BF4C2D1FB3EC2B00177DB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,7 +299,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0482B66F1FB4293F009CE6CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0482B6621FB4293F009CE6CD /* WPhotoExtention */;
+			targetProxy = 0482B66E1FB4293F009CE6CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		0482B66A1FB4293F009CE6CD /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0482B66B1FB4293F009CE6CD /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		04BF4C381FB3EC2B00177DB9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -203,6 +335,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0482B6721FB4293F009CE6CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WPhotoExtention/WPhotoExtention.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = WPhotoExtention/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-9-SearchBarController-.WPhotoExtention";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0482B6731FB4293F009CE6CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WPhotoExtention/WPhotoExtention.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				INFOPLIST_FILE = WPhotoExtention/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-9-SearchBarController-.WPhotoExtention";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		04BF4C411FB3EC2B00177DB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,8 +477,11 @@
 		04BF4C441FB3EC2B00177DB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "17-11-9-SearchBarController-/17-11-9-SearchBarController-.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = "17-11-9-SearchBarController-/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-9-SearchBarController-";
@@ -327,8 +494,11 @@
 		04BF4C451FB3EC2B00177DB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "17-11-9-SearchBarController-/17-11-9-SearchBarController-.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = "17-11-9-SearchBarController-/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-9-SearchBarController-";
@@ -341,6 +511,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0482B6711FB4293F009CE6CD /* Build configuration list for PBXNativeTarget "WPhotoExtention" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0482B6721FB4293F009CE6CD /* Debug */,
+				0482B6731FB4293F009CE6CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04BF4C2C1FB3EC2B00177DB9 /* Build configuration list for PBXProject "17-11-9-SearchBarController-" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

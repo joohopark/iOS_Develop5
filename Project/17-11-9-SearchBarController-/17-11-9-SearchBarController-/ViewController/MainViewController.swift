@@ -5,6 +5,8 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var tableView: UITableView!
+    
+    
     let identifier = "Cell"
     
     var imageList: [Data] = []
@@ -30,14 +32,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CustomCellTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CustomCellTableViewCell
         
-        cell?.titleLB.text = "\(indexPath)"
+        cell.titleLB.text = "\(indexPath)"
+        
+        
+        cell.tailBtn.setImage(#imageLiteral(resourceName: "StarIcon_Off"), for: .normal)
+        
+        //cell.tailBtn.imageView?.image = #imageLiteral(resourceName: "StarIcon_Off")
+        
 //        cell?.backGroundImage.image = UIImage(named: "test.jpg")
 //        cell?.tailImageView.image = #imageLiteral(resourceName: "StarIcon_Off")
         
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -54,7 +62,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func starBtnAction(_ sender: UIButton) {
-        print("버튼눌림")
+        if sender.currentImage == #imageLiteral(resourceName: "Star Icon") {
+            sender.setImage(#imageLiteral(resourceName: "StarIcon_Off"), for: .normal)
+        }else {
+            sender.setImage(#imageLiteral(resourceName: "Star Icon"), for: .normal)
+        }
     }
     
 

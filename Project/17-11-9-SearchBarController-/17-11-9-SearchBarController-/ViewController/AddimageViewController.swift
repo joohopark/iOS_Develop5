@@ -5,9 +5,6 @@ class AddimageViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var titleLB: UILabel?
     @IBOutlet weak var imageView: UIImageView!
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
