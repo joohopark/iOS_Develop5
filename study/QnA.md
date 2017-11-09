@@ -69,4 +69,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 ---
 
-## Q.4 -------?
+## Q.4 달력 만들기 부분에서, 날짜 변환... 뭔가 이상함;
+
+
+```swift
+let calendarIns = Calendar(identifier: .gregorian)
+var components = calendarIns.dateComponents([.year, .month, .day], from: date)
+print(components.year)
+
+components.day = 1
+print(components)
+let firstDayDate = calendarIns.date(from: components) // 2017-10-31
+print(firstDayDate)
+
+var weekDayCompo = calendarIns.dateComponents([.weekday], from: firstDayDate!) // 11월달의 첫번째달의 요일을 출력하는 이유는??
+//weekDayCompo = calendarIns.dateComponents([.], from: firstDayDate!)
+print(weekDayCompo)
+
+```
