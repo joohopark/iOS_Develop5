@@ -6,6 +6,8 @@
 
 ---
 
+![screen](/study/image/Calendar-2.jpg)
+
 |--View<br>
 |----CollectionView
 
@@ -265,46 +267,202 @@ struct MJcalendarDataModel {
 
 ## DateModel 을 통한 값을 CollectionView에 뿌려줍니다.
 
+```swift
+
+class MJCalendar: UIView {
+
+	  var year: Int?
+    var month: Int?
+    
+    //Date 값을 옵져빙으로 가져옴
+    // ViewController 에서 date 에 Date() 값을 넣으면, date의 변한값으로 year,month, 값을 넣어주고 contentsView를 reload후, 데이터를 뿌려줍니다.
+    var date: Date? {
+        willSet{
+            calendarData = MJcalendarDataModel(date: newValue!)
+            year = calendarData?.year
+            month = calendarData?.month
+            contentsView.reloadData()
+        }
+    }
+    
+    private var calendarData: MJcalendarDataModel?
+}
+
+```
+---
+
+## Cell, itemSize 를 정의합니다.
+
+```swift
+
+extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    // 각 색션의 item 개수 정의
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            return 7
+        }else {
+            if let calendarData = calendarData {
+                // 2번째 색션의 총 cell의 개수는, 첫 날짜개수 + 마지막 달의 개수
+                return calendarData.lastDayOfMonth + calendarData.startWeekOfMonth.rawValue
+            }else {
+                return 0
+            }
+        }
+       
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifie, for: indexPath) as! CustomCell
+        
+        
+        if indexPath.section == 0 {
+            //WeekDay의 rawValue 이용했음.
+            cell.titleLB.text = WeekDay(rawValue: indexPath.row)?.name
+            
+        }else {
+            // 시작 cell의 위치를 잡기위해서 계산해주는식.
+            // 각달의 1일의 요일을 숫자로 변경한후, 그값을 indexPath.item에서 빼주게되었을때 '0' 이 되는 곳을 시작점으로 줄수있다.
+            let changedIndex = indexPath.item - calendarData!.startWeekOfMonth.rawValue
+            if changedIndex >= 0 {
+                let day = changedIndex + 1
+                
+                cell.titleLB.text = "\(day)"
+                cell.titleLB.textColor = .black
+            }
+        }
+        return cell
+    }
+    // MARK: Modified Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.section == 0 {
+            return CGSize(width: collectionView.bounds.size.width/7, height: collectionView.bounds.size.height/6)
+        }else {
+            return CGSize(width: collectionView.bounds.size.width/7, height: collectionView.frame.size.height/6)
+        }
+    }
+    
+    // lineSpaceing 을 0으로
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+}
 
 
+```
+
+> 주의 사항으로는 CollectionView는 기본적으로, item, lineSpacing 이 10 정도 먹여져(?) 있습니다. 그래서 CollectionView의 Cell size를 생각할때, item, lineSpacing을 함께 고려해서 생각 해주어야 합니다.
+> 
+> 기본적으로, 첫번째 View에 달력을 뿌려주기가 완성됬습니다. 이제 기본적은 달력을 가져왔으니, 다음달, 전 달을 load 하는것을 만들어봅니다..!
 
 
+---
 
+## 확장
 
+![screen](/study/image/Calendar-3.gif)
 
+ViewController 에서 Next, Previous 버튼을 누르게 되면
 
+|--ViewController <br>
+|----MJCalendar.updatePrevious() <br>
+|------MJcalendarMager.previousMonth(with: MJcalendarDataModel!) <br>
 
+계층 구조로 데이터를 부르고 CollectionView를 `reload()` 합니다.
 
+```swift
 
+** ViewController 부분 
+@IBAction func previousAction(_ sender: UIButton) {
+        mjcalendear.updatePrevious()
+        if let monthText = mjcalendear.month {
+            monthLB.text = "\(monthText) 월"
+        }
+    }
+    
+    @IBAction func nextAction(_ sender: UIButton) {
+        mjcalendear.updateNextMonth()
+        if let monthText = mjcalendear.month {
+            monthLB.text = "\(monthText) 월"
+        }
+        
+        
+    }
 
+** MJCalendar(UIVIew) 부분
 
+func updateNextMonth() {
+        date = MJcalendarMager.nextMonth(with: calendarData!)
+    }
+    
+    func updatePrevious() {
+        date = MJcalendarMager.previousMonth(with: calendarData!)
+        
+    }
+    
+** MJcalendarMager 부분 
 
+class MJcalendarMager {
+    
+    class func nextMonth(with dateModel: MJcalendarDataModel) -> Date {
+        
+        let calendarIns = Calendar(identifier: .gregorian)
+        
+        var newComponets = DateComponents()
+        newComponets.year = dateModel.year
+        newComponets.month = dateModel.month + 1
+        newComponets.day = dateModel.day
+        
+        if let nextDate = calendarIns.date(from: newComponets) {
+            return nextDate
+        }else {
+            return Date()
+        }
+    }
+    
+    class func previousMonth(with nowDate: MJcalendarDataModel) -> Date? {
+        print(nowDate)
+        
+        let calendarIns = Calendar(identifier: .gregorian)
+        
+        var newComponets = DateComponents()
+        
+        newComponets.year = nowDate.year
+        newComponets.month = nowDate.month - 1
+        newComponets.day = nowDate.day
+        print(newComponets.year, newComponets.month, newComponets.day)
+        
+        if let nextDate = calendarIns.date(from: newComponets) {
+            return nextDate
+        }else {
+            return Date()
+        }
+        
+        
+    }
+    
+    
+    
+}
 
+```
 
-
-
-
+> 확장 & 고려 해야하는 부분은, 각 cell을 선택하고 어떤 Action을 주어야 할때, Cell 이 재사용 되는것을 어떻게 해결할것인지에 대한 문제랑, 다른 month 를 갔다가, 다시 돌아왔을때, 내가 표시해둔 어떤 정보를 그대로 가져오는 방법에 대해서 고민 해야할것 같습니다. 
+> 
 
 
 
 
 ---
-
-|--View
-|--CollectionView -> 색션 2개 -> 색션의 아이템은 7개(요일)
-
-각 셀에 Label에 텍스트를 하나씩 주어서 만듬..
-
-데이터 모델링을 할때, 
-
-년도 
-몇월
-시작날이 무슨요일인지 
-마지막날 : 30, 29, 31일...
-
-이녀석들을 가지고, 각 CollectionView에다가 값을 뿌려주는것 같음.
-
-initView-> 컬렉션뷰의 오토레이아웃을 잡아줌..
-아이템과 라인 스페이싱은 기본적으로 0, 아이템의 사이즈는, 컬렉션뷰의 witdh와 hight 값이 같게, 만듬..
-
-결국에는 캘린더에 뿌려주는 데이터를 어떻게 뿌려줄것인가에 대한고민, 그것만 해결하면 기능을 넣는것도 그렇게 어렵지 않을것 같다고 생각된다..
