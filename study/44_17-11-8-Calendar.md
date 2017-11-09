@@ -13,7 +13,7 @@
 
 의 계층 구조로 달력을 만들자!
 
-| 완성본 | | 과정 |
+| 완성본 |  과정 |
 | :---: | :---: | 
 | ![screen](/study/image/Calendar-2.jpg) | ![screen](/study/image/Calendar.jpg) |
 
