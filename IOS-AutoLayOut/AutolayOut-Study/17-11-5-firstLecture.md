@@ -126,12 +126,16 @@ item1.atrribute = 비율 * item2.atrribute + 간격
 
 반대로 오른쪽의 레이블의 크기를 늘리게 되면, 이때 왼쪽 레이블의 크기는 고정이 되어서 변화되지 않고, 왼쪽 레이블의 크기만 변하게 되는데, 일정 범위를 넘어가게 되면 device 의 범위를 벗어나서 오류가 발생하게 됩니다. 
 
+**Contents Hugging Priority 가 높은쪽이 자신이 정해놓은 frame 사이즈를 벗어나지 못하게 hugging 한다 **
+
 > 자신의 사이즈를 유지 하느냐 안하겠느냐에 대한 우선 순위를 설정한다고 생각하면 조금 편합니다..
 
 #### - Content Compression resistance Priority
 
 `Content Hugging Priority` 의 반대되는 개념입니다.<br>
 위의 `Content Hugging Priority` 값이 높은 쪽은 자신의 초기 크기를 유지하게됩니다. 그러다가 두개의 Label의 크기가 device의 범위를 넘어가게될때 두개의 label 오류인상태로 늘어나지도, 줄어들지도 않게 되는데  `Content Compression resistance Priority` 값을 적용하게 되면, `Content Compression resistance Priority` 값이 높은 쪽의 Label이 `Content Compression resistance Priority` 값이 낮은쪽의 Label의 크기가 변화하게 되면, 높은 값을 가지고 있는 쪽은 찌그러지지(?) 않게 됩니다. 찌그러지는 값에 대한 정항 정도라고 생각할수 있습니다. 
+
+
 
 > 모든 객체들의 Constraints 에는 Priority 의 값이 있습니다. 이 값을 잘 이용한다면, 조금 더 원하는 형태의 AutolayOut을 설계 할수 있습니다.
 >
