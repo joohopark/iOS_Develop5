@@ -49,18 +49,13 @@ class AddimageViewController: UIViewController, UIImagePickerControllerDelegate,
         cameraController.delegate = self
         cameraController.sourceType = .photoLibrary
         present(cameraController, animated: true, completion: nil)
-        
-        
-        
     }
+    
+    
     
     @IBAction func StoreBtnAction(_ sender: UIButton) {
         if let imgData = UserDefaults.standard.value(forKey: "profileImgData") as? Data {
-            
         }
-        
-        
-        
     }
 
 

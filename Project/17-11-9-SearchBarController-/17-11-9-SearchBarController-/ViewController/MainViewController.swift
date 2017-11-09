@@ -33,7 +33,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? CustomCellTableViewCell
         
         cell?.titleLB.text = "\(indexPath)"
-        cell?.backGroundImage.image = UIImage(named: "test.jpg")
+//        cell?.backGroundImage.image = UIImage(named: "test.jpg")
 //        cell?.tailImageView.image = #imageLiteral(resourceName: "StarIcon_Off")
         
         
@@ -53,6 +53,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 100
     }
     
+    @IBAction func starBtnAction(_ sender: UIButton) {
+        print("버튼눌림")
+    }
     
 
 
