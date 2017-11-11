@@ -24,6 +24,12 @@
 
 ---
 
+## CPU 구조
+
+![screen](/study/image/CPU-2.png)
+
+
+
 
 
 
