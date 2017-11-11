@@ -28,6 +28,48 @@
 
 ![screen](/study/image/CPU-2.png)
 
+* CU(Control Unit)
+* ALU(Arithmetic Logic Unit)
+* Register
+* CACHE
+
+---
+
+## CPU, CORE, Thread
+
+![screen](/study/image/CPU-3.png)
+
+```
+Cpu{ Core { 
+		Thread, Thread1, Thread2....} 
+		
+		Core1 {
+		Thread, Thread1, Thread2... }
+		
+		}
+``` 
+
+- Core 는 Os에 의해서 되어 지는데, CPU 속에 하나의 Core가 연산을 유지합니다. 
+- 여러개의 Core가 동시에 작업하는것 같지만 CPU는 한번에 하나의 Core 연산을 유지 할수 있습니다
+
+[What is the difference between a ‘Thread’ and a ‘Core’?](https://bitsum.com/tips-and-tweaks/what-is-the-difference-between-a-thread-and-a-core/)
+
+---
+
+## Hyper-Threading Technology
+
+
+| 일반 | hyper-Threading |
+| :---: | :---: | 
+| ![screen](/study/image/CPU.png) | ![screen](/study/image/CPU-1.png) |
+
+
+하이퍼스레딩(Hyper-Threading Technology, 이하 HTT)은 인텔이 동시 멀티스레딩을 구현한 기술이다. 물리상 실행 장치 한 개에 가상 실행 장치 두 개를 할당해 성능을 높이려는 기술이다. 운영 체제는 코어 한 개당 스레드가 두 개씩 추가돼 싱글 코어(1개)는 듀얼 코어(2개), 듀얼 코어(2개)는 쿼드코어(4개), 쿼드코어(4개)는 옥타코어(8개), 옥타코어(8개)는 헥사 데시멀 코어(16개) 가 장착 되어있다고 인식한다.
+
+
+
+
+
 
 
 
@@ -40,12 +82,6 @@
 
 ---
 
-Core와 thread,CPU의 차이
-In hardware, a ‘thread’ usually means a logical core
-
-**코어는 OS의 의해서 관리되어 지는데, CPU 속에서 하나의 Core속의 Thread 만 연산시에 유지됨**
-
-[](https://bitsum.com/tips-and-tweaks/what-is-the-difference-between-a-thread-and-a-core/)
 
 - 리눅스 CPU 개념 확인하기 좋은 예시 
 http://zetawiki.com/wiki/리눅스_CPU_개수_확인
