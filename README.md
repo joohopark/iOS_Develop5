@@ -122,7 +122,7 @@
 
 ### * **Part 9** 
 
-> 1. [Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue,](/stusy/42_17-11-6-Thread.md)
+> 1. [Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue](/stusy/42_17-11-6-Thread.md)
 > 
 > 2. [DeviceTest, MapKit](/study/43_17-11-7-deviceTest-Mapkit.md)
 > 
