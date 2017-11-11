@@ -20,7 +20,9 @@
 
 | 외형 | 내형 |
 | :---: | :---: | 
-| ![screen](/study/image/CPU.png) | ![screen](/study/image/CPU.png) |
+| ![screen](/study/image/CPU.png) | ![screen](/study/image/CPU-1.png) |
+
+---
 
 
 
