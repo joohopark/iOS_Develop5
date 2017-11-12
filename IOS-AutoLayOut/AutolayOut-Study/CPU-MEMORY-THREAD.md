@@ -117,83 +117,90 @@ sysctl hw | grep cpu
 
 공유 자원을 가지고, CPU 가 서로 사용하기 위해 CPU 권한을 뺴앗는것, 수행해야 하는 연산을 하기전에, CPU 권한이 넘어가 버려서, 해야할 수행을 하지 못하게 되는 현상이 발생함... 그것에 대한 대안으로 mutual exclusion 발상을 하게 됨.
 
-#### - 
+```swift
+
+** 일반 적인 경우
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    var globalCount = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        for _ in 0...10000 {
+            self.globalCount += 1
+
+            self.globalCount += 1
+        }
+        print(globalCount) // 20002
+     }
+
+** Race condition 이 발생하지 않는 경우 
 
 
+	let q = DispatchQueue.main.async {
+            for _ in 0...10000 {
+                self.globalCount += 1
+                print("\(self.globalCount) in q")
+                
+                let qq = DispatchQueue.main.async {
+                    self.globalCount += 1
+                    print("\(self.globalCount) in qq")
+                }
+            }
+        }
+        print(self.globalCount) // 20002
+        
+
+** Race Condition 발생하는 경우 
+
+let q = DispatchQueue.global().async {
+            for _ in 0...10000 {
+                self.globalCount += 1
+                print("\(self.globalCount) in q")
+
+                let qq = DispatchQueue.global().async {
+                    self.globalCount += 1
+                    print("\(self.globalCount) in qq")
+                }
+            }
+        }
+        self.globalCount 에서 Race Condition 이 발생해서, globalCount가 목표값 까지 도달 하지 못함.
+        
+** Race Condition 방지
+
+        
+        let semaphore = DispatchSemaphore(value: 1)
+        
+        
+        let q = DispatchQueue.global().async {
+            for _ in 0...10000 {
+                semaphore.wait()
+                self.globalCount += 1
+                print("\(self.globalCount) in q")
+                
+                let qq = DispatchQueue.global().async {
+                    self.globalCount += 1
+                    semaphore.signal()
+                    print("\(self.globalCount) in qq")
+                }
+            }
+            
+        }
+        
+        > siginal 형식을 통해서, globalCount에 접근할때 접근하는 count를 막아줍니다
+        
+```
 
 ---
 
+## 여담
 
+CPU strees test 하는 방법!
 
-## Cache
+- 터미널에서, thread 생성, 활성상태 에서 확인가능합니다
 
-![screen](/study/image/CPU-6.png)
-
-위로 갈수록 용량은 커지고, 속도는 느려지고, 가격도 저렴해집니다.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-
-- 리눅스 CPU 개념 확인하기 좋은 예시 
-http://zetawiki.com/wiki/리눅스_CPU_개수_확인
-
-
-
-
-
--
-- 물리적 스레드, 하이퍼스레드(가상 스레드)
-가상 스레드는 물리적 스레드보다 성능이 떨어짐. 근데 없는것보다는 낫다
-
-인텔 제품끼리보더라도 i5와 i7의 차이가 결국 하이퍼쓰레딩으로 인해 가상코어4개가 더 있냐없냐의 차이인데 이것이 일반적인 인코딩이나
-
-
-- 하이퍼 스레딩에 대한 자세한 설명
-https://nbamania.com/g2/bbs/board.php?bo_table=freetalk&wr_id=1332997
-
-- 4코어, 1 스레드 
-과거에는4코어4쓰레드처럼1코어당 1쓰레드로 데이터를 처리했다. 코어를 회사에 있는 하나의 훌륭한 인재라고 한다면, 인재가 회사의 업무를 처리하는 방식이 한 가지인 것이다. 즉, 1코어가 데이터를 처리할 때 하나의 길로 송신하고 수신하고 하는 것이다. 그러나 요즘은 4코어8쓰레드처럼 1코어당2쓰레드로 데이터를 처리한다. 즉 송신하고 수신하는 길이 다른 것이다.
-
-2코어 4쓰레드, 4코어 8쓰레드처럼 1코어당 2쓰레드란 개념은 CPU 최적화를 위해 만들어진 것으로 실제 성능이 15%정도 향상된다고 한다.
-
-
-- CPU 성능 환산
-
- CPU
- 
-- 
- 
- 
- 
-▶ CPU의 연산 속도, 클럭
- 
-- 컴퓨터에 있는 모든 데이터는 이진수로 처리되므로, 어떤 데이터라 할지라도 CPU는 수많은 0과 1로 이루어진 데이터를 연산하여 다양한 결과를 도출한다. 즉, 컴퓨터 내부에서 이동하는 데이터는 0과 1로만 구성된 디지털 신호의 조합이다.
- 
-- 이러한 디지털 신호를 빠르게 처리하는 연산 속도는 CPU마다 다르다. 속도를 나타내는 대표적인 단위는 클럭(Clock)이다. 클럭이란 1초당 CPU 내부에서 몇 단계의 작업이 처리되는 지를 측정하여 주파수 단위인 헤르츠(Hz)로 나타낸 것이다. 즉, 이 클럭 수치가 높을수록 빠른 성능의 CPU라고 볼 수 있다. 예를 들어 인텔 코어(Core) i7 4790K라는 제품의 CPU는 클럭이 4GHz인데, 이는 1초에 약 40억개의 작업이 처리됨을 의미한다. 
-
-
-하이퍼 스레딩은, 코어를 세분화 한다기 보다는 한코어에서 두개 이상의 쓰레드가 돌아가는 경우에 쓰레드 전환의 오버헤드를 줄여주는 기능을 합니다. 새로운 자원을 만들어 내는것이 아니기 때문에 원래 코어에 여유가 있을 때만 성능 향상 효과가 잇고, 코어가 100퍼센트로 차 있는 상황에서는 성능 향상이 없거나 오히려 성능이 저하될 수도 있습니다.
-
-
-- CPU strees test & 확성상태로 thread 확인
-
-
-- thread 생성, 활성상태 에서 확인가능
 ```
 yes > /dev/null &
 ```
@@ -203,6 +210,8 @@ yes > /dev/null &
 ```
 $ killall yes
 ```
+---
+
 
 
 
