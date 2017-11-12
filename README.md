@@ -129,6 +129,8 @@
 > 3. [Calendar 만들기](/study/44_17-11-8-Calendar.md)
 > 
 > 4. [작성중..위젯, SerachBarController](/study/45_17-11-9-SearchController-Wejet-imagePicker.md)
+> 
+> 5. [UISearchController, CAGradientLayer](/study/46_17-11-10-SearchBarController-Gradation.md)
 
 
 
