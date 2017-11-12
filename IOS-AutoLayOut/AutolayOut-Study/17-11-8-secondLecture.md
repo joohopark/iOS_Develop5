@@ -18,3 +18,10 @@ StakcView는 4개의 버튼이 있어도, 한개의 높이만 지정해주면 �
 
 > Aspect Ratio 는, 그냥 선택하면 바로 변하지 않고, 일단 Aspect Ratio 추가후, 따로 Multiplier 를 조정해서 설정해주어야 합니다..!
 > 
+> 일반적으로, 위치나 크기가 균등하다면 StackView가 편하다..! 
+
+---
+
+# Calc_2_rotate
+
+LandScape 에서 
