@@ -155,16 +155,22 @@ class ViewController: UIViewController {
 
 ** Race Condition 발생하는 경우 
 
-let q = DispatchQueue.global().async {
+let semaphore = DispatchSemaphore(value: 1)
+        
+        
+        let q = DispatchQueue.global().async {
             for _ in 0...10000 {
                 self.globalCount += 1
                 print("\(self.globalCount) in q")
-
-                let qq = DispatchQueue.global().async {
-                    self.globalCount += 1
-                    print("\(self.globalCount) in qq")
-                }
             }
+        }
+        
+        let qq = DispatchQueue.global().async {
+            for _ in 0...10000 {
+                self.globalCount += 1
+                print("\(self.globalCount) in qq")
+            }
+            
         }
         self.globalCount 에서 Race Condition 이 발생해서, globalCount가 목표값 까지 도달 하지 못함.
         
@@ -178,13 +184,23 @@ let q = DispatchQueue.global().async {
             for _ in 0...10000 {
                 semaphore.wait()
                 self.globalCount += 1
+                semaphore.signal()
+                
                 print("\(self.globalCount) in q")
                 
-                let qq = DispatchQueue.global().async {
-                    self.globalCount += 1
-                    semaphore.signal()
-                    print("\(self.globalCount) in qq")
-                }
+            }
+        }
+        
+        let qq = DispatchQueue.global().async {
+            
+            for _ in 0...10000 {
+            
+                semaphore.wait()
+                self.globalCount += 1
+                semaphore.signal()
+                print("\(self.globalCount) in qq")
+                
+                
             }
             
         }
