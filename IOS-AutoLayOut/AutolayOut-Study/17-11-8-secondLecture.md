@@ -49,8 +49,39 @@ portrait, LandScape 에서 보여지는 부분이 서로 다를때 사용하는 
 |----imageView
 |----image
 
-image를 View속에다가 가두어 놓고 autoLayout을 통해서 사용함..
-비율이 흐트러지지 않게 같은걸로 나타나게 하는것은 `Aspect Fit` 보이는것은 원래 크기로 보여지는데, View의 크기는 픽셀 크기로 보이게됨.. 
+> 이미지속에 작성될 텍스트를, image의 크기에 따라서 동적으로 변경되게 적용 하려고 합니다..!
+>
+> View, Imageview에 autoLayout을 적용해서, 모든 디바이스에 원하는 형태로 대응할수 있게 만들어 줍니다.
+
+
+
+ 
+ |--View
+ |----ImageView를 넣어줍니다. 
+ 
+ | * | Aspect Fit | 
+| :---: | :---: 
+|  ![screen](/study/image/Dynamic_Text.png) |  ![screen](/study/image/Dynamic_Text-1.png)|
+
+ 
+ - View의 Constraints 는, 좌,우 20, 센터 정렬을 해줍니다(top,bottom 은 지정하지않습니다)
+ - imageView의 Constraints 응 상,하,좌,우 0 으로 빽빽하게 적용 하고 image를 넣어줍니다.
+
+> 이렇게 적용하게 되면 image의 pixels 크기로 imageView가 사이즈를 자동으로 변경하게 됩니다. 이때 `Aspect Fit` 을 해주게되면, 보여지는 image는 device 사이즈의 가운데로 오지만, imageView의 CGSize 는 image의 원본 사이즈를 유지하게 됩니다.  
+> 
+
+
+ | imagePixeld | Aspect Ratio | multiplier | imageView 사이즈 확인|
+| :---: | :---: | :---: | :---: | 
+|  ![screen](/study/image/Dynamic_Text-2.png) |  ![screen](/study/image/Dynamic_Text-3.png)|   ![screen](/study/image/Dynamic_Text-4.png) |  ![screen](/study/image/Dynamic_Text-5.png)| 
+ 
+- 디바이스에 보여지는 크기로 만들어 주기 위해서는 이미지의 픽셀 크기를 비율로 imageView의 사이즈를 정의해주면, 디바이스에 보여지는 사이즈의 비율로, 이미지의 비율을 유지할수 있습니다.
+
+ 
+
+
+
+
 디바이스에 딱 보여지는 크기로 만들어 주기 위해서는 이미지의 픽셀 크기를 비율로서 지정 해주면됨.
 
 
