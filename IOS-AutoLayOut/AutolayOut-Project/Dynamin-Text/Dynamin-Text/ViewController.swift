@@ -8,16 +8,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var graph3Height: NSLayoutConstraint!
     @IBOutlet weak var graph4Height: NSLayoutConstraint!
     @IBOutlet weak var graph5Height: NSLayoutConstraint!
-    
     @IBOutlet weak var graph6Height: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
         
         
     }
@@ -79,7 +73,7 @@ extension NSLayoutConstraint {
         return newConstraint
     }
     
-    //NsLayout을 사용하는데, 내가 기본셋팅을 바꾸어서, 원하는 값만 사용하려고함
+    //NSLayout을 사용하는데, 내가 기본셋팅을 바꾸어서, 원하는 값만 사용하려고함
     
 }
 
