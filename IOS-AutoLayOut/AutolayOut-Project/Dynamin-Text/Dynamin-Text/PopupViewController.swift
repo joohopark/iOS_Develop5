@@ -11,6 +11,7 @@ import UIKit
 class PopupViewController: UIViewController {
 
     
+    
     @IBOutlet weak var popupViewCenterY: NSLayoutConstraint!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var popupImageView: UIImageView!
@@ -18,8 +19,9 @@ class PopupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewDidLoad")
-        
         popupViewCenterY.constant = 1000
+        
+        
         
         
     }

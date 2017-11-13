@@ -10,6 +10,7 @@
 4. Graph_AutoLayout_Code
 5. AutoLayout_Animate
 6. popup View 
+7. TableView-Expand
 
 ---
 
@@ -356,4 +357,113 @@ class PopupViewController: UIViewController {
 
 ---
 
+## TableView-Expand
 
+tableView의 Cell의 text 개수에 따라서 유동적으로 cell의 크기를 구성하는 방법..?
+
+StoryBoard 에서 tableView위에 바로 Cell 을 올리게되면 register을 하지 않아도된다. StoryBoard 에서 TableView에 Cell을 올리는 그자체가 register 하는 과정이다.
+
+텍스트의 길이가 다를때, 나의 클릭으로 인해서 텍스트 길이가 늘어나게 하는방법..
+
+
+- 기본적으로 cell의 높이가 같고, 클릭을 했을떄, cell의 높이가 달라지게 하려면 어떻게 해야할까..?
+
+- 높이를 저장할 변수가 필요함..?
+
+어떤 화면 구성을 바꾸기 위해서는, View,TableView나 화면을 갱신해주는 method가 필요함.
+
+두개의 매서드를 사용해서 구현할수 있음
+
+```swift
+
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+//        tableView.reloadData()
+```
+
+
+#### - label의 크기에 따라서 유동적으로 Cell의 높이값을 변하게 하는 방법
+
+```swift
+
+
+import UIKit
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let heightArray: NSMutableArray = []
+    let textDataArray: NSArray = ["short Text",
+                                  "Long Long Long Long Long Long Long Text",
+                                  "Very Long Long Long Long Long Long Long Long Long Long Text Very Long text ",
+                                  "Very Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Text Very Long text "]
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // text의 크기만큼 높이값이 자동으로 계산되어짐.
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        for _ in 0...14 {
+            heightArray.add(false)
+        }
+        
+        
+        
+        
+    }
+    
+    // label의 text 줄수만큼, 높이가 가변적으로 변하게됨.
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "expandCell", for: indexPath) as! MyCell
+        
+        if heightArray[indexPath.row] as! Bool == false {
+            cell.myLabel.numberOfLines = 1
+        }else {
+            cell.myLabel.numberOfLines = 0
+        }
+        
+        cell.myLabel.text = textDataArray[indexPath.row%3] as! String
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.heightArray[indexPath.row] as? Bool == false {
+            heightArray.replaceObject(at: indexPath.row, with: true)
+        }else {
+            heightArray.replaceObject(at: indexPath.row, with: false)
+        }
+        
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        //        tableView.reloadData()
+    }
+    
+    
+    
+    
+    
+}
+
+
+class MyCell: UITableViewCell {
+    @IBOutlet weak var myLabel: UILabel!
+}
+
+
+
+```
+
+---
+
+## TableView-Dynamic-Cell
