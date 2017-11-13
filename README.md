@@ -137,6 +137,8 @@
 ### *  **AutolayOut** 
 
 > 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
+> 
+> 2. [작성중..StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
 
 ### *  **Github 으로 협업하기** 
 

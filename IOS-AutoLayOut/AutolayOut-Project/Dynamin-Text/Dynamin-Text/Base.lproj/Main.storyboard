@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wgp-2E-OYy">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,26 +17,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dynamin_Text" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uO-63-mXx">
-                                <rect key="frame" x="20" y="40" width="280" height="400"/>
+                                <rect key="frame" x="20" y="101.66666666666669" width="374" height="532.66666666666652"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cert_BG.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="Dhc-kB-OI5">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="532.66666666666663"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Dhc-kB-OI5" secondAttribute="height" multiplier="1009:1438" id="j8N-j9-RbP"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공인인증서" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uR1-0F-DGh">
-                                        <rect key="frame" x="94.5" y="0.0" width="91" height="148.5"/>
+                                        <rect key="frame" x="126.33333333333334" y="0.0" width="121.33333333333334" height="197.66666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MGe-a5-ccX">
-                                        <rect key="frame" x="111.5" y="0.0" width="57" height="280.5"/>
+                                        <rect key="frame" x="149" y="0.0" width="76" height="373"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="발급자: 금융감독원  종  류: 은행  만료일: 2017-1-1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Irk-tv-OTX">
-                                <rect key="frame" x="113" y="40" width="94" height="400"/>
+                                <rect key="frame" x="144.33333333333334" y="101.66666666666669" width="125.33333333333334" height="532.66666666666652"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,33 +89,67 @@
             <objects>
                 <viewController id="uJX-wn-Xk6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quc-PW-LHi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-6H-ux3">
-                                <rect key="frame" x="20" y="40.5" width="280" height="399"/>
+                                <rect key="frame" x="20" y="101.66666666666669" width="374" height="532.66666666666652"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cert_BG.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="6am-c7-FwA">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="399"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="532.66666666666663"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6am-c7-FwA" secondAttribute="height" multiplier="1009:1438" id="hYG-rP-8zN"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wzm-uH-ycl">
+                                        <rect key="frame" x="151.33333333333334" y="0.0" width="72.333333333333343" height="373"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="발급자 : 금융감독원  종  류: 은행  만료일: 2017-1-1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XGS-dH-tRi">
+                                        <rect key="frame" x="106.99999999999999" y="0.0" width="160.66666666666663" height="586.33333333333337"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="wzm-uH-ycl" firstAttribute="top" secondItem="6am-c7-FwA" secondAttribute="top" id="7su-dt-gv3"/>
+                                    <constraint firstItem="wzm-uH-ycl" firstAttribute="bottom" secondItem="6am-c7-FwA" secondAttribute="bottom" multiplier="0.7" id="C7Q-eT-gbh"/>
+                                    <constraint firstItem="wzm-uH-ycl" firstAttribute="width" secondItem="6am-c7-FwA" secondAttribute="height" multiplier="73:532" id="E4m-Tx-BQu"/>
+                                    <constraint firstItem="wzm-uH-ycl" firstAttribute="centerX" secondItem="Cmg-6H-ux3" secondAttribute="centerX" id="EnB-rV-kxa"/>
+                                    <constraint firstItem="XGS-dH-tRi" firstAttribute="centerX" secondItem="Cmg-6H-ux3" secondAttribute="centerX" id="Fxm-3K-Ykb"/>
+                                    <constraint firstItem="6am-c7-FwA" firstAttribute="centerX" secondItem="Cmg-6H-ux3" secondAttribute="centerX" id="GFu-RI-4SK"/>
+                                    <constraint firstItem="XGS-dH-tRi" firstAttribute="top" secondItem="6am-c7-FwA" secondAttribute="top" id="RTs-EP-beD"/>
+                                    <constraint firstItem="6am-c7-FwA" firstAttribute="centerX" secondItem="Cmg-6H-ux3" secondAttribute="centerX" id="Rq7-qF-QpB"/>
                                     <constraint firstItem="6am-c7-FwA" firstAttribute="top" secondItem="Cmg-6H-ux3" secondAttribute="top" id="Sm9-VF-GnP"/>
                                     <constraint firstAttribute="bottom" secondItem="6am-c7-FwA" secondAttribute="bottom" id="doa-w5-kIz"/>
                                     <constraint firstItem="6am-c7-FwA" firstAttribute="leading" secondItem="Cmg-6H-ux3" secondAttribute="leading" id="evf-OY-jxx"/>
                                     <constraint firstAttribute="trailing" secondItem="6am-c7-FwA" secondAttribute="trailing" id="kci-Pr-u46"/>
+                                    <constraint firstItem="XGS-dH-tRi" firstAttribute="bottom" secondItem="6am-c7-FwA" secondAttribute="bottom" multiplier="1.1" id="o8N-5g-D8B"/>
+                                    <constraint firstItem="6am-c7-FwA" firstAttribute="centerY" secondItem="Cmg-6H-ux3" secondAttribute="centerY" id="u9n-tW-1Ir"/>
+                                    <constraint firstItem="6am-c7-FwA" firstAttribute="centerX" secondItem="Cmg-6H-ux3" secondAttribute="centerX" id="v8H-rL-W0J"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 위치에 고정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ckl-Lc-2bb">
+                                <rect key="frame" x="122.33333333333333" y="101.66666666666667" width="169.33333333333337" height="203.33333333333331"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Cmg-6H-ux3" firstAttribute="centerX" secondItem="quc-PW-LHi" secondAttribute="centerX" id="2FY-gM-bCN"/>
+                            <constraint firstItem="ckl-Lc-2bb" firstAttribute="top" secondItem="Cmg-6H-ux3" secondAttribute="top" id="BqA-OG-uOK"/>
                             <constraint firstItem="Cmg-6H-ux3" firstAttribute="centerX" secondItem="quc-PW-LHi" secondAttribute="centerX" id="J6S-VZ-t9H"/>
+                            <constraint firstItem="ckl-Lc-2bb" firstAttribute="bottom" secondItem="Cmg-6H-ux3" secondAttribute="bottom" multiplier="0.48" id="U3T-16-W2T"/>
                             <constraint firstItem="TOa-Fi-BH3" firstAttribute="trailing" secondItem="Cmg-6H-ux3" secondAttribute="trailing" constant="20" id="aTC-0P-jKK"/>
+                            <constraint firstItem="ckl-Lc-2bb" firstAttribute="width" secondItem="6am-c7-FwA" secondAttribute="height" multiplier="169:532" id="kM5-ac-9nF"/>
                             <constraint firstItem="Cmg-6H-ux3" firstAttribute="leading" secondItem="TOa-Fi-BH3" secondAttribute="leading" constant="20" id="vzG-Ba-Yb8"/>
+                            <constraint firstItem="ckl-Lc-2bb" firstAttribute="centerX" secondItem="quc-PW-LHi" secondAttribute="centerX" id="y6Z-25-pyi"/>
                             <constraint firstItem="Cmg-6H-ux3" firstAttribute="centerY" secondItem="quc-PW-LHi" secondAttribute="centerY" id="zdO-Mc-2b2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TOa-Fi-BH3"/>
@@ -123,41 +157,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOa-yf-6GK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697.5" y="133.75"/>
+            <point key="canvasLocation" x="697.10144927536237" y="133.69565217391306"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="srM-JE-aiy">
             <objects>
                 <viewController id="wgp-2E-OYy" customClass="ViewController" customModule="Dynamin_Text" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dm0-YL-uln">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyT-GU-0Qt">
-                                <rect key="frame" x="0.0" y="72" width="320" height="336"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="592"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeK-13-poF" userLabel="1">
-                                        <rect key="frame" x="20" y="335.5" width="30" height="0.5"/>
+                                        <rect key="frame" x="20" y="591.33333333333337" width="46" height="0.66666666666662877"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoK-9s-wJB" userLabel="2">
-                                        <rect key="frame" x="70" y="335.5" width="30" height="0.5"/>
+                                        <rect key="frame" x="86" y="591.33333333333337" width="45.666666666666657" height="0.66666666666662877"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQE-QM-k0F" userLabel="3">
-                                        <rect key="frame" x="120" y="335.5" width="30" height="0.5"/>
+                                        <rect key="frame" x="151.66666666666666" y="591.33333333333337" width="45.333333333333343" height="0.66666666666662877"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jT-Ey-5Q7" userLabel="4">
-                                        <rect key="frame" x="170" y="335.5" width="30" height="0.5"/>
+                                        <rect key="frame" x="217" y="591.33333333333337" width="45.666666666666686" height="0.66666666666662877"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mny-Rl-QC5" userLabel="5">
-                                        <rect key="frame" x="220" y="335.5" width="30" height="0.5"/>
+                                        <rect key="frame" x="282.66666666666669" y="591.33333333333337" width="46" height="0.66666666666662877"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEE-34-3jY" userLabel="6">
-                                        <rect key="frame" x="270" y="335.5" width="30" height="0.5"/>
+                                        <rect key="frame" x="348.66666666666669" y="591.33333333333337" width="45.333333333333314" height="0.66666666666662877"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
