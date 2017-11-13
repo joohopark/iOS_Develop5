@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044CD9DC1FB203D400B179E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CD9DB1FB203D400B179E4 /* AppDelegate.swift */; };
-		044CD9DE1FB203D400B179E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CD9DD1FB203D400B179E4 /* ViewController.swift */; };
-		044CD9E11FB203D400B179E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CD9DF1FB203D400B179E4 /* Main.storyboard */; };
-		044CD9E31FB203D400B179E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044CD9E21FB203D400B179E4 /* Assets.xcassets */; };
-		044CD9E61FB203D400B179E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CD9E41FB203D400B179E4 /* LaunchScreen.storyboard */; };
-		04F33D681FB95D8C0028574F /* Cert_Sample.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D661FB95D8C0028574F /* Cert_Sample.PNG */; };
-		04F33D691FB95D8C0028574F /* Cert_BG.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D671FB95D8C0028574F /* Cert_BG.PNG */; };
+		04F33D771FB95DD00028574F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F33D761FB95DD00028574F /* AppDelegate.swift */; };
+		04F33D791FB95DD00028574F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F33D781FB95DD00028574F /* ViewController.swift */; };
+		04F33D7C1FB95DD00028574F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D7A1FB95DD00028574F /* Main.storyboard */; };
+		04F33D7E1FB95DD00028574F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D7D1FB95DD00028574F /* Assets.xcassets */; };
+		04F33D811FB95DD00028574F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D7F1FB95DD00028574F /* LaunchScreen.storyboard */; };
+		04F33D8A1FB95E630028574F /* Cert_Sample.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D881FB95E620028574F /* Cert_Sample.PNG */; };
+		04F33D8B1FB95E630028574F /* Cert_BG.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D891FB95E620028574F /* Cert_BG.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		044CD9D81FB203D400B179E4 /* 17-11-8-Calc-StackView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "17-11-8-Calc-StackView.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		044CD9DB1FB203D400B179E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		044CD9DD1FB203D400B179E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		044CD9E01FB203D400B179E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		044CD9E21FB203D400B179E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		044CD9E51FB203D400B179E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		044CD9E71FB203D400B179E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04F33D661FB95D8C0028574F /* Cert_Sample.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cert_Sample.PNG; sourceTree = "<group>"; };
-		04F33D671FB95D8C0028574F /* Cert_BG.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cert_BG.PNG; sourceTree = "<group>"; };
+		04F33D731FB95DD00028574F /* Dynamin-Text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dynamin-Text.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F33D761FB95DD00028574F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04F33D781FB95DD00028574F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04F33D7B1FB95DD00028574F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04F33D7D1FB95DD00028574F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04F33D801FB95DD00028574F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04F33D821FB95DD00028574F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F33D881FB95E620028574F /* Cert_Sample.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cert_Sample.PNG; sourceTree = "<group>"; };
+		04F33D891FB95E620028574F /* Cert_BG.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cert_BG.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		044CD9D51FB203D400B179E4 /* Frameworks */ = {
+		04F33D701FB95DD00028574F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,74 +39,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		044CD9CF1FB203D400B179E4 = {
+		04F33D6A1FB95DD00028574F = {
 			isa = PBXGroup;
 			children = (
-				044CD9DA1FB203D400B179E4 /* 17-11-8-Calc-StackView */,
-				044CD9D91FB203D400B179E4 /* Products */,
+				04F33D751FB95DD00028574F /* Dynamin-Text */,
+				04F33D741FB95DD00028574F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		044CD9D91FB203D400B179E4 /* Products */ = {
+		04F33D741FB95DD00028574F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				044CD9D81FB203D400B179E4 /* 17-11-8-Calc-StackView.app */,
+				04F33D731FB95DD00028574F /* Dynamin-Text.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		044CD9DA1FB203D400B179E4 /* 17-11-8-Calc-StackView */ = {
+		04F33D751FB95DD00028574F /* Dynamin-Text */ = {
 			isa = PBXGroup;
 			children = (
-				044CD9DB1FB203D400B179E4 /* AppDelegate.swift */,
-				044CD9DD1FB203D400B179E4 /* ViewController.swift */,
-				044CD9DF1FB203D400B179E4 /* Main.storyboard */,
-				04F33D671FB95D8C0028574F /* Cert_BG.PNG */,
-				04F33D661FB95D8C0028574F /* Cert_Sample.PNG */,
-				044CD9E21FB203D400B179E4 /* Assets.xcassets */,
-				044CD9E41FB203D400B179E4 /* LaunchScreen.storyboard */,
-				044CD9E71FB203D400B179E4 /* Info.plist */,
+				04F33D761FB95DD00028574F /* AppDelegate.swift */,
+				04F33D781FB95DD00028574F /* ViewController.swift */,
+				04F33D7A1FB95DD00028574F /* Main.storyboard */,
+				04F33D891FB95E620028574F /* Cert_BG.PNG */,
+				04F33D881FB95E620028574F /* Cert_Sample.PNG */,
+				04F33D7D1FB95DD00028574F /* Assets.xcassets */,
+				04F33D7F1FB95DD00028574F /* LaunchScreen.storyboard */,
+				04F33D821FB95DD00028574F /* Info.plist */,
 			);
-			path = "17-11-8-Calc-StackView";
+			path = "Dynamin-Text";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		044CD9D71FB203D400B179E4 /* 17-11-8-Calc-StackView */ = {
+		04F33D721FB95DD00028574F /* Dynamin-Text */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 044CD9EA1FB203D400B179E4 /* Build configuration list for PBXNativeTarget "17-11-8-Calc-StackView" */;
+			buildConfigurationList = 04F33D851FB95DD00028574F /* Build configuration list for PBXNativeTarget "Dynamin-Text" */;
 			buildPhases = (
-				044CD9D41FB203D400B179E4 /* Sources */,
-				044CD9D51FB203D400B179E4 /* Frameworks */,
-				044CD9D61FB203D400B179E4 /* Resources */,
+				04F33D6F1FB95DD00028574F /* Sources */,
+				04F33D701FB95DD00028574F /* Frameworks */,
+				04F33D711FB95DD00028574F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "17-11-8-Calc-StackView";
-			productName = "17-11-8-Calc-StackView";
-			productReference = 044CD9D81FB203D400B179E4 /* 17-11-8-Calc-StackView.app */;
+			name = "Dynamin-Text";
+			productName = "Dynamin-Text";
+			productReference = 04F33D731FB95DD00028574F /* Dynamin-Text.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		044CD9D01FB203D400B179E4 /* Project object */ = {
+		04F33D6B1FB95DD00028574F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "MIN JUN JU";
 				TargetAttributes = {
-					044CD9D71FB203D400B179E4 = {
+					04F33D721FB95DD00028574F = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 044CD9D31FB203D400B179E4 /* Build configuration list for PBXProject "17-11-8-Calc-StackView" */;
+			buildConfigurationList = 04F33D6E1FB95DD00028574F /* Build configuration list for PBXProject "Dynamin-Text" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,56 +114,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 044CD9CF1FB203D400B179E4;
-			productRefGroup = 044CD9D91FB203D400B179E4 /* Products */;
+			mainGroup = 04F33D6A1FB95DD00028574F;
+			productRefGroup = 04F33D741FB95DD00028574F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				044CD9D71FB203D400B179E4 /* 17-11-8-Calc-StackView */,
+				04F33D721FB95DD00028574F /* Dynamin-Text */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		044CD9D61FB203D400B179E4 /* Resources */ = {
+		04F33D711FB95DD00028574F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044CD9E61FB203D400B179E4 /* LaunchScreen.storyboard in Resources */,
-				04F33D681FB95D8C0028574F /* Cert_Sample.PNG in Resources */,
-				044CD9E31FB203D400B179E4 /* Assets.xcassets in Resources */,
-				04F33D691FB95D8C0028574F /* Cert_BG.PNG in Resources */,
-				044CD9E11FB203D400B179E4 /* Main.storyboard in Resources */,
+				04F33D811FB95DD00028574F /* LaunchScreen.storyboard in Resources */,
+				04F33D8A1FB95E630028574F /* Cert_Sample.PNG in Resources */,
+				04F33D7E1FB95DD00028574F /* Assets.xcassets in Resources */,
+				04F33D8B1FB95E630028574F /* Cert_BG.PNG in Resources */,
+				04F33D7C1FB95DD00028574F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		044CD9D41FB203D400B179E4 /* Sources */ = {
+		04F33D6F1FB95DD00028574F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044CD9DE1FB203D400B179E4 /* ViewController.swift in Sources */,
-				044CD9DC1FB203D400B179E4 /* AppDelegate.swift in Sources */,
+				04F33D791FB95DD00028574F /* ViewController.swift in Sources */,
+				04F33D771FB95DD00028574F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		044CD9DF1FB203D400B179E4 /* Main.storyboard */ = {
+		04F33D7A1FB95DD00028574F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				044CD9E01FB203D400B179E4 /* Base */,
+				04F33D7B1FB95DD00028574F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		044CD9E41FB203D400B179E4 /* LaunchScreen.storyboard */ = {
+		04F33D7F1FB95DD00028574F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				044CD9E51FB203D400B179E4 /* Base */,
+				04F33D801FB95DD00028574F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		044CD9E81FB203D400B179E4 /* Debug */ = {
+		04F33D831FB95DD00028574F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -228,7 +228,7 @@
 			};
 			name = Debug;
 		};
-		044CD9E91FB203D400B179E4 /* Release */ = {
+		04F33D841FB95DD00028574F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -278,28 +278,28 @@
 			};
 			name = Release;
 		};
-		044CD9EB1FB203D400B179E4 /* Debug */ = {
+		04F33D861FB95DD00028574F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "17-11-8-Calc-StackView/Info.plist";
+				INFOPLIST_FILE = "Dynamin-Text/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-8-Calc-StackView";
+				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.Dynamin-Text";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		044CD9EC1FB203D400B179E4 /* Release */ = {
+		04F33D871FB95DD00028574F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "17-11-8-Calc-StackView/Info.plist";
+				INFOPLIST_FILE = "Dynamin-Text/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-8-Calc-StackView";
+				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.Dynamin-Text";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		044CD9D31FB203D400B179E4 /* Build configuration list for PBXProject "17-11-8-Calc-StackView" */ = {
+		04F33D6E1FB95DD00028574F /* Build configuration list for PBXProject "Dynamin-Text" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				044CD9E81FB203D400B179E4 /* Debug */,
-				044CD9E91FB203D400B179E4 /* Release */,
+				04F33D831FB95DD00028574F /* Debug */,
+				04F33D841FB95DD00028574F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		044CD9EA1FB203D400B179E4 /* Build configuration list for PBXNativeTarget "17-11-8-Calc-StackView" */ = {
+		04F33D851FB95DD00028574F /* Build configuration list for PBXNativeTarget "Dynamin-Text" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				044CD9EB1FB203D400B179E4 /* Debug */,
-				044CD9EC1FB203D400B179E4 /* Release */,
+				04F33D861FB95DD00028574F /* Debug */,
+				04F33D871FB95DD00028574F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 044CD9D01FB203D400B179E4 /* Project object */;
+	rootObject = 04F33D6B1FB95DD00028574F /* Project object */;
 }
