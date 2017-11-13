@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  17-11-8-Calc-StackView
-//
-//  Created by MIN JUN JU on 2017. 11. 8..
-//  Copyright © 2017년 MIN JUN JU. All rights reserved.
-//
 
 import UIKit
 
