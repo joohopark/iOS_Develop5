@@ -44,7 +44,6 @@ class ViewController: UIViewController {
         self.graph5Height = self.graph5Height.changeMultiplier(changeMultiplier: 0.2)
         self.graph6Height = self.graph6Height.changeMultiplier(changeMultiplier: 0.1)
         
-        
         UIView.animate(withDuration: 3, animations: {
             self.view.layoutIfNeeded()
         })

@@ -14,7 +14,7 @@ StakcView는 4개의 버튼이 있어도, 한개의 높이만 지정해주면 �
 
 | StackView | Aspect Ratio |
 | :---: | :---: |
-| ![screen](/study/image/StackView.jpg)] | ![screen](/study/image/StackView-1.jpg)] |
+| ![screen](/study/image/StackView.jpg) | ![screen](/study/image/StackView-1.jpg)] |
 
 > Aspect Ratio 는, 그냥 선택하면 바로 변하지 않고, 일단 Aspect Ratio 추가후, 따로 Multiplier 를 조정해서 설정해주어야 합니다..!
 > 
@@ -24,7 +24,20 @@ StakcView는 4개의 버튼이 있어도, 한개의 높이만 지정해주면 �
 
 # Calc_2_rotate
 
-LandScape 에서 보여지는 부분만 따로 표시하는 방법.
+| portrait | LandScape | 
+| :---: | :---: 
+| ![screen](/study/image/rotate.png) | ![screen](/study/image/rotate-1.png)|
+
+portrait, LandScape 에서 보여지는 부분이 서로 다를때 사용하는 방법 
+
+1. `vary for traits` 에서 LandScape 만 적용될때를 찾는다
+2. LandScape 만 적용되었을때 autoLayOut을 다듬어주고, 새롭게 만들어질 아이템들의 autoLayout을 설정합니다.
+3. `vary for traits` 설정을 done 하고, `Portrait` 부분으로 돌아갑니다. 
+
+![screen](/study/image/rotate-2.png)
+
+> installed 부분을 + 하고, 아래의 installed 부분을 체크를 풀어줍니다. 이렇게 적용하게되면, LandScape 일때 사용되는 아이템과, Portarait 일때 사용되는 아이템을 다르게 적용 해줄수 있습니다.
+
 
 상황에 따라서 `instalied` 하여 portarit, landScape 일때 화면 구성을 다르게 해줄수 있습니다.
 
