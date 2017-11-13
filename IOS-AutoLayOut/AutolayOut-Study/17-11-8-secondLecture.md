@@ -2,7 +2,13 @@
 
 ---
 
-# StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate
+# 목차
+
+1. StackView
+2. Rotate
+3. Dynamic_Text
+4. Graph_AutoLayout_Code
+5. AutoLayout_Animate
 
 ---
 
@@ -72,7 +78,7 @@ portrait, LandScape 에서 보여지는 부분이 서로 다를때 사용하는 
 > 
 
 
- | imagePixeld | Aspect Ratio | multiplier | imageView 사이즈 확인|
+| imagePixeld | Aspect Ratio | multiplier | imageView 사이즈 확인|
 | :---: | :---: | :---: | :---: | 
 |  ![screen](/study/image/Dynamic_Text-2.png) |  ![screen](/study/image/Dynamic_Text-3.png)|   ![screen](/study/image/Dynamic_Text-4.png) |  ![screen](/study/image/Dynamic_Text-5.png)| 
  
