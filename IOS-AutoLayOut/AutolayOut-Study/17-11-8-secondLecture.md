@@ -9,6 +9,7 @@
 3. Dynamic_Text
 4. Graph_AutoLayout_Code
 5. AutoLayout_Animate
+6. popup View 
 
 ---
 
@@ -208,7 +209,151 @@ extension NSLayoutConstraint {
 > Animate 적용시 `self.view.layoutIfNeeded()` 적용 시켜 주어야, 변경된 Layer 값이 실시간으로 적용이 됩니다..!
 > 
 > 주의 사항으로는 Constraints 값을 두번 정의하게되면, 오류가 나게 됩니다. 이유는 Constraints 값이 두번 적용이 되고, Priority 값이 기본적으로 1000 이기때문에, 어떤 값을 적용 해야하는데 알수 없어서 나는 오류입니다. 
+---
+
+## Popup View 
+
+![screen](/study/image/popup.png)
+
+mainViewController 에서 popup을 다른 Viewcontroller 를 present 하는 형식으로 구현 을 했습니다.
+
+```swift
+
+
+import UIKit
+
+class MainViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func popupBtn(_ sender: UIButton) {
+        
+        // `popup`은 storyboard name을 사용하고, withIdentifier 는 ViewController 연결할때, 지정한 identifier 를 사용합니다.
+        let popVC: PopupViewController = UIStoryboard(name: "popup", bundle: nil).instantiateViewController(withIdentifier: "popupVC") as! PopupViewController
+        
+        // View의 background의 투명하게 처리된부분이 아래의 옵션을 통해서 올라와 있는 View 가 보여지게 됨..
+        popVC.modalPresentationStyle = .overCurrentContext
+        self.present(popVC, animated: false, completion: nil)
+    }
+}
+
+
+```
+
+---
+
+## Popup 부분 
+
+![screen](/study/image/popup-1.png)
+
+```swift
+import UIKit
+
+class PopupViewController: UIViewController {
+
+    
+    @IBOutlet weak var popupViewCenterY: NSLayoutConstraint!
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var popupImageView: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()        
+    }
+        
+    override func viewDidLayoutSubviews() {
+        let ratio = (self.popupImageView.image?.size.height)! / self.popupImageView.frame.size.height
+        let calcHeight = (popupImageView.image?.size.height)! / ratio
+        
+        imageHeight.constant = calcHeight
+        print("viewdidLayoutSubview")
+    }
+    
+    @IBAction func backBtn(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+
+}
+
+- viewdidload > 디스플레이에 보이기 전에 호출됨
+- viewdidappear > 디스플레이가 보이고 난 이후에 사용됨
+- viewDidLayoutSubviews > 화면(View) 하나하나들이 호출될떄 불림.
+
+```
+
+> View 에 imageView를 올리고 나머지는 autolayout을 통해서 고정 시켜주 었습니다. 흐리게 페이드 되는 부분은, `popVC.modalPresentationStyle = .overCurrentContext ` 이부분을 설정하고, 다음 ViewController 의 rootView의 background 를 디폴츠값으로 변경하면, 그 이전 ViewController가 보이게 됩니다. 
+> 
 
 
 
 ---
+
+## PopupView 간단한 Animate
+
+![screen](/study/video-gif/popup.gif)
+
+```swift
+
+
+import UIKit
+
+class PopupViewController: UIViewController {
+
+    
+    @IBOutlet weak var popupViewCenterY: NSLayoutConstraint!
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var popupImageView: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("ViewDidLoad")
+        
+        // popUpView의 CenterY값을, Screen 에 보여 지기 전에는, 아래로 내려놓고 -> Screen 이 보여지고 난 이후에 원래의 값으로 돌려놓는 형식으로 animate 를 줍니다.
+        popupViewCenterY.constant = 1000
+        
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+        UIView.animate(withDuration: 1, animations: {
+            self.popupViewCenterY.constant = 0
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        let ratio = (self.popupImageView.image?.size.height)! / self.popupImageView.frame.size.height
+        let calcHeight = (popupImageView.image?.size.height)! / ratio
+        
+        imageHeight.constant = calcHeight
+        print("viewdidLayoutSubview")
+    }
+    
+    @IBAction func backBtn(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+
+```
+
+>     // popUpView의 CenterY값을, Screen 에 보여 지기 전에는, 아래로 내려놓고 -> Screen 이 보여지고 난 이후에 원래의 값으로 돌려놓는 형식으로 animate 를 줍니다.
+> 
+> 시점 차이르 이용해서 Animate를 적용 하는것을 확인할수 있습니다.
+
+---
+
+

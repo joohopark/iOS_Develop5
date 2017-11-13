@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040B82721FB9D76600753951 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B82711FB9D76600753951 /* PopupViewController.swift */; };
+		040B82741FB9D97100753951 /* popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 040B82731FB9D97100753951 /* popup.png */; };
+		040B82761FB9DB6000753951 /* popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040B82751FB9DB6000753951 /* popup.storyboard */; };
+		040B82781FB9DBD400753951 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B82771FB9DBD400753951 /* MainViewController.swift */; };
 		04F33D771FB95DD00028574F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F33D761FB95DD00028574F /* AppDelegate.swift */; };
 		04F33D791FB95DD00028574F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F33D781FB95DD00028574F /* ViewController.swift */; };
 		04F33D7C1FB95DD00028574F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F33D7A1FB95DD00028574F /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040B82711FB9D76600753951 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		040B82731FB9D97100753951 /* popup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup.png; sourceTree = "<group>"; };
+		040B82751FB9DB6000753951 /* popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = popup.storyboard; sourceTree = "<group>"; };
+		040B82771FB9DBD400753951 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		04F33D731FB95DD00028574F /* Dynamin-Text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dynamin-Text.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F33D761FB95DD00028574F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F33D781FB95DD00028574F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +68,11 @@
 			children = (
 				04F33D761FB95DD00028574F /* AppDelegate.swift */,
 				04F33D781FB95DD00028574F /* ViewController.swift */,
+				040B82771FB9DBD400753951 /* MainViewController.swift */,
+				040B82711FB9D76600753951 /* PopupViewController.swift */,
 				04F33D7A1FB95DD00028574F /* Main.storyboard */,
+				040B82751FB9DB6000753951 /* popup.storyboard */,
+				040B82731FB9D97100753951 /* popup.png */,
 				04F33D891FB95E620028574F /* Cert_BG.PNG */,
 				04F33D881FB95E620028574F /* Cert_Sample.PNG */,
 				04F33D7D1FB95DD00028574F /* Assets.xcassets */,
@@ -131,7 +143,9 @@
 			files = (
 				04F33D811FB95DD00028574F /* LaunchScreen.storyboard in Resources */,
 				04F33D8A1FB95E630028574F /* Cert_Sample.PNG in Resources */,
+				040B82741FB9D97100753951 /* popup.png in Resources */,
 				04F33D7E1FB95DD00028574F /* Assets.xcassets in Resources */,
+				040B82761FB9DB6000753951 /* popup.storyboard in Resources */,
 				04F33D8B1FB95E630028574F /* Cert_BG.PNG in Resources */,
 				04F33D7C1FB95DD00028574F /* Main.storyboard in Resources */,
 			);
@@ -146,6 +160,8 @@
 			files = (
 				04F33D791FB95DD00028574F /* ViewController.swift in Sources */,
 				04F33D771FB95DD00028574F /* AppDelegate.swift in Sources */,
+				040B82721FB9D76600753951 /* PopupViewController.swift in Sources */,
+				040B82781FB9DBD400753951 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
