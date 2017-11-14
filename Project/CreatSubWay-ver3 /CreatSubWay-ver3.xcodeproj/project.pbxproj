@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04000E721FAE343E00E4CC39 /* MainTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04000E711FAE343E00E4CC39 /* MainTapBarController.swift */; };
 		040FD6751FAE13B500DFCC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FD6741FAE13B500DFCC23 /* AppDelegate.swift */; };
 		040FD6771FAE13B500DFCC23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FD6761FAE13B500DFCC23 /* MainViewController.swift */; };
 		040FD67A1FAE13B500DFCC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040FD6781FAE13B500DFCC23 /* Main.storyboard */; };
@@ -14,9 +15,11 @@
 		040FD67F1FAE13B500DFCC23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040FD67D1FAE13B500DFCC23 /* LaunchScreen.storyboard */; };
 		040FD6871FAE14B100DFCC23 /* deagu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 040FD6861FAE14B100DFCC23 /* deagu.jpeg */; };
 		040FD6891FAE170B00DFCC23 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FD6881FAE170B00DFCC23 /* Data.swift */; };
+		0416CE241FAE1A6500474F5F /* SubwayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416CE231FAE1A6500474F5F /* SubwayList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04000E711FAE343E00E4CC39 /* MainTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapBarController.swift; sourceTree = "<group>"; };
 		040FD6711FAE13B500DFCC23 /* CreatSubWay-ver3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CreatSubWay-ver3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		040FD6741FAE13B500DFCC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		040FD6761FAE13B500DFCC23 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		040FD6801FAE13B500DFCC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		040FD6861FAE14B100DFCC23 /* deagu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deagu.jpeg; sourceTree = "<group>"; };
 		040FD6881FAE170B00DFCC23 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0416CE231FAE1A6500474F5F /* SubwayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,58 @@
 		040FD6731FAE13B500DFCC23 /* CreatSubWay-ver3 */ = {
 			isa = PBXGroup;
 			children = (
-				040FD6741FAE13B500DFCC23 /* AppDelegate.swift */,
-				040FD6761FAE13B500DFCC23 /* MainViewController.swift */,
-				040FD6881FAE170B00DFCC23 /* Data.swift */,
-				040FD6861FAE14B100DFCC23 /* deagu.jpeg */,
-				040FD6781FAE13B500DFCC23 /* Main.storyboard */,
-				040FD67B1FAE13B500DFCC23 /* Assets.xcassets */,
-				040FD67D1FAE13B500DFCC23 /* LaunchScreen.storyboard */,
+				0416CE1E1FAE1A0E00474F5F /* Delegate */,
+				0416CE221FAE1A4C00474F5F /* ViewController */,
+				0416CE1F1FAE1A1400474F5F /* DataModel */,
+				0416CE201FAE1A2800474F5F /* StroyBoard */,
+				0416CE211FAE1A3800474F5F /* Image-Asset */,
 				040FD6801FAE13B500DFCC23 /* Info.plist */,
 			);
 			path = "CreatSubWay-ver3";
+			sourceTree = "<group>";
+		};
+		0416CE1E1FAE1A0E00474F5F /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				040FD6741FAE13B500DFCC23 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		0416CE1F1FAE1A1400474F5F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				040FD6881FAE170B00DFCC23 /* Data.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		0416CE201FAE1A2800474F5F /* StroyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				040FD6781FAE13B500DFCC23 /* Main.storyboard */,
+				040FD67D1FAE13B500DFCC23 /* LaunchScreen.storyboard */,
+			);
+			path = StroyBoard;
+			sourceTree = "<group>";
+		};
+		0416CE211FAE1A3800474F5F /* Image-Asset */ = {
+			isa = PBXGroup;
+			children = (
+				040FD67B1FAE13B500DFCC23 /* Assets.xcassets */,
+				040FD6861FAE14B100DFCC23 /* deagu.jpeg */,
+			);
+			path = "Image-Asset";
+			sourceTree = "<group>";
+		};
+		0416CE221FAE1A4C00474F5F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				040FD6761FAE13B500DFCC23 /* MainViewController.swift */,
+				0416CE231FAE1A6500474F5F /* SubwayList.swift */,
+				04000E711FAE343E00E4CC39 /* MainTapBarController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +191,9 @@
 			files = (
 				040FD6771FAE13B500DFCC23 /* MainViewController.swift in Sources */,
 				040FD6891FAE170B00DFCC23 /* Data.swift in Sources */,
+				0416CE241FAE1A6500474F5F /* SubwayList.swift in Sources */,
 				040FD6751FAE13B500DFCC23 /* AppDelegate.swift in Sources */,
+				04000E721FAE343E00E4CC39 /* MainTapBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +331,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = "CreatSubWay-ver3/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.CreatSubWay-ver3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -297,12 +347,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = "CreatSubWay-ver3/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.CreatSubWay-ver3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

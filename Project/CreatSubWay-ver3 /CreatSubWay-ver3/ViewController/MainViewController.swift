@@ -7,6 +7,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     var imageView: UIImageView?
     var stationBtns: [UIButton]!
+    var searchBar: UISearchBar?
     
     var btn: UIButton!
     
@@ -31,6 +32,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView!.delegate = self
+
         
         let image = UIImage(named: "deagu.jpeg")
         imageView = UIImageView(image: image)
@@ -61,14 +63,15 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         for i in 0..<Station.stations.count {
             stationBtns.append(UIButton())
             stationBtns[i].frame = Station.stations[i].getCGRect()
-            stationBtns[i].backgroundColor = UIColor.black
+            stationBtns[i].backgroundColor = UIColor.blue
+            stationBtns[i].alpha = 0.3
             stationBtns[i].layer.cornerRadius = 10
             imageView?.addSubview(stationBtns[i])
             stationBtns[i].addTarget(self, action: #selector(btnAction(_:)) , for: .touchUpInside)
             stationBtns[i].titleLabel?.text = Station.stations[i].name
             stationBtns[i].tag = i
             
-            print(stationBtns[i].titleLabel?.text, stationBtns[i].tag)
+            
         }
         
         // 이 두줄로 해결 -> 이미지뷰 인터렉션 허용
@@ -150,9 +153,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 
                 //다익스트라
                 
-                var calcTable: [(sIndex: Int, timeSum: Int, isVisit:Bool)] = []
+                var calcTable: [(sIndex: Int, timeSum: Int, isVisit:Bool, subwayTag: Int?)] = []
+                var beforeStationTags: [Int] = []
                 for i in 0..<Station.stations.count {
-                    calcTable.append((i, Int.max, false))
+                    calcTable.append((i, Int.max, false, nil))
                 }
                 
                 
@@ -168,8 +172,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                 while nextStationTag != nil && self.arrivalStationTag != nextStationTag {
                     //다음역
                     
-                    let station = Station.stations[nextStationTag!]
-                    let currentStationTime = calcTable[nextStationTag!].timeSum
+                    beforeStationTags.append(nextStationTag!)
+                    
+                    let currentStationTag = nextStationTag!
+                    let station = Station.stations[currentStationTag]
+                    let currentStationTime = calcTable[currentStationTag].timeSum
                     //station을 방문했다고 체크
                     calcTable[nextStationTag!].isVisit = true
                     
@@ -178,12 +185,14 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                         let ssIndex = stationTime.sIndex
                         let calcTimeSum = (currentStationTime + stationTime.time)
                         
+                        
                         // **이전역 갈때는 항상 자기 비용에서 더하는거니까, 어차피 시간 변경이 안된다...**
                         // calc 에서 연산하기전에 최단거리를 확인해서, 짧은 거리의 값을 calcTimeSum 에 저장함.
                         // 이때는 다음역의 시간을 계산한다. 근데, 계산한 다음역을 방문 했다고는 체크하지 않음. 방문한 현재 역만을 체크함.
                         // 방문 한곳은 계산값이 고정인데, 방문하지 않은곳은 계산
                         if( calcTable[ssIndex].timeSum > calcTimeSum ) {
                             calcTable[ssIndex].timeSum = calcTimeSum
+                            calcTable[ssIndex].subwayTag = currentStationTag
                         }
                     }
                     
@@ -197,17 +206,53 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
                             
                             // if에 한번 걸리게 되면 minTime 값이 갱신되어 있기 때문에, 다음의 값의 연산에서 minTime 값이 갱신 되어서 이후 if 문에 걸리지 않는다.
                             minTime > calcTableItem.timeSum { //시작역과 가장 가까우면(시간)
-                            
                             nextStationTag = calcTableItem.sIndex //다음 역으로 지정
-                            
                             minTime = calcTableItem.timeSum //시작역과 이 역과의 시간값 저장
                         }
+                        // 방문역에 대한 새로운 정의
+                        
+                        /*if !calcTableItem.isVisit && calcTableItem.subwayPath == ""{
+                            
+                            calcTable[nextStationTag!].subwayPath = Station.sn[beforeStationTags.last!]
+                            
+                            print(beforeStationTags)
+                            
+                        }*/
+                        
+                        
+                        
+                        
                     }
                     
-                    // 방문체크할때, 경로를 저장 하는게 아니라, 비용 값이 변경 될때(왜냐하면, 처음 정한 비용이 다른 값으로 변할수 있기 때문에) 현재 역에서 방문한 역에 현재 역의 방문한 값을 넣어준다. 그리고, 현재 역에서 넣어준값을 역추적 하면 내가 가려고하는 노선의 위치가 나옴.
+                    for item in calcTable where item.timeSum < Int.max {
+                        print("\(Station.sn[item.sIndex]) = 비용 : \(item.timeSum) / 방문\(item.isVisit ? "" : "안" )함 / 이전역 : \(item.subwayTag != nil ? Station.sn[item.subwayTag!] : "없음")")
+                    }
+                    print("============================================")
                     
                     
                 }
+                
+                calcTable[self.arrivalStationTag].isVisit = true
+                
+                // 방문체크할때, 경로를 저장 하는게 아니라, 비용 값이 변경 될때(왜냐하면, 처음 정한 비용이 다른 값으로 변할수 있기 때문에) 현재 역에서 방문한 역에 현재 역의 방문한 값을 넣어준다. 그리고, 현재 역에서 넣어준값을 역추적 하면 내가 가려고하는 노선의 위치가 나옴.
+                
+                var targetTag: Int? = self.arrivalStationTag
+                var pathArray = [targetTag!]
+                while targetTag != nil {
+                    print(targetTag, calcTable.filter({ $0.sIndex == targetTag }).first?.subwayTag)
+                    if let tag = calcTable.filter({ $0.sIndex == targetTag }).first?.subwayTag {
+                        pathArray.insert(tag, at: 0)
+                        targetTag = tag
+                    } else {
+                        targetTag = nil
+                    }
+                }
+                
+                for tag in pathArray {
+                    
+                    print(Station.sn[tag])
+                }
+                
                 
                 let popAlert: UIAlertController = UIAlertController(title: "총 \(calcTable[self.arrivalStationTag].timeSum) 분 소요 됩니다", message:"" , preferredStyle: .alert)
                 
