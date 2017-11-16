@@ -9,7 +9,7 @@ class AddViewController: UIViewController {
     var weatherData = WeatherData.Main
     
     var dataSourceOrigin = WeatherData.Main.SearchCityNameList
-    var dataSource: [String] = []
+    var dataSource: [String]? = []
     
     @IBOutlet weak var tableViewInAddViewController: UITableView!
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         if searchController?.isActive == false {
             return weatherData.SearchWeatherList?.count ?? 0
         }else{
-            return dataSource.count ?? 0
+            return dataSource!.count ?? 0
         }
         
         
@@ -54,28 +54,31 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         if searchController?.isActive == false {
             print("비활성")
 //            cell.textLabel?.text = "\(indexPath.row)"
+            return cell
         }else {
+            if let allData = self.dataSource {
             
-            if let allData = WeatherData.Main.SearchWeatherList {
-                
-                cell.textLabel?.text = "\((allData[indexPath.row]["name"]) as! String)  "
-                return cell
+                let celltext: String = dataSource![indexPath.row]
+            cell.textLabel?.text = "\(celltext)"
+            return cell
             }
         }
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        
-        
         var imageData: Data?
         var imageURLString: String?
         
         var locationName: String?
         var locationTemp: Float?
         
-        let cityName = dataSourceOrigin![indexPath.row]
+        print(cell?.textLabel?.text)
+        
+        let selectedIndex = dataSourceOrigin?.index(of: (cell?.textLabel?.text)!)
+        let cityName = dataSourceOrigin![selectedIndex!]
         
         let url: URL! = URL(string: "\(WeatherData.Main.baseURL)\(cityName)\(WeatherData.Main.appid)")
         var request = URLRequest(url: url)
@@ -83,7 +86,7 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         let session = URLSession.shared
         
         session.dataTask(with: request) { (data, response, error) in
-            print(data, response, error)
+            
             
             // 데이터 가져오기
             if let data = data {
@@ -110,37 +113,34 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
                     
                     WeatherData.Main.weatherList?.append(tempDic)
                    
-                    print(WeatherData.Main.weatherList)
+                    DispatchQueue.main.async{
+                        self.navigationController?.popViewController(animated: true)
+
+                    }
                 } catch let error {
                     print("\(error.localizedDescription)")
                 }
             }
             }.resume()
-        
-        print("셀선택")
-        self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
-
 
 extension AddViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         // TODO
         let searchBar = searchController.searchBar
-        print(dataSourceOrigin)
+        
         if searchBar.text != nil && searchBar.text!.count > 0 {
             dataSource = (dataSourceOrigin?.filter({
                 $0.contains(searchBar.text!)
             }))!
-            
+            print(dataSource, dataSourceOrigin)
         } else {
-            print(dataSource)
-            dataSource.removeAll()
+
+            dataSource = []
             dataSource = dataSourceOrigin!
-            print(dataSource)
+
         }
 //
         tableView.reloadData()

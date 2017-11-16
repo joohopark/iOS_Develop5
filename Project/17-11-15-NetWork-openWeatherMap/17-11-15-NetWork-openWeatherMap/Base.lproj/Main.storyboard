@@ -120,7 +120,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mz8-ZL-Vkx" firstAttribute="top" secondItem="Mzx-Ps-wFG" secondAttribute="top" id="5nL-jU-l5q"/>
                             <constraint firstItem="Mzx-Ps-wFG" firstAttribute="trailing" secondItem="mz8-ZL-Vkx" secondAttribute="trailing" id="Dsd-XF-bTJ"/>

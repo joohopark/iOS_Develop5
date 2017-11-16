@@ -77,7 +77,24 @@ class WeatherData {
         
         var locationName: String?
         var locationTemp: Float?
-        let cityNameList:[String] = ["Japan", "Barcelona"]
+        let cityNameList:[String] = ["Japan",
+                                     "Barcelona",
+                                     "Incheon",
+                                     "Daejeon",
+                                     "Anseong",
+                                     "Kaesong",
+                                     "Thika",
+                                     "Shuya",
+                                     "Novomoskovsk",
+                                     "Chino",
+                                     "Germann",
+                                     "Cottonwood",
+                                     "Darazo",
+                                     "Damaturu",
+                                     "Chinandega",
+                                     "Boaco",
+                                     "Zundert"]
+        
         
         for item in cityNameList {
             let url: URL! = URL(string: "\(baseURL)\(item)\(appid)")
@@ -120,10 +137,6 @@ class WeatherData {
                     }
                 }
                 }.resume()
-            
-            
-            
-            
         }
         
     }

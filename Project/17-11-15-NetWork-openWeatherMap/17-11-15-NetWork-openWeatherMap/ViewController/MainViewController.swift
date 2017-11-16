@@ -15,6 +15,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+        print("reloadData")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +50,9 @@ class MainViewController: UIViewController {
 //
                     self.imageData = try Data(contentsOf: URL(string: "https://openweathermap.org/img/w/\(iconURLValue).png")!)
                     
-                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 } catch let error {
                     print("\(error.localizedDescription)")
                 }
