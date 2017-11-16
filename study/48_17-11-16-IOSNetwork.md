@@ -2,77 +2,101 @@
 
 ---
 
-## IOS NetWork
-
---
-
+## IOS NetWork, URL Load System, URLRequset, URLSession, URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)
 
 ---
 
-## IOS Network
+## URL Load System
 
-URL 을 가지고 어떤 녀석들을 load 하는
+URL을 통해서 컨텐츠의 리소스를 받아올수 있는 가장 일반적인 방법으로 URLSeesion을 사용합니다. 
 
-objective-c 에서는 let과 var 가 존재하지 않음. 그래서 NS에 mutable이라는 클레스가 존재함. 이것을 swift에서는 struct로 만들어짐.
-
-인증방식중 Auth -> 서버는 아이디와, 비밀번호를 보내면 그거에대한 응답으로 토큰과 키값을줌, 그 토큰과 키값을 서버에 보내면됨. 서버에서는 이 토큰이 어떤 유저인가 알수 있다. 
-
-feed 를 요청할때, 토큰값을 같이 보내주면 데이터를 보내주고, 그렇지 않으면 데이터를 주지 않음.. 아 이런식으로 Auth 를 구현해놓음. 아이디와 비밀번호를 매번 
-
-리퀘스로 보낸다는것은 URI 로 보내는거고 -> URI 는 하나의 method 임. 
-URL 로 보내는것은 URL 로 보낸다고 생각해야함. 
-
+![screen](/study/image/iosNetwork.jpg)
 
 ---
+
+## URLRequset 
+
+URL Loading System에서 요청에 대한 추가 정보를 가지고 있고, URL 및 프로토콜 별 속성을 캡슐화한 Class 입니다. 요청하는 정보에 대해서만 캡슐화 하고 있고, 서버에 요청하는 역할을 URLSeesion을 통해서 합니다
+
+```swift
+
+public init(url: URL, cachePolicy: URLRequest.CachePolicy = default,timeoutInterval: TimeInterval = default)
+var cachePolicy: URLRequest.CachePolicyvar timeoutInterval: TimeIntervalvar networkServiceType: URLRequest.NetworkServiceType
+var httpMethod: String?var httpBody: Data?
+func addValue(_ value: String, forHTTPHeaderField field: String)func setValue(_ value: String?, forHTTPHeaderField field: String)
+```
+
+---
+
 
 ## URLSession 
 
-shared 는 singeton 으로 존재함. 
+URLSession 프로퍼트중 sheard 는 싱글턴 패턴으로 되어있고, Task 요청 하나하나가 closure 로 비동처리 됩니다. 
 
-task 는 요청에 대해서 task 하나씩하나씩 만듬. 
-task 를 보내고, task가 보내고, delegate, clousre 서 응답을 받음. 
+`Session` 과 `task` 의 차이는 Session이 Task 보다 큰 단위입니다.
 
-하나의 teask 가 응답을 받고, 응답을 보내는. 
+#### - 지원 가능 URL
 
-Session 과 task 의 차이
+- File Transfer Protocol (ftp://) <br>
+- Hypertext Transfer Protocol (http://) <br>
+- Hypertext Transfer Protocol with encryption (https://)  <br>
+- Local file URLs (file:///) <br>
+- Data URLs (data://) <br>
 
-session이 요리사면, task는 session이 만든 요리사.. 리퀘스트 -> 응답, 응답을 처리한느것임. 
+```swift
+
+class var shared: URLSession { get }
+init(configuration: URLSessionConfiguration)
+
+func dataTask(with request: URLRequest,completionHandler:@escaping(Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask
+func dataTask(with url: URL, completionHandler:@escaping(Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask
+func uploadTask(with request: URLRequest, from bodyData: Data?, completionHandler:@escaping(Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionUploadTask
+
+func downloadTask(with request: URLRequest, completionHandler:@escaping(URL?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDownloadTask
+
+```
 
 ---
 
 ## URLSessionTask 
 
-resume: 다른것을 하다가 다시 돌아온다는..?
+URLSessionTask는 URLSession의 작업 하나(Task)를 나타내는 추상클래스로 URLSession을 통해서만 생성 가능합니다.
+
+![screen](/study/image/iosNetwork-1.jpg)
+
+- NSURLSessionDataTask: HTTP GET요청으로 서버로부터 데이터를 가져오는 작업을 수행합니다. <br>
+- NSURLSessionUploadTask: 디스크로부터 웹서버로 파일을 업로드하는 작업을 수행합니다. 주로 HTTP POST, PUT 메소 드를 이용합니다 <br>
+- NSURLSessionDownloadTask: 서버로부터 파일을 다운로드 하는 작업을 수행합니다. <br>
 
 ---
 
 ## URLSessionConfiguration
 
-dafault 는 값을 디스크에 저장하고
-ephemral 은 값을 메모리에 저장합니다.
+URLSessionConfiguration은 Session의 설정에 관련된 클래스.  다음 3가지 중 하나 값으로 생성되며, 타임아웃, 캐시 정책등의 프로퍼티를 설정가능 합니다
 
+1. default: 디폴트 configuration 객체를 생성합니다. 디폴드 값으 로는 파일로 다운로드 될때를 제외하고는 Disk에 캐쉬를 저장하 며, 키체인에 자격을 저장합니다.<br>
 
-쿠키는 어디의 방문기록을 가지고 있고
-cacsh는 : 필요한 데이터들을 임시저장 -> 메모리에 
+2. ephemeral: 디폴트 configuration과 설정은 동일하다 session관 련 데이터가 메모리에 올라갑니다. <br>
 
----
-
-네트워크 실행 순서
-
-Request 생성 -> session 만듬 -> Session메소드 생성 -> Task 실행 -> 용청에 대한 응답을 처리 
-
-JSONSerialization -> 하나씩 스텝바이 스텝으로 언패킹함.
-JSONDecoder -> 들어온 데이터를 -> 모델로 바꾸어줌
+3. background: Session이 백그라운드에서 다운로드 작업과 업로 드 작업을 마져 수행할 수 있도록 합니다. <br>
 
 ---
 
-## URLRequest 생성 방법
+## 네트워크 실행 순서(중요)
 
-apple 는, http로 사용하려면, 해제를 해야함, 기본적으로 https 를 사용행햐ㅏㅁ 
+1. URLRequest 인스턴스 생성. (요청생성) <br>
+2. URLSession 인스턴스 생성.   (*URLConfiguration 설정은 옵션) <br>
+3. URLSession의 메소드를 통해 URLSessionTask 생성 <br>
+4. Task 실행 : 네트워크 요청 <br>
+5. 요청한 task에 대한 응답(respond)처리 (Delegate or Closure) <br>
+6. JSONSerialization or JSONDecoder(Swift 4)를 통해 알맞은 데 이터 인스턴스로 변환 <br>
 
-ATS(application trans
+```swift
 
-webView를 사용할때 https 
+let url = URL(string:"http://naver.com")!//request instansevar request = URLRequest(url: url)//config = defaultrequest.httpMethod = “POST"//request.httpMethod = “GET”//bodyDatalet dataStr = "{username:\(userID),password:\(pw)}"let data = dataStr.data(using: .utf8)request.httpBody = data
+```
+
+> URL 생성시, app crush 나는 부분을 명확하게 지정해주어야 합니다. 무조건 옵셔널 바인딩 처리후, 사용하는것이 능사가 아니라고 하는 부분이 딱 네트워크 부분인것 같습니다.
 
 ---
 
@@ -98,31 +122,4 @@ respons -> 첫번째, data를 보기전에, respons 를 통해서, 어떤값인�
 
 
 ---
-
-# 17-11-16  필기
-
-선생님은, dataTask 의 error = error 을 맨위에 놓고 처리해줌. 
-
-statuscode 를 설정해주기 위해서,  
-
-```
-
-// 성공 했을 경우 
-if (response as! HTTPURLResponse).statusCode / 100 == 1 {
-
-  }이런식으로 처리함. 
-```
-
-typealias Metwprlcp,[;ectopm 
-
-
-타입을 정해주지 않으면 www form 인코딩 타입 
-
-
-
-
-
-
-
-
 
