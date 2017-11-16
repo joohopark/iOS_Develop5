@@ -10,7 +10,7 @@ class WeatherDataModel {
   typealias networkDataList = (_ Data: Data?,_ response: URLResponse?,_ error: Error?) -> Void
   
   private init() {
-    //        setData()
+//            setData()
   }
   
   func setData(completion: @escaping networkDataList) -> String {
