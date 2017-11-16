@@ -80,6 +80,7 @@
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="addActionBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9z-HA-SIj"/>
+                                    <segue destination="YPP-jQ-m5O" kind="show" id="lIi-l5-9Cg"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -90,7 +91,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="559" y="60"/>
+            <point key="canvasLocation" x="607" y="60"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="i3m-kD-Lyp">
+            <objects>
+                <viewController storyboardIdentifier="AddVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YPP-jQ-m5O" customClass="AddViewController" customModule="_7_11_15_NetWork_openWeatherMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mDn-sL-OCb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-ZL-Vkx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Hn4-yd-5Fr">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hn4-yd-5Fr" id="l9C-0k-OAH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YPP-jQ-m5O" id="olK-6z-aKe"/>
+                                    <outlet property="delegate" destination="YPP-jQ-m5O" id="Vgv-Ao-DxJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mz8-ZL-Vkx" firstAttribute="top" secondItem="Mzx-Ps-wFG" secondAttribute="top" id="5nL-jU-l5q"/>
+                            <constraint firstItem="Mzx-Ps-wFG" firstAttribute="trailing" secondItem="mz8-ZL-Vkx" secondAttribute="trailing" id="Dsd-XF-bTJ"/>
+                            <constraint firstItem="mz8-ZL-Vkx" firstAttribute="leading" secondItem="Mzx-Ps-wFG" secondAttribute="leading" id="Szs-wJ-Dgh"/>
+                            <constraint firstItem="Mzx-Ps-wFG" firstAttribute="bottom" secondItem="mz8-ZL-Vkx" secondAttribute="bottom" id="xzq-S0-d5K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mzx-Ps-wFG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1f1-Hr-46p"/>
+                    <connections>
+                        <outlet property="tableView" destination="mz8-ZL-Vkx" id="iPx-Ik-Pey"/>
+                        <outlet property="tableViewInAddViewController" destination="mz8-ZL-Vkx" id="yZw-08-p1G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chE-2X-M5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gOf-RU-J8q">
