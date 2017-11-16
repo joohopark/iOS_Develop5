@@ -8,10 +8,9 @@ class ViewController: UIViewController {
         
         WeatherDataModel.Main.setData { (data, response, error) in
           print(data, response, error)
-            
-        }
+          
     }
-
+  }
 
 
 
