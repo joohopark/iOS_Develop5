@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="n7Z-go-sIK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="n7Z-go-sIK">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n7Z-go-sIK" id="vFV-rZ-jRt">
@@ -82,6 +83,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YZU-Mw-iac" id="ocY-p0-7gC"/>
+                                    <outlet property="delegate" destination="YZU-Mw-iac" id="Uqj-6V-ICm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aen-tC-bhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="933"/>
+            <point key="canvasLocation" x="137" y="931"/>
         </scene>
         <!--Image Table View-->
         <scene sceneID="dL6-a2-0w2">
@@ -121,37 +126,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XG-fk-0qf">
-                                <rect key="frame" x="67" y="136" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0XG-fk-0qf">
+                                <rect key="frame" x="0.0" y="133.5" width="375" height="400"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fC-Dd-vd5">
-                                <rect key="frame" x="168" y="344" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="이미지"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fC-Dd-vd5">
+                                <rect key="frame" x="131.5" y="542.5" width="112.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iNX-iP-Fda"/>
+                                </constraints>
+                                <state key="normal" title="이미지 선택"/>
                                 <connections>
                                     <action selector="imagePopBtn:" destination="Aex-P4-zli" eventType="touchUpInside" id="rRT-gG-PQ8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-Gj-0f2">
-                                <rect key="frame" x="150" y="420" width="69" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text Field" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vdC-pw-Zye">
+                                <rect key="frame" x="75" y="79" width="225" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9o8-re-u99"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0XG-fk-0qf" firstAttribute="centerY" secondItem="PUw-Lo-yge" secondAttribute="centerY" id="15K-3H-s6P"/>
+                            <constraint firstItem="vdC-pw-Zye" firstAttribute="width" secondItem="0XG-fk-0qf" secondAttribute="width" multiplier="0.6" id="AXE-5f-wJd"/>
+                            <constraint firstItem="4fC-Dd-vd5" firstAttribute="width" secondItem="0XG-fk-0qf" secondAttribute="width" multiplier="0.3" id="AuQ-P5-kC3"/>
+                            <constraint firstItem="0XG-fk-0qf" firstAttribute="height" secondItem="PUw-Lo-yge" secondAttribute="height" multiplier="0.6" id="Gdm-Hs-2mQ"/>
+                            <constraint firstItem="vdC-pw-Zye" firstAttribute="centerX" secondItem="PUw-Lo-yge" secondAttribute="centerX" id="SGI-gn-VeB"/>
+                            <constraint firstItem="0XG-fk-0qf" firstAttribute="top" secondItem="vdC-pw-Zye" secondAttribute="bottom" constant="14.5" id="eld-Sx-MqX"/>
+                            <constraint firstItem="0XG-fk-0qf" firstAttribute="width" secondItem="PUw-Lo-yge" secondAttribute="width" id="gVR-W8-f9z"/>
+                            <constraint firstItem="4fC-Dd-vd5" firstAttribute="centerX" secondItem="PUw-Lo-yge" secondAttribute="centerX" id="hrO-E2-ZL7"/>
+                            <constraint firstItem="4fC-Dd-vd5" firstAttribute="top" secondItem="0XG-fk-0qf" secondAttribute="bottom" multiplier="1.015" constant="1" id="niw-B6-cd2"/>
+                            <constraint firstItem="0XG-fk-0qf" firstAttribute="centerX" secondItem="PUw-Lo-yge" secondAttribute="centerX" id="sNb-2P-k0f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xe7-HQ-YFA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sED-cz-hJz">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="EWM-Hy-vTJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WDf-Gj-0f2">
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="이미지 저장"/>
+                                <state key="normal" title="저장"/>
                                 <connections>
                                     <action selector="imageStoreBtn:" destination="Aex-P4-zli" eventType="touchUpInside" id="6Ec-1h-PFj"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Xe7-HQ-YFA"/>
-                    </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="0XG-fk-0qf" id="bte-80-nW4"/>
+                        <outlet property="textTF" destination="vdC-pw-Zye" id="JEP-2x-qNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbQ-Sk-ACr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="932"/>
+            <point key="canvasLocation" x="1245.5999999999999" y="931.48425787106453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bzz-zl-LGc">

@@ -60,17 +60,41 @@
 		042C9B9C1FBD5B4400BC826C /* 17-11-16-Request-Network */ = {
 			isa = PBXGroup;
 			children = (
-				042C9B9D1FBD5B4400BC826C /* AppDelegate.swift */,
-				042C9B9F1FBD5B4400BC826C /* ViewController.swift */,
-				042C9BAF1FBD5C9F00BC826C /* NetworkManager.swift */,
-				04F5601E1FBE719300005486 /* TableViewController.swift */,
-				042C9BB11FBD7B8F00BC826C /* UIImageTableView.swift */,
+				04F560201FBE787E00005486 /* AppDelegate */,
+				04F560211FBE788D00005486 /* NetworkViewController */,
+				04F560221FBE78A100005486 /* ImageViewController */,
 				042C9BA11FBD5B4500BC826C /* Main.storyboard */,
 				042C9BA41FBD5B4500BC826C /* Assets.xcassets */,
 				042C9BA61FBD5B4500BC826C /* LaunchScreen.storyboard */,
 				042C9BA91FBD5B4500BC826C /* Info.plist */,
 			);
 			path = "17-11-16-Request-Network";
+			sourceTree = "<group>";
+		};
+		04F560201FBE787E00005486 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				042C9B9D1FBD5B4400BC826C /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		04F560211FBE788D00005486 /* NetworkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				042C9B9F1FBD5B4400BC826C /* ViewController.swift */,
+				042C9BAF1FBD5C9F00BC826C /* NetworkManager.swift */,
+			);
+			path = NetworkViewController;
+			sourceTree = "<group>";
+		};
+		04F560221FBE78A100005486 /* ImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04F5601E1FBE719300005486 /* TableViewController.swift */,
+				042C9BB11FBD7B8F00BC826C /* UIImageTableView.swift */,
+			);
+			path = ImageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
