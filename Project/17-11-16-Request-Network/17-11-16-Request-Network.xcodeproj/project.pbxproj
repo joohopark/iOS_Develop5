@@ -14,6 +14,7 @@
 		042C9BA81FBD5B4500BC826C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042C9BA61FBD5B4500BC826C /* LaunchScreen.storyboard */; };
 		042C9BB01FBD5C9F00BC826C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C9BAF1FBD5C9F00BC826C /* NetworkManager.swift */; };
 		042C9BB21FBD7B8F00BC826C /* UIImageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042C9BB11FBD7B8F00BC826C /* UIImageTableView.swift */; };
+		04F5601F1FBE719300005486 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5601E1FBE719300005486 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		042C9BA91FBD5B4500BC826C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042C9BAF1FBD5C9F00BC826C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		042C9BB11FBD7B8F00BC826C /* UIImageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTableView.swift; sourceTree = "<group>"; };
+		04F5601E1FBE719300005486 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				042C9B9D1FBD5B4400BC826C /* AppDelegate.swift */,
 				042C9B9F1FBD5B4400BC826C /* ViewController.swift */,
 				042C9BAF1FBD5C9F00BC826C /* NetworkManager.swift */,
+				04F5601E1FBE719300005486 /* TableViewController.swift */,
 				042C9BB11FBD7B8F00BC826C /* UIImageTableView.swift */,
 				042C9BA11FBD5B4500BC826C /* Main.storyboard */,
 				042C9BA41FBD5B4500BC826C /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				042C9BB01FBD5C9F00BC826C /* NetworkManager.swift in Sources */,
 				042C9BB21FBD7B8F00BC826C /* UIImageTableView.swift in Sources */,
 				042C9BA01FBD5B4400BC826C /* ViewController.swift in Sources */,
+				04F5601F1FBE719300005486 /* TableViewController.swift in Sources */,
 				042C9B9E1FBD5B4400BC826C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

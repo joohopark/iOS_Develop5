@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="uK0-dY-mc6">
             <objects>
-                <viewController id="YZU-Mw-iac" sceneMemberID="viewController">
+                <viewController id="YZU-Mw-iac" customClass="TableViewController" customModule="_7_11_16_Request_Network" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EKq-8L-yUg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,21 +105,49 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="AWV-cF-ReH" id="JdK-Vp-Bh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aen-tC-bhO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="359" y="933"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Table View-->
         <scene sceneID="dL6-a2-0w2">
             <objects>
-                <viewController id="Aex-P4-zli" sceneMemberID="viewController">
+                <viewController id="Aex-P4-zli" customClass="UIImageTableView" customModule="_7_11_16_Request_Network" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PUw-Lo-yge">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0XG-fk-0qf">
+                                <rect key="frame" x="67" y="136" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fC-Dd-vd5">
+                                <rect key="frame" x="168" y="344" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="이미지"/>
+                                <connections>
+                                    <action selector="imagePopBtn:" destination="Aex-P4-zli" eventType="touchUpInside" id="rRT-gG-PQ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-Gj-0f2">
+                                <rect key="frame" x="150" y="420" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="이미지 저장"/>
+                                <connections>
+                                    <action selector="imageStoreBtn:" destination="Aex-P4-zli" eventType="touchUpInside" id="6Ec-1h-PFj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xe7-HQ-YFA"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="0XG-fk-0qf" id="bte-80-nW4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WbQ-Sk-ACr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
