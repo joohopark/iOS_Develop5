@@ -140,7 +140,7 @@
 > 
 > 3. [작성중..OpenWeather API 실습](/study/49_17-11-16-OpenWeatherAPI.md)
 > 
-> 4. [작성중..Network, Closure](study/50_17-11-16-Network-Closure.md)
+> 4. [IOS Network 실습](study/50_17-11-17-network-day3.md)
 > 
 > 5. 
 
