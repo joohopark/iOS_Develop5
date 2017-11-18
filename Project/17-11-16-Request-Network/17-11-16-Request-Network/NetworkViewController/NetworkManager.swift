@@ -160,6 +160,9 @@ class NetworkManager {
       
       print(data, response, error)
       
+      completion(true, data, error)
+      print(data, response)
+      
       print(try! JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any])
       
       
