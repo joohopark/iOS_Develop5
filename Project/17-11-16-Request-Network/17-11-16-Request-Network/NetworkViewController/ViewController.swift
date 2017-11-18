@@ -7,10 +7,6 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    NetworkManager.shared.requestGetPosts { (isSuccess, data, error) in
-      
-      print(isSuccess, data, error)
-    }
     
   }
   
@@ -22,13 +18,10 @@ class ViewController: UIViewController {
   @IBAction func signupBtn(_ sender: UIButton) {
     
     if checkData() {
-      
       let userID = idTF.text
       let userPW = pwTF.text
       
       print(userID, userPW)
-      
-      
       NetworkManager.shared.requestSignup(userid: userID!, pw: userPW!, completion: { (isSuccess, resultData, error) in
         
         print(isSuccess, resultData, error)
@@ -44,10 +37,7 @@ class ViewController: UIViewController {
   
   @IBAction func loginBtn(_ sender: UIButton) {
 //     print(NetworkManager.shared.loadToKen())
-    NetworkManager.shared.requestGetPosts(completion: { (isSuccess, resultData, error) in
 
-      print(isSuccess, resultData, error)
-    })
     
     
   }

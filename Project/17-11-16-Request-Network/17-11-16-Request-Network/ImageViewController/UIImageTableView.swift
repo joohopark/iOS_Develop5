@@ -23,8 +23,22 @@ class UIImageTableView: UIViewController {
   }
   
   @IBAction func imageStoreBtn(_ sender: UIButton) {
+    let x = PostModel(title: "앙 기모띠", content: "앙앙", imgCoverUrl: "앙")
+    let image = UserDefaults.standard.value(forKey: "ImgData") as? Data
+      NetworkManager.shared.requestPost(post: x, img: UIImage(data: image!)!, completion: { (ok, data, error) in
+        
+        print(ok, data, error)
+      })
     
   }
+  
+  
+  @IBAction func checkBtn(_ sender: UIButton) {
+    NetworkManager.shared.requestGetPosts { (ok, data, error) in
+      print(ok, data, error)
+    }
+  }
+  
 }
 
 extension UIImageTableView: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -34,21 +48,25 @@ extension UIImageTableView: UIImagePickerControllerDelegate, UINavigationControl
     print("이미지 선택시 불리는 메소드")
     if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
       print(img)
+      
+      
     }
     
     if let url = info[UIImagePickerControllerImageURL] as? URL {
       if let data = try? Data(contentsOf: url) {
         imageView.image = UIImage(data: data)
+        NetworkManager.shared.imageList?.append(data)
         //유저 디폴트에 저장하고 -> 저장한것을 서버에 보내고, 하는것을 확인해보자.
         UserDefaults.standard.set(data, forKey: "ImgData")
         // image 를 userDefault로 저장해서 사용하는 방식을 채택함.. 오..
-        
       }
       
     }
     
     picker.dismiss(animated: true, completion: nil)
   }
+  
+  
   
   //취소했을때 불리는 델리게이트 메소드
   func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
