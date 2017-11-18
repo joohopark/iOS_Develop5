@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-var baseURL: String = "http://api-ios-dev.ap-northeast-2.elasticbeanstanlk.com/api"
+var baseURL: String = "http://api-ios-dev.ap-northeast-2.elasticbeanstalk.com/api"
 var uriSignup: String = "/member/signup/"
 var postURL = "/post/"
 
@@ -104,7 +104,7 @@ class NetworkManager {
       {
         //제대로 들어올 경우
         // 키값을 가지고 오고, 키 값을 다른곳에 저장하여 준다.
-        let resultArr = try! JSONSerialization.jsonObject(with: data!, options: []) as! [[String:Any]]
+        let  resultArr = try! JSONSerialization.jsonObject(with: data!, options: []) as! [[String:Any]]
         
         let decoder = JSONDecoder()
         let model = try! decoder.decode([PostModel].self, from: data!)

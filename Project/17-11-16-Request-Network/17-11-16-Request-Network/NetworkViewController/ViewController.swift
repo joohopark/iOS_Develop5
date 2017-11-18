@@ -29,8 +29,6 @@ class ViewController: UIViewController {
           print("goMain")
         }
       })
-      
-      
     }
   }
   
