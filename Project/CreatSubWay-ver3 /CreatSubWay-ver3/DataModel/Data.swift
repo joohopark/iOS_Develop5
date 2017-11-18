@@ -1,12 +1,4 @@
-//
-//  dataViewController.swift
-//  testDiecstra
-//
-//  Created by MIN JUN JU on 2017. 10. 13..
-//  Copyright © 2017년 MIN JUN JU. All rights reserved.
-//
 
-import UIKit
 
 import UIKit
 
