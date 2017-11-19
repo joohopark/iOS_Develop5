@@ -11,6 +11,7 @@
 5. AutoLayout_Animate
 6. popup View 
 7. TableView-Expand
+8. TableView-Dynamic-Cell
 
 ---
 
@@ -447,12 +448,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         //        tableView.reloadData()
-    }
-    
-    
-    
-    
-    
+    } 
 }
 
 
@@ -472,5 +468,22 @@ AutoLayout 을, 화면 밖에서 cell을 구성하는 방법, 그렇지 않은 �
 
 tableViewCell 속에서 autoLayout을 구성할때, 모든 label의 값을 지정하고, hugging 변수를 가지고 조정함.
 
+tableView 속에서 Cell의 크기가 고정되어 있다면, LB의 크기에 따라서 줄수가 늘어나야 되는 경우에는, LB의 라인수를 0 으로 지정 해놓으면....LB의 크기에 따라서 늘어남.
+
+tableView의 Row의 높이값은 자동적으로 계산되어서 사용하겠다
+
+table.rowHeight = UITableViewAutomaticDimension
+
+tableView의 estima
+
+```swift
+// cell의 높이값을 자동으로 계산 하겠다는 이야기..!
+tableView.rowHeight = UITableViewAutomaticDimension
+
+func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    return UITableViewAutomaticDimension
+  }
+```
 
 
