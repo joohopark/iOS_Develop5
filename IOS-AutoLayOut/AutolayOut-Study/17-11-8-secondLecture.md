@@ -467,3 +467,10 @@ class MyCell: UITableViewCell {
 ---
 
 ## TableView-Dynamic-Cell
+
+AutoLayout 을, 화면 밖에서 cell을 구성하는 방법, 그렇지 않은 방법을 배워본다..!
+
+tableViewCell 속에서 autoLayout을 구성할때, 모든 label의 값을 지정하고, hugging 변수를 가지고 조정함.
+
+
+

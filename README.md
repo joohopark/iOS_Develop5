@@ -175,10 +175,11 @@
 > 
 > 2. [작성중..StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
 
-### *  **Github 으로 협업하기** 
+### *  **Github 으로 협업하기 & firebase 사용하기** 
 
 > 1. [Git 을 이용한 협업 WorkFlow](/study/0_17-10-28-github-recture.md)
 > 
+> 2. [작성중..firbase 사용하기..]()
 
 
 
@@ -237,3 +238,4 @@
 
 ### **:envelope:**  : <devminjunju@gmail.com>
 
+# 

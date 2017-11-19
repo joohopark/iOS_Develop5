@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     // read google info.plist
     ref = Database.database().reference()
     
+    
     ref.observe(.childAdded) { (dataSnapshot) in
       print("childAdded value: \(dataSnapshot)")
       
@@ -64,8 +65,7 @@ class ViewController: UIViewController {
   @IBAction func selectBtnAction(_ sender: UIButton) {
     
     let itemRef = ref.child(nameTextField.text!)
-    ref.Database
-    addListenerForSingleValueEvent
+
     
     
     
