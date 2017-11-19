@@ -173,7 +173,9 @@
 
 > 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
 > 
-> 2. [작성중..StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
+> 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, popup View, TableView-Expand, TableView-Dynamic-Cell](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
+> 
+> 3. [작성중..카카오톡UI 따라하기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
 
 ### *  **Github 으로 협업하기 & firebase 사용하기** 
 
