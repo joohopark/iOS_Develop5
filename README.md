@@ -138,7 +138,7 @@
 > 
 > 2. [IOS NetWork, URL Load System, URLRequset, URLSession, URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/study/48_17-11-16-IOSNetwork.md)
 > 
-> 3. [작성중..OpenWeather API 실습](/study/49_17-11-16-OpenWeatherAPI.md)
+> 3. [OpenWeather API 실습](/study/49_17-11-16-OpenWeatherAPI.md)
 > 
 > 4. [IOS Network 실습](study/50_17-11-17-network-day3.md)
 > 
