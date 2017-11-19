@@ -119,11 +119,20 @@
                                     <outlet property="delegate" destination="YPP-jQ-m5O" id="Vgv-Ao-DxJ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IAH-JG-hI3">
+                                <rect key="frame" x="162.5" y="308" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8LH-B3-7Ra"/>
+                                    <constraint firstAttribute="width" constant="50" id="QOi-RJ-dq2"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mz8-ZL-Vkx" firstAttribute="top" secondItem="Mzx-Ps-wFG" secondAttribute="top" id="5nL-jU-l5q"/>
+                            <constraint firstItem="IAH-JG-hI3" firstAttribute="centerY" secondItem="mDn-sL-OCb" secondAttribute="centerY" id="DJh-8I-eLf"/>
                             <constraint firstItem="Mzx-Ps-wFG" firstAttribute="trailing" secondItem="mz8-ZL-Vkx" secondAttribute="trailing" id="Dsd-XF-bTJ"/>
+                            <constraint firstItem="IAH-JG-hI3" firstAttribute="centerX" secondItem="mDn-sL-OCb" secondAttribute="centerX" id="RHo-oJ-PEP"/>
                             <constraint firstItem="mz8-ZL-Vkx" firstAttribute="leading" secondItem="Mzx-Ps-wFG" secondAttribute="leading" id="Szs-wJ-Dgh"/>
                             <constraint firstItem="Mzx-Ps-wFG" firstAttribute="bottom" secondItem="mz8-ZL-Vkx" secondAttribute="bottom" id="xzq-S0-d5K"/>
                         </constraints>
@@ -131,6 +140,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1f1-Hr-46p"/>
                     <connections>
+                        <outlet property="indicator" destination="IAH-JG-hI3" id="ogs-fm-rpR"/>
                         <outlet property="tableView" destination="mz8-ZL-Vkx" id="iPx-Ik-Pey"/>
                         <outlet property="tableViewInAddViewController" destination="mz8-ZL-Vkx" id="yZw-08-p1G"/>
                     </connections>

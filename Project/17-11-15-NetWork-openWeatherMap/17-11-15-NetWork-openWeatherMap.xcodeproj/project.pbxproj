@@ -16,6 +16,7 @@
 		046A3DEE1FBC1064008D4391 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A3DED1FBC1064008D4391 /* MainViewController.swift */; };
 		046A3DF01FBC12BE008D4391 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 046A3DEF1FBC12BE008D4391 /* test.jpg */; };
 		046A3DF21FBC26ED008D4391 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046A3DF11FBC26ED008D4391 /* WeatherData.swift */; };
+		04B1F57A1FBD816600B48819 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = 04B1F5791FBD816600B48819 /* CityList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		046A3DED1FBC1064008D4391 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		046A3DEF1FBC12BE008D4391 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		046A3DF11FBC26ED008D4391 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		04B1F5791FBD816600B48819 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				042C9B6F1FBC897E00BC826C /* DataModel */,
 				042C9B701FBC898600BC826C /* ViewController */,
 				046A3DEF1FBC12BE008D4391 /* test.jpg */,
+				04B1F5791FBD816600B48819 /* CityList.json */,
 				046A3DDF1FBC0A3F008D4391 /* Main.storyboard */,
 				046A3DE21FBC0A3F008D4391 /* Assets.xcassets */,
 				046A3DE41FBC0A3F008D4391 /* LaunchScreen.storyboard */,
@@ -159,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B1F57A1FBD816600B48819 /* CityList.json in Resources */,
 				046A3DE61FBC0A3F008D4391 /* LaunchScreen.storyboard in Resources */,
 				046A3DE31FBC0A3F008D4391 /* Assets.xcassets in Resources */,
 				046A3DE11FBC0A3F008D4391 /* Main.storyboard in Resources */,
@@ -315,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = "17-11-15-NetWork-openWeatherMap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-15-NetWork-openWeatherMap";
@@ -329,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
 				INFOPLIST_FILE = "17-11-15-NetWork-openWeatherMap/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Oraganization.-7-11-15-NetWork-openWeatherMap";
