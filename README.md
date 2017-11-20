@@ -146,7 +146,7 @@
 
 ### * **Part 11** 
 
-> 1. [작성중..Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
+> 1. [Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
 > 
 > 2. [작성중..](/study/)
 
