@@ -157,10 +157,6 @@ class StartViewController: UIViewController {
     self.contentBackground.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
     self.contentBackground.leftAnchor.constraint(equalTo: self.contentView.leftAnchor).isActive = true
     self.contentBackground.rightAnchor.constraint(equalTo: self.contentView.rightAnchor).isActive = true
-    
-    self.idTF.centerXAnchor.constraint(equalTo: self.contentBackground.centerXAnchor).isActive = true
-
-    self.idTF.centerYAnchor.constraintEqualToSystemSpacingBelow(loginScrollView.centerYAnchor, multiplier: 1.0).isActive = true
 
   }
   
@@ -191,13 +187,6 @@ class StartViewController: UIViewController {
     
   }
   
-  func auto(_ sender: AnyObject) {
-    sender.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10).isActive = true
-    sender.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive = true
-    sender.trailingAnchor.constraint(equalTo: self.view.trailingAnchor , constant: -10).isActive = true
-    sender.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
-  }
-  
 }
 
 extension StartViewController {
@@ -210,7 +199,7 @@ extension StartViewController {
     let targetTFCenterX = NSLayoutConstraint(item: target,
                                              attribute: NSLayoutAttribute.centerX,
                                              relatedBy: NSLayoutRelation.equal,
-                                             toItem: self.view,
+                                             toItem: self.loginScrollView,
                                              attribute: NSLayoutAttribute.centerX,
                                              multiplier: centerXMultiplier,
                                              constant: 0)
@@ -218,7 +207,7 @@ extension StartViewController {
     let targetTFCenterY = NSLayoutConstraint(item: target,
                                              attribute: NSLayoutAttribute.centerY,
                                              relatedBy: NSLayoutRelation.equal,
-                                             toItem: self.view,
+                                             toItem: self.loginScrollView,
                                              attribute: NSLayoutAttribute.centerY,
                                              multiplier: centerYMultiplier,
                                              constant: 0)
@@ -226,7 +215,7 @@ extension StartViewController {
     let targetTFWidth = NSLayoutConstraint(item: target,
                                            attribute: NSLayoutAttribute.width,
                                            relatedBy: NSLayoutRelation.equal,
-                                           toItem: self.view,
+                                           toItem: self.loginScrollView,
                                            attribute: NSLayoutAttribute.width,
                                            multiplier: widthMultiplier,
                                            constant: 0)
@@ -234,7 +223,7 @@ extension StartViewController {
     let targetTFHeight = NSLayoutConstraint(item: target,
                                             attribute: NSLayoutAttribute.height,
                                             relatedBy: NSLayoutRelation.equal,
-                                            toItem: self.view,
+                                            toItem: self.loginScrollView,
                                             attribute: NSLayoutAttribute.height,
                                             multiplier: heightMultiplier,
                                             constant: 0)

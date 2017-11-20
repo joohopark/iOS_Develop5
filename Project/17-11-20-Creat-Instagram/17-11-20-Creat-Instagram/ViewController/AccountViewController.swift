@@ -205,7 +205,7 @@ extension AccountViewController {
     let targetTFCenterX = NSLayoutConstraint(item: target,
                                          attribute: NSLayoutAttribute.centerX,
                                          relatedBy: NSLayoutRelation.equal,
-                                         toItem: self.view,
+                                         toItem: self.loginScrollView,
                                          attribute: NSLayoutAttribute.centerX,
                                          multiplier: centerXMultiplier,
                                          constant: 0)
@@ -213,7 +213,7 @@ extension AccountViewController {
     let targetTFCenterY = NSLayoutConstraint(item: target,
                                          attribute: NSLayoutAttribute.centerY,
                                          relatedBy: NSLayoutRelation.equal,
-                                         toItem: self.view,
+                                         toItem: self.loginScrollView,
                                          attribute: NSLayoutAttribute.centerY,
                                          multiplier: centerYMultiplier,
                                          constant: 0)
@@ -221,7 +221,7 @@ extension AccountViewController {
     let targetTFWidth = NSLayoutConstraint(item: target,
                                        attribute: NSLayoutAttribute.width,
                                        relatedBy: NSLayoutRelation.equal,
-                                       toItem: self.view,
+                                       toItem: self.loginScrollView,
                                        attribute: NSLayoutAttribute.width,
                                        multiplier: widthMultiplier,
                                        constant: 0)
@@ -229,7 +229,7 @@ extension AccountViewController {
     let targetTFHeight = NSLayoutConstraint(item: target,
                                         attribute: NSLayoutAttribute.height,
                                         relatedBy: NSLayoutRelation.equal,
-                                        toItem: self.view,
+                                        toItem: self.loginScrollView,
                                         attribute: NSLayoutAttribute.height,
                                         multiplier: heightMultiplier,
                                         constant: 0)
