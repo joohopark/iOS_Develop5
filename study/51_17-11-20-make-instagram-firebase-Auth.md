@@ -362,10 +362,33 @@ NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWi
 
 
 
+-------------------------
+
+## 17-11-21 
+
+사진을 스토리지에 올리지고, ok 되면, 데이터 베이스(리얼타임 데이터)에 올림..
+
+user에 uuid를 key값으로 두고, 데이터를 옵로드 하라는 의미인거같음.
 
 
+```swift
+
+let tabbar = UItabbarController()
+tabbar.viewControllers = [ViewController(), ViewControllerTwo(),.... 이런식으로]
+
+window = UIWindow(frame: UIScreen.mai.bounds)
+window.rootViewcontrooler = UITabBarController()
+window.makeyAndvisible
+
+UITabBarController class 에서 이렇게 넣어줌
+self.viewControllers = [navi1]
+ 
+```
+
+tapbar의 역활은 각각의 viewControlelr 들을 묶어두는역활을 하고, 
+
+tapbar는 각각의 ViewController에서 컨트롤함.
 
 
-
-
+새로운것을 할떄는, 일단 원래 되는것을 만들어놓고, 새로운것을 시도하는것을 추천함.
 

@@ -7,6 +7,7 @@ import Firebase
 //fc@fc.com
 class StartViewController: UIViewController {
   
+  
   var loginScrollView: UIScrollView = {
     let sv = UIScrollView()
     sv.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +30,7 @@ class StartViewController: UIViewController {
     return image
   }()
   
-
+  
   
   var idTF: UITextField = {
     let tf = UITextField()
@@ -79,8 +80,11 @@ class StartViewController: UIViewController {
     return btn
   }()
   
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     view.addSubview(loginScrollView)
     loginScrollView.addSubview(contentView)
     
@@ -90,6 +94,8 @@ class StartViewController: UIViewController {
     contentBackground.addSubview(loginBtn)
     contentBackground.addSubview(accountBtn)
     loginScrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+    
+    
     
     self.setLayoutMultiplier(target: idTF,
                              centerXMultiplier: 1.0,
@@ -171,6 +177,7 @@ class StartViewController: UIViewController {
       if error == nil && user != nil {
         print(user)
         print("로그인완료")
+        
         
       }else {
         print(error?.localizedDescription)

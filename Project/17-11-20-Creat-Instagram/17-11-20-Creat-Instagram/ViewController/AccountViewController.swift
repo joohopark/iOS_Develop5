@@ -1,12 +1,15 @@
 import UIKit
 import Firebase
+import CoreData
 //height = 0.06%
 // width = 0.7 %
+
 
 
 class AccountViewController: UIViewController {
   
 
+  var ref: DatabaseReference!
   var loginScrollView: UIScrollView = {
     let sv = UIScrollView()
     sv.translatesAutoresizingMaskIntoConstraints = false
@@ -89,6 +92,29 @@ class AccountViewController: UIViewController {
   
   override func viewDidLoad() {
     view.backgroundColor = .white
+    ref = Database.database().reference()
+
+
+    ref.observe(.childAdded) { (dataSnapshot) in
+      print("childAdded value: \(dataSnapshot)")
+
+    }
+
+    ref.observe(.childChanged) { (dataSnapshot) in
+      print("childchanged value: \(dataSnapshot)")
+    }
+
+    ref.observe(.childRemoved) { (dataSnapshot) in
+      print("childRemoved value: \(dataSnapshot)")
+    }
+    //let uid = Auth.auth().currentUser?.uid
+
+
+
+//    let itemRef = ref.child("노드").setValue("데이터")
+////    ref.setValue("값수정?", forKey: "데이터")
+//        itemRef.
+//    setValue("이건 들어갈까?")
     
     view.addSubview(loginScrollView)
     loginScrollView.addSubview(contentView)

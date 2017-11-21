@@ -9,4 +9,5 @@ target '17-11-20-Creat-Instagram' do
 
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 end
