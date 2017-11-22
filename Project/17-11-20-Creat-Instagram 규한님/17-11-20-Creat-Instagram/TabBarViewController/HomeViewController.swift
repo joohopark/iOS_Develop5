@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
   let storageRef = Storage.storage().reference()
   let uid = Auth.auth().currentUser?.uid
   
+  
+  
   var profileBtn: UIButton = {
     var btn = UIButton()
     btn.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
@@ -124,6 +126,7 @@ class HomeViewController: UIViewController {
     
   }()
   
+   // fill. fillEqually -> 이거 두가지 사용해서, 둘의 속성을 몰라서 생기는 문제 같음.
   var stackView4: UIStackView = {
     let stack = UIStackView()
     
@@ -220,6 +223,8 @@ class HomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
     ref = Database.database().reference()
     view.backgroundColor = .white
     view.addSubview(profileBtn)
@@ -240,7 +245,7 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
           let imagePath = loadData["image"] as! String
           let data = try? Data(contentsOf: URL(string: imagePath)!)
-          
+
           self.profileBtn.setImage(UIImage(data: data!), for: .normal)
         }
       }

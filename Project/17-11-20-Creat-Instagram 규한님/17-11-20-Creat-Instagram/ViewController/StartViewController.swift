@@ -198,7 +198,9 @@ class StartViewController: UIViewController {
         let likeVC = LikeViewController()
         let browsingVC = BrowsingViewController()
         
-        goTabBar.viewControllers = [homeVC, searchVC, addPostVC, likeVC, browsingVC]
+        let navigationViewController: UINavigationController = UINavigationController(rootViewController: addPostVC)
+        
+        goTabBar.viewControllers = [browsingVC, searchVC, navigationViewController, likeVC, homeVC]
         
         //let image = UIImage(named: "home.png")
 

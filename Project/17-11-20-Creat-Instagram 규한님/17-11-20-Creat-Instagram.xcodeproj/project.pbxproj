@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040F67DB1FC55B5200D3D55F /* NextPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F67DA1FC55B5200D3D55F /* NextPostViewController.swift */; };
 		041C36101FC3FE6300FC945C /* home-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 041C360B1FC3FE6200FC945C /* home-48.png */; };
 		041C36111FC3FE6300FC945C /* like-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 041C360C1FC3FE6200FC945C /* like-48.png */; };
 		041C36121FC3FE6300FC945C /* search-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 041C360D1FC3FE6300FC945C /* search-48.png */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040F67DA1FC55B5200D3D55F /* NextPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPostViewController.swift; sourceTree = "<group>"; };
 		041C360B1FC3FE6200FC945C /* home-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-48.png"; sourceTree = "<group>"; };
 		041C360C1FC3FE6200FC945C /* like-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like-48.png"; sourceTree = "<group>"; };
 		041C360D1FC3FE6300FC945C /* search-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-48.png"; sourceTree = "<group>"; };
@@ -97,11 +99,12 @@
 		044E31481FC3DB7200E6964B /* TabBarViewController */ = {
 			isa = PBXGroup;
 			children = (
-				044E313D1FC3DA7400E6964B /* HomeViewController.swift */,
+				044E31451FC3DAFE00E6964B /* BrowsingViewController.swift */,
 				044E313F1FC3DA9700E6964B /* SearchViewController.swift */,
 				044E31411FC3DAB900E6964B /* AddPostViewController.swift */,
+				040F67DA1FC55B5200D3D55F /* NextPostViewController.swift */,
 				044E31431FC3DACF00E6964B /* LikeViewController.swift */,
-				044E31451FC3DAFE00E6964B /* BrowsingViewController.swift */,
+				044E313D1FC3DA7400E6964B /* HomeViewController.swift */,
 			);
 			path = TabBarViewController;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				044E31441FC3DACF00E6964B /* LikeViewController.swift in Sources */,
 				04D296141FC286BF00224077 /* AppDelegate.swift in Sources */,
 				044E313C1FC3DA5D00E6964B /* MainTabbarController.swift in Sources */,
+				040F67DB1FC55B5200D3D55F /* NextPostViewController.swift in Sources */,
 				044E31421FC3DAB900E6964B /* AddPostViewController.swift in Sources */,
 				04D296281FC2AA1100224077 /* AccountViewController.swift in Sources */,
 				044E31461FC3DAFE00E6964B /* BrowsingViewController.swift in Sources */,

@@ -873,3 +873,18 @@ extension HomeViewController {
 > stackView를 사용하였는데, label, button 같은 오브젝트들을 closure 로 묵어놓으니까, stackView에 담길때, 해당 오브젝트들의 frame 값이 모호하다는 애러가 계속 발생했습니다. 해당 인스턴스들이 생성되는 시점과, 스텍뷰에 넣어서 사용되어지는 시점을 명확하게 알고 다시 한번 접근 해야할것 같습니다.
 > 
 
+---
+
+17.11.22
+
+PHAset 하는 방법
+
+// PHaset을 통해 앨범의 asets 데이터 가져오기
+
+// PHFetchOption 설정가능
+
+
+// enumerateOBjects를 톻애 각 asset을 하나씩 작업 실행하기
+
+// 각 asset별: PhImageManager을 통해 이미지 불러오기 requestImage 
+
