@@ -178,11 +178,6 @@ class BrowsingCustomCell: UITableViewCell {
     self.contentView.addSubview(postImageView)
     self.contentView.addSubview(textLb)
     
-    //autolayout
-    //
-    //
-    //
-    
     
   }
   

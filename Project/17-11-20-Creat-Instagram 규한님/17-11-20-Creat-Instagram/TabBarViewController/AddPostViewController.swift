@@ -49,6 +49,7 @@ class AddPostViewController: UIViewController {
     //allPhotosOptions.fetchLimit = 20
     //옥경님에게 질문하기
     allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+    print(allPhotosOptions)
     allPhotos = PHAsset.fetchAssets(with: allPhotosOptions)
     
     collectionView?.reloadData()

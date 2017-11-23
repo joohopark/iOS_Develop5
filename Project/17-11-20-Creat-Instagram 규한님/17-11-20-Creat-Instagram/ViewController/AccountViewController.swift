@@ -99,14 +99,14 @@ class AccountViewController: UIViewController {
   override func viewDidLoad() {
     view.backgroundColor = .white
     
-    #if DEBUG
-          //MARK://TEST CODE
-          let uid = Auth.auth().currentUser?.uid
-          let itemRef = ref.child("노드").setValue("데이터")
-      //    ref.setValue("값수정?", forKey: "데이터")
-              itemRef.setValue("이건 들어갈까?")
-      //MARK://--
-    #endif
+//    #if DEBUG
+//          //MARK://TEST CODE
+//          let uid = Auth.auth().currentUser?.uid
+//          let itemRef = ref.child("노드").setValue("데이터")
+//      //    ref.setValue("값수정?", forKey: "데이터")
+//              itemRef.setValue("이건 들어갈까?")
+//      //MARK://--
+//    #endif
 
     view.addSubview(loginScrollView)
     loginScrollView.addSubview(contentView)
