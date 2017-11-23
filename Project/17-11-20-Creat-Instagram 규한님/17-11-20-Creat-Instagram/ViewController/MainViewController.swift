@@ -16,9 +16,7 @@ class MainViewController: UIViewController {
     print(Auth.auth().currentUser?.uid)
     view.backgroundColor = .white
     
-    
-    
-    
+
     view.addSubview(successLable)
   }
   

@@ -12,26 +12,26 @@ class StartViewController: UIViewController {
     let sv = UIScrollView()
     sv.translatesAutoresizingMaskIntoConstraints = false
     sv.backgroundColor = .lightGray
-    sv.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+//    sv.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     return sv
   }()
+  
   var contentView: UIView = {
     let view = UIView()
-    view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+//    view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
   }()
+
   var contentBackground: UIImageView = {
     let image = UIImageView()
     image.translatesAutoresizingMaskIntoConstraints = false
-    image.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-    image.image = UIImage(named: "Login Screen")
+//    image.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    image.image = #imageLiteral(resourceName: "login_screen")
     image.isUserInteractionEnabled = true
     return image
   }()
-  
-  
-  
+
   var idTF: UITextField = {
     let tf = UITextField()
     tf.backgroundColor = .clear
@@ -80,19 +80,20 @@ class StartViewController: UIViewController {
     return btn
   }()
   
-  
   var ref: DatabaseReference!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     ref = Database.database().reference()
+    //파이어 베이스 데이터 추가 클로져
     ref.observe(.childAdded) { (dataSnapshot) in
       //print("childAdded value: \(dataSnapshot)")
     }
-    
+    //파이어 베이스 데이터 변경 클로져
     ref.observe(.childChanged) { (dataSnapshot) in
       //print("childchanged value: \(dataSnapshot)")
     }
+    
     ref.observe(.childRemoved) { (dataSnapshot) in
       //print("childRemoved value: \(dataSnapshot)")
     }
@@ -107,8 +108,38 @@ class StartViewController: UIViewController {
     contentBackground.addSubview(accountBtn)
     loginScrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
+//    idTF.setLayoutMultiplier(item: self.loginScrollView, centerXMultiplier: 1.0, centerYMultiplier: 0.9, widthMultiplier: 0.7, heightMultiplier: 0.06)
+    //레이아웃 설정
+    updateLayout()
+    //remove 추가
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(noti:)),
+                                           name: .UIKeyboardWillShow,
+                                           object: nil)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)),
+                                           name: .UIKeyboardWillHide,
+                                           object: nil)
     
     
+    loginBtn.addTarget(self, action: #selector(self.loginBtnAction(_:)) , for: .touchUpInside)
+    accountBtn.addTarget(self, action: #selector(self.accountBtnAction(_:)), for: .touchUpInside)
+  }
+  
+  @objc func keyboardWillHide(noti: Notification) {
+    loginScrollView.contentInset = UIEdgeInsets.zero
+  }
+  
+
+  @objc func keyboardDidShow(noti: Notification) {
+    guard let userInfo = noti.userInfo else { return }
+    guard let keyFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect else {return}
+    loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyFrame.height, right: 0)
+    
+  }
+  
+  private func updateLayout()
+  {
     self.setLayoutMultiplier(target: idTF,
                              centerXMultiplier: 1.0,
                              centerYMultiplier: 0.9,
@@ -132,30 +163,9 @@ class StartViewController: UIViewController {
                              centerYMultiplier: 1.8,
                              widthMultiplier: 0.7,
                              heightMultiplier: 0.06)
+    
     autoScrollView()
     autoContentView()
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(noti:)),
-                                           name: .UIKeyboardWillShow,
-                                           object: nil)
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)),
-                                           name: .UIKeyboardWillHide,
-                                           object: nil)
-    
-    
-    loginBtn.addTarget(self, action: #selector(self.loginBtnAction(_:)) , for: .touchUpInside)
-    accountBtn.addTarget(self, action: #selector(self.accountBtnAction(_:)), for: .touchUpInside)
-  }
-  
-  @objc func keyboardWillHide(noti: Notification) {
-    loginScrollView.contentInset = UIEdgeInsets.zero
-  }
-  
-  @objc func keyboardDidShow(noti: Notification) {
-    guard let userInfo = noti.userInfo else { return }
-    guard let keyFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect else {return}
-    loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyFrame.height, right: 0)
-    
   }
   
   func autoScrollView() {
@@ -184,8 +194,13 @@ class StartViewController: UIViewController {
     guard let id = idTF.text else {return}
     guard let pw = pwTF.text else {return}
     
+    login(email:id, pw:pw)
     
-    Auth.auth().signIn(withEmail: id, password: pw) { (user, error) in
+  }
+  
+  private func login(email:String, pw:String)
+  {
+    Auth.auth().signIn(withEmail: email, password: pw) { (user, error) in
       if error == nil && user != nil {
         print(user)
         print("로그인완료")
@@ -203,8 +218,8 @@ class StartViewController: UIViewController {
         goTabBar.viewControllers = [browsingVC, searchVC, navigationViewController, likeVC, homeVC]
         
         //let image = UIImage(named: "home.png")
-
-
+        
+        
         
         homeVC.tabBarItem.image = #imageLiteral(resourceName: "home_unselected")
         searchVC.tabBarItem.image = #imageLiteral(resourceName: "search_unselected")
@@ -218,6 +233,7 @@ class StartViewController: UIViewController {
       }
     }
   }
+  
   
   @objc func accountBtnAction(_ sender: UIButton) {
     
@@ -272,6 +288,20 @@ extension StartViewController {
     self.view.addConstraint(targetTFCenterY)
     self.view.addConstraint(targetTFWidth)
     self.view.addConstraint(targetTFHeight)
+  }
+}
+
+
+extension UIView
+{
+  func setLayoutMultiplier(item:UIView,
+                           centerXMultiplier: CGFloat,
+                           centerYMultiplier: CGFloat,
+                           widthMultiplier: CGFloat,
+                           heightMultiplier: CGFloat) {
+    
+      self.translatesAutoresizingMaskIntoConstraints = false
+    
   }
 }
 

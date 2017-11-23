@@ -15,6 +15,8 @@ class BrowsingViewController: UIViewController {
   
   let tableView: UITableView = {
     let tv: UITableView = UITableView()
+    tv.register(BrowsingCustomCell.self, forCellReuseIdentifier: "Cell")
+    tv.rowHeight = UITableViewAutomaticDimension
     return tv
   }()
   
@@ -23,47 +25,14 @@ class BrowsingViewController: UIViewController {
     ref = Database.database().reference()
     view.backgroundColor = .white
     view.addSubview(tableView)
-    tableView.frame = CGRect(x: 0,
-                             y: 0,
-                             width: self.view.bounds.size.width,
-                             height: self.view.bounds.size.height)
+    
     tableView.delegate = self
     tableView.dataSource = self
     
-    tableView.register(BrowsingCustomCell.self, forCellReuseIdentifier: "Cell")
-    tableView.rowHeight = UITableViewAutomaticDimension
-    
-    NotificationCenter.default.addObserver(forName: Notification.Name.init("throwData"), object: nil, queue: nil, using: { (noti) in
-      self.ref.child(self.uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
-        if let loadData = dataSnapshot.value as? NSDictionary {
-          DispatchQueue.main.async {
-            self.postArray = []
-            let postDataArrOfAny = loadData["post"]! as! [Any]
-            
-            for item in postDataArrOfAny {
-              if item is NSNull {
-                print("\(item) is null")
-              }else {
-                let temp = item as! [String:String]
-                self.postArray!.append(temp["contents"] as! String)
-                self.postImageArray.append(temp["image"] as! String)
-              }
-            }
-            self.tableView.reloadData()
-          }
-          
-          
-        }
-      }
-    })
-    
-    ref.child(uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
-      
-      
-      
-      
+    ref.child(uid!).observeSingleEvent(of: .value) {[unowned self] (dataSnapshot) in
+  
       if let loadData = dataSnapshot.value as? NSDictionary {
-        DispatchQueue.main.async {
+        
           self.postArray = []
           let postDataArrOfAny = loadData["post"]! as! [Any]
           
@@ -72,12 +41,15 @@ class BrowsingViewController: UIViewController {
               print("\(item) is null")
             }else {
               let temp = item as! [String:String]
-              self.postArray!.append(temp["contents"] as! String)
-              self.postImageArray.append(temp["image"] as! String)
+              
+              self.postArray!.append(temp["contents"]!)
+              self.postImageArray.append(temp["image"]!)
             }
           }
-          self.tableView.reloadData()
-        }
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+          }
+        
         
         
       }
@@ -104,7 +76,7 @@ extension BrowsingViewController: UITableViewDelegate,UITableViewDataSource {
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    return self.postImageArray.count ?? 0
+    return self.postImageArray.count
     
   }
   
@@ -169,9 +141,7 @@ class BrowsingCustomCell: UITableViewCell {
 
   override func layoutSubviews() {
     super.layoutSubviews()
-    super.layoutSubviews()
     // Customize imageView like you need
-    
     self.imageView?.frame = CGRect(x: 10, y: 0, width: 40, height: 40)
     self.imageView?.contentMode = UIViewContentMode.scaleAspectFit
     // Costomize other elements
@@ -202,13 +172,27 @@ class BrowsingCustomCell: UITableViewCell {
 
   }
 
-
+  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+      super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    self.contentView.addSubview(postImageView)
+    self.contentView.addSubview(textLb)
+    
+    //autolayout
+    //
+    //
+    //
+    
+    
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: coder)
+  }
+  
+  //nib파일을 통해서만 불림
   override func awakeFromNib() {
     super.awakeFromNib()
-
-
-
-
 
   }
 

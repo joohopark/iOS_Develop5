@@ -27,7 +27,12 @@ class NextPostViewController: UIViewController {
     return tf
   }()
   
-  var indicate: UIActivityIndicatorView!
+  var indicate: UIActivityIndicatorView! = {
+    let idc = UIActivityIndicatorView()
+    idc.backgroundColor = .black
+    
+    return idc
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -79,11 +84,21 @@ class NextPostViewController: UIViewController {
         
         
         if let loadData = dataSnapshot.value as? NSDictionary {
+          
           guard let postIndex = loadData["post"] as? NSArray, postIndex != nil else {
             self.dic = ["post": ["1": ["image": profileImageUrl, "contents": postText]]]
             
-            Database.database().reference().child(self.uid!).updateChildValues(self.dic!, withCompletionBlock: { (error, data) in})
-            return}
+            Database.database().reference().child(self.uid!).updateChildValues(self.dic!, withCompletionBlock: { (error, data) in
+              
+              
+              
+              
+            })
+            
+            
+            return
+            
+          }
           
           
           
@@ -94,15 +109,13 @@ class NextPostViewController: UIViewController {
           Database.database().reference().child(self.uid!).child("post").updateChildValues(updateDic, withCompletionBlock: { (error, data) in
             
             DispatchQueue.main.async {
-              NotificationCenter.default.post(name: Notification.Name.init("throwData"), object: nil, userInfo: ["noti":"info"])
               
-              self.navigationController?.popToRootViewController(animated: true)
-              self.indicate.stopAnimating()
+              //self.navigationController?.popToViewController(MainTabbarController(), animated: true)
+              //self.navigationController?.popToRootViewController(animated: true)
+              self.dismiss(animated: true, completion: nil)
               
-              
+              self.indicate.stopAnimating() 
             }
-            
-            
           })
         }
       })

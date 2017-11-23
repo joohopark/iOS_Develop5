@@ -14,6 +14,7 @@ class AddPostViewController: UIViewController {
   var selectedImage: UIImage = UIImage()
   
   
+  let v = UIView()
   
   
   override func viewDidLoad() {
@@ -21,8 +22,9 @@ class AddPostViewController: UIViewController {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                              target: self,
                                                              action: #selector(self.next(_:)))
+    
     view.backgroundColor = .white
-    layout = UICollectionViewFlowLayout()
+//    layout = UICollectionViewFlowLayout()
     layout.itemSize = CGSize(width: 100, height: 100)
     collectionView = UICollectionView(frame: CGRect(x: 0,
                                                     y: 0,
@@ -45,8 +47,10 @@ class AddPostViewController: UIViewController {
   func fetchAllPhotos() {
     let allPhotosOptions = PHFetchOptions()
     //allPhotosOptions.fetchLimit = 20
+    //옥경님에게 질문하기
     allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
     allPhotos = PHAsset.fetchAssets(with: allPhotosOptions)
+    
     collectionView?.reloadData()
   }
   
@@ -82,8 +86,6 @@ extension AddPostViewController: UICollectionViewDelegate, UICollectionViewDataS
     let asset = allPhotos.object(at: indexPath.item)
     
     cell.representedAssetIdentifier = asset.localIdentifier
-    
-    
     
     imageManager.requestImage(for: asset,
                               targetSize: CGSize(width: 300, height: 300),

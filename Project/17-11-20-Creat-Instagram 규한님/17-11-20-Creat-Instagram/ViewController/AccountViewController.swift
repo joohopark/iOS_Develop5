@@ -6,6 +6,12 @@ import CoreData
 
 import CoreData
 
+#if DEBUG
+let baseURL = "https://test.api.com"
+#else
+let baseURL = "https://api.com"
+#endif
+
 class AccountViewController: UIViewController {
   
 
@@ -90,22 +96,18 @@ class AccountViewController: UIViewController {
     return btn
   }()
   
-  
   override func viewDidLoad() {
     view.backgroundColor = .white
     
+    #if DEBUG
+          //MARK://TEST CODE
+          let uid = Auth.auth().currentUser?.uid
+          let itemRef = ref.child("노드").setValue("데이터")
+      //    ref.setValue("값수정?", forKey: "데이터")
+              itemRef.setValue("이건 들어갈까?")
+      //MARK://--
+    #endif
 
-
-    
-    //let uid = Auth.auth().currentUser?.uid
-
-
-
-//    let itemRef = ref.child("노드").setValue("데이터")
-////    ref.setValue("값수정?", forKey: "데이터")
-//        itemRef.
-//    setValue("이건 들어갈까?")
-    
     view.addSubview(loginScrollView)
     loginScrollView.addSubview(contentView)
     contentView.addSubview(contentBackground)
