@@ -87,14 +87,14 @@ class StartViewController: UIViewController {
     super.viewDidLoad()
     ref = Database.database().reference()
     ref.observe(.childAdded) { (dataSnapshot) in
-      print("childAdded value: \(dataSnapshot)")
+      //print("childAdded value: \(dataSnapshot)")
     }
     
     ref.observe(.childChanged) { (dataSnapshot) in
-      print("childchanged value: \(dataSnapshot)")
+      //print("childchanged value: \(dataSnapshot)")
     }
     ref.observe(.childRemoved) { (dataSnapshot) in
-      print("childRemoved value: \(dataSnapshot)")
+      //print("childRemoved value: \(dataSnapshot)")
     }
     
     view.addSubview(loginScrollView)

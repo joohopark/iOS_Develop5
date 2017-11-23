@@ -240,7 +240,7 @@ class HomeViewController: UIViewController {
     
     
     ref.child(uid!).observeSingleEvent(of: .value) { (dataSnapshot, string) in
-      print(dataSnapshot, dataSnapshot.value)
+      
       if let loadData = dataSnapshot.value as? NSDictionary {
         DispatchQueue.main.async {
           let imagePath = loadData["image"] as! String
@@ -273,7 +273,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
   // 사진을 선택 후 불리는 델리게이트 메소드
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     
-    print(info)
+    
     if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
       print("이미지선택")
       // 이미지 선택후, 서버에 넣는 방법을 여기서 해주어야 할것 같음.
@@ -283,14 +283,14 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
       let filename = NSUUID().uuidString
       // 폴더이름      // 이미지 이름
       Storage.storage().reference().child(uid!).child(filename).putData(uploadimage!, metadata: nil, completion: { (metadata, error) in
-        print(error,metadata)
+        
         // storega의 firePath
         guard let profileImageUrl = metadata?.downloadURL()?.absoluteString else { return }
         let dic = ["image": profileImageUrl]
         
         
         Database.database().reference().child(self.uid!).updateChildValues(dic, withCompletionBlock: { (err, ref) in
-          print(err,ref)
+          
           //완료후 행동
         })
       })

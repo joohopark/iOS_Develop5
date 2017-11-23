@@ -84,7 +84,7 @@ extension AddPostViewController: UICollectionViewDelegate, UICollectionViewDataS
     cell.representedAssetIdentifier = asset.localIdentifier
     
     
-    print(asset, cell.representedAssetIdentifier)
+    
     imageManager.requestImage(for: asset,
                               targetSize: CGSize(width: 300, height: 300),
                               contentMode: .aspectFill,
@@ -140,6 +140,7 @@ class CustomCell: UICollectionViewCell {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
   
   
 }

@@ -56,7 +56,7 @@ class NextPostViewController: UIViewController {
   }
   
   @objc func networkPost(_ sender: UIBarButtonItem) {
-    print(postTextView.text,"포스트 확인")
+    
     let indicateCGRect = CGRect(x: self.view.center.x, y: self.view.center.y, width: 100, height: 100)
     indicate = UIActivityIndicatorView(frame: indicateCGRect)
     view.addSubview(indicate)
@@ -85,7 +85,7 @@ class NextPostViewController: UIViewController {
             Database.database().reference().child(self.uid!).updateChildValues(self.dic!, withCompletionBlock: { (error, data) in})
             return}
           
-          print(postIndex.count, postIndex)
+          
           
           self.dic = ["\(postIndex.count+1)": ["1": ["image": profileImageUrl, "contents": postText]]]
           
@@ -94,6 +94,8 @@ class NextPostViewController: UIViewController {
           Database.database().reference().child(self.uid!).child("post").updateChildValues(updateDic, withCompletionBlock: { (error, data) in
             
             DispatchQueue.main.async {
+              NotificationCenter.default.post(name: Notification.Name.init("throwData"), object: nil, userInfo: ["noti":"info"])
+              
               self.navigationController?.popToRootViewController(animated: true)
               self.indicate.stopAnimating()
               

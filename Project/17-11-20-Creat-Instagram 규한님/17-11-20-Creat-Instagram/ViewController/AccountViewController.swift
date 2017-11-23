@@ -197,7 +197,7 @@ class AccountViewController: UIViewController {
       Auth.auth().createUser(withEmail: id, password: pw, completion: { (user, error) in
         if error == nil && user != nil {
           print("회원가입 완료!")
-          print(user)
+          
           
         }else {
           // firebase 에서 제공하는 에러 string
