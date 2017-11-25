@@ -10,7 +10,7 @@
 
 ---
 
-## 추천도서
+## 추천 도서
 
 [권도균의 스타트업 경영 수업](http://book.naver.com/bookdb/book_detail.nhn?bid=9366875)<br>
 [승려와 수수께끼](http://book.naver.com/bookdb/book_detail.nhn?bid=7376143)<br>
@@ -18,7 +18,13 @@
 [마우스드라이버 크로니클](http://book.naver.com/bookdb/book_detail.nhn?bid=6974322)<br>
 [스무살에 알았더라면 좋았을 것들](http://book.naver.com/bookdb/book_detail.nhn?bid=6284954)<br>
 
+---
 
+## 추천 강의
+
+[https://www.coursera.org/](https://www.coursera.org/)<br>
+[https://www.udacity.com/](https://www.udacity.com/)<br>
+[https://www.udemy.com/](https://www.udemy.com/)<br>
 
 ---
 

@@ -38,6 +38,7 @@ class BrowsingViewController: UIViewController {
       if let loadData = dataSnapshot.value as? NSDictionary {
         DispatchQueue.main.async {
           self.postArray = []
+          self.postImageArray = []
           if let postDataArrOfAny = loadData["post"] as? [Any] {
             let postDataArrOfAny = loadData["post"]! as? [Any]
             
