@@ -874,17 +874,3 @@ extension HomeViewController {
 > 
 
 ---
-
-17.11.22
-
-PHAset 하는 방법
-
-// PHaset을 통해 앨범의 asets 데이터 가져오기
-
-// PHFetchOption 설정가능
-
-
-// enumerateOBjects를 톻애 각 asset을 하나씩 작업 실행하기
-
-// 각 asset별: PhImageManager을 통해 이미지 불러오기 requestImage 
-
