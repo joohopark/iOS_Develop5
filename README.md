@@ -220,9 +220,11 @@
 ---
 
 
-# QnA
+# 기타
 
 > 1. [QnA 목록들](/study/QnA.md)
+> 
+> 2. [17-11-25-NAVER D2STARTUP FACTORY](/study/0_17-11-25-NAVER_D2_STARTUP_FACTORY.md)
 
  
 
