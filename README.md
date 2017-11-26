@@ -180,13 +180,12 @@
 > 
 > 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, popup View, TableView-Expand, TableView-Dynamic-Cell](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
 > 
-> 3. [작성중..카카오톡UI 따라하기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
+> 3. [카카오톡UI chat UI 만들기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
 
 ### *  **Github 으로 협업하기 & firebase 사용하기** 
 
 > 1. [Git 을 이용한 협업 WorkFlow](/study/0_17-10-28-github-recture.md)
 > 
-> 2. [작성중..firbase 사용하기..]()
 
 
 
