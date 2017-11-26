@@ -324,7 +324,7 @@ class BrowsingViewController: UIViewController {
     
     getNetworkData()
   }
-  
+
   func getNetworkData() {
     ref.child(uid!).observeSingleEvent(of: .value) { (dataSnapshot) in
       if let loadData = dataSnapshot.value as? NSDictionary {

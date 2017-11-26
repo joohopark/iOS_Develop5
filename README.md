@@ -148,7 +148,7 @@
 
 > 1. [Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
 > 
-> 2. [작성중..CoreData,Login](/study/52_17-11-26-mak-instagram-firebase-CoreData.md)
+> 2. [Firebase-CoreData, ObserveSingerEvent](/study/52_17-11-26-mak-instagram-firebase-CoreData.md)
 
 
 
