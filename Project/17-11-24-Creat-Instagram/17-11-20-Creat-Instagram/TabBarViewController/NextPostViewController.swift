@@ -75,7 +75,9 @@ class NextPostViewController: UIViewController {
           guard let postIndex = loadData["post"] as? NSArray, postIndex != nil else {
             self.dic = ["post": ["1": ["image": profileImageUrl, "contents": postText]]]
             Database.database().reference().child(self.uid!).updateChildValues(self.dic!, withCompletionBlock: { (error, data) in})
-            return}
+            
+            return
+          }
           self.dic = ["\(postIndex.count+1)": ["1": ["image": profileImageUrl, "contents": postText]]]
           let updateDic = ["\(postIndex.count)": ["image": profileImageUrl, "contents": postText]]
           //          self.dic = ["\(postIndex.count+1)": ["image": profileImageUrl, "contents": postText]]

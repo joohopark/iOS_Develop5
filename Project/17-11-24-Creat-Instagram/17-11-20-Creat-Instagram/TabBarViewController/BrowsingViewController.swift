@@ -9,7 +9,7 @@ class BrowsingViewController: UIViewController {
   var ref: DatabaseReference!
   let uid = Auth.auth().currentUser?.uid
   var postArray: [String]?
-  var postImageArray: [String]? = []
+  var postImageArray: [String]?
   
   let tableView: UITableView = {
     let tv: UITableView = UITableView()
@@ -41,7 +41,6 @@ class BrowsingViewController: UIViewController {
           self.postImageArray = []
           if let postDataArrOfAny = loadData["post"] as? [Any] {
             let postDataArrOfAny = loadData["post"]! as? [Any]
-            
             for item in postDataArrOfAny! {
               if item is NSNull {
                 print("\(item) is null")
@@ -65,27 +64,23 @@ class BrowsingViewController: UIViewController {
       self.postArray = []
       self.getNetworkData()
       self.tableView.reloadData()
-    
+      
     }
-//    tableView.reloadData()
   }
-  
 }
+
 extension BrowsingViewController: UITableViewDelegate,UITableViewDataSource {
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
   }
   
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-    return self.postImageArray!.count ?? 0
-    
+    return self.postImageArray?.count ?? 0
   }
   
   public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BrowsingCustomCell
     guard let postData = self.postArray else {return cell}
-    
     cell.bounds = CGRect(x: 0,
                          y: 0,
                          width: (cell.imageView?.bounds.width)!,
@@ -96,25 +91,18 @@ extension BrowsingViewController: UITableViewDelegate,UITableViewDataSource {
                                     height: (cell.imageView?.bounds.height)!)
     cell.imageView?.clipsToBounds = true
     cell.imageView?.contentMode = .scaleAspectFit
-    
     cell.textLabel?.numberOfLines = 0
     cell.textLabel?.text = "\(postArray![indexPath.row])"
     let imagePath = postImageArray![indexPath.row]
     let data = try? Data(contentsOf: URL(string: imagePath)!)
-//    cell.postImageView.image = UIImage(data: data!)
     cell.imageView?.image = UIImage(data: data!)
-    
-    
     return cell
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
   }
-  
-  
 }
-
 
 class BrowsingCustomCell: UITableViewCell {
   
@@ -135,49 +123,25 @@ class BrowsingCustomCell: UITableViewCell {
     return lb
   }()
   
-  
   override func layoutSubviews() {
     super.layoutSubviews()
-
+    
     // Customize imageView like you need
     self.addSubview(postImageView)
     self.addSubview(textLb)
-
+    
     self.imageView?.frame = CGRect(x: 10, y: 0, width: 40, height: 40)
     self.imageView?.contentMode = UIViewContentMode.scaleAspectFit
     // Costomize other elements
   }
   
-  
-//  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-//    super.init(style: style, reuseIdentifier: reuseIdentifier)
-//    self.addSubview(postImageView)
-//    self.addSubview(textLb)
-//    self.imageView?.frame = CGRect(x: 10, y: 0, width: 40, height: 40)
-//    self.imageView?.contentMode = UIViewContentMode.scaleAspectFit
-//
-//
-//  }
-  
-//  required init?(coder aDecoder: NSCoder) {
-//    fatalError("init(coder:) has not been implemented")
-//  }
-  
   override func awakeFromNib() {
     super.awakeFromNib()
-    
-    
-    
-    
-    
   }
-  
+
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
   }
-  
 }
 
 
