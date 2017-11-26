@@ -438,10 +438,9 @@ class BrowsingCustomCell: UITableViewCell {
 
 ```
 
-> firebase에 저장되어있는 값들을 가져오는 `시점`에 대한 고민이 필요한것 같습니다. singerton 으로 된 Data를 가져올때, 언제 load 해줄것인지에 대한 고민이 
-
-
-
+> firebase에 저장되어있는 값들을 가져오는 `시점`에 대한 고민이 필요한것 같습니다. singerton 으로 된 Data를 가져올때, 언제 load 해줄것인지에 대한 고민이 필요합니다. 데이터를 사용하려고하는 시점에 사용 되어지는 데이터가 담겨 있어야 원할때 사용할수 있습니다. 
+> 
+> 사실 Firebase에 imagePath 를 저장하고, app에서는 image를 Data로 가지고 있는 구조는 좋은 구조는 아닌걸 알게 되었습니다. 위에서 짜여진것은 image를 data로 가지고 있는 구조이지만, 결코 좋은 구조가 아니므로 수정이 필요합니다.
 
 ---
 
@@ -449,3 +448,4 @@ class BrowsingCustomCell: UITableViewCell {
 
 
 [rhammer님 블로그](http://rhammer.tistory.com/229) <br>
+[collectionView 구조](https://developer.apple.com/library/content/documentation/WindowsViews/Conceptual/CollectionViewPGforIOS/CollectionViewBasics/CollectionViewBasics.html#//apple_ref/doc/uid/TP40012334-CH2-SW1)
