@@ -2,154 +2,212 @@
 
 ---
 
-## Kakao_intro
+## kakaoTalk Chat UI 만들기
 
-채팅창 구현하기 -> 채팅창의 요소는 TableView로 구현한다..?
+![screen](/study/image/kakaoUI.png)
 
-TableViewCell 을 Xib 파일을 통해서 만듬.. 
-형태는 그대로 고정된 상태에서, 내부의 LB의 값이 늘어나면, 그거에 마추어서 늘어나개..?하려면 `Streching`
+구현하기 위해서 필요한 요소들
 
-x = 0 -> 0.3-> 30% x축으로 30% 간만큼..?
-y = 0
-
-> x,y 값 0, 0 은 시작점.
-
-witdh = 1 : 늘어날 범위, 원래 크기의 그대로 이미지의 비율만큼만 늘리겠다 라는 의미..
-height = 0
-
-0.5 0.5 
-0   0    으로 셋팅하면, 가운데 풍선 크기만 늘어나게됨.
+1. 입력되는 Text에 대한 UI AutolayOut 설정
+2. 텍스트 길이에 따라서, 디바이스 크기에 따라서 유동적으로 변경되는 Text line 만들기
 
 ---
 
-textLB 크기에 따라서, image, 크기를 주고 싶을떄, hugging 를 사용함.
+## inputText Cell 만들기
 
-## kakao-3mybubble 
+| 내가 작성한 chat Cell Nib 파일| 상대방 Chat Cell Nib 파일|
+| :---: | :---: |
+| ![screen](/study/image/kakaoUI-1.png) | ![screen](/study/image/kakaoUI-2.png)|
 
-제약조건 주는 방법이 조금 다릅니다. 이미지,레이블들을 각각 연동시켜서 constrains 주는 방법을 한번 확인해보자
-
-tableView의 Separator 을 none으로 만들면, cell의 구분선이 없어지게 됩니다.
-
----
-
-## kakao-4yourBubble 
-
-label 길이에 따라서 이미지가 늘어나는 streching? 한번 다시 정리하자 
-
----
-
-## ComplexCell 
-
-인풋값에 따라서 상대방의 cell, 혹은 나의 cell을 나오게 하는 방법..
-indexpath.row 의 홀,짝수에 따라서 만듬..
-
----
-
-## CellFinish
-
-profile image 동그랗게 layer.conerRadius
-
-my,your Cell을 구성함.
-
----
-
-## kakako-7 inputview1
-
-구조 
---View
-----button
-----TextView
-
-textView의 입력되는 글자에 따라서, textView의 높이가 달라지게 설계함.
-
-button속의 text가 너무 딱 붙어 있는것 같을때 inset을 사용해서 내부 간격을 넓혀줌.
-
-
-키보드가 올라올때, 키보드위에 같이 올라오고, 내려갈때 같이 내려가는 부분을 정의해주고 만들어보자
-
-textInPutView의 위치가 올라가는 것으로 만들어 주기로함.
 
 ```swift
 
-// 키보드 Notification
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)) , name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+내가 작성한 chatCell 구조
+
+|--imageView
+|--Label
+|--Label
+
+각각 정렬, 제약 조건을 통해서 AutoLayout을 지정했습니다.
+
+
+```
+#### - Stretching 이용해서 image 크기 조절
+
+Streching은 이미지가 커질때 어느부분이 늘어나고, 줄어들수 있게 설정할수 있습니다.
+`Attribute inspect` 부분에서 `Stretching` 에서 조절할수 있습니다. <br>
+
+| * | x | y | width | height |
+|:--:|:--:|:--:|:--:|:--:|
+| 기본값 | 0 | 0 | 1 | 1 |
+| 설정값 | 0.5 | 0.5 | 0 | 0 |
+
+> 값의 범위는 0~1 까지 입니다. 
+> 
+> x, y 는 이미지가 늘어났을대 조건을 지정해주는 `시작위치` 가 됩니다. width, height 는 x,y 로 지정 한 `시작위치`에서 width,height 로 설정한 범위 만큼 적용 Stretching 이 적용 됩니다.
+> 
+> label, imageView의 hugging priority, Constrains 를 설정하여 Autolayout을 설정합니다. 
+
+---
+
+## text 작성 update 설정
+
+```swift
+
+
+
+import UIKit
+
+class MainViewController: UIViewController {
+  UILabel
+  @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet private weak var inputviewBottomMargin: NSLayoutConstraint!
+  @IBOutlet private weak var inputTextView: UITextView!
+  @IBOutlet private weak var inputContainerView: UIView!
+  @IBOutlet private weak var inputDoneBtn: UIButton!
+  @IBOutlet private weak var inputTextViewHeight: NSLayoutConstraint!
+  var chatData: NSMutableArray = ["hi!", "반가워요!"]
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    UILabel
+    inputTextView.delegate = self
+    inputContainerView.backgroundColor = UIColor(red:0.80,
+                                                 green:0.82,
+                                                 blue:0.84,
+                                                 alpha:1.00)
+    inputDoneBtn.backgroundColor = UIColor(red:0.98,
+                                           green:0.93,
+                                           blue:0.33,
+                                           alpha:1.00)
+    tableView.rowHeight = UITableViewAutomaticDimension
+    //Nib 파일로 Cell 을 만들경우, 이렇게 등록을 해주어야함.
+    tableView.register(UINib(nibName: "MyBubbleCell", bundle: nil),
+                       forCellReuseIdentifier: "MyCell")
     
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    tableView.register(UINib(nibName: "YourBubbleCell", bundle: nil),
+                       forCellReuseIdentifier: "YourCell")
+    
+    // 키보드 Notification
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(self.keyboardWillShow(noti:)) ,
+                                           name: NSNotification.Name.UIKeyboardWillShow,
+                                           object: nil)
+    
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(self.keyboardWillHide(noti:)) ,
+                                           name: NSNotification.Name.UIKeyboardWillHide,
+                                           object: nil)
   }
   
-  @objc func keyboardWillShow(noti: NSNotification) {
+  @objc private func keyboardWillShow(noti: NSNotification) {
     // userInfo 값을 가져옴
-    let notiInfo = noti.userInfo as! NSDictionary
+    guard let notiInfo = noti.userInfo as NSDictionary? else {return}
+    //let notiInfo = noti.userInfo //as! NSDictionary
     // keyboardfrema 값을 가져온후, CGRect값으로 변경함
+    
     let keyboardFrema = notiInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
     let height = keyboardFrema.size.height
-    print(keyboardFrema,height)
-    
-    inputviewBottomMargin.constant = -height
+    self.inputviewBottomMargin.constant = -height
+    let keyboardDuration = notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+    UIView.animate(withDuration: keyboardDuration) {
+      // animation, frema 을 실시간으로 적용할때 무조건 필요함
+      self.view.layoutIfNeeded()
+    }
   }
   
-  @objc func keyboardWillHide(noti: NSNotification){
+  @objc private func keyboardWillHide(noti: NSNotification){
+    guard let notiInfo = noti.userInfo as NSDictionary? else {return}
+    
+    let keyboardDuration = notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+    UIView.animate(withDuration: keyboardDuration) {
+      self.view.layoutIfNeeded()
+      self.inputviewBottomMargin.constant = 0
+    }
+  }
+  
+  @IBAction func testInputDone(_ sender: UIButton) {
+    if inputTextView.text.isEmpty != true {
+      chatData.add(inputTextView.text)
+      inputTextView.text = ""
+      self.tableView.reloadData()
+      let lastIndexPath = IndexPath(row: self.chatData.count-1, section: 0)
+      
+      //layout 이 잘 안가는경우에, 아래의 녀석을 호출하고 이동시켜보자.
+      self.view.layoutIfNeeded()
+      //원하는 tableView의 low로 이동하는
+      tableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: false)
+      
+    }
+    //같은 함수 한번더 호출해서 해결
+    textViewDidChange(inputTextView)
+    
+    
     
   }
+  
+}
 
+extension MainViewController: UITableViewDelegate,UITableViewDataSource {
+  internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.view.endEditing(true)
+    let testOffset = """
+    self.tableView.contentOffset : \(self.tableView.contentOffset)
+    self.view.frame.origin.y : \(self.view.frame.origin.y)
+    self.view.bounds.origin.y : \(self.view.bounds.origin.y)
+    """
+    print(testOffset)
+    
+  }
+  internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.chatData.count
+  }
+  
+  internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let defaultCell: UITableViewCell
+    if indexPath.row % 2 == 0 {
+      let myCell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! MyBubbleCell
+      myCell.myTextBubble.text = self.chatData[indexPath.row] as? String
+      defaultCell = myCell
+    }else {
+      let yourCell = tableView.dequeueReusableCell(withIdentifier: "YourCell", for: indexPath) as! YourBubbleCell
+      yourCell.yourTextBubble.text = self.chatData[indexPath.row] as? String
+      defaultCell = yourCell
+    }
+    // 셀 선택되었을때, 나타나는 녀석..
+    defaultCell.selectionStyle = UITableViewCellSelectionStyle.none
+    return defaultCell
+  }
+  
+  internal func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableViewAutomaticDimension
+  }
+}
 
-
+extension MainViewController: UITextViewDelegate {
+  
+  // textView에 글자를 작성할때마다 호출되는 녀석
+  func textViewDidChange(_ textView: UITextView) {
+    print("같은 함수 한번더 호출")
+    if textView.contentSize.height <= 83 {
+      inputTextViewHeight.constant = textView.contentSize.height
+      textView.setContentOffset(CGPoint.zero, animated: true)
+    }
+  }
+}
 ```
 
-> 위의 방법으로 만들어 놓으면 키보드가 올라오기전에, 인풋뷰가 미리 올라가 있어서 자연스럽지 않은 모습으로 올라오게됨. 그 방법을 해결하기위해서, Animation으로 시간 차를 줌
+> textField 가 아닌 TextView를 통해서 구현했습니다. keyboard 에 대한 처리는 NotificationCenter 을 통해서 keyboardFrema 만큼, 더해주고, 빼준값을 Constraints 에 연산하여 히결 했습니다.
+> 
+> TextView의 Delegate 를 통해서, textView의 size로 조절하였습니다. 최대 높이는, 4줄 작성했을때 입니다. 
+> 
+> Cell 을 선택하게되었을때, keyboard를 내리는 방법은 `self.view.endEditing(true)` 을 통해서 구현 했습니다 textLB 크기에 따라서, image 를 유동적으로 만들어 주기 위해서 hugging priority 를 사용했습니다.
+> 
+> tableView의 구분은 TableView의 Separator 속성을 None으로 만들어 주었습니다.
+> 
+> keyboard가 올라올때 inputView의 자연스러운 에니메이션 처리를 위해서, keyboardDuration 값을 받아서, 그 시간을 animation을 주었습니다.
+> 
 > 
 
-// 테이블뷰의 본문을 눌렀을때, keyboard가 내려가게 만들기 위해서, 하는 설정
-
-```swift
-
-
-```
-
 ---
-
-## inputTextView3
-
-필요한것<br>
-
-1. 텍스트 입력시 마지막 줄로 가게하는것
-
-
----
-
-## kakako
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

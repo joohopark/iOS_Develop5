@@ -3,7 +3,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-  
+  UILabel
   @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var inputviewBottomMargin: NSLayoutConstraint!
   @IBOutlet private weak var inputTextView: UITextView!
@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    UILabel
     inputTextView.delegate = self
     inputContainerView.backgroundColor = UIColor(red:0.80,
                                                  green:0.82,
@@ -32,9 +33,15 @@ class MainViewController: UIViewController {
                        forCellReuseIdentifier: "YourCell")
     
     // 키보드 Notification
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(noti:)) , name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(self.keyboardWillShow(noti:)) ,
+                                           name: NSNotification.Name.UIKeyboardWillShow,
+                                           object: nil)
     
-    NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(noti:)) , name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(self.keyboardWillHide(noti:)) ,
+                                           name: NSNotification.Name.UIKeyboardWillHide,
+                                           object: nil)
   }
   
   @objc private func keyboardWillShow(noti: NSNotification) {
@@ -114,17 +121,6 @@ extension MainViewController: UITableViewDelegate,UITableViewDataSource {
     // 셀 선택되었을때, 나타나는 녀석..
     defaultCell.selectionStyle = UITableViewCellSelectionStyle.none
     return defaultCell
-    
-    //    switch indexPath.row {
-    //    case _ where indexPath.row % 2 == 0:
-    //      return myCell
-    //    case _ where indexPath.row % 2 != 0:
-    //      return yourCell
-    //    default:
-    //      // 여기에 오면 crush 나야함
-    //      let cell = tableView.dequeueReusableCell(withIdentifier: "errorCell", for: indexPath)
-    //      return cell
-    //    }
   }
   
   internal func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
