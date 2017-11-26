@@ -64,15 +64,13 @@ class BrowsingViewController: UIViewController {
       self.postImageArray = []
       self.postArray = []
       self.getNetworkData()
+      self.tableView.reloadData()
     
     }
-    tableView.reloadData()
+//    tableView.reloadData()
   }
   
 }
-
-
-
 extension BrowsingViewController: UITableViewDelegate,UITableViewDataSource {
   func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableViewAutomaticDimension
@@ -88,15 +86,22 @@ extension BrowsingViewController: UITableViewDelegate,UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BrowsingCustomCell
     guard let postData = self.postArray else {return cell}
     
-    cell.bounds = CGRect(x: 0, y: 0, width: 45, height: 45)
-    cell.imageView?.bounds = CGRect(x: 0, y: 0, width: 45, height: 45)
+    cell.bounds = CGRect(x: 0,
+                         y: 0,
+                         width: (cell.imageView?.bounds.width)!,
+                         height: (cell.imageView?.bounds.height)!)
+    cell.imageView?.bounds = CGRect(x: 0,
+                                    y: 0,
+                                    width: (cell.imageView?.bounds.width)!,
+                                    height: (cell.imageView?.bounds.height)!)
+    cell.imageView?.clipsToBounds = true
+    cell.imageView?.contentMode = .scaleAspectFit
     
     cell.textLabel?.numberOfLines = 0
     cell.textLabel?.text = "\(postArray![indexPath.row])"
-    cell.imageView?.clipsToBounds = true
-    cell.imageView?.contentMode = .scaleAspectFit
     let imagePath = postImageArray![indexPath.row]
     let data = try? Data(contentsOf: URL(string: imagePath)!)
+//    cell.postImageView.image = UIImage(data: data!)
     cell.imageView?.image = UIImage(data: data!)
     
     
@@ -133,18 +138,30 @@ class BrowsingCustomCell: UITableViewCell {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    
+
     // Customize imageView like you need
-    
+    self.addSubview(postImageView)
+    self.addSubview(textLb)
+
     self.imageView?.frame = CGRect(x: 10, y: 0, width: 40, height: 40)
     self.imageView?.contentMode = UIViewContentMode.scaleAspectFit
     // Costomize other elements
-    CGRect(x: 60, y: 0, width: self.frame.width-45, height: 20)
-    
-    
-    
   }
   
+  
+//  override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+//    super.init(style: style, reuseIdentifier: reuseIdentifier)
+//    self.addSubview(postImageView)
+//    self.addSubview(textLb)
+//    self.imageView?.frame = CGRect(x: 10, y: 0, width: 40, height: 40)
+//    self.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+//
+//
+//  }
+  
+//  required init?(coder aDecoder: NSCoder) {
+//    fatalError("init(coder:) has not been implemented")
+//  }
   
   override func awakeFromNib() {
     super.awakeFromNib()

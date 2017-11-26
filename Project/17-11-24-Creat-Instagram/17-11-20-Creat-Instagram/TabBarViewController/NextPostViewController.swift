@@ -21,7 +21,7 @@ class NextPostViewController: UIViewController {
     let tf = UITextView()
     tf.isEditable = true
     tf.layer.borderColor = UIColor.black.cgColor
-    tf.layer.borderWidth = 4
+    tf.layer.borderWidth = 3
     return tf
   }()
   
@@ -41,68 +41,45 @@ class NextPostViewController: UIViewController {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                              target: self.btn,
                                                              action: #selector(self.networkPost(_:)))
-    
-    
-    //btn = UIButton(frame: CGRect(x: 30, y: 30, width: 100, height: 100))
-    //btn.backgroundColor = .black
-    
-    //view.addSubview(btn)
-    //btn.addTarget(self, action: #selector(self.networkPost(_:)),  for: .touchUpInside)
-//    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-//                                                             target: self,
-//                                                             action: #selector(self.networkPost(_:)) )
-    
     view.addSubview(headerImageView)
     view.addSubview(postTextView)
-    
-    headerImageView.frame = CGRect(x: 0, y: 100,
-                                   width: self.view.frame.size.width/5, height: self.view.frame.size.height/6)
-    
+    let navigationHeight: CGFloat = (self.navigationController?.navigationBar.frame.size.height)!
+    let height: CGFloat = 27
+    headerImageView.frame = CGRect(x: 0,
+                                   y: navigationHeight+height,
+                                   width: self.view.frame.size.width/5,
+                                   height: self.view.frame.size.height*0.2)
     postTextView.frame = CGRect(x: self.view.frame.size.width/5,
-                                y: 100,
-                                width: self.view.frame.size.width*5,
-                                height: self.view.frame.size.height*0.4)
-    
-    
-    
-    // Do any additional setup after loading the view.
+                                y: navigationHeight+height,
+                                width: self.view.frame.size.width*0.8,
+                                height: self.view.frame.size.height*0.2)
   }
   
   @objc func networkPost(_ sender: UIBarButtonItem) {
-    
     let indicateCGRect = CGRect(x: self.view.center.x, y: self.view.center.y, width: 100, height: 100)
     indicate = UIActivityIndicatorView(frame: indicateCGRect)
     view.addSubview(indicate)
     indicate.startAnimating()
     indicate.hidesWhenStopped = true
-    guard let image = self.headerImageView.image else { return }
     
+    guard let image = self.headerImageView.image else { return }
     let uploadimage = UIImageJPEGRepresentation(image, 0.3)
     let filename = NSUUID().uuidString
-    
-    
     Storage.storage().reference().child(uid!).child(filename).putData(uploadimage!, metadata: nil) { (metadata, error) in
       //storage 의 Path
       guard let profileImageUrl = metadata?.downloadURL()?.absoluteString else { return }
       guard let postText = self.postTextView.text else { return }
       // ref의 index 값을 불러온후. 저장해주려고함.
-      
-      
       self.ref.child(self.uid!).observeSingleEvent(of: .value, andPreviousSiblingKeyWith: { (dataSnapshot, string) in
-        
-        
         if let loadData = dataSnapshot.value as? NSDictionary {
           guard let postIndex = loadData["post"] as? NSArray, postIndex != nil else {
             self.dic = ["post": ["1": ["image": profileImageUrl, "contents": postText]]]
-            
             Database.database().reference().child(self.uid!).updateChildValues(self.dic!, withCompletionBlock: { (error, data) in})
             return}
-          
           self.dic = ["\(postIndex.count+1)": ["1": ["image": profileImageUrl, "contents": postText]]]
           let updateDic = ["\(postIndex.count)": ["image": profileImageUrl, "contents": postText]]
           //          self.dic = ["\(postIndex.count+1)": ["image": profileImageUrl, "contents": postText]]
           Database.database().reference().child(self.uid!).child("post").updateChildValues(updateDic, withCompletionBlock: { (error, data) in
-            
             NotificationCenter.default.post(name: Notification.Name.init("netWorkData"),
                                             object: nil,
                                             userInfo: ["noti" : "info"])
