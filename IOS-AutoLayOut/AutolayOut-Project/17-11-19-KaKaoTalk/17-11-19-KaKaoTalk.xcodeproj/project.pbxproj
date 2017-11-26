@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		044BD6F51FC1B17D005370B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD6F41FC1B17D005370B5 /* AppDelegate.swift */; };
-		044BD6F71FC1B17D005370B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD6F61FC1B17D005370B5 /* ViewController.swift */; };
+		044BD6F71FC1B17D005370B5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD6F61FC1B17D005370B5 /* MainViewController.swift */; };
 		044BD6FA1FC1B17D005370B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044BD6F81FC1B17D005370B5 /* Main.storyboard */; };
 		044BD6FC1FC1B17D005370B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044BD6FB1FC1B17D005370B5 /* Assets.xcassets */; };
 		044BD6FF1FC1B17D005370B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044BD6FD1FC1B17D005370B5 /* LaunchScreen.storyboard */; };
@@ -21,12 +21,17 @@
 		044BD7131FC1B327005370B5 /* man.png in Resources */ = {isa = PBXBuildFile; fileRef = 044BD70C1FC1B327005370B5 /* man.png */; };
 		044BD7181FC1B381005370B5 /* MyBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BD7161FC1B381005370B5 /* MyBubbleCell.swift */; };
 		044BD7191FC1B381005370B5 /* MyBubbleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044BD7171FC1B381005370B5 /* MyBubbleCell.xib */; };
+		04E0E6071FCA8D9D0071EE03 /* YourBubbleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0E6051FCA8D9D0071EE03 /* YourBubbleCell.swift */; };
+		04E0E6081FCA8D9D0071EE03 /* YourBubbleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0E6061FCA8D9D0071EE03 /* YourBubbleCell.xib */; };
+		04E0E60C1FCA8E520071EE03 /* youBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E0E6091FCA8E520071EE03 /* youBubble@2x.png */; };
+		04E0E60D1FCA8E520071EE03 /* youBubble@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E0E60A1FCA8E520071EE03 /* youBubble@3x.png */; };
+		04E0E60E1FCA8E520071EE03 /* youBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E0E60B1FCA8E520071EE03 /* youBubble.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		044BD6F11FC1B17D005370B5 /* 17-11-19-KaKaoTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "17-11-19-KaKaoTalk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		044BD6F41FC1B17D005370B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		044BD6F61FC1B17D005370B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		044BD6F61FC1B17D005370B5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		044BD6F91FC1B17D005370B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		044BD6FB1FC1B17D005370B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044BD6FE1FC1B17D005370B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +45,11 @@
 		044BD70C1FC1B327005370B5 /* man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man.png; sourceTree = "<group>"; };
 		044BD7161FC1B381005370B5 /* MyBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBubbleCell.swift; sourceTree = "<group>"; };
 		044BD7171FC1B381005370B5 /* MyBubbleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBubbleCell.xib; sourceTree = "<group>"; };
+		04E0E6051FCA8D9D0071EE03 /* YourBubbleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourBubbleCell.swift; sourceTree = "<group>"; };
+		04E0E6061FCA8D9D0071EE03 /* YourBubbleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourBubbleCell.xib; sourceTree = "<group>"; };
+		04E0E6091FCA8E520071EE03 /* youBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youBubble@2x.png"; sourceTree = "<group>"; };
+		04E0E60A1FCA8E520071EE03 /* youBubble@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youBubble@3x.png"; sourceTree = "<group>"; };
+		04E0E60B1FCA8E520071EE03 /* youBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youBubble.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,9 @@
 				044BD70A1FC1B326005370B5 /* meBubble.png */,
 				044BD7081FC1B326005370B5 /* meBubble@2x.png */,
 				044BD7061FC1B325005370B5 /* meBubble@3x.png */,
+				04E0E60B1FCA8E520071EE03 /* youBubble.png */,
+				04E0E6091FCA8E520071EE03 /* youBubble@2x.png */,
+				04E0E60A1FCA8E520071EE03 /* youBubble@3x.png */,
 				044BD7071FC1B325005370B5 /* oraganization-7-11-19-firebase-export.json */,
 				044BD70B1FC1B326005370B5 /* profile2.png */,
 				044BD7001FC1B17D005370B5 /* Info.plist */,
@@ -100,8 +113,10 @@
 		044BD7151FC1B353005370B5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				044BD6F61FC1B17D005370B5 /* ViewController.swift */,
+				044BD6F61FC1B17D005370B5 /* MainViewController.swift */,
 				044BD7161FC1B381005370B5 /* MyBubbleCell.swift */,
+				04E0E6051FCA8D9D0071EE03 /* YourBubbleCell.swift */,
+				04E0E6061FCA8D9D0071EE03 /* YourBubbleCell.xib */,
 				044BD7171FC1B381005370B5 /* MyBubbleCell.xib */,
 			);
 			path = ViewController;
@@ -168,9 +183,13 @@
 			files = (
 				044BD6FF1FC1B17D005370B5 /* LaunchScreen.storyboard in Resources */,
 				044BD6FC1FC1B17D005370B5 /* Assets.xcassets in Resources */,
+				04E0E6081FCA8D9D0071EE03 /* YourBubbleCell.xib in Resources */,
+				04E0E60E1FCA8E520071EE03 /* youBubble.png in Resources */,
+				04E0E60C1FCA8E520071EE03 /* youBubble@2x.png in Resources */,
 				044BD6FA1FC1B17D005370B5 /* Main.storyboard in Resources */,
 				044BD7121FC1B327005370B5 /* profile2.png in Resources */,
 				044BD7101FC1B327005370B5 /* girl.png in Resources */,
+				04E0E60D1FCA8E520071EE03 /* youBubble@3x.png in Resources */,
 				044BD70E1FC1B327005370B5 /* oraganization-7-11-19-firebase-export.json in Resources */,
 				044BD7131FC1B327005370B5 /* man.png in Resources */,
 				044BD7111FC1B327005370B5 /* meBubble.png in Resources */,
@@ -188,7 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				044BD7181FC1B381005370B5 /* MyBubbleCell.swift in Sources */,
-				044BD6F71FC1B17D005370B5 /* ViewController.swift in Sources */,
+				044BD6F71FC1B17D005370B5 /* MainViewController.swift in Sources */,
+				04E0E6071FCA8D9D0071EE03 /* YourBubbleCell.swift in Sources */,
 				044BD6F51FC1B17D005370B5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
