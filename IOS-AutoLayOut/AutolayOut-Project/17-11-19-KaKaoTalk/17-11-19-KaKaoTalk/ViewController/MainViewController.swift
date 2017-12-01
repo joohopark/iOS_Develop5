@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    UILabel
     inputTextView.delegate = self
     inputContainerView.backgroundColor = UIColor(red:0.80,
                                                  green:0.82,
