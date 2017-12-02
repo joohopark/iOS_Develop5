@@ -94,8 +94,8 @@
 
 ### * **Part 10** 
 
-> 1. [Network, Client-server Model, HTTP, URL/URI, Rest, HTTP Request, Contents Type, Application/json](/study/47_17-11-14-Network.md)
-> 2. [IOS NetWork, URL Load System, URLRequset, URLSession, URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/study/48_17-11-16-IOSNetwork.md)
+> 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/study/47_17-11-14-Network.md)
+> 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/study/48_17-11-16-IOSNetwork.md)
 > 3. [OpenWeather API 실습](/study/49_17-11-16-OpenWeatherAPI.md)
 > 4. [IOS Network 실습](study/50_17-11-17-network-day3.md)
 
@@ -114,7 +114,7 @@
 ### *  **AutolayOut** 
 
 > 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, <br> Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
-> 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, popup View, TableView-Expand, TableView-Dynamic-Cell](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
+> 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, <br> popup View, TableView-Expand, TableView-Dynamic-Cell](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
 > 3. [카카오톡UI chat UI 만들기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
 
 
