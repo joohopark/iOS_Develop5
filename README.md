@@ -142,14 +142,10 @@
 > 2. [지하철 노선도 만들기(초보편) Part 2](https://devminjun.github.io/blog/CreatSubway-ver2)
 > 
 
-
-
-
-
 ---
 
 
-# 기타
+### * **기타**
 
 > 1. [17-11-25-NAVER D2STARTUP FACTORY](/study/0_17-11-25-NAVER_D2_STARTUP_FACTORY.md)
 
