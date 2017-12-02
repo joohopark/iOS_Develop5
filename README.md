@@ -113,7 +113,7 @@
 
 ### *  **AutolayOut** 
 
-> 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
+> 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, <br> Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
 > 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, popup View, TableView-Expand, TableView-Dynamic-Cell](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
 > 3. [카카오톡UI chat UI 만들기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
 
