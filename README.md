@@ -22,30 +22,20 @@
 ### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Optional, Nil, Access control, Inout)**
 
 > 1. [반복,조건문 Quiz, Class, OOP](/study/6_17-9-11.md)
-> 
 > 2. [Class Structure, Inheritance, override](/study/7_17-9-13.md)
-> 
 > 3. [StoryBoard 활용해서 계산기 만들기](/study/8_17-9-14.md)
-> 
 > 4. [IOS application life cycle, MVC(Model View Controller)](/study/9_17-9-15.md)
-> 
 > 5. [Tuple, Any, AnyObject, nill, Type Casting, Access Control, Optionals, Modules and Sourece Files](/study/10_17-9-16.md)
-> 
 > 6. [Func, Inout, 논리연산자(===, !==), 삼항 연산자, switch](/study/11_17-9-16.md)
 
 
 ### *  **Part 3**
 
 > 1. [StoryBoard 활용해서 대표이사 되기](/study/12_17-9-18.md)
->
 > 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17-9-18.md)
->
 > 3. [Enumeration(열거형), Optional(옵셔널), ](/study/14_17-9-19.md)
-> 
 > 4. [Closure, 계산기에 Closure, Enum 뜯어서 다시하기](/study/15_17-9-20.md)
-> 
 > 5. [baseballGame 만들기](/study/16_17-9-21.md)
-> 
 > 6. [baseballGame 만들기 ver.1](/study/16-1_17-9-21.md)
 
 
