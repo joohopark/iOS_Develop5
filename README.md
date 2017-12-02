@@ -11,7 +11,7 @@
 
 # Learning Table( 17.9.4~
 
-### *  **Part 1**
+### *  **Part 1(Variable, Collection Type, Computer Science)**
 
 > 1. [Computer Configuration, How to work Computer](/study/1_17-9-4.md)
 > 
@@ -21,9 +21,9 @@
 > 
 > 4. [collection Type, Array, Set, Dictionary, Quiz](/study/4_17-9-7.md)
 >
-> 5. [Git Definition, Git Command](/study/5_17-9-8_git.md)
+> 5. [Git Definition, Git Command](/study/5_17-9-8-git.md)
 
-### *  **Part 2**
+### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Optional, Nil, Access control, Inout)**
 
 > 1. [반복,조건문 Quiz, Class, OOP](/study/6_17-9-11.md)
 > 
