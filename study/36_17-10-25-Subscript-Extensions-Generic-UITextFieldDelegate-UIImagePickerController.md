@@ -21,7 +21,6 @@ class TestSubscript {
         
     }
 
-
 var variable = TestSubscript()
 
 print(variable[0,10]) // (0, 10)
@@ -29,7 +28,6 @@ print(variable[0,10]) // (0, 10)
 **응용**
 
 **subscript 를 사용해보자**
-
 class test {
         subscript(section: Int, row: Int) -> Int {
             if section == 0 {
@@ -43,9 +41,7 @@ class test {
                 
             }
             return 0
-        }
-        
-        
+        }   
     }
 
 var x: test() 
@@ -53,8 +49,6 @@ var x: test()
 x[0,0] // 0 반환 
 
 이런식으로 반환형식을 만들어서 사용할수 있다.
-
-
 ```
 
 ---
@@ -65,7 +59,7 @@ x[0,0] // 0 반환
 
 **Extentsion에서는 저장프로퍼티는 사용할수 없다.**
 
-**Extension**을 통해서, class 내부에 있는 함수들을 기능 별로 나누어서 정리해서 사용하면 조금더 유의미하게 사용할수 있을것 같음..!
+`Extension`을 통해서, class 내부에 있는 함수들을 기능 별로 나누어서 정리해서 사용하면 조금더 유의미하게 사용할수 있을것 같음..!
 
 #### - 예제
 
@@ -74,10 +68,6 @@ x[0,0] // 0 반환
 delegate, datasource 를 Extension 으로 정리해주어서 사용해도 좋다. 
 
 class SettingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-
-    
-
 }
 
 extension SettingViewController {

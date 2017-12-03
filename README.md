@@ -69,12 +69,12 @@
 
 
 
-### *  **Part 7** 
+### *  **Part 7(Do-Try-catch, NavigationViewController, Notification, Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController, UICollectionView, UICollectionViewDelegate, UICollectionViewFlowLayout, TapBarController)** 
 
-> 1. [Optional, AppLifeCycle, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review.md)
+> 1. [예외처리, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review.md)
 > 2. [MiniProject-Creat-LoginPage, Notification](/study/35_17-10-24-Combine-Project.md)
 > 3. [Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController](/study/36_17-10-25-Subscript-Extensions-Generic-UITextFieldDelegate-UIImagePickerController.md)
-> 4. [UICollectionView, TapBarController](/study/37_17-10-26-musicfile.md)
+> 4. [UICollectionView, UICollectionViewDelegate, TapBarController](/study/37_17-10-26-musicfile.md)
 > 5. [UICollectionView, UICollectionViewFlowLayout](/study/38_17-10-27-CollectionView-gesture.md)
 > 
 

@@ -2,7 +2,7 @@
 
 ---
 
-## TabbarController, UICollectionView
+## TabbarController, UICollectionView, UICollectionViewDelegate
 
 ---
 
