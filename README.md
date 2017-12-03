@@ -39,7 +39,7 @@
 > 6. [baseballGame 만들기 ver.2](/study/16-1_17-9-21.md)
 
 
-### *  **Part 4** 
+### *  **Part 4(UI View, Label, Base, Resolutions, Hierarchy, User Defaults, Alert, UITableView)** 
 
 > 1. [UI 를 코드로 만들어보기!, UI Base, Resolutions, UIView, UILabel](/study/17_17-9-25.md)
 > 2. [UIButton, UITextField, UITextFieldDelegate](/study/18_17-9-26.md)
@@ -47,7 +47,7 @@
 > 4. [회원가입 페이지 만들기 ver.1](/study/19-1_17-9-27.md)
 > 5. [UI Class Hierarchy, UIScrollView, UserDeFaults](/study/20_17-9-28.md)
 > 6. [alert](/study/20-1_17-9-28.md)
-> 7. [UITableView, UITableView Customizing 하기](/study/21_17-9-29.md)
+> 7. [UITableView Customizing 하기](/study/21_17-9-29.md)
  
 ### *  **Part 5** 
 
