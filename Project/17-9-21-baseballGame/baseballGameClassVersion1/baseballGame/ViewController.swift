@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet var disPlayLabel: UILabel!
     @IBOutlet var disPlayLabel1: UILabel!
     @IBOutlet var disPlayLabel2: UILabel!
-    
     @IBOutlet var resultDisPlayLabel: UILabel!
     
     //텍스트 레이블(내가 만든것들 로그 추적해서 다시 만들어 보자
@@ -23,44 +22,28 @@ class ViewController: UIViewController {
     //변수 모음
     var isRunning:Bool = false
     var randomValueArray:[Int] = []
-    
     var selectedNumArray:[Int] = []
-    
-
-    // 함수 모음
-    
     
     // 시작 버튼
     @IBAction func startBtn(_ btn: UIButton) {
         isRunning = true
-        
         //randomValueArray에 난수 생성
         creatRandomValue()
         // text view 에 보여지는 모습 출ㄹ
         textView.text = "\(randomValueArray)"
         resultDisPlayLabel.text = "start game 뾰로롱~!"
-        
-        
     }
-    
     
     // 난수를 생성하는 함수를 호출 함
     func creatRandomValue() -> [Int] {
-        
-        
         while randomValueArray.count <= 2 {
-            
             var randomValue1 = Int(arc4random_uniform(10))
             if !randomValueArray.contains(randomValue1) {
-                
                 randomValueArray.append(randomValue1)
             }
         }
         return randomValueArray
-        
     }
-    
-    
     // reset 초기화 버튼
     @IBAction func resetBtn(_ btn: UIButton) {
         

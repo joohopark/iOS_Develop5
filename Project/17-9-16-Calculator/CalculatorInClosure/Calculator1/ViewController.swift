@@ -40,9 +40,10 @@ class ViewController: UIViewController {
         }
         disPlayLabel.text = disPlayText
         //operatorArea = (btn.titleLabel?.text)!
-        if btn.titleLabel?.text == "+" || btn.titleLabel?.text == "-" || btn.titleLabel?.text == "*" || btn.titleLabel?.text == "/"  { // 연산자 눌렀을때 실행되는 함수.
-            
-            
+        if btn.titleLabel?.text == "+" ||
+            btn.titleLabel?.text == "-" ||
+            btn.titleLabel?.text == "*" ||
+            btn.titleLabel?.text == "/"  { // 연산자 눌렀을때 실행되는 함수.
             
             if operatorArea == "" {                      // 맨처음 연산자를 만났을때 처리.
                 operatorArea += (btn.titleLabel?.text)! // 연산자 구역에 연산자 추가
@@ -56,9 +57,7 @@ class ViewController: UIViewController {
                 disPlayText = ""                       // 콘솔창에 보여지는 값 초기화.
                 intIntputValue += intIntputValueArea   // input 값의 두 구역 연산.
                 disPlayLabel.text = String(intIntputValue) // 연산한 값 콘솔창에 표시.
-                
                 intIntputValueArea = 0                     // 두번쨰 연산 구역 초기화.
-                
                 
             }else if operatorArea == "-" { //operatorArea아 "+" 인경우.
                 strBtn = (btn.titleLabel?.text)!
@@ -67,12 +66,8 @@ class ViewController: UIViewController {
                 disPlayText = ""
                 intIntputValue -= intIntputValueArea
                 disPlayLabel.text = String(intIntputValue)
-                
                 intIntputValueArea = 0
-                
-                
-                
-                
+
             }else if operatorArea == "*" { //operatorArea아 "+" 인경우.
                 strBtn = (btn.titleLabel?.text)!
                 operatorArea = strBtn
@@ -81,9 +76,7 @@ class ViewController: UIViewController {
                 disPlayText = ""
                 intIntputValue *= intIntputValueArea
                 disPlayLabel.text = String(intIntputValue)
-                
                 intIntputValueArea = 0
-                
                 
             }else if operatorArea == "/" { //operatorArea아 "+" 인경우.
                 strBtn = (btn.titleLabel?.text)!
@@ -92,17 +85,15 @@ class ViewController: UIViewController {
                 disPlayText = ""
                 intIntputValue /= intIntputValueArea
                 disPlayLabel.text = String(intIntputValue)
-                
                 intIntputValueArea = 0
-                
             }
         }
+            
         else if btn.titleLabel?.text == "=" {   // 연산자 = 을 만낫을때, 연산 구역 1,2 연산후, 모든값 초기화.
             if operatorArea == "+" { //operatorArea이 "+" 인경우.
                 intIntputValueArea = Int(disPlayText)!
                 intIntputValue += intIntputValueArea
                 disPlayLabel.text = String(intIntputValue) // 모든것들 연산후, 초기화
-                
                 disPlayText = ""
                 intIntputValueArea = 0
                 //operatorArea = "+"
@@ -111,7 +102,6 @@ class ViewController: UIViewController {
                 intIntputValueArea = Int(disPlayText)!
                 intIntputValue -= intIntputValueArea
                 disPlayLabel.text = String(intIntputValue)
-                
                 disPlayText = ""
                 intIntputValueArea = 0
                 //operatorArea = "-"
@@ -121,7 +111,6 @@ class ViewController: UIViewController {
                 disPlayLabel.text = String(intIntputValue)
                 intIntputValue *= intIntputValueArea
                 disPlayLabel.text = String(intIntputValue)
-                
                 disPlayText = ""
                 intIntputValueArea = 0
                 //operatorArea = "*"
@@ -130,32 +119,20 @@ class ViewController: UIViewController {
                 intIntputValueArea = Int(disPlayText)!
                 intIntputValue /= intIntputValueArea
                 disPlayLabel.text = String(intIntputValue)
-                
                 disPlayText = ""
                 intIntputValueArea = 0
                 //operatorArea = "/"
             }
-            
-            
         }
     }
     
     @IBAction func resetBtn(btn: UIButton) {
-        
         disPlayText = ""
         intIntputValue = 0
         intIntputValueArea = 0
         operatorArea = ""
         disPlayLabel.text = disPlayText
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,7 +143,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
