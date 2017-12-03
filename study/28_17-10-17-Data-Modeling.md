@@ -7,6 +7,151 @@
 
 ---
 
+## Struct 로 데이터 모델 만들기
+
+| 데이터 컨트롤 흐름 |
+| :------------ |
+|![screen](/study/image/ClassVSStruct-9.jpg) |
+
+
+> 이렇게 서버나,데이터 베이스 에서 넘어온 값은 Dictionanry OR Array 또는 다른 형태로 넘어오는데, 이 데이터를 내가 수정, 재사용이 `편하게` 만들어주기 위한 목적으로 데이터 모델을 사용한다. 
+
+
+---
+
+## 데이터 모델 만들기 실습 Part 1
+
+- var someInts:[Int] = [1,2,3,4] -> -> 이런 문법을 `섭 스크립트` 문법이라고 한다.
+  
+
+
+```swift
+
+enum checkGender: Int {
+    case man = 1
+    case girl = 2
+}
+
+struct data {
+    var userID: String
+    var userPW: String
+    var email: String
+    var birthDay: String?
+    var gender: Int
+    
+    // enum 으로 정의해서 해보자
+    //var genderlist: [String]? = ["남자", "여자"]
+    
+    
+    // init 시도 할때 실패할수 있는 가능성을 내포하고 있어서 init 을 옵셔널로 선언 해준다.
+    init?(dumidata: [String:Any]) {
+        
+        // userID 정의
+        guard let userID = dumidata["userID"] as? String else { return nil }
+        self.userID = userID
+        
+        // userPW 정의
+        guard let userPW = dumidata["userPW"] as? String else { return nil }
+        self.userPW = userPW
+        
+        //email 정의
+        guard let email = dumidata["email"] as? String else { return nil }
+        self.email = email
+        
+        
+        // birthDay 는 옵셔널이기 때문에 값이 없을수도 있음. 그렇게 때문에 guard let 말고, 값이 없을수도 있는 경우를 생각해서 그냥 옵셔널일수로 만들어주자
+        self.birthDay = dumidata["birthDay"] as? String
+        
+       
+        guard let rawValue = dumidata["gender"] as? Int else {return nil}
+        self.gender = checkGender(rawValue: rawValue)!.rawValue
+
+    }
+    
+}
+
+
+let userDic: Dictionary<String,Any> = ["userID":"joo", "userPW":"12345!@", "email":"knightjym@gmail.com", "birthDay":"2017/10/15", "gender":1]
+
+
+
+```
+
+var userID: String
+    var userPW: String
+    var email: String
+    var birthDay: String?
+    var gender: Int
+
+> userID, userPW, email, birthDay, gender 각각의 값을 Struct 를 통해서 타입을 검사하고, 들어 있는 값이 nil 이냐 아니느냐에 따라서 값을 분류 했다. 그 중 gender 같이 두가지 값을 가지고 있고, 그 값이 어떤 `정보`와 매칭 되어서 Eunm 을 사용해서 원하는 값을 얻게 만들었다, 사실 Array로 담아서 만들어도 가능하다!
+
+---
+
+## 데이터 모델 만들기 실습 part 2
+
+```swift
+
+var data: [[String:Any]] = [["imageURL":"http....",
+                                "전시명" : "돈을 드립니다!",
+                                "전시장소": "창덕궁",
+                                "시작날짜": "2017-5-5",
+                                "종료날짜" : "2017-10-10"],
+                            
+                            ["imageURL":"http....111",
+                             "전시명" : "돈을 드립니다!111",
+                             "전시장소": "창덕궁111",
+                             "시작날짜": "2017-10-10",
+                             "종료날짜" : "2017-10-20"]]
+
+
+struct ImportData {
+    var URL: String
+    var titleName: String
+    var place: String
+    
+    var startDate: String
+    var endDate: String?
+    
+    init?(dumidata: [String:Any]) {
+        
+        guard let URL = dumidata["imageURL"] as? String else { return nil }
+        self.URL = URL
+        
+        guard let titleName = dumidata["전시명"] as? String else { return nil }
+        self.titleName = titleName
+        
+        guard let place = dumidata["전시장소"] as? String else { return nil }
+        self.place = place
+        
+        guard let startDate = dumidata["시작날짜"] as? String else { return nil }
+        self.startDate = startDate
+        
+        guard let endDate = dumidata["종료날짜"] as? String else { return nil }
+        self.endDate = endDate
+
+        
+        
+
+    }
+    
+    
+}
+
+for i in data{
+    let indexValue = i
+    let value = ImportData(dumidata: indexValue)
+    dump(value)
+    
+
+}
+
+
+```
+> data 가 조금 많아 졌다고 가정 했을대, 위의 방법을 사용했다, for 문을 사용해서 데이터의 각 인덱스 번호에 접근후, 그 인덱스 번호를 이용해서 struct로 구조화 해서 데이터를 핸들링 하는 방법을 사용했다. 필요한 데이터가 있을떄 for-in 문에서 적절하게 필요한 변수를 넣어서 가공하게 되면, 데이터를 수정하기도 편리하고, 추가되는 데이터는 Struct에서 추가 해주기만 하면 데이터 가공을 조금 용이 하게 사용할수 있다.
+
+
+---
+
 ## Data Model 실습
 
 > 사실 서버쪽에서 데이터가 넘어올떄 '_' 가 포함되어 있다. 이것도 필터링 해주는 방법을 생각해주어야 할것 같다..!

@@ -57,15 +57,15 @@
 > 4. [AutoLayOut, StackView](/study/25_17-10-13-AutoLayout.md)
 
 
-### *  **Part 6** 
+### *  **Part 6(Initialzation, 값 타입 vs 참조 타입, Data Model, Bundle, Plist, Singletone Pattern, tableView Cell Reusable, prepare)** 
 
-> 1. [Class, Struct, Setting a Default Property Value with a Closure or Function, Data Model on Struct](/study/26_17-10-16-Class-Struct.md)
+> 1. [Class, Struct, Initialization, <br> Setting a Default Property Value with a Closure or Function](/study/26_17-10-16-Class-Struct.md)
 > 2. [값 타입 VS 참조 타입 ](/study/27_17-10-16-Class-Struct.md)
 > 3. [Data Model](/study/28_17-10-17-Data-Modeling.md)
 > 4. [Bundle, Plist, Singleton Pattern](/study/29_17-10-18-Bundle-Plist-Singletone-Pattern.md)
-> 5. [PsyTest App 만들기 였는데, DataModle, Plist, Singleton 실습](/study/30_17-10-18-PsyTest.md)
+> 5. [PsyTest App 만들기(DataModle, Plist, Singleton 연습)](/study/30_17-10-18-PsyTest.md)
 > 6. [Bundle, Plist, Singleton 연습하기!](/study/31_17-10-19-prectice-Bundle-Plist-Singleton.md)
-> 7. [tableView, prepare, ViewController](/study/32_17-10-20-tableView.md)
+> 7. [tableView Cell Reusable, prepare](/study/32_17-10-20-tableView.md)
 
 
 

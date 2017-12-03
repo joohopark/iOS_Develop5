@@ -2,7 +2,7 @@
 
 ---
 
-## TableView
+## TableView Cell Reusable, prepare
 
 ---
 
@@ -12,24 +12,19 @@ IOS 의 TableView의 강력한 장점중의 하나인 `재사용` 조금 을 이
 
 | * | * | 
 | :------------ | -----------: | 
-| ![screen](/study/image/TablewViewReusable.jpg) | ![screen](/study/image/TablewViewReusable-1.jpg)          | 
+| ![screen](/study/image/TablewViewReusable.jpg) | ![screen](/study/image/TablewViewReusable-1.jpg) | 
 
+하나의 cell을 만들고, 그 셀에 switch를 넣고, cell이 어떻게 재사용되는지 살펴 보았다.
+문제점 1. 아무 설정도 해놓지 않고 사용하면, 0번 row에서 switcher를 false만들면, 다음 화면으로 스크롤 될때, 0번의 switcher의 false 가 그대로 따라가게 된다. 
+
+사실 엄밀하게는, 각각 row의 switcher 값을 지정 시켜놓고, switcher의 isOn 값이 변할때 마다, 지정해놓은 부분을 변경 하는 식인데, cell의 재사용을 이해하지 못하면 절대 해결할수 없는 문제가 생기게 된다.
+ 
+ 
+- ViewController 부분 <br>
+	- 테이블뷰의 형태는 스토리보드로 그려주고 연결만 시켜서 사용하였습니다
 
 
 ```swift
-
-하나의 cell을 만들고, 그 셀에 switch를 넣고, cell이 어떻게 재사용되는지 살펴 보았다.
-
-문제점 1. 아무 설정도 해놓지 않고 사용하면, 0번 row에서 switcher를 false만들면, 다음 화면으로 스크롤 될때, 0번의 switcher의 false 가 그대로 따라가게 된다. 
-
- -> 사실 엄밀하게는, 각각 row의 switcher 값을 지정 시켜놓고, switcher의 isOn 값이 변할때 마다, 지정해놓은 부분을 변경 하는 식인데, cell의 재사용을 이해하지 못하면 절대 해결할수 없는 문제가 생기게 된다.
- 
- 
- - ViewController 부분
-    -> 테이블뷰의 형태는 스토리보드로 그려주고 연결만 시켜서 사용하였따.
-
-
-
  import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, SwitchTableViewCellDelegate {
@@ -78,9 +73,6 @@ class ViewController: UIViewController, UITableViewDataSource, SwitchTableViewCe
         
     }
     
-    
-    
- 
  - CustomCell 부분
 import UIKit
 
@@ -140,44 +132,26 @@ class CustomCell: UITableViewCell, SwitchTableViewCellDelegate  {
 // Delegate 생성하기 위해서 protocol 생성 
 protocol SwitchTableViewCellDelegate {
     func switchTableViewCell(cell: CustomCell, didChangedSwitch value:Bool)
+	}
 }
-
-
-
-}
-
-
-
-
-
-
 ```
 
 ---
 
 ## TableView 
 
-**show**, : navi -> show -> push 
-				  viewController -> 강제로 모달리 시키는것임.
-				  
-				  **show, modal**의 차이를 알아놓고 정리하자.
-				  
-				  
-**modalry**, 를 하는 이유가 show 는 쌓이는것이고, modalry 는 현재 stack밖으로 벗어난다고 생각하자..
-
----
-
+- show
+	- navi -> show -> push, viewController -> 강제로 모달리 시키는것임. 
+- modalry
+	- 를 하는 이유가 show 는 쌓이는것이고, modalry 는 현재 stack밖으로 벗어난다고 생각하자..
 
 ---
 
 ## TableView 응용 하기 
 
-
-
 | * | * | 
 | :------------ | -----------: | 
 | ![screen](/study/image/ReTableViewController.jpg) | ![screen](/study/image/ReTableViewController-1.jpg) | 
-
 
 
 - 사용 한것
@@ -186,19 +160,15 @@ protocol SwitchTableViewCellDelegate {
 
 ![screen](/study/image/PlistData.jpg) <br>
 
-> Plist 구조 
-> |--Array
-> |----String:String
-> 
-> Plist = [[String:String], [String:String]....]
+- Plist 구조 <br>
 
+--Array <br>
+----String:String <br>
+
+Plist = [[String:String], [String:String]....]
 
 2. 뷰 컨트롤러 전환할때, 이전 뷰컨트롤러의 데이터 사용 <br>
-
 3. AutoLayout<br>
-
-
-
 
 ```swift
 
@@ -245,11 +215,7 @@ struct ProfileModel {
         
         guard let bgImageName = data["BackgroundImage"] else { return nil}
         self.bgImageName = bgImageName
-        
-        
     }
-    
-    
 }
 
 
@@ -292,26 +258,15 @@ class ProFileDataManager {
                     let dataModel = ProfileModel(data: realData) {
                     profiles.append(dataModel)
                     print(profiles)
-                    
-                    
-                    
                 }
             }
         }
-        
     }
-
-    
 }
-
 
 - MainViewcontroller, NextViewcontroller 나누기.
 
-
-
-
 import UIKit
-
 class MainViewController: UIViewController, UITableViewDataSource {
     
     
@@ -331,13 +286,6 @@ class MainViewController: UIViewController, UITableViewDataSource {
         
         
     }
-    
-    
-    
-    
-    
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataManager?.profilesData.count ?? 0
@@ -359,13 +307,9 @@ class MainViewController: UIViewController, UITableViewDataSource {
         
         
         cell.data = detaileData
-
-        
-        
         
         return cell
     }
-    
     
     // prepare 는 뷰컨트롤러간 전환할때 호출되는데, 
     // Push 하는 방식으로 사용되는것 같다. 
@@ -384,11 +328,8 @@ class MainViewController: UIViewController, UITableViewDataSource {
         nextVC.data = cell.data
         
     }
-
-   
-
-
 }
+
 
 - NextVC
 
@@ -425,25 +366,13 @@ class NextViewController: UIViewController {
             
             detailProfileImageView.image = UIImage(named: (data?.profileImageName)!)
         }
-            
-            
-            
-
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-
-
 }
-
-
-
 ``` 
 
 ---

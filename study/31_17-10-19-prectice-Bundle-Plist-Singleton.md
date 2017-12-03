@@ -84,10 +84,6 @@ struct SingleTonDataCenter {
             
             
         }
-        
-        
-        
-        
         // 여기에선 무조건 파일이 존재 한다. -> print를 사용해서 경로에 plist가 생성 되었는지 확인할수 있다.
         print(documentsPath)
         
@@ -137,17 +133,9 @@ struct SingleTonDataCenter {
         
         
         let newDicDic = NSDictionary(dictionary: newDic!)
-        newDicDic.write(toFile: documentsPath!, atomically: true)
-        
-        
+        newDicDic.write(toFile: documentsPath!, atomically: true)   
     }
-    
-
 }
-
-
-
-
 ```
 
 ---
@@ -155,7 +143,8 @@ struct SingleTonDataCenter {
 ## Bundle, Plist 응용 하기
 
 Bundle의 데이터를 핸들링 하는 방법 2가지
-	1. bundle의 있는 값을 가져와서 -> documents 파일에 저장 -> bundle의 값을 가져와서 수정후 -> documnets파일에 저장 -> 다음의 값을 핸들링시 documents의 값을 사용할수 있다.
+
+1. bundle의 있는 값을 가져와서 -> documents 파일에 저장 -> bundle의 값을 가져와서 수정후 -> documnets파일에 저장 -> 다음의 값을 핸들링시 documents의 값을 사용할수 있다.
 
 
 ```swift
@@ -234,35 +223,15 @@ class ViewController: UIViewController {
 
 ```
 
-> 유의 해야 하는것은 데이터를 추가, 수정을 분리해서 생각 해야 한다. Plist가 딕셔너리나, 어레이로 만들어 졌을때, 접근시, 내가 새롭게 만들 변수의 데이터를 덮어 씌운다고 생각하고 접근 해야한다. 원래 있는 키 값에 접근후, 다른 값으로 변경 했다면, 수정이 아니라, 엄밀하게는 데이터를 덮어 씌운다고 생각하고 접근해야한다.. 데이터 구조를 잘못 모델링 했을경우 아무런 데이터가 안들어가 있는것을 확인할수 있다. 
-> 
-> 연산 프로퍼티를 유용하게 사용할수 있는데, 싱글톤으로 사용되었을경우, 수정되면 곤란한 값을 연산프로퍼티의 get 만 가능하게 정의 해주면, 유용하게 사용할수 있다.
-> 
-> 자주 사용되는데, 값이 바뀌면 곤란한 경우의 프로퍼티들을 연산 프로퍼티를 사용해서 원하는 값으로 핸들링하면서 사용할수 있다.
-> 
+유의 해야 하는것은 데이터를 추가, 수정을 분리해서 생각 해야 한다. Plist가 딕셔너리나, 어레이로 만들어 졌을때, 접근시, 내가 새롭게 만들 변수의 데이터를 덮어 씌운다고 생각하고 접근 해야한다.
+ 
+원래 있는 키 값에 접근후, 다른 값으로 변경 했다면, 수정이 아니라, 엄밀하게는 데이터를 덮어 씌운다고 생각하고 접근해야한다.. 데이터 구조를 잘못 모델링 했을경우 아무런 데이터가 안들어가 있는것을 확인할수 있다. 
+ 
+연산 프로퍼티를 유용하게 사용할수 있는데, 싱글톤으로 사용되었을경우, 수정되면 곤란한 값을 연산프로퍼티의 get 만 가능하게 정의 해주면, 유용하게 사용할수 있다.
+ 
+자주 사용되는데, 값이 바뀌면 곤란한 경우의 프로퍼티들을 연산 프로퍼티를 사용해서 원하는 값으로 핸들링하면서 사용할수 있다.
 
 ---
-
-## 연산 프로퍼티 사용 예제
-
-
-```swift
-
-연산프로퍼티 정의해서 값만 가져와서 사용할수 있다.
-
-var dic: [String:Any] { 
-	var aa = ["aa":"123, "bb":"345"....]
-
-
-return aa 
-}
-
-```
-
-
-
----
-
 
 ## 데이터의 저장 기점
 
@@ -279,7 +248,7 @@ app를 종료하게 되면, app 를 사용할때 추가, 삭제, 생성 되는 �
 | ![screen](/study/image/DataModelPlst.jpg)     | ![screen](/study/image/DataModelPlst-1.jpg) |
 
 
-- applunch 후, 기존 데이터 로드하기
+#### - applunch 후, 기존 데이터 로드하기
 
 
 ```swift
@@ -325,17 +294,13 @@ func addBundleData() {
         }
         
         tv.text = throwTextView
-        
-        
-        
-        
     }
 
 
 
 ```
 
-- 데이터 추가하기
+#### - 데이터 추가하기
 
 ```swift
 
@@ -372,16 +337,8 @@ func addBundleData() {
             tf.text = ""
             
         }
-        
-        
-        
-        
     }
-
-
 ```
-
-
 
 ---
 
