@@ -57,7 +57,7 @@
 > 4. [AutoLayOut, StackView](/study/25_17-10-13-AutoLayout.md)
 
 
-### *  **Part 6(Initialzation, 값 타입 vs 참조 타입, Data Model, <br> Bundle, Plist, Singletone Pattern, tableView Cell Reusable, prepare)** 
+### *  **Part 6(Initialzation, 값 타입 vs 참조 타입, Data Model, <br> 	Bundle, Plist, Singletone Pattern, tableView Cell Reusable, prepare)** 
 
 > 1. [Class, Struct, Initialization, <br> Setting a Default Property Value with a Closure or Function](/study/26_17-10-16-Class-Struct.md)
 > 2. [값 타입 VS 참조 타입 ](/study/27_17-10-16-Class-Struct.md)
