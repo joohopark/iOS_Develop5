@@ -78,21 +78,24 @@
 > 5. [UICollectionView, UICollectionViewFlowLayout](/study/38_17-10-27-CollectionView-gesture.md)
 > 
 
-### *  **Part 8** 
+### *  **Part 8(AVAudioPlayer, UICollectionView, UIGestureRecognizer, <br> ARC, Map, Filter, Reduce)** 
 
-> 1. [AVAudioPlayer, UICollectionView, UIGestureRecognizer](/study/39_17-10-30-AVAudioPlayer-UICollectionView-UIGestureRecognizer.md)
+> 1. [AVAudioPlayer, UIGestureRecognizer](/study/39_17-10-30-AVAudioPlayer-UICollectionView-UIGestureRecognizer.md)
 > 2. [ARC](/study/40_17-10-31-ARC.md)
-> 3. [Delegate, Closure, Map, Filter, Reduce](/study/41_17-11-1-Closure-Delegate.md) 
+> 3. [Closure, Map, Filter, Reduce](/study/41_17-11-1-Closure-Delegate.md) 
 
-### * **Part 9** 
+### * **Part 9(Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue, <br>
+Semaphore, DeviceTest, MapKit, 위젯, SerachBarController, <br> 
+UISearchController, CAGradientLayer )** 
 
 > 1. [Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue](/study/42_17-11-6-Thread.md)
-> 2. [DeviceTest, MapKit](/study/43_17-11-7-deviceTest-Mapkit.md)
-> 3. [Calendar 만들기](/study/44_17-11-8-Calendar.md)
-> 4. [작성중..위젯, SerachBarController](/study/45_17-11-9-SearchController-Wejet-imagePicker.md)
-> 5. [UISearchController, CAGradientLayer](/study/46_17-11-10-SearchBarController-Gradation.md)
+> 2. [CPU, Memory, Thread, Semaphore](/study/0_CPU-MEMORY-THREAD-Semaphore.md)
+> 3. [DeviceTest, MapKit](/study/43_17-11-7-deviceTest-Mapkit.md)
+> 4. [Calendar 만들기](/study/44_17-11-8-Calendar.md)
+> 5. [위젯, SerachBarController](/study/45_17-11-9-SearchController-Wejet-imagePicker.md)
+> 6. [UISearchController, CAGradientLayer](/study/46_17-11-10-SearchBarController-Gradation.md)
 
-### * **Part 10** 
+### * **Part 10(IOS Network, OpenWeather API)** 
 
 > 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/study/47_17-11-14-Network.md)
 > 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/study/48_17-11-16-IOSNetwork.md)
@@ -100,11 +103,10 @@
 > 4. [IOS Network 실습](study/50_17-11-17-network-day3.md)
 
 
-### * **Part 11** 
+### * **Part 11(Instagram 만들기, Firebase-CoreData)** 
 
 > 1. [Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
 > 2. [Firebase-CoreData, ObserveSingerEvent](/study/52_17-11-26-mak-instagram-firebase-CoreData.md)
-
 
 
 

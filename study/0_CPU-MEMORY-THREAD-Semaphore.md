@@ -23,9 +23,6 @@
 | ![screen](/study/image/CPU.png) | ![screen](/study/image/CPU-1.png) |
 
 
-	
-
-
 ---
 
 ## CPU 구조
@@ -198,15 +195,10 @@ let semaphore = DispatchSemaphore(value: 1)
                 semaphore.wait()
                 self.globalCount += 1
                 semaphore.signal()
-                print("\(self.globalCount) in qq")
-                
-                
-            }
-            
+                print("\(self.globalCount) in qq")   
+            }   
         }
-        
         > siginal 형식을 통해서, globalCount에 접근할때 접근하는 count를 막아줍니다
-        
 ```
 
 ---
