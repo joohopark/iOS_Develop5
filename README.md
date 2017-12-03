@@ -125,8 +125,15 @@ UISearchController, CAGradientLayer )**
 > 1. [Git 을 이용한 협업 WorkFlow](/study/0_17-10-28-github-recture.md)
 > 
 
+### * **Projects** 
 
+> 1. [지하철 노선도 만들기(초보편) Part 1](https://devminjun.github.io/blog/CreatSubway-ver1)
+> 2. [지하철 노선도 만들기(초보편) Part 2](https://devminjun.github.io/blog/CreatSubway-ver2)
+> 
 
+### * **Insights**
+
+> 1. [17-11-25-NAVER D2STARTUP FACTORY](/study/0_17-11-25-NAVER_D2_STARTUP_FACTORY.md)
 
 ### *  **Braek week** 
 
@@ -137,31 +144,15 @@ UISearchController, CAGradientLayer )**
 > 5. [Break Week 때 한것들](/breakweek/breakWeek.md)
 
 
+### * **Reference**
 
-### * **Projects** 
-
-> 1. [지하철 노선도 만들기(초보편) Part 1](https://devminjun.github.io/blog/CreatSubway-ver1)
-> 2. [지하철 노선도 만들기(초보편) Part 2](https://devminjun.github.io/blog/CreatSubway-ver2)
-> 
-
----
-
-
-### * **기타**
-
-> 1. [17-11-25-NAVER D2STARTUP FACTORY](/study/0_17-11-25-NAVER_D2_STARTUP_FACTORY.md)
-
-
----
-
-
-# Reference 
-
-#### [Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)<br>
-#### [전수열님 Swift 학습자료](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)<br>
-#### [Swift Interpreter](https://swift.sandbox.bluemix.net/#/repl)<br>
-#### [Xcode Documents](http://help.apple.com/xcode/mac/9.0/#/)<br>
-#### [MarkDown 기본 문법](/study/2017-10-13-markdown.md)<br>
+> 1. [전수열님 Swift 학습자료](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)<br>
+> 2. [Apple Documents](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/)<br>
+> 3. [Swift Interpreter](https://swift.sandbox.bluemix.net/#/repl)<br>
+> 4. [Xcode Documents](http://help.apple.com/xcode/mac/9.0/#/)<br>
+> 5. [WWDC 모음](https://developer.apple.com/videos/)<br>
+> 6. [APPLE DEVELOP DOCUMENTS](https://developer.apple.com/documentation) <br>
+> 7. [MarkDown 기본 문법](/study/2017-10-13-markdown.md)<br>
 
 ---
 
