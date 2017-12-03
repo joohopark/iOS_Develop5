@@ -29,7 +29,7 @@
 > 6. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/study/11_17-9-16.md)
 
 
-### *  **Part 3(Property, Enumeration, guard let, if let)  **
+### *  **Part 3(Property, Enumeration, guard let, if let)**
 
 > 1. [StoryBoard 활용해서 대표이사 되기](/study/12_17-9-18.md)
 > 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17-9-18.md)
