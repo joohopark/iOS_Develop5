@@ -19,7 +19,7 @@
 > 4. [collection Type, Array, Set, Dictionary, Quiz](/study/4_17-9-7.md)
 > 5. [Git Definition, Git Command](/study/5_17-9-8-git.md)
 
-### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Optional, Nil, Access control, Inout)**
+### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Access control, Inout)**
 
 > 1. [반복,조건문 Quiz, Class, OOP](/study/6_17-9-11.md)
 > 2. [Class Structure, Inheritance, override](/study/7_17-9-13.md)
@@ -29,7 +29,7 @@
 > 6. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/study/11_17-9-16.md)
 
 
-### *  **Part 3**
+### *  **Part 3(Property, Enumeration, guard let, if let)  **
 
 > 1. [StoryBoard 활용해서 대표이사 되기](/study/12_17-9-18.md)
 > 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17-9-18.md)
