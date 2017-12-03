@@ -49,7 +49,7 @@
 > 6. [alert](/study/20-1_17-9-28.md)
 > 7. [UITableView Customizing 하기](/study/21_17-9-29.md)
  
-### *  **Part 5(UIViewController, Segue, UINavigationController, Protocol, Delegate, AutoLayout, StackView)** 
+### *  **Part 5(UIViewController, Segue, UINavigationController, <br>	 Protocol, Delegate, AutoLayout, StackView)** 
 
 > 1. [UIVIewController, Segue(간단한 화면전환)](/study/22_17-10-10.md)
 > 2. [UINavigationController](/study/23_17-10-11.md)
@@ -69,7 +69,7 @@
 
 
 
-### *  **Part 7(Do-Try-catch, NavigationViewController, Notification, Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController, UICollectionView, UICollectionViewDelegate, UICollectionViewFlowLayout, TapBarController)** 
+### *  **Part 7(Do-Try-catch, NavigationViewController, Notification, Subscript,<br>	 Extensions, Generic, UITextFieldDelegate, UIImagePickerController, <br>	 UICollectionView, UICollectionViewDelegate, UICollectionViewFlowLayout, TapBarController)** 
 
 > 1. [예외처리, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review.md)
 > 2. [MiniProject-Creat-LoginPage, Notification](/study/35_17-10-24-Combine-Project.md)
