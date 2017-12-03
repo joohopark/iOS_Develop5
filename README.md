@@ -29,14 +29,14 @@
 > 6. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/study/11_17-9-16.md)
 
 
-### *  **Part 3(Property, Enumeration, guard let, if let)**
+### *  **Part 3(Property, Enumeration, guard let, if let, Closure)**
 
 > 1. [StoryBoard 활용해서 대표이사 되기](/study/12_17-9-18.md)
 > 2. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17-9-18.md)
 > 3. [Enumeration(열거형), Optional(옵셔널), guard let, if let ](/study/14_17-9-19.md)
-> 4. [Closure, 계산기에 Closure, Enum 뜯어서 다시하기](/study/15_17-9-20.md)
-> 5. [baseballGame 만들기](/study/16_17-9-21.md)
-> 6. [baseballGame 만들기 ver.1](/study/16-1_17-9-21.md)
+> 4. [Closure](/study/15_17-9-20.md)
+> 5. [baseballGame 만들기 ver.1](/study/16_17-9-21.md)
+> 6. [baseballGame 만들기 ver.2](/study/16-1_17-9-21.md)
 
 
 ### *  **Part 4** 
