@@ -25,7 +25,7 @@
 > 2. [Class Structure, Inheritance, override](/study/7_17-9-13.md)
 > 3. [StoryBoard 활용해서 계산기 만들기](/study/8_17-9-14.md)
 > 4. [IOS application life cycle, MVC(Model View Controller)](/study/9_17-9-15.md)
-> 5. [Tuple, Any, AnyObject, nill, Type Casting, Access Control, Optionals, Modules and Sourece Files](/study/10_17-9-16.md)
+> 5. [Tuple, Any, AnyObject, nill, Type Casting, <br> Access Control, Modules and Sourece Files](/study/10_17-9-16.md)
 > 6. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/study/11_17-9-16.md)
 
 
