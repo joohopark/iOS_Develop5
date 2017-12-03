@@ -49,10 +49,10 @@
 > 6. [alert](/study/20-1_17-9-28.md)
 > 7. [UITableView Customizing 하기](/study/21_17-9-29.md)
  
-### *  **Part 5** 
+### *  **Part 5(UIViewController, Segue, UINavigationController, Protocol, Delegate, AutoLayout, StackView)** 
 
 > 1. [UIVIewController, Segue(간단한 화면전환)](/study/22_17-10-10.md)
-> 2. [UINavigationController, UIViewController](/study/23_17-10-11.md)
+> 2. [UINavigationController](/study/23_17-10-11.md)
 > 3. [Protocol, Delegate](/study/24_17-10-12.md)
 > 4. [AutoLayOut, StackView](/study/25_17-10-13-AutoLayout.md)
 

@@ -2,33 +2,119 @@
 
 ---
 
+## autoLayout, StackView
+
 ## Refrence : [AutoLayOut PDF](/study/image/AutoLayOut.pdf)
 
 ---
 
-## autoLayOut 
+## Graph_AutoLayout_Code(멋지게 그래프를 표현하는 방법과 애니메이션)
 
-- apple에서 권고하는 autoLayOut은 6, 7, 사이즈 들을 고려하고, + 계열은  + 계열 끼리 고려해서 만들어 주는것을 권고한다.
+![scrrn](/study/video-gif/graph.MOV.gif) <br>
 
-- Device가, 가로,세로 모드일때 자동으로 변경되는것을 선택 하는것은 xcode.. 설정에 있음..
+|--View <br>
+|----view 6개 <br>
 
-- notification 하는방법 찾아보자.
+View 속에, 그래프로 사용될 View 6개를 만들어 놓고, autoLayout 을 통해서, 그래프의 변경 되는 값을 조정해줍니다.<br>
+기본 superview의 autolayout 을 통해서, 위치와 사이즈를 정해줍니다. 그 속에서, 각 그래프의 bottom 을 superView에 고정 해놓고 각 View들의 height 값을 비율로 정의해서 그래프를 정의하는 방법을 사용합니다.
 
-- addTaget 방식으로 하는 방식은 customView에서 addTaget 안에 그 파라미터를 그대로 받아서, 전달하려는 customView에서 controll 할 btn에 btn.addTaget.... 해서 받은 파라미터를 그대로 넘겨 주어서 실행해줌.. 약간 fake? 같은 느낌으로 만들수 잇다.
+| superView Constraints | 그래프1의 Constraints | 그래프2의 Constraints | 
+| :---: | :---: | :---: | 
+|  ![screen](/study/image/graph-1.png) |  ![screen](/study/image/graph-2.png)|   ![screen](/study/image/graph-2.png) |  
 
-- autoLayOut에서 복붙이 안되는 이유는, constraints의 적용 되는 구조가 view 기준으로 적용되는것도 있고, superView 기준으로 적용되는것도 있어서, 복붙은 조금 위험한 생각이다.
+> 원리는, View의 bottom 을 고정시켜놓고, 그래프의 height값을 input값으로 받아서 변경시켜주면, 유동적은 그래프를 사용할수 있습니다.
+> 
 
-- 픽셀과 포인트의 차이점 그리고 포인트 에서 1 포인트를 주는 이유는, 사실 디스플레이 되기 위해서는 한줄이 보여야 하는데, 그 겹치는 경계 구간에 갔을떄 보여줌.
+```swift
+import UIKit
+class ViewController: UIViewController {
 
-- 4:3 비율은 전체 스크린을 쪼개서, 나누어준것으로 계산할수 있다.
+	 // autoLayout 으로 지정한 height 값을 IBOutlet을 통해서 가져옵니다. 
+    @IBOutlet weak var graph1Height: NSLayoutConstraint!
+    @IBOutlet weak var graph2Height: NSLayoutConstraint!
+    @IBOutlet weak var graph3Height: NSLayoutConstraint!
+    @IBOutlet weak var graph4Height: NSLayoutConstraint!
+    @IBOutlet weak var graph5Height: NSLayoutConstraint!
+    @IBOutlet weak var graph6Height: NSLayoutConstraint!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+        
+    @IBAction func btn1Action(_ sender: UIButton) {
+        UIView.animate(withDuration: 3, animations: {
+            self.graph1Height = self.graph1Height.changeMultiplier(changeMultiplier: 0.1)
+            self.graph2Height = self.graph2Height.changeMultiplier(changeMultiplier: 0.2)
+            self.graph3Height = self.graph3Height.changeMultiplier(changeMultiplier: 0.3)
+            self.graph4Height = self.graph4Height.changeMultiplier(changeMultiplier: 0.4)
+            self.graph5Height = self.graph5Height.changeMultiplier(changeMultiplier: 0.5)
+            self.graph6Height = self.graph6Height.changeMultiplier(changeMultiplier: 0.6)
+            
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    
+    @IBAction func btn2Action(_ sender: UIButton) {
+        self.graph1Height = self.graph1Height.changeMultiplier(changeMultiplier: 0.6)
+        self.graph2Height = self.graph2Height.changeMultiplier(changeMultiplier: 0.5)
+        self.graph3Height = self.graph3Height.changeMultiplier(changeMultiplier: 0.4)
+        self.graph4Height = self.graph4Height.changeMultiplier(changeMultiplier: 0.3)
+        self.graph5Height = self.graph5Height.changeMultiplier(changeMultiplier: 0.2)
+        self.graph6Height = self.graph6Height.changeMultiplier(changeMultiplier: 0.1)
+        
+        UIView.animate(withDuration: 3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    } 
+}
 
+// NSLayout의 multiplier 를 코드로 바로 적용하려고 하면, 적용이 되지 않습니다. 그래서 원래의 Constraints 값을 비활성화후, 새롭게 Constraints 값을 생성후, 새로 적용된 값을 Constraints에 적용 시켜서 사용합니다..!
+extension NSLayoutConstraint {
+    func changeMultiplier(changeMultiplier: CGFloat) -> NSLayoutConstraint {
+        
+        // 원래 자신의 Constraint 값을 deactivate 하고,
+        // 새롭게 Newconstraint 값을 적용한것을, activate 함..
+        NSLayoutConstraint.deactivate([self])
+        let newConstraint = NSLayoutConstraint(item: self.firstItem,
+                                              attribute: firstAttribute,
+                                              relatedBy: self.relation,
+                                              toItem: self.secondItem,
+                                              attribute: self.secondAttribute,
+                                              multiplier: changeMultiplier,
+                                              constant: self.constant)
+        
+        // View가 가지고 있는 기본 셋팅값을 사용하겠다는 코드
+        newConstraint.priority = self.priority
+        newConstraint.shouldBeArchived = self.shouldBeArchived
+        newConstraint.identifier = self.identifier
+        
+        NSLayoutConstraint.activate([newConstraint])
+        
+        return newConstraint
+    }
+    //NsLayout을 사용하는데, 내가 기본셋팅을 바꾸어서, 원하는 값만 사용하려고함
+}
+```
 
----
-
+> Animate 적용시 `self.view.layoutIfNeeded()` 적용 시켜 주어야, 변경된 Layer 값이 실시간으로 적용이 됩니다..!
+> 
+> 주의 사항으로는 Constraints 값을 두번 정의하게되면, 오류가 나게 됩니다. 이유는 Constraints 값이 두번 적용이 되고, Priority 값이 기본적으로 1000 이기때문에, 어떤 값을 적용 해야하는데 알수 없어서 나는 오류입니다. 
 ## StackView
 
-- 효율은 좋지만, 일반적인 경우보다 소스를 많이 먹어서, 조금 느리다
 
+계산기를 StackView로 만들기 
+상황에 따라서 크기가 변하는거라면, Priority 값을 주어야 하지만, 그렇지 않은 경우는 Priority 값을 주지 않아도 됩니다.
+stackView로 묶어놓으면, witdh 를 잡을때, 멀리플라이어로 잡아주고, height 를 잡아줄때는 `Aspect Ratio` 로 잡아주면 편하게 잡아줄수 있음..!
+StakcView는 4개의 버튼이 있어도, 한개의 높이만 지정해주면 모두 같이 높이가 늘어나기때문에, StackView안에 있는 한개의 button의 높이를 Aspect Ratio 로 잡아주게되면, 편하게 사용할수 있다.
+
+| StackView | Aspect Ratio |
+| :---: | :---: |
+| ![screen](/study/image/StackView.jpg) | ![screen](/study/image/StackView-1.jpg)] |
+
+> Aspect Ratio 는, 그냥 선택하면 바로 변하지 않고, 일단 Aspect Ratio 추가후, 따로 Multiplier 를 조정해서 설정해주어야 합니다..!
+> 
+> 일반적으로, 위치나 크기가 균등하다면 StackView가 편하다..! 
 ---
 
 ## ScrollView Storyboard 로 만들기
