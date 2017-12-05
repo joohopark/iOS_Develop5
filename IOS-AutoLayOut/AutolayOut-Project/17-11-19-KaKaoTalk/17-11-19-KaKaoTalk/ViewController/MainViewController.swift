@@ -3,7 +3,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-  UILabel
+  
   @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var inputviewBottomMargin: NSLayoutConstraint!
   @IBOutlet private weak var inputTextView: UITextView!
