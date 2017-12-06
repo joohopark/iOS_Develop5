@@ -84,8 +84,7 @@
 > 2. [ARC](/study/40_17-10-31-ARC.md)
 > 3. [Closure, Map, Filter, Reduce](/study/41_17-11-1-Closure-Delegate.md) 
 
-### * **Part 9(Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue, <br>
-Semaphore, DeviceTest, MapKit, 위젯, SerachBarController, <br> 
+### * **Part 9(Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue, <br> Semaphore, DeviceTest, MapKit, 위젯, SerachBarController, <br> 
 UISearchController, CAGradientLayer )** 
 
 > 1. [Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue](/study/42_17-11-6-Thread.md)
