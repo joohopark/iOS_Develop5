@@ -5,6 +5,8 @@
 ## OpenWeatherAPI 실습하기
 
 ### [사용한 API(OpenWeather API)](https://openweathermap.org) <br>
+
+#### [프로젝트의 위치는 이곳 입니다](/Project/17-11-19-OpenWeatherAPI)
 ---
 
 ![screen](/study/video-gif/OpenWeather.gif)
