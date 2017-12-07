@@ -4,7 +4,7 @@
 
 ## kakaoTalk Chat UI 만들기
 
-#### [프로젝트 위치는 이곳입니다](IOS-AutoLayOut/AutolayOut-Project/17-11-19-KaKaoTalk)
+#### [프로젝트 위치는 이곳입니다](/IOS-AutoLayOut/AutolayOut-Project/17-11-19-KaKaoTalk)
 
 ![screen](/study/image/kakaoUI.png)
 
