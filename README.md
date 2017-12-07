@@ -111,10 +111,11 @@ UISearchController, CAGradientLayer )**
 > 4. [IOS Network 실습](study/50_17-11-17-network-day3.md)
 
 
-### * **Part 11(Instagram 만들기, Firebase-CoreData)** 
+### * **Part 11(Instagram 만들기, Firebase-CoreData, PushNotification)** 
 
 > 1. [Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
 > 2. [Firebase-CoreData, ObserveSingerEvent](/study/52_17-11-26-mak-instagram-firebase-CoreData.md)
+> 3. [Push Notification](/study/0_Push_Notification.md)
 
 
 ---
@@ -142,6 +143,7 @@ UISearchController, CAGradientLayer )**
 > 2. [Swift 기본 문법 정리 1/2](/breakweek/2017-10-9-online.md)
 > 3. [Swift 기본 문법 정리 2/2](/breakweek/2017-10-10-online.md)
 > 4. [Break Week 때 한것들](/breakweek/breakWeek.md)
+
 
 
 ### * **Reference**
