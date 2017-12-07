@@ -24,7 +24,7 @@
 > 9. [지하철 노선도 만들기(초보편) ver.0](/breakweek/CreatSubway.md)
 > 10. [지하철 노선도 만들기(초보편) ver.1](https://devminjun.github.io/blog/CreatSubway-ver1)
 > 11. [지하철 노선도 만들기(초보편) ver.2](https://devminjun.github.io/blog/CreatSubway-ver2) 
-> 12. [카카오톡UI chat UI 만들기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
+> 12. [카카오톡 Chat UI 만들기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
 > 13. [수정&추가중....Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
 >  
 
