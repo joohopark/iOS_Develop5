@@ -15,6 +15,8 @@ class TestDatePickerViewController: UIViewController {
                                  for: UIControlEvents.valueChanged)
 
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +31,20 @@ class TestDatePickerViewController: UIViewController {
             sender.date is \(sender.date)
             dateFormatter.string is \(dateFormatter.string(from: sender.date))
             """)
+        self.view.endEditing(true)
+    }
+    @IBAction func btnAction(_ sender: UIButton) {
+        
+        let alertController: UIAlertController = UIAlertController(title: "알럿 컨트롤러 타이틀",
+                                                                   message: "컨트롤러 메세지",
+                                                                   preferredStyle: .actionSheet)
+        let alertAction: UIAlertAction = UIAlertAction(title: "액션 타이틀",
+                                                       style: .default,
+                                                       handler: nil)
+        alertController.addAction(alertAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
     }
     
 }
