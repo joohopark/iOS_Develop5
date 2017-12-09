@@ -1,4 +1,4 @@
-
+// b386e899ce89aef401f50a43e85f547d2cff21a4
 
 import UIKit
 
@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         lb.textAlignment = .center
         lb.text = "+"
         return lb
-        
     }()
     
     var stackViewLists: UIStackView = {
