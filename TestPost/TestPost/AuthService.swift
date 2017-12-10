@@ -92,6 +92,7 @@ struct AuthService : NetworkInfo {
             if imgprofile?.path == nil {
                 multipartFormData.append(String("").data(using: .utf8)!, withName: "img_profile")
             }else {
+                // imageUpload 완전체
                 if let imagePath = imgprofile?.path,
                     let image = UIImage(contentsOfFile: imagePath),
                     let multipartImage = UIImageJPEGRepresentation(image, 0.5) {
@@ -101,10 +102,11 @@ struct AuthService : NetworkInfo {
                                              mimeType: "image/png")
                 }
             }
-//            for (key, value) in parameters {
-//                multipartFormData.append(String(describing: value).data(using: .utf8)!,
-//                                         withName: key)
-//            }
+            // 상황에 따라서 사용함. 없어도 업로드가능
+            for (key, value) in parameters {
+                multipartFormData.append(String(describing: value).data(using: .utf8)!,
+                                         withName: key)
+            }
         }, to: serviceType.routing, method: .post, headers: ["Authorization":"Token d03c530221f181229b611096490596166631d701"]
             ,encodingCompletion: {
                 encodingResult in
