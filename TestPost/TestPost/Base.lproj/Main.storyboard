@@ -66,11 +66,30 @@
                                     <action selector="postReplyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TlA-6e-zBZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIt-nj-Q8x">
+                                <rect key="frame" x="16" y="283" width="117" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post Photo Creat"/>
+                                <connections>
+                                    <action selector="postPhotoCreat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R1t-kN-1mQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zx-nO-xuS">
+                                <rect key="frame" x="175" y="235" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="imagePickerButton"/>
+                                <connections>
+                                    <action selector="imagePickerButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5zH-Lq-n8I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Test Post" id="BHr-LO-0VI"/>
+                    <connections>
+                        <outlet property="imagePickerButton" destination="7Zx-nO-xuS" id="h49-6B-f45"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
