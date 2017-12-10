@@ -117,20 +117,8 @@ struct AuthService : NetworkInfo {
                             response is : \(String(describing: response.response))
                             response Data is : \(String(describing: response.data))
                             reseponse result is : \(response.result)
-                            responser result value is : \(String(describing: response.result.value).data(using: .utf8))
+                            responser result value is : \(response.result.value as! [String:Any])
                             """)
-                        let testValue = String(describing: response.data).data(using: .utf8)
-                        print(testValue)
-                        
-                        //                        (response.result.value as! [String:[String]])["email"]?[0] ?? nil)
-                        
-                        // email에 대한 값이 리스트로 담겨져서 들어옴
-                        if let x = (response.result.value as? [String:Any]) {
-                            let y = x["email"]
-                            //print(y, )
-                        }
-                        //guard let x = (response.result.value as! [String:[String]])["email"]) else {return}
-                        //asvjknasv@gmail.com asdfgh
                     }
                     
                 case .failure(let encodingError):
