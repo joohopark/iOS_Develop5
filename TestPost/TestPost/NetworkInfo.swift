@@ -8,7 +8,7 @@
 
 import Foundation
 
-let baseURL = "v"
+let baseURL = "http://explog-shz.ap-northeast-2.elasticbeanstalk.com/"
 
 enum ServiceType: String{
     case login
@@ -18,6 +18,7 @@ enum ServiceType: String{
     case postDetail
     case postTextCreat
     case postText
+    case postreply
     var routing : String{
         switch self{
         case .login:
@@ -41,7 +42,11 @@ enum ServiceType: String{
         case .postText:
             //print()
             return baseURL + "post/text/10/"
+        case .postreply:
+            //print()
+            return baseURL + "post/8/reply/"
         }
+        
     }
 }
 

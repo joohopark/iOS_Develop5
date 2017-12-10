@@ -88,7 +88,7 @@ class MainViewController: UIViewController{
     
     @IBAction func postTextCreatAction(_ sender: UIButton) {
         let parameters: Parameters = ["title": "글 제목 작성..!",
-                                      "content": "글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용..."]
+                                      "content": "글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용...글내용..."]
         
         let Auth_header = ["Authorization":token]
         let url = ServiceType.postTextCreat.routing
@@ -97,7 +97,7 @@ class MainViewController: UIViewController{
                           parameters: parameters,
                           headers: Auth_header).responseJSON { (response) in
                             print(response.response?.statusCode)
-                            print(response.result.value )//as? [String:Any])
+                            print(response.result.value as? [String:Any])
         }
         
     }
@@ -109,10 +109,19 @@ class MainViewController: UIViewController{
                           method: .get,
                           headers: Auth_header).responseJSON { (response) in
                             print(response.response?.statusCode)
-                            print(response.result.value)
+                            print(response.result.value as? [String:Any])
         }
     }
     
-    
+    @IBAction func postReplyAction(_ sender: UIButton) {
+        let Auth_header = ["Authorization":token]
+        let url = ServiceType.postreply.routing
+        Alamofire.request(url,
+                          method: .get,
+                          headers: Auth_header).responseJSON { (response) in
+                            print(response.response?.statusCode)
+                            print(response.result.value as? [String:Any])
+        }
+    }
 }
 

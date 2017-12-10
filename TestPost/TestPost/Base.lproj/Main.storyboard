@@ -58,6 +58,14 @@
                                     <action selector="postTextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Bm-Qv-wa2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-xh-Kkg">
+                                <rect key="frame" x="16" y="219" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post Reply"/>
+                                <connections>
+                                    <action selector="postReplyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TlA-6e-zBZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
