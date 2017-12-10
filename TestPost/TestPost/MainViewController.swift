@@ -13,6 +13,7 @@ let token: String = "Token d03c530221f181229b611096490596166631d701"
 let titleParam: String = "타이틀 임의로"
 let timeParam: String = "2017-12-05T17:37:34"
 
+
 // header 형식 Authorization Token d03c530221f181229b611096490596166631d701
 class MainViewController: UIViewController{
     
@@ -128,8 +129,8 @@ class MainViewController: UIViewController{
     }
     @IBAction func postPhotoCreat(_ sender: UIButton) {
         
-        let url: URL! = self.imageurl ?? nil
         
+        let url: URL? = self.imageurl ?? nil
         AuthService.postPhotoCreat(imgprofile: url) { (result) in
             print(result)
         }
@@ -171,7 +172,16 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
             }
             else {
                 print("file already exists")
-                self.imageurl = localPath
+                do {
+                    // 이미지를 local Path 에 저장 -> 생성
+                    try UIImageJPEGRepresentation(image, 1.0)?.write(to: localPath!)
+                    print("file saved")
+                    self.imagePickerButton.setImage(image, for: .normal)
+                    self.imageurl = localPath
+                }catch {
+                    print("error saving file")
+                }
+                
             }
         }
         picker.dismiss(animated: true, completion: nil)
@@ -183,6 +193,4 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
     
 }
-
-
 

@@ -19,7 +19,7 @@ enum ServiceType: String{
     case postTextCreat
     case postText
     case postreply
-    case photoCreat
+    case postPhotoCreat
     var routing : String{
         switch self{
         case .login:
@@ -46,7 +46,7 @@ enum ServiceType: String{
         case .postreply:
             //print()
             return baseURL + "post/8/reply/"
-        case .photoCreat:
+        case .postPhotoCreat:
             //print()
             return baseURL + "post/26/photo/"
         }
