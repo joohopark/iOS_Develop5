@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-let token: String = "Token d03c530221f181229b611096490596166631d701"
+let token: String = "Token 1741c5a24be95983da9ec1b67cc96c6b4dbe14af"
 let titleParam: String = "타이틀 임의로"
 let timeParam: String = "2017-12-05T17:37:34"
 
