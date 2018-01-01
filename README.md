@@ -11,6 +11,9 @@
 
 # Learning Table( 17.9.4~
 
+### * **Team Project**
+[EXPLOG(여행기 기반SNS)](https://github.com/devminjun/EXPLOG)
+
 ### *  **Mini Projects**
 
 > 1. [StoryBoard 활용해서 계산기 만들기](/study/8_17-9-14.md) 
