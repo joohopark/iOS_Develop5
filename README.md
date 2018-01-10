@@ -41,18 +41,18 @@
 
 ### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Access control, Inout)**
 
-> 1. [반복,조건문 Quiz, Class, OOP](/Part_2/6_17-9-11.md)
-> 2. [Class Structure, Inheritance, override](/Part_2/7_17-9-13.md)
-> 3. [IOS application life cycle, MVC(Model View Controller)](/Part_2/9_17-9-15.md)
-> 4. [Tuple, Any, AnyObject, nill, Type Casting, <br> Access Control, Modules and Sourece Files](/Part_2/10_17-9-16.md)
-> 5. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/Part_2/11_17-9-16.md)
+> 1. [반복,조건문 Quiz, Class, OOP](/Part_2/6_17-9-11-Class_OOP.md)
+> 2. [Class Structure, Inheritance, override](/Part_2/7_17-9-13-Inheritance_override_class.md)
+> 3. [IOS application life cycle, MVC(Model View Controller)](/Part_2/9_17-9-15-LifeCycle_MVC.md)
+> 4. [Tuple, Any, AnyObject, nil, Type Casting, <br> Access Control, Modules and Sourece Files](/Part_2/10_17-9-16-Tuple_Any_AnyObject_nil_Typecasting.md)
+> 5. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/Part_2/11_17-9-16-Inout_tripleOperate.md)
 
 
 ### *  **Part 3(Property, Enumeration, guard let, if let, Closure)**
 
-> 1. [Switch, Property(Stored, Computed, Type), Type Method-Static](/Part_3/13_17-9-18.md)
-> 2. [Enumeration(열거형), Optional(옵셔널), guard let, if let ](/Part_3/14_17-9-19.md)
-> 3. [Closure](/Part_3/15_17-9-20.md)
+> 1. [Switch, Property(Stored, Computed, Type), Type Method-Static](/Part_3/13_17-9-18-Switch_Property_typeMethod.md)
+> 2. [Enumeration(열거형), Optional(옵셔널), guard let, if let ](/Part_3/14_17-9-19-Enumeration_Optional_GuardLet_ifLet.md)
+> 3. [Closure](/Part_3/15_17-9-20-Closure.md)
 
 
 ### *  **Part 4(UI View, Label, Base, Resolutions, Hierarchy, User Defaults, Alert, UITableView)** 
