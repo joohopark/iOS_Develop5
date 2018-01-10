@@ -10,7 +10,7 @@
 #### - Auguments Lables, Parameter Name 구별 이유
 
 ```swift
-func fName(agumentName paramName:Int) -> Int {      return paramName + 3  }
+func fName(agumentName  paramName:Int) -> Int {      return paramName + 3  }
 ```
 
 - fName : 함수 이름 <br>
