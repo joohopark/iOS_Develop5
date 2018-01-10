@@ -33,26 +33,26 @@
 
 ### *  **Part 1(Variable, Collection Type, Computer Science)**
 
-> 1. [Computer Configuration, How to work Computer](/Part1/1_17-9-4.md)
-> 2. [Variable(변수), constant(상수), if, while](/Part1/2_17-9-5.md)
-> 3. [for-in, func, Syntax, Quiz](/Part1/3_17-9-6.md)
-> 4. [collection Type, Array, Set, Dictionary, Quiz](/Part1/4_17-9-7.md)
-> 5. [Git Definition, Git Command](/Part1/5_17-9-8-git.md)
+> 1. [Computer Configuration, How to work Computer](/Part_1/1_17-9-4.md)
+> 2. [Variable(변수), constant(상수), if, while](/Part_1/2_17-9-5.md)
+> 3. [for-in, func, Syntax, Quiz](/Part_1/3_17-9-6.md)
+> 4. [collection Type, Array, Set, Dictionary, Quiz](/Part_1/4_17-9-7.md)
+> 5. [Git Definition, Git Command](/Part_1/5_17-9-8-git.md)
 
 ### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Access control, Inout)**
 
-> 1. [반복,조건문 Quiz, Class, OOP](/study/6_17-9-11.md)
-> 2. [Class Structure, Inheritance, override](/study/7_17-9-13.md)
-> 3. [IOS application life cycle, MVC(Model View Controller)](/study/9_17-9-15.md)
-> 4. [Tuple, Any, AnyObject, nill, Type Casting, <br> Access Control, Modules and Sourece Files](/study/10_17-9-16.md)
-> 5. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/study/11_17-9-16.md)
+> 1. [반복,조건문 Quiz, Class, OOP](/Part_2/6_17-9-11.md)
+> 2. [Class Structure, Inheritance, override](/Part_2/7_17-9-13.md)
+> 3. [IOS application life cycle, MVC(Model View Controller)](/Part_2/9_17-9-15.md)
+> 4. [Tuple, Any, AnyObject, nill, Type Casting, <br> Access Control, Modules and Sourece Files](/Part_2/10_17-9-16.md)
+> 5. [Func, Inout, 논리연산자(===, !==), 삼항 연산자](/Part_2/11_17-9-16.md)
 
 
 ### *  **Part 3(Property, Enumeration, guard let, if let, Closure)**
 
-> 1. [Switch, Property(Stored, Computed, Type), Type Method-Static](/study/13_17-9-18.md)
-> 2. [Enumeration(열거형), Optional(옵셔널), guard let, if let ](/study/14_17-9-19.md)
-> 3. [Closure](/study/15_17-9-20.md)
+> 1. [Switch, Property(Stored, Computed, Type), Type Method-Static](/Part_3/13_17-9-18.md)
+> 2. [Enumeration(열거형), Optional(옵셔널), guard let, if let ](/Part_3/14_17-9-19.md)
+> 3. [Closure](/Part_3/15_17-9-20.md)
 
 
 ### *  **Part 4(UI View, Label, Base, Resolutions, Hierarchy, User Defaults, Alert, UITableView)** 
