@@ -33,10 +33,10 @@
 
 ### *  **Part 1(Variable, Collection Type, Computer Science)**
 
-> 1. [Computer Configuration, How to work Computer](/Part_1/1_17-9-4.md)
-> 2. [Variable(변수), constant(상수), if, while](/Part_1/2_17-9-5.md)
-> 3. [for-in, func, Syntax, Quiz](/Part_1/3_17-9-6.md)
-> 4. [collection Type, Array, Set, Dictionary, Quiz](/Part_1/4_17-9-7.md)
+> 1. [Computer Configuration, How to work Computer](/Part_1/1_17-9-4-How_to_work_Computer.md)
+> 2. [Variable(변수), constant(상수), if, while](/Part_1/2_17-9-5-Variable_constant_if_while.md)
+> 3. [for-in, func, Syntax, Quiz](/Part_1/3_17-9-6-for_in_func.md)
+> 4. [collection Type, Array, Set, Dictionary, Quiz](/Part_1/4_17-9-7-CollectionType.md)
 > 5. [Git Definition, Git Command](/Part_1/5_17-9-8-git.md)
 
 ### *  **Part 2(OOP, IOS Application Life Cycle, MVC, Access control, Inout)**
