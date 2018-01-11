@@ -16,7 +16,7 @@
 
 ### *  **Mini Projects**
 
-> 1. [StoryBoard 활용해서 계산기 만들기](/Mini_Projects/8_17-9-14-8_17-9-14-Calculator.md.md) 
+> 1. [StoryBoard 활용해서 계산기 만들기](/Mini_Projects/8_17-9-14-Calculator.md) 
 > 2. [StoryBoard 활용해서 대표이사 되기](/Mini_Projects/12_17-9-18-StroyBoard.md)
 > 3. [baseballGame 만들기 ver.1](/Mini_Projects/16_17-9-21-baseballGame.md)
 > 4. [baseballGame 만들기 ver.1.0.1](/Mini_Projects/16-1_17-9-21-BaseBallGame-Version2.md)
