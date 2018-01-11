@@ -2,7 +2,7 @@
 
 ---
 
-## for-in, while, func 예제 문제, class, OOP   개념 간단한 설명
+## for-in, while, func 예제 문제, class, OOP   개념 간단한 설명 
 
 ---
 
