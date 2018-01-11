@@ -2,7 +2,7 @@
 
 ---
 
-## collection Type, Array, set, Dictionary 문법, quiz
+## collection Type, Array, set, Dictionary 문법, quiz 
 
 ---
 
