@@ -11,7 +11,7 @@
  4. 지하철 노선도 탐색 기능.(출발 -> 도착 정했을때, 환승역 등등 고려해야 하는데, 아마 알고리즘을 사용해야 할 것 같다) 
 
 
-#### [프로젝트 위치는 이곳 입니다](/Project/CreatSubWay-ver1)
+#### [프로젝트 위치는 이곳 입니다](/Mini_Projects/Projexts_Xcode/CreatSubWay-ver1)
 
  
 ---
@@ -32,40 +32,30 @@
 
 
 ```swift
-
 import UIKit { 
-
 class ViewController: UIViewController, UIScrollViewDelegate {
     var scrollView: UIScrollView!
     var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // 이미지, 스크롤뷰 생성 
         let frameSize = view.bounds.size
-        scrollView = UIScrollView(frame: CGRect(origin: CGPoint.zero, size: frameSize))
-        
+        scrollView = UIScrollView(frame: CGRect(origin: CGPoint.zero, size: frameSize))    
         // 이미지 생성, 스크롤뷰의 컨텐츠 사이즈는, 이미지뷰의 사이즈로 정함
         let image = UIImage(named: "deagu.jpeg")
         imageView = UIImageView(image: image)
         scrollView.contentSize = imageView.bounds.size
         
-        
         //view 에 뿌려주기
-        
         scrollView.addSubview(imageView)
         view.addSubview(scrollView)
         
-
-       // Hierarchy 현재 구조         
+        // Hierarchy 현재 구조         
         UIView
         |-- UiScrollview
         |-- UIImageView 
- }
-
-
-
+}
 ```
 
 ---
@@ -84,26 +74,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 ```swift
-
 // scrollViewDelegate 체텍
 class ViewController: UIViewController, UIScrollViewDelegate {
- 
-    
     var pinchGesture = UIPinchGestureRecognizer()
-  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
         // zoomscale 설정
         scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 3.0
         
-        
         // scrollView 에 델리게이트 할당
         scrollView.delegate = self
-        
         // 텝 횟수에 따라서 동작 결정 
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(self.tapToZoom))
         doubleTap.numberOfTapsRequired = 2
@@ -112,38 +93,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // 더블텝 제스쳐를 scrllView 상위로 올렷다, 컨테이너 밖으로 벗어나면 터치가 안됨 ㅠㅠ
         scrollView.addGestureRecognizer(doubleTap)
         
-    
-    
     // 더블탭 기능, delegate 사용해서, addTaget 으로 사용함, 엄밀하게 더블텝을 위한것보다는, 델리게이트를 이용해서, 불려 오는 함수에 조건을 넣어서 기능을 구현했다.
-    
     @objc func tapToZoom(_ gestureRecognizer: UIGestureRecognizer) {
-        
-        
         print("줌..")
-        
         // 더블탭 간단 하게 구현
         if scrollView.zoomScale == CGFloat(1) {
             scrollView.setZoomScale(3, animated: true)
         }else {
             scrollView.setZoomScale(1, animated: true)
         }
-        
     }
     
     // Pinch Gesture 줌 인, 아웃 가능, 사실상 핵심 기능. 이미지뷰를 반환할때, 하이라키 구조와 컨테이너 개념을 알고 있어야 한다. Forzooming 하려는 대상에 따라서 여러가지 방법으로 구현이 가능함.
-    @objc func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        
+    @objc func viewForZooming(in scrollView: UIScrollView) -> UIView? {    
         //print("viewFor")
-        
-        
         return imageView
     }
-        
-        
-        
-        
-
-
 ```
 
 > 확대를 사용할때, 계층 구조를 명확히 알고있어야 합니다. 그렇지 않으면, 이미지, 버튼, 확대 되는 부분이 따로 놀아서 확대, 축소 시에 이미지와 기능이 분리 되어서 확대 될수도 있습니다. 
@@ -152,8 +117,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 ---
 
 ## 3. 각 역마다 버튼 넣고, 위치 지정(버튼은 총 13개만 만들었습니다!) 
-
- 
 
 ![screensh](/study/image/CreatSubway3.jpg) ![screensh](https://user-images.githubusercontent.com/30401511/31275413-126a2ca0-aad2-11e7-8c45-7bd39fec8254.jpg)
 
@@ -167,9 +130,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 ```swift
-
 import UIKit
-
 class ViewController: UIViewController, UIScrollViewDelegate {
     
    /*==========================
@@ -207,7 +168,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // 스타트 역의 tag 값을 가져온다
     var getStartStionTag = 0
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         /*==========================
@@ -233,7 +193,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         daeguBank = UIButton()
         beomeo = UIButton()
         
-        
         /*=======================
                  각 버튼 위치
          ========================*/
@@ -258,12 +217,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         daeguBank = UIButton(frame: CGRect(x: 680, y: 320, width: 20, height: 20))
         beomeo = UIButton(frame: CGRect(x: 730, y: 320, width: 20, height: 20))
         
-
-
         /*==========================
                버튼 색상, 곡률 지정
          ==========================*/
-
         yeungNamHosp.backgroundColor = UIColor.clear
         yeungNamHosp.layer.cornerRadius = 10
 
@@ -305,9 +261,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
         beomeo.backgroundColor = UIColor.clear
         beomeo.layer.cornerRadius = 10
-
-
-
+        
         /*=======================
              버튼 imageView 에 추가.
          ========================*/
@@ -329,7 +283,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         imageView.addSubview(kyungDeaHosp)
         imageView.addSubview(daeguBank)
         imageView.addSubview(beomeo)
-        
         
         /*=======================
              버튼 기능 연결
@@ -398,14 +351,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         kyungDeaHosp.tag = 1
         daeguBank.tag = 2
-        beomeo.tag = 3
-    
-        
+        beomeo.tag = 3    
     }
-
-        
-
-
 ```
 
 ---
@@ -428,36 +375,28 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 
 ```swift
-
-/*=======================
+    /*=======================
             역 버튼 기능
      ========================*/
-    @objc func btnAction(_ sender: UIButton) {
-        
+    @objc func btnAction(_ sender: UIButton) {    
         clickBtn += 1
-
+        
         /*=======================
              출발역에 대한 조건 설정
          ========================*/
-        if clickBtn == 1 {
-            
+        if clickBtn == 1 {    
             /*=======================
                     출발역 알럿
              ========================*/
             let popAlert: UIAlertController = UIAlertController(title: "출발 역 은", message: "\(sender.titleLabel!.text!) 입니다", preferredStyle: .alert)
-            
             /*=======================
                  OK 누르면 출발역 설정
              ========================*/
             let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                
                 // 전역 변수에 출발역 설정
                 self.startStation = sender.titleLabel!.text!
                 self.getStartStionTag = sender.tag
-                
                 print("출발역은 \(sender.titleLabel!.text!)")
-            
-                
             })
             
             /*=======================
@@ -467,7 +406,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 self.clickBtn = 0
                 self.startStation = ""
                 self.getStartStionTag = 0
-                
             })
             
             /*=======================
@@ -479,9 +417,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             /*=======================
               alert 을 뷰에 뿌려줌
              ========================*/
-            
             self.present(popAlert, animated: true, completion: nil)
-            
             
             /*=======================
                도착역 설정 구간, 여기가 핵심(출발역 -> 도착역 알고리즘 적용)
@@ -494,12 +430,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
              ========================*/
             let popAlert: UIAlertController = UIAlertController(title: "도착 역 은", message: "\(sender.titleLabel!.text!) 입니다", preferredStyle: .alert)
             
-            
             /*=======================
            도착역 OK 버튼 누르면 예상 시간 반환
              ========================*/
-            let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                
+            let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in    
                 // 도착역 전역변수에 지정
                 self.arrivalStation = sender.titleLabel!.text!
                 print("출발역은 \(self.checkLine(self.startStation)), 도착역은 \(self.checkLine(self.arrivalStation)) " )
@@ -508,30 +442,24 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                  예외처리-1 : 출발역이 반월당인 경우
                  ========================*/
                 if self.startStation == "반월당" {
-                    
-                    
+                
                     /*=======================
                      예외처리-1 알럿
                      ========================*/
-                    var popAlert: UIAlertController = UIAlertController(title: "총 \(sender.tag*3) 분 소요 됩니다", message:"" , preferredStyle: .alert)
-                    
-                    let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                        
+                    var popAlert: UIAlertController = UIAlertController(title: "총 \(sender.tag*3) 분 소요 됩니다", message:"" , preferredStyle: .alert)    
+                    let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in 
                         // 모두 리셋
                         self.startStation = ""
                         self.arrivalStation = ""
                         self.clickBtn = 0
                         self.getStartStionTag = 0
-                        
                     })
 
-                    
                     /*=======================
                      예외처리-1 알럿 출력
                      ========================*/
                     popAlert.addAction(okAlertAction)
-                    self.present(popAlert, animated: true, completion: nil)
-                    
+                    self.present(popAlert, animated: true, completion: nil)                    
                     /*=======================
                      예외처리-2 출발역 1호선 -> 도착역 1호선
                      ========================*/
@@ -542,24 +470,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                     /*=======================
                      예외처리-2 환승역 이전에 출발->도착
                      ========================*/
-                    if section1.contains(self.startStation) && section1.contains(self.arrivalStation) {
-                        
-                        
+                    if section1.contains(self.startStation) && section1.contains(self.arrivalStation) {                        
                         var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag-sender.tag))*3) 분 소요 됩니다", message:"" , preferredStyle: .alert)
-                        
-                        
                         let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                            
                             // 모두 리셋
                             self.startStation = ""
                             self.arrivalStation = ""
                             self.clickBtn = 0
                             self.getStartStionTag = 0
-                            
                         })
-                        
-                        
-                        
                         popAlert.addAction(okAlertAction)
                         self.present(popAlert, animated: true, completion: nil)
                         
@@ -567,61 +486,38 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                          예외처리-2 환승역 이후에 출발->도착
                          ========================*/
                     }else if section2.contains(self.startStation) && section2.contains(self.arrivalStation) {
-                        
-                        
                         var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag-sender.tag))*3) 분 소요 됩니다", message:"" , preferredStyle: .alert)
-                        
-                        
                         let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                            
-                            
                             self.startStation = ""
                             self.arrivalStation = ""
                             self.clickBtn = 0
                             self.getStartStionTag = 0
-                            
                         })
-                        
-                        
-                        
                         popAlert.addAction(okAlertAction)
                         self.present(popAlert, animated: true, completion: nil)
-                       
+                        
                         /*=======================
                          일반적인 경우 1호선 -> 1호선(환승역 넘어선 경우)
                          ========================*/
                     }else {
-                        
                         // 1. UIAlertController 설정
                         var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag+sender.tag))*3) 분 소요 됩니다", message: "", preferredStyle: .alert)
                         
-                        // 2. UIAlertAction 설정
-                        
-                        let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                            
+                        // 2. UIAlertAction 설정 
+                        let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in    
                             // 모두 리셋
                             self.startStation = ""
                             self.arrivalStation = ""
                             self.clickBtn = 0
                             self.getStartStionTag = 0
-                            
-                            
-                            
                         })
-
-                        
-                        
                         popAlert.addAction(okAlertAction)
                         self.present(popAlert, animated: true, completion: nil)
-
-                        
                     }
-                 
-                    
+                        
                     /*=======================
                      예외처리-3 2호선 -> 2호선
                      ========================*/
-                    
                 }else if self.checkLine(self.startStation) == 2 && self.checkLine(self.arrivalStation) == 2   {
                     var section1 = ["내당", "반고개", "신남"]
                     var section2 = ["경대병원", "대구은행", "범어"]
@@ -630,22 +526,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                      예외처리-3 환승역 이전에 출발->도착
                      ========================*/
                     if section1.contains(self.startStation) && section1.contains(self.arrivalStation) {
-                        
-                        
                         var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag-sender.tag))*3) 분 소요 됩니다", message:"" , preferredStyle: .alert)
-                        
-                        
                         let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                            
                             // 모두 리셋
                             self.startStation = ""
                             self.arrivalStation = ""
                             self.clickBtn = 0
                             self.getStartStionTag = 0
-                            
                         })
-                        
-                        
                         
                         popAlert.addAction(okAlertAction)
                         self.present(popAlert, animated: true, completion: nil)
@@ -654,22 +542,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                          예외처리-3 환승역 이후에 출발->도착
                          ========================*/
                     }else if section2.contains(self.startStation) && section2.contains(self.arrivalStation) {
-                        
-                        
                         var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag-sender.tag))*3) 분 소요 됩니다", message:"" , preferredStyle: .alert)
-                        
-                        
                         let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                            
-                            
                             self.startStation = ""
                             self.arrivalStation = ""
                             self.clickBtn = 0
                             self.getStartStionTag = 0
-                            
                         })
-                        
-                        
                         
                         popAlert.addAction(okAlertAction)
                         self.present(popAlert, animated: true, completion: nil)
@@ -678,138 +557,81 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                          일반적인 경우 2호선 -> 2호선(환승역 넘어선 경우)
                          ========================*/
                     }else {
-                        
                         // 1. UIAlertController 설정
                         var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag+sender.tag))*3) 분 소요 됩니다", message: "", preferredStyle: .alert)
-                        
-                        // 2. UIAlertAction 설정
-                        
+                        // 2. UIAlertAction 설정 
                         let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                            
                             // 모두 리셋
                             self.startStation = ""
                             self.arrivalStation = ""
                             self.clickBtn = 0
                             self.getStartStionTag = 0
-                            
-                            
-                            
                         })
-                        
-                        
-                        
                         popAlert.addAction(okAlertAction)
                         self.present(popAlert, animated: true, completion: nil)
-                        
-                        
                     }
-                    
-                    
+                        
             /*=======================
              1호선 -> 2호선
              ========================*/
                 }else if self.checkLine(self.startStation) == 1 && self.checkLine(self.arrivalStation) == 2 {
                     var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag+sender.tag))*3) 분 소요 됩니다", message: "", preferredStyle: .alert)
-                    
                     // 2. UIAlertAction 설정
-                    
                     let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                        
                         // 모두 리셋
                         self.startStation = ""
                         self.arrivalStation = ""
                         self.clickBtn = 0
-                        self.getStartStionTag = 0
-                        
-                        
-                        
+                        self.getStartStionTag = 0                        
                     })
-                    
                     popAlert.addAction(okAlertAction)
                     self.present(popAlert, animated: true, completion: nil)
                     
-                    
-
                 /*=======================
                  2호선 -> 1호선
                  ========================*/
-
                 }else if self.checkLine(self.startStation) == 2 && self.checkLine(self.arrivalStation) == 1 {
                     var popAlert: UIAlertController = UIAlertController(title: "총 \(abs((self.getStartStionTag+sender.tag))*3) 분 소요 됩니다", message: "", preferredStyle: .alert)
-                    
                     // 2. UIAlertAction 설정
-                    
                     let okAlertAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                        
                         // 모두 리셋
                         self.startStation = ""
                         self.arrivalStation = ""
                         self.clickBtn = 0
-                        self.getStartStionTag = 0
-                        
-                        
-                        
+                        self.getStartStionTag = 0                        
                     })
-                    
                     popAlert.addAction(okAlertAction)
                     self.present(popAlert, animated: true, completion: nil)
                 }
-                    
-
-               
-                
-                
-                
             })
             ///////////////////////위까지 okAlert 범위
-            
             // 도착역 재설정
             let cancelAlertAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .default, handler: { (alert) in
                 self.clickBtn = 1
                 self.arrivalStation = ""
                 
-            })
-            
+            })            
             // 출발역  재설정
             let resetStartStation: UIAlertAction = UIAlertAction(title: "ResetStatstation", style: .default, handler: { (alert) in
                 self.clickBtn = 0
                 self.startStation = ""
                 print("출발역이 리셋되었습니다. 현재 출발역은 \(self.startStation)")
-                
             })
-            
-            
             // 3. 알럿액션을 알럿 컨트롤러에 연결
             popAlert.addAction(okAlertAction)
             popAlert.addAction(cancelAlertAction)
             popAlert.addAction(resetStartStation)
-            
-            // 4. 알럿 뿌려주기
-            
+            // 4. 알럿 뿌려주기            
             self.present(popAlert, animated: true, completion: nil)
-            
-            
-            //clickBtn = 1
-            
         }
-        
-        
-        
-        
-        
-        
-        
     }
     
     /*=======================
     선택한 역이 몇 호선인지 반환 해줍니다
     ========================*/
-    
     func checkLine(_ sender: String) -> Int {
-        
         let line1 = ["영대병원", "교대", "명덕", "반월당", "중앙로", "대구역", "칠성시장"]
         let line2 = ["내당", "반고개", "신남", "반월당", "경대병원", "대구은행", "범어"]
-        
         if line1.contains(sender) {
             return 1
         }else if line2.contains(sender) {
@@ -817,8 +639,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         return 0
     }
-
-
 ```
 
 기본적으로 알럿을 사용하니까, 알럿 사용하기위해서 작성해야하는 코드를 작성해야 하니까, 코드가 조금씩 길어졌습니다. 알럿이 아니라, 나중에는 view를 불러오는 방식으로 반복적으로 처리하면 코드를 줄일수 있을것 같습니다. 
