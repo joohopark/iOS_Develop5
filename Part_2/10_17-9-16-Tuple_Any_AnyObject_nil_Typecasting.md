@@ -1,6 +1,6 @@
 # 17.9.15(금)
 ---
-## Tuple, Any, Nill, Type casting, Access Control(접근제어),Optionals, Modules and Sourece Files(모듈과, 소스 파일)
+## Tuple, Any, Nill, Type casting, Access Control(접근제어),Optionals, Modules and Sourece Files(모듈과, 소스 파일) 
 
 ---
 
