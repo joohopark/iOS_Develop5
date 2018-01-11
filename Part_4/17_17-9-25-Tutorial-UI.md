@@ -3,7 +3,7 @@
 ---
 
 ## UI Base, Resolutions, UIView, UILabel
-
+ 
 - Resolutions <br>
 	- Pixel : 실제 이미지 사이즈
 	- Point : 화면에 표시되는 사이즈 
