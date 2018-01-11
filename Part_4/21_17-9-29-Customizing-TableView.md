@@ -3,7 +3,7 @@
 ---
 
 ## UITableView Customizing 하기
-
+ 
 - UITableView 생성하기 위한 log
 	1. UITableView 구조를 알아보자!
 		- Section : TableView의 category 를 나누는 역활(?)을 해준다고 생각해보자.
