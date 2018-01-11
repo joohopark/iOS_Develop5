@@ -27,7 +27,7 @@
 > 9. [지하철 노선도 만들기(초보편) ver.0](/Mini_Projects/CreatSubway.md)
 > 10. [지하철 노선도 만들기(초보편) ver.1](https://devminjun.github.io/blog/CreatSubway-ver1)
 > 11. [지하철 노선도 만들기(초보편) ver.2](https://devminjun.github.io/blog/CreatSubway-ver2) 
-> 12. [카카오톡 Chat UI 만들기](/AutoLayOut/Study/17-11-19-kakaotalk.md)
+> 12. [카카오톡 Chat UI 만들기](/AutoLayout/Study/17-11-19-kakaotalk.md)
 > 13. [Instagram 만들기, firebaseAuth](/Part__11/51_17-11-20-make-instagram-firebase-Auth.md)
 >  
 
@@ -68,7 +68,7 @@
 > 1. [UIVIewController, Segue(간단한 화면전환)](/Part_5/22_17-10-10-UIviewController-Segue.md)
 > 2. [UINavigationController](/Part_5/23_17-10-11-UINavigationController.md)
 > 3. [Protocol, Delegate](/Part_5/24_17-10-12-Protocol-Delegate.md)
-> 4. [AutoLayOut, StackView](/Part_5/25_17-10-13-AutoLayout-StackView.md)
+> 4. [AutoLayout, StackView](/Part_5/25_17-10-13-AutoLayout-StackView.md)
 
 
 ### *  **Part 6(Initialzation, 값 타입 vs 참조 타입, Data Model, <br> 	Bundle, Plist, Singletone Pattern, tableView Cell Reusable, prepare)** 
@@ -123,9 +123,9 @@ UISearchController, CAGradientLayer )**
 ---
 
 
-### *  **AutolayOut** 
+### *  **Autolayout** 
 
-> 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, <br> Content Compression resistance Priority, Image resolution, margin](/AutoLayout/Study/17-11-5-firstLecture.md)
+> 1. [Autolayout, Constraints, Constraints Multiplier, Hugging-Priority, <br> Content Compression resistance Priority, Image resolution, margin](/AutoLayout/Study/17-11-5-firstLecture.md)
 > 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, <br> popup View, TableView-Expand, TableView-Dynamic-Cell](/AutoLayout/Study/17-11-8-secondLecture.md)
 > 3. [카카오톡UI chat UI 만들기](/IOS-AutoLayout/Study/17-11-19-kakaotalk.md)
 
