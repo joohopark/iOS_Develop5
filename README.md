@@ -94,9 +94,9 @@
 
 ### *  **Part 8(AVAudioPlayer, UICollectionView, UIGestureRecognizer, <br> ARC, Map, Filter, Reduce)** 
 
-> 1. [AVAudioPlayer, UIGestureRecognizer](/study/39_17-10-30-AVAudioPlayer-UICollectionView-UIGestureRecognizer.md)
-> 2. [ARC](/study/40_17-10-31-ARC.md)
-> 3. [Closure, Map, Filter, Reduce](/study/41_17-11-1-Closure-Delegate.md) 
+> 1. [AVAudioPlayer, UIGestureRecognizer](/Part_8/39_17-10-30-AVAudioPlayer-UICollectionView-UIGestureRecognizer.md)
+> 2. [ARC](/Part_8/40_17-10-31-ARC.md)
+> 3. [Closure, Map, Filter, Reduce](/Part_8/41_17-11-1-Closure-Delegate.md) 
 
 ### * **Part 9(Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue, <br> Semaphore, DeviceTest, MapKit, 위젯, SerachBarController, <br> 
 UISearchController, CAGradientLayer )** 
