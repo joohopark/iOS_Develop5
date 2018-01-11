@@ -2,7 +2,7 @@
 
 ---
 ## IOS application life cycle, MVC(Model View Controller)
-
+ 
 ---
 
 ## Application Life Cycle 
