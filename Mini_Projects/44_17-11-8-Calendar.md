@@ -4,7 +4,7 @@
 
 ## 달력 만들기
 
-#### [프로젝트의 위치는 이곳입니다](/Project/17-11-8-Calendar)
+#### [프로젝트의 위치는 이곳입니다](/Mini_Projects/Projexts_Xcode/17-11-8-Calendar)
 
 ---
 
@@ -28,24 +28,18 @@
 ![screen](/study/image/Calendar-1.jpg) <br>
 
 ```swift
-
 ** MJCalendar 부분
-
 class MJCalendar: UIView {
-
-
 	private let cellIdentifie = "Cell"
-
-
+	
 	//초기화 하기위한 init method 3개 생성(각각 용도에 맞게 사용하자)
 		override init(frame: CGRect) {
         super.init(frame: frame)
      	   setUpUI()
      	   updateLayout()
-        
 	    }
-    override func awakeFromNib() {
-    
+	    
+    override func awakeFromNib() { 
         setUpUI()
         updateLayout()
     }
@@ -55,15 +49,13 @@ class MJCalendar: UIView {
     }
     
     //collectionView의 속성을 closure 로 정의
-    private var contentsView: UICollectionView = {
-        
+    private var contentsView: UICollectionView = { 
         // 컬렉션뷰는 만들기 위해서 Layout을 적용해주어야함.
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), collectionViewLayout: layout)
-        // collectionView 속성 추가 기능
         
+        // collectionView 속성 추가 기능
         collectionView.backgroundColor = .clear
         collectionView.alpha = 1
         return collectionView
@@ -75,26 +67,19 @@ class MJCalendar: UIView {
         self.addSubview(contentsView)
         contentsView.delegate = self
         contentsView.dataSource = self
-        
-        
         contentsView.register(CustomCell.self, forCellWithReuseIdentifier:cellIdentifie)
     }
     
     private func updateLayout() {
         self.contentsView.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0)
     }
-
-
 }
 
 
 // 오토레이아웃 확장
 extension UIView {
-    
     func constraint(targetView:UIView, topConstant:CGFloat?, bottomConstant:CGFloat?, leftConstant:CGFloat?, rightConstant:CGFloat?) {
-        
         self.translatesAutoresizingMaskIntoConstraints = false
-        
         if let constant = topConstant {
             self.topAnchor.constraint(equalTo: targetView.topAnchor, constant: constant).isActive = true
         }
@@ -107,34 +92,25 @@ extension UIView {
         if let constant = rightConstant {
             self.rightAnchor.constraint(equalTo: targetView.rightAnchor, constant: constant).isActive = true
         }
-        
-    }
-    
+    }    
 }
 
 
 extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
     // 각 색션의 item 개수 정의
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
   return 10        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifie, for: indexPath) as! CustomCell
-        
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifie, for: indexPath) as! CustomCell        
         return cell
-        
         }   
 }
-
 ```
 
 --- 
@@ -142,8 +118,7 @@ extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICo
 ## CustomCell 정의
 
 ```swift
-class CustomCell: UICollectionViewCell {
-    
+class CustomCell: UICollectionViewCell {   
     // 연산프로퍼티로 사용하면, 외부에서 호출 해야함, closure로 사용하는 이유는 내부에서 사용하기 위해서임.
     var titleLB: UILabel = {
         let lb = UILabel()
@@ -153,8 +128,6 @@ class CustomCell: UICollectionViewCell {
         return lb
     }()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpUI()
@@ -162,19 +135,17 @@ class CustomCell: UICollectionViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        
+        super.init(coder: aDecoder)    
     }
+    
     private func setUpUI() {
-        self.addSubview(titleLB)
-        
+        self.addSubview(titleLB)    
     }
+    
     private func updateLayout() {
         titleLB.constraint(targetView: self, topConstant: 0, bottomConstant: 0, leftConstant: 0, rightConstant: 0)
     }
 }
-
 ```
 
 ---
@@ -185,20 +156,9 @@ class CustomCell: UICollectionViewCell {
 그리고 month 에 맞추어서 day를 각 cell에 뿌려줍니다. 그러기위해서 조금의 수학 연산이필요합니다
 
 ```swift
-
-//
-//  MJCalendarDataCenter.swift
-//  17-11-8-Calendar
-//
-//  Created by MIN JUN JU on 2017. 11. 8..
-//  Copyright © 2017년 MIN JUN JU. All rights reserved.
-//
 import Foundation
-
-
 enum WeekDay: Int {
-    case Sun=0, Mon, Tue, Wed, Thu, Fri, Sat
-    
+    case Sun=0, Mon, Tue, Wed, Thu, Fri, Sat    
     // WeekDay 의 해당 스트링값을 뱉러내기 위해서..
     var name: String {
         switch self {
@@ -221,50 +181,37 @@ enum WeekDay: Int {
 }
 
 struct MJcalendarDataModel {
-    
     var year: Int
     var month: Int
     var day: Int
-    
     // starWeekOfMonth 가 enum을 받음
     var startWeekOfMonth: WeekDay
     var lastDayOfMonth: Int
     
     init?(date: Date) {
-        
         // Calendar 셋팅
         // calendar를 통해서 -> componets에 값을 넣고, year, month 를 가지고 있음
-        let calendarIns = Calendar(identifier: .gregorian)
-        
+        let calendarIns = Calendar(identifier: .gregorian)    
         var components = calendarIns.dateComponents([.year, .month, .day], from: date)
-        
         year = components.year ?? 0
-        month = components.month ?? 0
-        
+        month = components.month ?? 0   
         day = components.day ?? 0
         // 첫째 주 의, 요일을 뽑아오기 위해서 그 달의 첫번째 날ㅇ
         components.day = 1
-        
-        
         //각 년월의 1일은 date -> 1부터 시작함. 1은 일요일.
         guard let firstDayDate = calendarIns.date(from: components) else { return nil }
-        
         // weekday가 요일을 숫자로 바꾸어 준다.
         var weekDayCompo = calendarIns.dateComponents([.weekday], from: firstDayDate)
-        startWeekOfMonth = WeekDay.init(rawValue: weekDayCompo.weekday! - 1)!
-        
+        startWeekOfMonth = WeekDay.init(rawValue: weekDayCompo.weekday! - 1)!   
         var addComponets = DateComponents()
         addComponets.month = 1
         addComponets.day = -1
-        
         guard let lastDayDate = calendarIns.date(byAdding: addComponets, to: firstDayDate) else { return nil }
         lastDayOfMonth = calendarIns.dateComponents([.day], from: lastDayDate).day ?? 1
-        
     }
 }
-
-
 ```
+
 > Enum 을 통해서, 요일 타입을 정의하고, `MJcalendarDataModel`을 통해서 각 month 와 day 정보들을 가져옵니다.
 
 ---
@@ -272,12 +219,9 @@ struct MJcalendarDataModel {
 ## DateModel 을 통한 값을 CollectionView에 뿌려줍니다.
 
 ```swift
-
 class MJCalendar: UIView {
-
 	  var year: Int?
     var month: Int?
-    
     //Date 값을 옵져빙으로 가져옴
     // ViewController 에서 date 에 Date() 값을 넣으면, date의 변한값으로 year,month, 값을 넣어주고 contentsView를 reload후, 데이터를 뿌려줍니다.
     var date: Date? {
@@ -288,26 +232,21 @@ class MJCalendar: UIView {
             contentsView.reloadData()
         }
     }
-    
     private var calendarData: MJcalendarDataModel?
 }
-
 ```
 ---
 
 ## Cell, itemSize 를 정의합니다.
 
 ```swift
-
 extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
     // 각 색션의 item 개수 정의
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {    
         if section == 0 {
             return 7
         }else {
@@ -318,34 +257,28 @@ extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICo
                 return 0
             }
         }
-       
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifie, for: indexPath) as! CustomCell
-        
-        
         if indexPath.section == 0 {
             //WeekDay의 rawValue 이용했음.
             cell.titleLB.text = WeekDay(rawValue: indexPath.row)?.name
-            
         }else {
             // 시작 cell의 위치를 잡기위해서 계산해주는식.
             // 각달의 1일의 요일을 숫자로 변경한후, 그값을 indexPath.item에서 빼주게되었을때 '0' 이 되는 곳을 시작점으로 줄수있다.
             let changedIndex = indexPath.item - calendarData!.startWeekOfMonth.rawValue
             if changedIndex >= 0 {
                 let day = changedIndex + 1
-                
                 cell.titleLB.text = "\(day)"
                 cell.titleLB.textColor = .black
             }
         }
         return cell
     }
+    
     // MARK: Modified Size
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {    
         if indexPath.section == 0 {
             return CGSize(width: collectionView.bounds.size.width/7, height: collectionView.bounds.size.height/6)
         }else {
@@ -361,10 +294,7 @@ extension MJCalendar: UICollectionViewDataSource, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
 }
-
-
 ```
 
 > 주의 사항으로는 CollectionView는 기본적으로, item, lineSpacing 이 10 정도 먹여져(?) 있습니다. 그래서 CollectionView의 Cell size를 생각할때, item, lineSpacing을 함께 고려해서 생각 해주어야 합니다.
@@ -387,7 +317,6 @@ ViewController 에서 Next, Previous 버튼을 누르게 되면
 계층 구조로 데이터를 부르고 CollectionView를 `reload()` 합니다.
 
 ```swift
-
 ** ViewController 부분 
 @IBAction func previousAction(_ sender: UIButton) {
         mjcalendear.updatePrevious()
@@ -401,34 +330,25 @@ ViewController 에서 Next, Previous 버튼을 누르게 되면
         if let monthText = mjcalendear.month {
             monthLB.text = "\(monthText) 월"
         }
-        
-        
     }
-
+    
 ** MJCalendar(UIVIew) 부분
-
 func updateNextMonth() {
         date = MJcalendarMager.nextMonth(with: calendarData!)
     }
     
     func updatePrevious() {
         date = MJcalendarMager.previousMonth(with: calendarData!)
-        
     }
     
 ** MJcalendarMager 부분 
-
 class MJcalendarMager {
-    
     class func nextMonth(with dateModel: MJcalendarDataModel) -> Date {
-        
         let calendarIns = Calendar(identifier: .gregorian)
-        
         var newComponets = DateComponents()
         newComponets.year = dateModel.year
         newComponets.month = dateModel.month + 1
         newComponets.day = dateModel.day
-        
         if let nextDate = calendarIns.date(from: newComponets) {
             return nextDate
         }else {
@@ -438,29 +358,19 @@ class MJcalendarMager {
     
     class func previousMonth(with nowDate: MJcalendarDataModel) -> Date? {
         print(nowDate)
-        
         let calendarIns = Calendar(identifier: .gregorian)
-        
         var newComponets = DateComponents()
-        
         newComponets.year = nowDate.year
         newComponets.month = nowDate.month - 1
         newComponets.day = nowDate.day
         print(newComponets.year, newComponets.month, newComponets.day)
-        
         if let nextDate = calendarIns.date(from: newComponets) {
             return nextDate
         }else {
             return Date()
         }
-        
-        
     }
-    
-    
-    
 }
-
 ```
 
 > 확장 & 고려 해야하는 부분은, 각 cell을 선택하고 어떤 Action을 주어야 할때, Cell 이 재사용 되는것을 어떻게 해결할것인지에 대한 문제랑, 다른 month 를 갔다가, 다시 돌아왔을때, 내가 표시해둔 어떤 정보를 그대로 가져오는 방법에 대해서 고민 해야할것 같습니다. 
