@@ -117,21 +117,20 @@ UISearchController, CAGradientLayer )**
 
 ### * **Part 11(Instagram 만들기, Firebase-CoreData)** 
 
-> 1. [Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
-> 2. [Firebase-CoreData, ObserveSingerEvent](/study/52_17-11-26-mak-instagram-firebase-CoreData.md)
-
+> 1. [Instagram 만들기, firebaseAuth](/Part_11/51_17-11-20-make-instagram-firebase-Auth.md)
+> 2. [Firebase-CoreData, ObserveSingerEvent](/Part_11/52_17-11-26-mak-instagram-firebase-CoreData.md)
 
 ---
 
 
 ### *  **AutolayOut** 
 
-> 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, <br> Content Compression resistance Priority, Image resolution, margin](/IOS-AutoLayOut/AutolayOut-Study/17-11-5-firstLecture.md)
-> 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, <br> popup View, TableView-Expand, TableView-Dynamic-Cell](/IOS-AutoLayOut/AutolayOut-Study/17-11-8-secondLecture.md)
-> 3. [카카오톡UI chat UI 만들기](/IOS-AutoLayOut/AutolayOut-Study/17-11-19-kakaotalk.md)
+> 1. [AutolayOut, Constraints, Constraints Multiplier, Hugging-Priority, <br> Content Compression resistance Priority, Image resolution, margin](/AutoLayOut/Study/17-11-5-firstLecture.md)
+> 2. [StackView, Rotate, Dynamic_Text, Graph_AutoLayout_Code, AutoLayout_Animate, <br> popup View, TableView-Expand, TableView-Dynamic-Cell](/AutoLayOut/Study/17-11-8-secondLecture.md)
+> 3. [카카오톡UI chat UI 만들기](/IOS-AutoLayOut/Study/17-11-19-kakaotalk.md)
 
 
-### *  **Github 으로 협업하기 & firebase 사용하기** 
+### *  **Git 으로 협업하기** 
 
 > 1. [Git 을 이용한 협업 WorkFlow](/study/0_17-10-28-github-recture.md)
 > 
