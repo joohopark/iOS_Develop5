@@ -193,11 +193,3 @@ class ViewController: UIViewController {
 ![screen](/study/image/baseBallGame.png)
 
 </p>
-
-
-
-
-
-
-
-
