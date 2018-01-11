@@ -1,7 +1,7 @@
 # 26_17-10-16
 
 ---
-
+ 
 ## Class, Struct, Initialization, Setting a Default Property Value with a Closure or Function
 
 ---
