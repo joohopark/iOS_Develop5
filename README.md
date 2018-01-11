@@ -57,29 +57,29 @@
 
 ### *  **Part 4(UI View, Label, Base, Resolutions, Hierarchy, User Defaults, Alert, UITableView)** 
 
-> 1. [UI 를 코드로 만들어보기!, UI Base, Resolutions, UIView, UILabel](/study/17_17-9-25.md)
-> 2. [UIButton, UITextField, UITextFieldDelegate](/study/18_17-9-26.md)
-> 3. [UI Class Hierarchy, UIScrollView, UserDeFaults](/study/20_17-9-28.md)
-> 4. [alert](/study/20-1_17-9-28.md)
-> 5. [UITableView Customizing 하기](/study/21_17-9-29.md)
+> 1. [UI 를 코드로 만들어보기!, UI Base, Resolutions, UIView, UILabel](/Part_4/17_17-9-25-Tutorial-UI.md)
+> 2. [UIButton, UITextField, UITextFieldDelegate](/Part_4/18_17-9-26-UIButton-UITextField.md)
+> 3. [UI Class Hierarchy, UIScrollView, UserDeFaults](/Part_4/20_17-9-28-UIScrollView-UserDefaults.md)
+> 4. [AlertController](/Part_4/20-1_17-9-28-AlertController.md)
+> 5. [UITableView Customizing 하기](/Part_4/21_17-9-29-Customizing-TableView.md)
  
 ### *  **Part 5(UIViewController, Segue, UINavigationController, <br>	 Protocol, Delegate, AutoLayout, StackView)** 
 
-> 1. [UIVIewController, Segue(간단한 화면전환)](/study/22_17-10-10.md)
-> 2. [UINavigationController](/study/23_17-10-11.md)
-> 3. [Protocol, Delegate](/study/24_17-10-12.md)
-> 4. [AutoLayOut, StackView](/study/25_17-10-13-AutoLayout.md)
+> 1. [UIVIewController, Segue(간단한 화면전환)](/Part_5/22_17-10-10-UIviewController-Segue.md)
+> 2. [UINavigationController](/Part_5/23_17-10-11-UINavigationController.md)
+> 3. [Protocol, Delegate](/Part_5/24_17-10-12-Protocol-Delegate.md)
+> 4. [AutoLayOut, StackView](/Part_5/25_17-10-13-AutoLayout-StackView.md)
 
 
 ### *  **Part 6(Initialzation, 값 타입 vs 참조 타입, Data Model, <br> 	Bundle, Plist, Singletone Pattern, tableView Cell Reusable, prepare)** 
 
-> 1. [Class, Struct, Initialization, <br> Setting a Default Property Value with a Closure or Function](/study/26_17-10-16-Class-Struct.md)
-> 2. [값 타입 VS 참조 타입 ](/study/27_17-10-16-Class-Struct.md)
-> 3. [Data Model](/study/28_17-10-17-Data-Modeling.md)
-> 4. [Bundle, Plist, Singleton Pattern](/study/29_17-10-18-Bundle-Plist-Singletone-Pattern.md)
-> 5. [PsyTest App 만들기(DataModle, Plist, Singleton 연습)](/study/30_17-10-18-PsyTest.md)
-> 6. [Bundle, Plist, Singleton 연습하기!](/study/31_17-10-19-prectice-Bundle-Plist-Singleton.md)
-> 7. [tableView Cell Reusable, prepare](/study/32_17-10-20-tableView.md)
+> 1. [Class, Struct, Initialization, <br> Setting a Default Property Value with a Closure or Function](/Part_6/26_17-10-16-Class-Struct.md)
+> 2. [값 타입 VS 참조 타입 ](/Part_6/27_17-10-16-Class-Struct.md)
+> 3. [Data Model](/Part_6/28_17-10-17-Data-Modeling.md)
+> 4. [Bundle, Plist, Singleton Pattern](/Part_6/29_17-10-18-Bundle-Plist-Singletone-Pattern.md)
+> 5. [PsyTest App 만들기(DataModle, Plist, Singleton 연습)](/Part_6/30_17-10-18-PsyTest.md)
+> 6. [Bundle, Plist, Singleton 연습하기!](/Part_6/31_17-10-19-prectice-Bundle-Plist-Singleton.md)
+> 7. [tableView Cell Reusable, prepare](/Part_6/32_17-10-20-tableView.md)
 
 
 
