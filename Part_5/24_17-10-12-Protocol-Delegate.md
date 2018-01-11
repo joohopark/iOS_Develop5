@@ -3,7 +3,7 @@
 
 ## Protocol, Delegate Pattern
 
----
+--- 
 ## Protocol 
 
 protocol : 일종의 통신규약 처럼 체택 하면 어떤 Protocol 을 체텍한다는것은, 해당 Protocol 이 정의해놓은 무언가를 따르겠다는 약속(?) 체결이 된다.
