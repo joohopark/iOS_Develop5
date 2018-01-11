@@ -85,11 +85,11 @@
 
 ### *  **Part 7(Do-Try-catch, NavigationViewController, Notification, Subscript,<br>	 Extensions, Generic, UITextFieldDelegate, UIImagePickerController, <br>	 UICollectionView, UICollectionViewDelegate, UICollectionViewFlowLayout, TapBarController)** 
 
-> 1. [예외처리, Do-Try-catch 문, NavigationViewController](/study/34_17-10-23-all-review.md)
-> 2. [MiniProject-Creat-LoginPage, Notification](/study/35_17-10-24-Combine-Project.md)
-> 3. [Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController](/study/36_17-10-25-Subscript-Extensions-Generic-UITextFieldDelegate-UIImagePickerController.md)
-> 4. [UICollectionView, UICollectionViewDelegate, TapBarController](/study/37_17-10-26-musicfile.md)
-> 5. [UICollectionView, UICollectionViewFlowLayout](/study/38_17-10-27-CollectionView-gesture.md)
+> 1. [예외처리, Do-Try-catch 문, NavigationController](/Part_7/34_17-10-23-Do_Try_Catch-NavigationController.md)
+> 2. [MiniProject-Creat-LoginPage, Notification](/Part_7/35_17-10-24-Login-MiniProject.md)
+> 3. [Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController](/Part_7/36_17-10-25-Subscript-Extensions-Generic-UITextFieldDelegate-UIImagePickerController.md)
+> 4. [UICollectionView, UICollectionViewDelegate, TapBarController](/Part_7/37_17-10-26-musicfile-FlowLayout.md)
+> 5. [UICollectionView, UICollectionViewFlowLayout](/Part_7/38_17-10-27-CollectionView-Gesture.md)
 > 
 
 ### *  **Part 8(AVAudioPlayer, UICollectionView, UIGestureRecognizer, <br> ARC, Map, Filter, Reduce)** 
