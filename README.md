@@ -109,16 +109,16 @@ UISearchController, CAGradientLayer )**
 
 ### * **Part 10(IOS Network, OpenWeather API, PushNotification)** 
 
-> 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/Part_10/47_17-11-14-Network.md)
-> 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/Part_10/48_17-11-16-IOSNetwork.md)
-> 4. [IOS Network 실습](Part_10/50_17-11-17-network-day3.md)
-> 5. [Push Notification](/Part_10/0_Push_Notification.md)
+> 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/Part__10/47_17-11-14-Network.md)
+> 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/Part__10/48_17-11-16-IOSNetwork.md)
+> 4. [IOS Network 실습](Part__10/50_17-11-17-network-day3.md)
+> 5. [Push Notification](/Part__10/0_Push_Notification.md)
 
 
 ### * **Part 11(Instagram 만들기, Firebase-CoreData)** 
 
-> 1. [Instagram 만들기, firebaseAuth](/Part_11/51_17-11-20-make-instagram-firebase-Auth.md)
-> 2. [Firebase-CoreData, ObserveSingerEvent](/Part_11/52_17-11-26-mak-instagram-firebase-CoreData.md)
+> 1. [Instagram 만들기, firebaseAuth](/Part__11/51_17-11-20-make-instagram-firebase-Auth.md)
+> 2. [Firebase-CoreData, ObserveSingerEvent](/Part__11/52_17-11-26-mak-instagram-firebase-CoreData.md)
 
 ---
 
