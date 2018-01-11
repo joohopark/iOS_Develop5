@@ -107,25 +107,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
          각 버튼 위치
          ========================*/
         
-        yeungNamHosp = UIButton(frame: CGRect(x: 465, y: 430, width: 20, height: 20))
-        univOfEduc = UIButton(frame: CGRect(x: 486, y: 410, width: 20, height: 20))
-        myeongDeok = UIButton(frame: CGRect(x: 515, y: 380, width: 20, height: 20))
+        yeungNamHosp.frame = CGRect(x: 465, y: 430, width: 20, height: 20)
+        univOfEduc.frame = CGRect(x: 486, y: 410, width: 20, height: 20)
+        myeongDeok.frame = CGRect(x: 515, y: 380, width: 20, height: 20)
         
         // 환승역
-        banWorlDang = UIButton(frame: CGRect(x: 575, y: 320, width: 20, height: 20))
+        banWorlDang.frame = CGRect(x: 575, y: 320, width: 20, height: 20)
         
-        jungangno = UIButton(frame: CGRect(x: 610, y: 290, width: 20, height: 20))
-        daeguStation = UIButton(frame: CGRect(x: 640, y: 265, width: 20, height: 20))
-        chilseongMarket = UIButton(frame: CGRect(x: 690, y: 265, width: 20, height: 20))
+        jungangno.frame = CGRect(x: 610, y: 290, width: 20, height: 20)
+        daeguStation.frame = CGRect(x: 640, y: 265, width: 20, height: 20)
+        chilseongMarket.frame = CGRect(x: 690, y: 265, width: 20, height: 20)
         
         // 2호선
-        neaDang = UIButton(frame: CGRect(x: 430, y: 320, width: 20, height: 20))
-        bangogae = UIButton(frame: CGRect(x: 475, y: 320, width: 20, height: 20))
-        sinNam = UIButton(frame: CGRect(x: 545, y: 320, width: 20, height: 20))
+        neaDang.frame = CGRect(x: 430, y: 320, width: 20, height: 20)
+        bangogae.frame = CGRect(x: 475, y: 320, width: 20, height: 20)
+        sinNam.frame = CGRect(x: 545, y: 320, width: 20, height: 20)
         
-        kyungDeaHosp = UIButton(frame: CGRect(x: 640, y: 320, width: 20, height: 20))
-        daeguBank = UIButton(frame: CGRect(x: 680, y: 320, width: 20, height: 20))
-        beomeo = UIButton(frame: CGRect(x: 730, y: 320, width: 20, height: 20))
+        kyungDeaHosp.frame = CGRect(x: 640, y: 320, width: 20, height: 20)
+        daeguBank.frame = CGRect(x: 680, y: 320, width: 20, height: 20)
+        beomeo.frame = CGRect(x: 730, y: 320, width: 20, height: 20)
         
         
         
