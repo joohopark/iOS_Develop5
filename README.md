@@ -101,24 +101,24 @@
 ### * **Part 9(Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue, <br> Semaphore, DeviceTest, MapKit, 위젯, SerachBarController, <br> 
 UISearchController, CAGradientLayer )** 
 
-> 1. [Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue](/study/42_17-11-6-Thread.md)
-> 2. [CPU, Memory, Thread, Semaphore](/study/0_CPU-MEMORY-THREAD-Semaphore.md)
-> 3. [DeviceTest, MapKit](/study/43_17-11-7-deviceTest-Mapkit.md)
-> 4. [위젯, SerachBarController](/study/45_17-11-9-SearchController-Wejet-imagePicker.md)
-> 5. [UISearchController, CAGradientLayer](/study/46_17-11-10-SearchBarController-Gradation.md)
+> 1. [Thread, Multithread ,GCD(Grand Central Dispatch), DispatchQueue](/Part_9/42_17-11-6-Thread.md)
+> 2. [CPU, Memory, Thread, Semaphore](/Part_9/0_CPU-MEMORY-THREAD-Semaphore.md)
+> 3. [DeviceTest, MapKit](/Part_9/43_17-11-7-deviceTest-Mapkit.md)
+> 4. [위젯, SerachBarController](/Part_9/45_17-11-9-SearchController-Wejet-imagePicker.md)
+> 5. [UISearchController, CAGradientLayer](/Part_9/46_17-11-10-SearchBarController-Gradation.md)
 
-### * **Part 10(IOS Network, OpenWeather API)** 
+### * **Part 10(IOS Network, OpenWeather API, PushNotification)** 
 
-> 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/study/47_17-11-14-Network.md)
-> 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/study/48_17-11-16-IOSNetwork.md)
-> 4. [IOS Network 실습](study/50_17-11-17-network-day3.md)
+> 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/Part_10/47_17-11-14-Network.md)
+> 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/Part_10/48_17-11-16-IOSNetwork.md)
+> 4. [IOS Network 실습](Part_10/50_17-11-17-network-day3.md)
+> 5. [Push Notification](/Part_10/0_Push_Notification.md)
 
 
-### * **Part 11(Instagram 만들기, Firebase-CoreData, PushNotification)** 
+### * **Part 11(Instagram 만들기, Firebase-CoreData)** 
 
 > 1. [Instagram 만들기, firebaseAuth](/study/51_17-11-20-make-instagram-firebase-Auth.md)
 > 2. [Firebase-CoreData, ObserveSingerEvent](/study/52_17-11-26-mak-instagram-firebase-CoreData.md)
-> 3. [Push Notification](/study/0_Push_Notification.md)
 
 
 ---
