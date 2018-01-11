@@ -2,7 +2,7 @@
 
 ---
 
-## Switch, 프로퍼티(저장, 연산, 타입), Type Method-static
+## Switch, 프로퍼티(저장, 연산, 타입), Type Method-static 
 
 ---
 
