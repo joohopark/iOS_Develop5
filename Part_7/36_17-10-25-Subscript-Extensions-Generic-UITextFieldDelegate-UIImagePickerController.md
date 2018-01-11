@@ -1,7 +1,7 @@
 # 36_17-10-25
 
 ---
-
+ 
 ## Subscript, Extensions, Generic, UITextFieldDelegate, UIImagePickerController  
 
 ---
