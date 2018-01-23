@@ -111,7 +111,7 @@ UISearchController, CAGradientLayer )**
 
 > 1. [Network, Client-server Model, HTTP, URL/URI, Rest, <br> HTTP Request, Contents Type, Application/json](/Part__10/47_17-11-14-Network.md)
 > 2. [IOS NetWork, URL Load System, URLRequset, URLSession, <br> URLSessionTask, URLSessionConfiguration, 네트워크 실행 순서(중요!)](/Part__10/48_17-11-16-IOSNetwork.md)
-> 4. [IOS Network 실습](Part__10/50_17-11-17-network-day3.md)
+> 4. [IOS Network 실습](Part__10/50_17-11-16-Network-closure.md)
 > 5. [Push Notification](/Part__10/0_Push_Notification.md)
 
 
