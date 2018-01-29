@@ -261,7 +261,6 @@ struct PostModel:Codable {
 
 
 // extention 부분
-
 extension Data {
   mutating func appendString(_ string: String) {
     let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
