@@ -6,7 +6,7 @@
 
   
 ---   
-### **:envelope:**  : <devminjunju@gmail.com>
+### **:envelope:**  : <dev.mjun@gmail.com>
 
 
 # Learning Table( 17.9.4~
